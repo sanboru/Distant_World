@@ -1,8 +1,23 @@
-﻿###########################
+###########################
 # JAP Events
 ###########################
 
 add_namespace = DW_JAP
+
+#国会議事堂トリガー
+country_event ~ {
+	id = DW_JAP.hide1
+	hidden = yes
+	fire_only_once = yes
+	
+		trigger = {
+		date > 1936.11.6
+		date < 1936.11.8
+		}
+	option = {
+		JAP = { country_event = DW_JAP.1 }
+	}
+}
 
 #国会議事堂
 country_event = {
@@ -12,13 +27,19 @@ country_event = {
 	
 	fire_only_once = yes
 	
-	trigger = {#どういう条件で起こるかわからん！！！！教えて！！！！
+	trigger = {
+	date > 1936.11.6
+	date < 1936.11.8
 	}
 	mean_time_to_happen = {
 		days=1
 	}
 	
-	option = { #選択肢の効果も教えて
+	option = { #民主主義の象徴だ
 		name = DW_JAP.1.a
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.05
+		}
 	}
 }
