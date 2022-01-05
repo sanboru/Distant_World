@@ -4,33 +4,107 @@
     
     continuous_focus_position = { x = 20 y = 1200 }
 
-    focus = {
-		id = DW_JAP_national_unity
-		icon = focus_jap_cast_the_die
+focus_tree = {
+	id = DWmod_JAP_NF
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = JAP
+		}
+	}
+	default = no
+	focus = {
+		id = DWmod_JAP_national_unity
+		text = DWmod_JAP_national_unity
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		cost = 5.00
 		x = 1
 		y = 0
 
-		cost = 5
-
-		ai_will_do = {
-			factor = 10
-		}
-
-		available = {
-            
-		}
-
-		bypass = {
-			
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		search_filters = { FOCUS_FILTER_STABILITY }
-		completion_reward = {
-            add_stability = 0.1
-            add_war_support = 0.1
-		}
 	}
+	focus = {
+		id = DW_JAP_millitary_expansion_plan
+		text = DW_JAP_millitary_expansion_plan
+		icon = GFX_goal_generic_axis_build_infantry
+		cost = 5.00
+		prerequisite = {
+			focus = DWmod_JAP_national_unity
+		}
+		x = 1
+		y = 1
+
+	}
+	focus = {
+		id = DW_JAP_national_unite_law
+		text = DW_JAP_national_unite_law
+		icon = GFX_focus_cze_german_puppet
+		cost = 5.00
+		prerequisite = {
+			focus = DW_JAP_millitary_expansion_plan
+		}
+		x = 1
+		y = 2
+
+	}
+	focus = {
+		id = DW_JAP_beign_reuniting_the_nation
+		text = DW_JAP_beign_reuniting_the_nation
+		icon = GFX_focus_jap_strike_south
+		cost = 10.00
+		prerequisite = {
+			focus = DW_JAP_national_unite_law
+		}
+		x = 1
+		y = 3
+
+	}
+	focus = {
+		id = DW_JAP_southern_islands
+		text = DW_JAP_southern_islands
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = DW_JAP_beign_reuniting_the_nation
+		}
+		x = 0
+		y = 4
+
+	}
+	focus = {
+		id = DW_JAP_northern_union
+		text = DW_JAP_northern_union
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = DW_JAP_beign_reuniting_the_nation
+		}
+		x = 2
+		y = 4
+
+	}
+	focus = {
+		id = DW_JAP_mobilize_the_navy
+		text = DW_JAP_mobilize_the_navy
+		icon = GFX_focus_generic_cruiser2
+		cost = 10.00
+		prerequisite = {
+			focus = DW_JAP_southern_islands
+		}
+		x = 0
+		y = 5
+
+	}
+	focus = {
+		id = DW_JAP_ensure_the_supply
+		text = DW_JAP_ensure_the_supply
+		icon = GFX_focus_generic_rubber
+		cost = 10.00
+		prerequisite = {
+			focus = DW_JAP_northern_union
+		}
+		x = 2
+		y = 5
+
+	}
+}
