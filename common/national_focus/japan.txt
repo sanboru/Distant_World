@@ -1,0 +1,36 @@
+	###########################
+    # JAP National Focus
+    ###########################
+    
+    continuous_focus_position = { x = 20 y = 1200 }
+
+    focus = {
+		id = DW_JAP_national_unity
+		icon = focus_jap_cast_the_die
+		x = 1
+		y = 0
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+            
+		}
+
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+            add_stability = 0.1
+            add_war_support = 0.1
+		}
+	}
