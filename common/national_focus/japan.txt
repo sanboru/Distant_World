@@ -1,11 +1,5 @@
-	###########################
-    # JAP National Focus
-    ###########################
-    
-    continuous_focus_position = { x = 20 y = 1200 }
-
 focus_tree = {
-	id = DWmod_JAP_NF
+	id = jap
 	country = {
 		factor = 0
 		modifier = {
@@ -87,7 +81,7 @@ focus_tree = {
 		id = DW_JAP_mobilize_the_navy
 		text = DW_JAP_mobilize_the_navy
 		icon = GFX_focus_generic_cruiser2
-		cost = 10.00
+		cost = 3.00
 		prerequisite = {
 			focus = DW_JAP_southern_islands
 		}
@@ -105,6 +99,30 @@ focus_tree = {
 		}
 		x = 2
 		y = 5
+
+	}
+	focus = {
+		id = DW_JAP_moblize_the_rikusentai
+		text = DW_JAP_moblize_the_rikusentai
+		icon = GFX_goal_generic_amphibious_assault
+		cost = 3.00
+		prerequisite = {
+			focus = DW_JAP_mobilize_the_navy
+		}
+		x = 0
+		y = 6
+
+	}
+	focus = {
+		id = DW_JAP_snowtop_transport
+		text = DW_JAP_snowtop_transport
+		icon = GFX_focus_cze_military_aeronautical_institute
+		cost = 10.00
+		prerequisite = {
+			focus = DW_JAP_ensure_the_supply
+		}
+		x = 2
+		y = 6
 
 	}
 }
