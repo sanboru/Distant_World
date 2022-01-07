@@ -71,7 +71,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			
+			add_ideas = limited_conscription
 		}
 
 	}
@@ -86,6 +86,27 @@ focus_tree = {
 		x = 1
 		y = 2
 
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			set_stability = 0.3
+			set_war_support = 0.7
+		}
 	}
 	focus = {
 		id = DW_JAP_beign_reuniting_the_nation
@@ -98,6 +119,27 @@ focus_tree = {
 		x = 1
 		y = 3
 
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			set_stability = 0.3
+			set_war_support = 0.7
+		}
 	}
 	focus = {
 		id = DW_JAP_southern_islands
