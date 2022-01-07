@@ -1,0 +1,7 @@
+spriteTypes = {
+    
+    spriteType = {
+        name = GFX_idea_ DW_JAP_reunification_of_nation
+        textureFile = interface\idea\idea_jap_militarism_shogun.dds
+    }
+}
