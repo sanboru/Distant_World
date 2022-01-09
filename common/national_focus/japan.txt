@@ -144,25 +144,76 @@ focus_tree = {
 		id = DW_JAP_southern_islands
 		text = DW_JAP_southern_islands
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 5.00
 		prerequisite = {
 			focus = DW_JAP_beign_reuniting_the_nation
 		}
 		x = 0
 		y = 4
 
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+			tag = RYU {
+				exists = no
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = RYU
+				}
+		}
+
 	}
 	focus = {
 		id = DW_JAP_northern_union
 		text = DW_JAP_northern_union
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 5.00
 		prerequisite = {
 			focus = DW_JAP_beign_reuniting_the_nation
 		}
 		x = 2
 		y = 4
 
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+			tag = EZO {
+				exists = no
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = EZO
+			}
+		}
 	}
 	focus = {
 		id = DW_JAP_mobilize_the_navy
@@ -175,12 +226,14 @@ focus_tree = {
 		x = 0
 		y = 5
 
+
+
 	}
 	focus = {
 		id = DW_JAP_ensure_the_supply
 		text = DW_JAP_ensure_the_supply
 		icon = GFX_focus_generic_rubber
-		cost = 10.00
+		cost = 3.00
 		prerequisite = {
 			focus = DW_JAP_northern_union
 		}
