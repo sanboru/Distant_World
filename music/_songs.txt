@@ -1,0 +1,17 @@
+
+music_station = "ADW_Music"
+
+music = {
+	song = "Anthem_of_USSR_Remixed"
+	chance = {
+		modifier = {
+			factor = 3
+            tag = RUS
+            tag = RRU
+            tag = CSB
+            tag = URL
+            tag = TMN
+            tag = ALT
+		}		
+	}
+}

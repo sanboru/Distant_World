@@ -1,0 +1,8 @@
+
+#Anthem of USSR (Remixed By Tea_Lover)
+
+music = {
+    name = "Anthem_of_USSR_Remixed"
+    file = "DW_Anthem_of_USSR_Remixed"
+    volume = 0.65
+}
