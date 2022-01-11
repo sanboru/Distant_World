@@ -1,0 +1,17 @@
+spriteTypes = {
+    
+    spriteType = {
+        name = gfx_idea_DW_JAP_reunification_of_nation
+        textureFile = gfx_interface/idea/idea_jap_militarism_shogun.dds
+    }
+
+    spriteType = {
+        name = gfx_idea_DW_JAP_scars_of_revolution
+        textureFile = gfx_interface/idea/trotskyite_plot.dds
+    }
+
+    spriteType = {
+        name = gfx_idea_DW_JAP_divided_nation
+        textureFile = gfx/interface/ideaspr_crush_the_revolution.dds
+    }
+}

@@ -1,0 +1,268 @@
+
+#日本国家方針ツリー
+
+focus_tree = {
+	id = jap
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = JAP
+		}
+	}
+	default = no
+	focus = {
+		id = DWmod_JAP_national_unity
+		text = DWmod_JAP_national_unity
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		cost = 5.00
+		x = 1
+		y = 0
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_stability = 0.1
+			add_war_support = 0.1
+		}
+	}
+	focus = {
+		id = DW_JAP_millitary_expansion_plan
+		text = DW_JAP_millitary_expansion_plan
+		icon = GFX_goal_generic_axis_build_infantry
+		cost = 5.00
+
+		prerequisite = {
+			focus = DWmod_JAP_national_unity
+		}
+		x = 1
+		y = 1
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_ideas = limited_conscription
+		}
+
+	}
+	focus = {
+		id = DW_JAP_national_unite_law
+		text = DW_JAP_national_unite_law
+		icon = GFX_focus_cze_german_puppet
+		cost = 5.00
+		prerequisite = {
+			focus = DW_JAP_millitary_expansion_plan
+		}
+		x = 1
+		y = 2
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			set_stability = 0.3
+			set_war_support = 0.7
+		}
+	}
+	focus = {
+		id = DW_JAP_beign_reuniting_the_nation
+		text = DW_JAP_beign_reuniting_the_nation
+		icon = GFX_focus_jap_strike_south
+		cost = 10.00
+		prerequisite = {
+			focus = DW_JAP_national_unite_law
+		}
+		x = 1
+		y = 3
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_ideas =  DW_JAP_reunification_of_nation
+		}
+	}
+	focus = {
+		id = DW_JAP_southern_islands
+		text = DW_JAP_southern_islands
+		icon = GFX_goal_unknown
+		cost = 5.00
+		prerequisite = {
+			focus = DW_JAP_beign_reuniting_the_nation
+		}
+		x = 0
+		y = 4
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+			tag = RYU {
+				exists = no
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = RYU
+				}
+		}
+
+	}
+	focus = {
+		id = DW_JAP_northern_union
+		text = DW_JAP_northern_union
+		icon = GFX_goal_unknown
+		cost = 5.00
+		prerequisite = {
+			focus = DW_JAP_beign_reuniting_the_nation
+		}
+		x = 2
+		y = 4
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+			tag = EZO {
+				exists = no
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = EZO
+			}
+		}
+	}
+	focus = {
+		id = DW_JAP_mobilize_the_navy
+		text = DW_JAP_mobilize_the_navy
+		icon = GFX_focus_generic_cruiser2
+		cost = 3.00
+		prerequisite = {
+			focus = DW_JAP_southern_islands
+		}
+		x = 0
+		y = 5
+
+
+
+	}
+	focus = {
+		id = DW_JAP_ensure_the_supply
+		text = DW_JAP_ensure_the_supply
+		icon = GFX_focus_generic_rubber
+		cost = 3.00
+		prerequisite = {
+			focus = DW_JAP_northern_union
+		}
+		x = 2
+		y = 5
+
+	}
+	focus = {
+		id = DW_JAP_moblize_the_rikusentai
+		text = DW_JAP_moblize_the_rikusentai
+		icon = GFX_goal_generic_amphibious_assault
+		cost = 3.00
+		prerequisite = {
+			focus = DW_JAP_mobilize_the_navy
+		}
+		x = 0
+		y = 6
+
+	}
+	focus = {
+		id = DW_JAP_snowtop_transport
+		text = DW_JAP_snowtop_transport
+		icon = GFX_focus_cze_military_aeronautical_institute
+		cost = 10.00
+		prerequisite = {
+			focus = DW_JAP_ensure_the_supply
+		}
+		x = 2
+		y = 6
+
+	}
+}
