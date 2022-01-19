@@ -1,3 +1,5 @@
+#日本国民精神
+
 ideas = {
     country = {
 
@@ -60,7 +62,7 @@ ideas = {
                     always = yes
                 }
             
-            removal_cost = 1
+            removal_cost = -1
 
             modifier = {
                 stability_weekly = -0.01
@@ -70,6 +72,23 @@ ideas = {
                 industrial_capacity_factory = 0.10
             }
         }
+        
+        DW_JAP_young_military = {
+            allowed = {
+                original_tag = JAP
+        }
+
+            allowed_civil_war = {
+                always = yes
+            }
+            
+            removal_cost = -1
+            
+            modifier = {
+                
+            }
+        }
+        
         }
     }
 }
