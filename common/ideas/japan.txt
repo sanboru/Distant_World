@@ -1,3 +1,5 @@
+#日本国民精神
+
 ideas = {
     country = {
 
@@ -89,6 +91,23 @@ ideas = {
                 invasion_preparation = -0.7
             }
         }
+        
+        DW_JAP_young_military = {
+            allowed = {
+                original_tag = JAP
+        }
+
+            allowed_civil_war = {
+                always = yes
+            }
+            
+            removal_cost = -1
+            
+            modifier = {
+                
+            }
+        }
+        
 
         }
     }
