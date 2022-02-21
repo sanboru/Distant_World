@@ -60,7 +60,7 @@ ideas = {
                     always = yes
                 }
             
-            removal_cost = 1
+            removal_cost = -1
 
             modifier = {
                 stability_weekly = -0.01
@@ -70,6 +70,26 @@ ideas = {
                 industrial_capacity_factory = 0.10
             }
         }
+
+        DW_JAP_mobilize_the_navy = {
+            allowed = {
+                always = no
+            }
+
+            allowed_civil_war = {
+                    always = no
+                }
+            
+            removal_cost = -1
+
+            modifier = {
+                navy_max_range_factor = 1.25
+                experience_gain_navy_factor = 2
+                convoy_escort_efficiency = 2
+                invasion_preparation = -0.7
+            }
+        }
+
         }
     }
 }
