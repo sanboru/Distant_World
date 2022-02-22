@@ -260,6 +260,27 @@ focus_tree = {
 		x = 2
 		y = 5
 
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			research_bonus = {tech_logistics_company = 0.5}
+		}
+
+
 	}
 	focus = {
 		id = DW_JAP_moblize_the_rikusentai
