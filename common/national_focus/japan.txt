@@ -226,6 +226,26 @@ focus_tree = {
 		x = 0
 		y = 5
 
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_ideas = DW_JAP_mobilize_the_navy
+		}
 
 
 	}
@@ -239,6 +259,27 @@ focus_tree = {
 		}
 		x = 2
 		y = 5
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			research_bonus = {tech_logistics_company = 0.5}
+		}
+
 
 	}
 	focus = {
