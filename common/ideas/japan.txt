@@ -73,7 +73,7 @@ ideas = {
             }
         }
 
-        DW_JAP_mobilize_the_navy = {
+        DW_JAP_young_navy = {
             allowed = {
                 always = no
             }
@@ -86,13 +86,14 @@ ideas = {
 
             modifier = {
                 navy_max_range_factor = 1.25
-                experience_gain_navy_factor = 2
                 convoy_escort_efficiency = 2
-                invasion_preparation = -0.7
+                invasion_preparation = -0.2
+                industrial_capacity_dockyard = 0.2
+                experience_gain_navy_factor = 0.5
             }
         }
         
-        DW_JAP_young_military = {
+        DW_JAP_young_military_1 = {
             allowed = {
                 original_tag = JAP
         }
