@@ -1,0 +1,27 @@
+fcus_tree = { #インドのNF中部ガンジーインド
+  id = india_national_focus
+ 	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = RAJ
+		}
+	}
+ 	default = no
+	focus = {
+		id = RAJ_after_the_india
+		icon = GFX_goal_generic_neutrality_focus
+		x = 0
+		y = 0
+
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
