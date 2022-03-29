@@ -1,0 +1,10 @@
+focus_tree = { #インドのNF
+  id = india_national_focus
+ 	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = RAJ
+		}
+	}
+  default = no
