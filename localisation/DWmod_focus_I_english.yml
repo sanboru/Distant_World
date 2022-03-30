@@ -1,6 +1,7 @@
-:
- DWmod_JAP_national_unity:0 "国内の団結"
- DWmod_JAP_national_unity_desc:0 "大日本帝国の北には幕府同盟、南には琉球連合、そして西には大韓帝国が存在する。これらの領土は古来より我々のものであり、この混沌を正しい状態へと戻さねばならない！しかし、そのためには国内をまず一致団結させる必要がある、内部分裂するのは統一した後でも可能だ..."
+l_english:
+ RAJ_after_the_india:0 "インドの今後の決定"
+ DW_JAP_national_unity:0 "国内の団結"
+ DW_JAP_national_unity_desc:0 "大日本帝国の北には幕府同盟、南には琉球連合、そして西には大韓帝国が存在する。これらの領土は古来より我々のものであり、この混沌を正しい状態へと戻さねばならない！しかし、そのためには国内をまず一致団結させる必要がある、内部分裂するのは統一した後でも可能だ..."
  DW_JAP_millitary_expansion_plan:0 "軍備増員計画"
  DW_JAP_millitary_expansion_plan_desc:0 "我々は現在周囲の小国に対する戦争準備を進めている。これらの国より有利に戦うには軍備を増員し、拡大することが不可欠だ。"
  DW_JAP_national_unite_law:0 "国家統一法"
