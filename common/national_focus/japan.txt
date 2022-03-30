@@ -12,8 +12,8 @@ focus_tree = {
 	}
 	default = no
 	focus = {
-		id = DWmod_JAP_national_unity
-		text = DWmod_JAP_national_unity
+		id = DW_JAP_national_unity
+		text = DW_JAP_national_unity
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
 		cost = 5.00
 		x = 1
