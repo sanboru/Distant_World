@@ -25,3 +25,96 @@ fcus_tree = { #インドのNF中部ガンジーインド
 			add_political_power = 50
 		}
 	}
+	focus = { #軍事力の統一
+		id = RAJ_unite_by_mil
+		icon = GFX_focus_ger_oppose_hitler
+		prerequisite = { focus = RAJ_after_the_india }
+		x = 0
+		y = 1
+
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+		}
+	}
+	focus = { #軍に国をまかせる
+		id = RAJ_mil_country
+		icon = GFX_focus_RAJ_seek_help_from_germany
+		prerequisite = { focus = RAJ_unite_by_mil }
+		mutually_exclusive = {focus = }
+		x = 0
+		y = 2
+
+		cost = 2
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+		}
+	}
+	focus = { #ガンジーファシズム
+		id = MGF_RAJ_make_mil_country
+		icon = GFX_focus_RAJ_indianisation_of_army
+		prerequisite = { focus = RAJ_mil_country }
+		mutually_exclusive = { focus = NGR_RAJ_mil_country }
+		x = 1
+		y = 3
+
+		cost = 3
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+		}
+	}
+	focus = { #ガンジー暗殺ルート
+		id = NGR_RAJ_mil_country
+		icon = GFX_focus_RAJ_indianisation_of_army
+		prerequisite = { focus = RAJ_mil_country }
+		mutually_exclusive = { focus = MGF_RAJ_make_mil_country }
+		x = -1
+		y = 3
+
+		cost = 20
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+		}
+	}
+	focus = { #RSSとの協力
+		id = NGR_RAJ_help_with_RSS
+		icon = GFX_goal_generic_military_deal
+		prerequisite = { focus = NGR_RAJ_mil_country }
+		x = -1
+		y = 4
+
+		cost = 4
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+		}
+	}
+}
