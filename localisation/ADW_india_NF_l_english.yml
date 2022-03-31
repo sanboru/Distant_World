@@ -1,0 +1,13 @@
+l_english:
+ RAJ_after_the_india:0 "インドの今後の運命"
+ RAJ_after_the_india_desc:0 "インドの今後どのような運命になるかを決定する。"
+ RAJ_unite_by_mil:0 "インドを軍事力で統一する"
+ RAJ_unite_by_mil_desc:0 "[ROOT.GetName]の軍事力を強化して分裂した国内を統一する。"
+ RAJ_mil_country:0 "軍国主義を進める"
+ RAJ_mil_country_desc:0 "軍国主義を進めて戦争によりこの国を統一する。"
+ NGR_RAJ_mil_country:0 "ガンジーを暗殺する"
+ NGR_RAJ_mil_country_desc:0 "現在[ROOT.GetName]の指導者であるガンジーを約105日かけて暗殺する。"
+ MGF_RAJ_make_mil_country:0 "ガンジーにファシズムを説く"
+ MGF_RAJ_make_mil_country_desc:0 "ガンジーにファシズムの民族主義的思想を説く。"
+ NGR_RAJ_help_with_RSS:0 "RSSと協力する"
+ NGR_RAJ_help_with_RSS_desc:0 "インドの民族主義の団体、民族義勇団と協力し、これからのインドを作っていこう。"
