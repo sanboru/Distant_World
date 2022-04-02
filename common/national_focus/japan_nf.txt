@@ -1,21 +1,20 @@
 
 #日本国家方針ツリー
 
-focus_tree = {
-	id = jap
-	country = {
-		factor = 0
-		modifier = {
-			add = 10
-			tag = JAP
-		}
+country = {
+	factor = 0
+	modifier = {
+		add = 20
+		tag = JAP
 	}
+}
 	default = no
+
 	focus = {
-		id = DW_JAP_national_unity
-		text = DW_JAP_national_unity
+		id = DW_JAP_current_stats
+		text = DW_JAP_current_stats
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
-		cost = 5.00
+		cost = 1
 		x = 1
 		y = 0
 
@@ -37,10 +36,12 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			add_stability = 0.1
-			add_war_support = 0.1
+			country_event = {
+				id = DW_JAP.2
+			}
 		}
 	}
+
 	focus = {
 		id = DW_JAP_millitary_expansion_plan
 		text = DW_JAP_millitary_expansion_plan
@@ -71,10 +72,11 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			add_ideas = limited_conscription
+			add_ideas = extensive_conscription
 		}
 
 	}
+
 	focus = {
 		id = DW_JAP_national_unite_law
 		text = DW_JAP_national_unite_law
@@ -108,6 +110,7 @@ focus_tree = {
 			set_war_support = 0.7
 		}
 	}
+
 	focus = {
 		id = DW_JAP_beign_reuniting_the_nation
 		text = DW_JAP_beign_reuniting_the_nation
@@ -140,6 +143,7 @@ focus_tree = {
 			add_ideas =  DW_JAP_reunification_of_nation
 		}
 	}
+
 	focus = {
 		id = DW_JAP_southern_islands
 		text = DW_JAP_southern_islands
@@ -171,13 +175,14 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
-			create_wargoal = {
+			declare_war_on = {
+				target = ryu
 				type = annex_everything
-				target = RYU
-				}
+			}
 		}
 
 	}
+
 	focus = {
 		id = DW_JAP_northern_union
 		text = DW_JAP_northern_union
@@ -209,12 +214,14 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
-			create_wargoal = {
+			declare_war_on = {
+				target = ezo
 				type = annex_everything
-				target = EZO
 			}
 		}
+		}
 	}
+
 	focus = {
 		id = DW_JAP_rebuild_the_navy
 		text = DW_JAP_mobilize_the_navy
@@ -247,8 +254,8 @@ focus_tree = {
 			add_ideas = DW_JAP_young_navy
 		}
 
-
 	}
+
 	focus = {
 		id = DW_JAP_ensure_the_supply
 		text = DW_JAP_ensure_the_supply
@@ -282,6 +289,7 @@ focus_tree = {
 
 
 	}
+
 	focus = {
 		id = DW_JAP_moblize_the_rikusentai
 		text = DW_JAP_moblize_the_rikusentai
@@ -314,6 +322,7 @@ focus_tree = {
 
 
 	}
+
 	focus = {
 		id = DW_JAP_snowtop_transport
 		text = DW_JAP_snowtop_transport
