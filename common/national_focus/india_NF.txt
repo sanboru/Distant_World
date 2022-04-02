@@ -1,14 +1,20 @@
-fcus_tree = { #インドのNF中部ガンジーインド
-  id = india_national_focus
- 	country = {
+focus_tree = {
+	id = raj_nationalist_focus_new
+	
+	country = {
 		factor = 0
 		modifier = {
 			add = 10
 			tag = RAJ
 		}
 	}
- 	default = no
-	focus = {
+	
+
+	default = no
+
+	continuous_focus_position = { x = 20 y = 50000 }
+	
+	focus = { 
 		id = RAJ_after_the_india
 		icon = GFX_goal_generic_neutrality_focus
 		x = 0
@@ -20,8 +26,678 @@ fcus_tree = { #インドのNF中部ガンジーインド
 		}
 		available_if_capitulated = yes
 
-		search_filters = { FOCUS_FILTER_STABILITY }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			add_political_power = 50
 		}
 	}
+	focus = { #軍事力の統一
+		id = RAJ_unite_by_mil
+		icon = GFX_focus_ger_oppose_hitler
+		prerequisite = { focus = RAJ_after_the_india }
+		x = 0
+		y = 1
+
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+		}
+	}
+	focus = { #軍に国をまかせる
+		id = RAJ_mil_country
+		icon = GFX_focus_RAJ_seek_help_from_germany
+		prerequisite = { focus = RAJ_unite_by_mil }
+		mutually_exclusive = {focus = }
+		x = 0
+		y = 2
+
+		cost = 2
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+		}
+	}
+	focus = { #ガンジーファシズム
+		id = MGF_RAJ_make_mil_country
+		icon = GFX_focus_RAJ_indianisation_of_army
+		prerequisite = { focus = RAJ_mil_country }
+		mutually_exclusive = { focus = NGR_RAJ_mil_country }
+		x = 5
+		y = 3
+
+		cost = 3
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+		}
+	}
+	focus = { #ガンジー暗殺ルート
+		id = NGR_RAJ_mil_country
+		prerequisite = { focus = RAJ_mil_country }
+		mutually_exclusive = { focus = MGF_RAJ_make_mil_country }
+		x = -1
+		y = 3
+
+		cost = 20
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+		}
+	}
+	focus = { #RSSとの協力
+		id = NGR_RAJ_help_with_RSS
+		icon = GFX_goal_generic_military_deal
+		prerequisite = { focus = NGR_RAJ_mil_country }
+		mutually_exclusive = { focus = india_kokumin_renme }
+		mutually_exclusive = { focus = india_koku_mil }
+		x = -1
+		y = 4
+
+		cost = 4
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+		}
+	}
+	#ここまで
+	focus = { #軍備を拡張する
+		id = spread_militally
+		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = NGR_RAJ_help_with_RSS }
+		x = -1
+		y = 5
+
+		cost = 6
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+		}
+	}
+	
+	focus = { #人民
+		id = choushuu_people
+		icon = GFX_focus_generic_little_entente
+		prerequisite = { focus = NGR_RAJ_help_with_RSS }
+		x = -3
+		y = 5
+		cost = 6
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+		}
+	}
+	focus = { #国民の士気を上げる
+		id = increase_kokumin_shiki
+		icon = GFX_focus_generic_manpower
+		prerequisite = { focus = choushuu_people }
+		prerequisite = { focus = spread_militally }
+		x = -2
+		y = 6
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+		}
+	}
+	focus = { #工場の軍事的利用
+		id = minju_fac_use
+		icon = GFX_goal_generic_consumer_goods
+		prerequisite = { focus = choushuu_people }
+		prerequisite = { focus = spread_militally }
+		x = -2
+		y = 7
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+		}
+	}
+	focus = { #中央集権
+		id = chuuou_shuken
+		icon = GFX_goal_generic_air_doctrine
+		prerequisite = {
+			focus = NGR_RAJ_help_with_RSS
+			focus = india_koku_mil
+			focus = india_kokumin_renme
+		}
+		x = 1
+		y = 6
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+		}
+	}
+	focus = { #インド独立連盟に協力を求める
+		id = india_kokumin_renme
+		prerequisite = { focus =  }
+		mutually_exclusive = { focus = NGR_RAJ_help_with_RSS }
+		mutually_exclusive = { focus = india_koku_mil }
+		prerequisite = { focus = NGR_RAJ_mil_country }
+		x = 1
+		y = 4
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+		}
+	}
+	focus = { #インド国民軍
+		id = india_koku_mil
+		mutually_exclusive = { focus = NGR_RAJ_help_with_RSS }
+		mutually_exclusive = { focus = india_kokumin_renme }
+		prerequisite = { focus = NGR_RAJ_mil_country }
+		x = 3
+		y = 4
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+		}
+	}
+	focus = { #移民の受け入れ
+		id = come_on_imin
+		icon = GFX_focus_SOV_mobilization_plan
+		prerequisite = {
+			focus = india_koku_mil
+			focus = india_kokumin_renme
+		}
+		x = 3
+		y = 5
+		cost = 20
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+		}
+	}
+	focus = { #購入
+		id = buy_equipment_from_abroad
+		icon = GFX_focus_generic_air_defense
+		prerequisite = {
+			focus = india_koku_mil
+			focus = india_kokumin_renme
+		}
+		x = 5
+		y = 5
+		cost = 20
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+		}
+	}
+	focus = { #軍のパレード
+		id = parede_at_mil
+		icon = GFX_focus_generic_license_production
+		prerequisite = { focus = buy_equipment_from_abroad }
+		prerequisite = { focus = come_on_imin }
+		x = 4
+		y = 6
+		cost = 20
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+		}
+	}
+	focus = { #軍需３
+		id = build_gunju_fac
+		icon = GFX_goal_generic_construction
+		prerequisite = { focus = parede_at_mil }
+		x = 4
+		y = 7
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+		}
+	}
+	focus = { #研究枠追加
+		id = build_research_buiding
+		icon = GFX_focus_research
+		prerequisite = { focus = build_gunju_fac }
+		x = 4
+		y = 8
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+		}
+	}
+	focus = { #研究員雇用
+		id = add_many_researcher
+		icon = GFX_goal_tfv_generic_tech_sharing
+		
+		prerequisite = { focus = minju_fac_use }
+		x = -2
+		y = 8
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+		}
+	}
+	focus = { #国家の行く末
+		id = national_focus_of_raj
+		icon = GFX_focus_SOV_panslavic_nationalism
+		prerequisite = { focus = chuuou_shuken }
+		x = 1
+		y = 7
+		cost = 1
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+		}
+	}
+	
+	focus = { #農業化
+		id = be_farmer_country
+		icon = GFX_goal_generic_construction2
+		prerequisite = { focus = national_focus_of_raj }
+		mutually_exclusive = { focus = be_factory_country }
+		x = 0
+		y = 8
+		cost = 1
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+		}
+	}
+	focus = { #工業
+		id = be_factory_country
+		icon = GFX_focus_SOV_organize_wreckers
+		prerequisite = { focus = national_focus_of_raj }
+		mutually_exclusive = { focus = be_farmer_country }
+		x = 2
+		y = 8
+		cost = 1
+		ai_will_do = {
+			factor = 15
+		}
+		available_if_capitulated = yes
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+		}
+	}
+	focus = { #工業促進
+		id = promote_factory
+		icon = GFX_focus_generic_aircraft_production
+		prerequisite = { focus = be_factory_country }
+		x = 2
+		y = 9
+		cost = 1
+		ai_will_do = {
+			factor = 15
+		}
+		available_if_capitulated = yes
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+		}
+	}
+	focus = { #軍事工業国家
+		id = mil_fac_country
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = promote_factory }
+		mutually_exclusive = { focus = cliv_fac_country }
+		x = 2
+		y = 10
+		cost = 10
+		ai_will_do = {
+			factor = 15
+		}
+		available_if_capitulated = yes
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+		}
+	}
+	focus = { #民間工業国家
+		id = cliv_fac_country
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = promote_factory }
+		mutually_exclusive = { focus = mil_fac_country }
+		x = 4
+		y = 10
+		cost = 10
+		ai_will_do = {
+			factor = 15
+		}
+		available_if_capitulated = yes
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+		}
+	}
+	focus = { #インフラ建設
+		id = infra_build
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = cliv_fac_country }
+		x = 4
+		y = 11
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+		}
+	}
+	focus = { #軍需工場2
+		id = build_more_gunju
+		icon = GFX_goal_generic_CAS
+		prerequisite = { focus = mil_fac_country }
+		x = 2
+		y = 11
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+		}
+	}
+	focus = { #兵器売る
+		id = sell_equipment
+		icon = GFX_focus_generic_diplomatic_treaty
+		prerequisite = { focus = build_more_gunju }
+		x = 2
+		y = 12
+		cost = 2
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+		}
+	}
+	focus = { #工場を貸す
+		id = lend_fac
+		icon = GFX_focus_generic_self_management
+		prerequisite = { focus = infra_build }
+		x = 4
+		y = 12
+		cost = 2
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+		}
+	}
+	focus = { #農業の輸出促進
+		id = promote_of_farming
+		icon = GFX_focus_RAJ_all_india_forward_bloc
+		prerequisite = { focus = be_farmer_country }
+		x = 0
+		y = 9
+		cost = 10
+		ai_will_do = {
+			factor = 15
+		}
+		available_if_capitulated = yes
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+		}
+	}
+	focus = { #農耕社会による団結
+		id = help_each_other_by_farmer
+		icon = GFX_goal_generic_national_unity
+		prerequisite = { focus = promote_of_farming }
+		x = 0
+		y = 10
+		cost = 5
+		ai_will_do = {
+			factor = 15
+		}
+		available_if_capitulated = yes
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+		}
+	}
+	focus = { #大量輸出
+		id = many_rice_sell
+		icon = GFX_goal_tripartite_pact
+		prerequisite = { focus = promote_of_farming }
+		x = -2
+		y = 10
+		cost = 10
+		ai_will_do = {
+			factor = 15
+		}
+		available_if_capitulated = yes
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+		}
+	}
+	focus = { #輸出計画
+		id = the_promise_of_export
+		icon = GFX_focus_generic_monarchy_1
+		prerequisite = {
+			focus = many_rice_sell
+			focus = help_each_other_by_farmer
+		}
+		x = -1
+		y = 12
+		cost = 4
+		ai_will_do = {
+			factor = 8
+		}
+		available_if_capitulated = yes
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+		}
+	}
+
+	focus = { #対外政策
+		id = the_way_against_broad
+		icon = GFX_focus_POL_expand_polish_intelligence
+		prerequisite = {
+			focus = lend_fac
+			focus = sell_equipment
+			focus = the_promise_of_export
+		}
+		x = 5
+		y = 14
+		cost = 2
+		ai_will_do = {
+			factor = 8
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+		}
+	}
+	focus = { #インド統一
+		id = india_unite
+		icon = GFX_focus_RAJ_two_nation_theory
+		prerequisite = { focus = the_way_against_broad }
+		x = 5
+		y = 15
+		cost = 1
+		ai_will_do = {
+			factor = 8
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+		}
+	}
+	focus = { #イギリス領インドの攻撃
+		id = attack_ENG_RAJ
+		icon = GFX_focus_RAJ_seek_help_from_germany
+		prerequisite = { focus = india_unite }
+		x = 5
+		y = 16
+		cost = 3
+		ai_will_do = {
+			factor = 8
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+		}
+	}
+	focus = { #ムガルの攻撃
+		id = attack_mugaru
+		icon = GFX_focus_hol_united_netherlands
+		prerequisite = { focus = india_unite }
+		x = 3
+		y = 16
+		cost = 3
+		ai_will_do = {
+			factor = 8
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+		}
+	}
+	focus = { #インド共和国
+		id = attack_india_kyouwa
+		icon = GFX_focus_hol_united_netherlands
+		prerequisite = { focus = india_unite }
+		x = 7
+		y = 16
+		cost = 3
+		ai_will_do = {
+			factor = 8
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+		}
+	}
+	focus = { #バングラデッシュ
+		id = attack_bagura
+		icon = GFX_focus_usa_focus_on_asia
+		prerequisite = { focus = attack_india_kyouwa }
+		x = 7
+		y = 17
+		cost = 3
+		ai_will_do = {
+			factor = 8
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		
+		completion_reward = {
+		}
+	}
+	
+	focus = { #インド統一
+		id = unite_india
+		icon = GFX_focus_man_claim_the_mandate_of_heaven
+		prerequisite = { focus = attack_bagura }
+		prerequisite = { focus = attack_mugaru }
+		prerequisite = { focus = attack_ENG_RAJ }
+		x = 5
+		y = 18
+		cost = 3
+		ai_will_do = {
+			factor = 8
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		
+		completion_reward = {
+		}
+	}
+}
