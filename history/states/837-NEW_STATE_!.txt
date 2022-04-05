@@ -12,7 +12,7 @@ state={
 		chromium=3.000
 	}
 	history={
-		owner = RAJ
+		owner = EIN
 		victory_points = {
 			7395 3
 		}
