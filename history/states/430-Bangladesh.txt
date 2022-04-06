@@ -6,7 +6,7 @@ state={
 		add_core_of = BAN
 		owner = BAN
 		victory_points = {
-			11929 1 
+			11929 10
 		}
 		buildings = {
 			infrastructure = 3 #was: 5
