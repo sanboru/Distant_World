@@ -1,1 +1,233 @@
-
+on_actions = { #GDP計算
+	on_startup = {
+		effect = {
+			GER = {
+				set_variable = {
+					var = DAI_KIG
+					value = 3
+				}
+			}
+		}
+	}
+	on_daily = {
+		effect = {
+			ROOT = {
+				set_temp_variable = { num_fac_cil = ROOT.num_of_civilian_factories }
+				multiply_temp_variable = { num_fac_cil = 3 }
+				set_temp_variable = { num_fac_mil = ROOT.num_of_military_factories }
+				multiply_temp_variable = { num_fac_mil = 2 }
+				set_temp_variable = { num_fac_nav = ROOT.num_of_naval_factories }
+				multiply_temp_variable = { num_fac_nav = 4 }
+				add_to_temp_variable = { aa_ww_temp = num_fac_mil }
+				add_to_temp_variable = { aa_ww_temp = num_fac_nav }
+				add_to_temp_variable = { aa_ww_temp = num_fac_cil }
+				set_temp_variable = { can_work_peo_f = ROOT.max_manpower_k }
+				multiply_temp_variable = { can_work_peo_f = 1 }
+				multiply_temp_variable = { aa_ww_temp = can_work_peo_f }
+				divide_temp_variable = { aa_ww_temp = 100000000 }
+				set_variable = {
+					var = GDP_daily
+					value = aa_ww_temp
+				}
+			}
+		}
+	}
+	on_daily = {
+		effect = {
+			ROOT = {
+				set_temp_variable = { dai_KI = DAI_KIG }
+				multiply_temp_variable = { dai_KI = 0.5 }
+				set_temp_variable = { cu_KI = CHU_KIG }
+				multiply_temp_variable = { cu_KI = 0.03 }
+				set_temp_variable = { KIG_1 = dai_KI }
+				add_to_temp_variable = { KIG_1 = cu_KI }
+				set_temp_variable = { can_work_peo = ROOT.max_manpower_k }
+				multiply_temp_variable = { can_work_peo = 2 }
+				multiply_temp_variable = { KIG_1 = can_work_peo }
+				divide_temp_variable = { KIG_1 = 10000 }
+				add_to_variable = {
+					var = GDP_daily
+					value = KIG_1
+				}
+				
+			}
+		}
+	}
+	on_daily = {
+		effect = {
+			ROOT = {
+				set_temp_variable = { imp_res_oil = ROOT.resource_imported@oil } #資源
+				multiply_temp_variable = { imp_res_oil = 0.1 }
+				set_temp_variable = { imp_res_stel = ROOT.resource_imported@steal }
+				multiply_temp_variable = { imp_res_stel = 0.06 }
+				set_temp_variable = { imp_res_alu = ROOT.resource_imported@aluminium }
+				multiply_temp_variable = { imp_res_alu = 0.05 }
+				set_temp_variable = { imp_res_rub = ROOT.resource_imported@rubber }
+				multiply_temp_variable = { imp_res_rub = 0.02 }
+				set_temp_variable = { imp_res_tun = ROOT.resource_imported@tungsten }
+				multiply_temp_variable = { imp_res_tun = 0.03 }
+				set_temp_variable = { imp_res_chr = ROOT.resource_imported@chromium }
+				multiply_temp_variable = { imp_res_chr = 0.03 }
+				
+				set_temp_variable = { mout_res_imp = imp_res_oil }
+				add_to_temp_variable = { mout_res_imp = imp_res_stel }
+				add_to_temp_variable = { mout_res_imp = imp_res_alu }
+				add_to_temp_variable = { mout_res_imp = imp_res_rub }
+				add_to_temp_variable = { mout_res_imp = imp_res_tun }
+				add_to_temp_variable = { mout_res_imp = imp_res_chr }
+				subtract_from_variable = {
+					var = GDP_daily
+					value = mout_res_imp
+				}
+			}
+		}
+	}
+	on_daily = {
+		effect = {
+			ROOT = {
+				set_temp_variable = { exp_res_oil = ROOT.resource_exported@oil }
+				multiply_temp_variable = { exp_res_oil = 0.1 }
+				set_temp_variable = { exp_res_stel = ROOT.resource_exported@steal }
+				multiply_temp_variable = { exp_res_stel = 0.06 }
+				set_temp_variable = { exp_res_alu = ROOT.resource_exported@aluminium }
+				multiply_temp_variable = { exp_res_alu = 0.05 }
+				set_temp_variable = { exp_res_rub = ROOT.resource_exported@rubber }
+				multiply_temp_variable = { exp_res_rub = 0.02 }
+				set_temp_variable = { exp_res_tun = ROOT.resource_exported@tungsten }
+				multiply_temp_variable = { exp_res_tun = 0.03 }
+				set_temp_variable = { exp_res_chr = ROOT.resource_exported@chromium }
+				multiply_temp_variable = { exp_res_chr = 0.03 }
+				
+				set_temp_variable = { mout_res_exp = exp_res_oil }
+				add_to_temp_variable = { mout_res_exp = exp_res_stel }
+				add_to_temp_variable = { mout_res_exp = exp_res_alu }
+				add_to_temp_variable = { mout_res_exp = exp_res_rub }
+				add_to_temp_variable = { mout_res_exp = exp_res_tun }
+				add_to_temp_variable = { mout_res_exp = exp_res_chr }
+				add_to_variable = {
+					var = GDP_daily
+					value = mout_res_exp
+				}
+			}
+		}
+	}
+	on_daily = {
+		effect = {
+			ROOT = {
+				set_variable = {
+					var = my_country_infra
+					value = 0
+				}
+				set_variable = {
+					var = all_state
+					value = ROOT.num_owned_controlled_states
+				}
+				multiply_variable = {
+					var = all_state
+					value = 5
+				}
+			}
+			every_state = {
+				limit = {
+					owner = {
+						tag = ROOT
+					}
+				}
+				add_to_variable = {
+					var = ROOT.my_country_infra
+					value = THIS.infrastructure_level
+				}
+			}
+			ROOT = {
+				set_temp_variable = { manp_SHO = max_manpower_k }
+				divide_variable = {
+					var = my_country_infra
+					value = all_state
+				}
+				multiply_temp_variable = { manp_SHO = 46 }
+				divide_temp_variable = { manp_SHO = 1000 }
+				multiply_variable = { manp_SHO = all_state }
+				add_to_variable = {
+					var = manp_SHO
+					value = GDP_daily
+				}
+			}
+		}
+	}
+	on_daily = {
+		effect = {
+			ROOT = {
+				set_variable = { country_people = max_available_manpower_k }
+				set_variable = { country_people_mi = manpower_k }
+				subtract_from_variable = {
+					var = country_people
+					value = country_people_mi
+				}
+				multiply_temp_variable = { country_people = 10 }
+				set_temp_variable = { ships_rot = ROOT.num_ships }
+				multiply_temp_variable = { ships_rot = 0.1 }
+				add_to_temp_variable = { country_people = ships_rot }
+				subtract_from_variable = {
+					var = GDP_daily
+					value = country_people
+				}
+			}
+		}
+	}
+	on_daily = {
+		effect = {
+			ROOT = {
+				add_to_variable = {
+					var = GDP_amou
+					value = GDP_daily
+				}
+			}
+		}
+	}
+	
+	
+	on_daily = {
+		effect = {
+			if = {
+				ROOT = {
+					if = {
+						limit = {
+							check_variable = {
+								var = GDP_amou
+								value = 100000000
+								compare = greater_than_or_equals
+							}
+						}
+						set_variable = {
+							var = GDP_amou_kei
+							value = GDP_amou
+						}
+						divide_variable = {
+							var = GDP_amou_kei
+							value = 100000000
+						}
+						else = {
+							if = {
+								limit = {
+									check_variable = {
+										var = GDP_amou
+										value = 10000
+										compare = greater_than_or_equals
+									}
+								}
+								set_variable = {
+									var = GDP_amou_cho
+									value = GDP_amou
+								}
+								divide_variable = {
+									var = GDP_amou_cho
+									value = 10000
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
