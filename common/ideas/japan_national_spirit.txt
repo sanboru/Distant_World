@@ -72,26 +72,6 @@ ideas = {
                 industrial_capacity_factory = 0.10
             }
         }
-
-        DW_JAP_young_navy = {
-            allowed = {
-                always = no
-            }
-
-            allowed_civil_war = {
-                    always = no
-                }
-            
-            removal_cost = -1
-
-            modifier = {
-                navy_max_range_factor = 1.25
-                convoy_escort_efficiency = 2
-                invasion_preparation = -0.2
-                industrial_capacity_dockyard = 0.2
-                experience_gain_navy_factor = 0.5
-            }
-        }
         
         DW_JAP_young_military_1 = {
             allowed = {

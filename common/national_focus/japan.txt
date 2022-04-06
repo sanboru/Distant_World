@@ -1,0 +1,68 @@
+focus_tree = {
+	id = japan
+	country = {
+		factor = 1
+	}
+	default = yes
+
+	focus = {
+		id = ADW_JAP_current_stats
+		icon = GFX_focus_chi_collaboration_with_the_japanese
+		cost = 1.00
+		prerequisite = {
+			focus = ADW_JAP_our_focus
+		}
+		x = 1
+		y = 0
+			completion_reward = {
+					country_event = {
+							id = DW_JAP.2
+						}
+				}
+
+	}
+	focus = {
+		id = ADW_JAP_our_focus
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		cost = 1.00
+		prerequisite = {
+			focus = ADW_JAP_negotiations_with_china
+		}
+		x = 1
+		y = 1
+			completion_reward = {
+					country_event = {
+							id = DW_JAP.3
+						}
+				}
+
+	}
+	focus = {
+		id = ADW_JAP_negotiations_with_china
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = ADW_JAP_early_moblization
+		}
+		x = 1
+		y = 2
+			completion_reward = {
+					country_event = {
+							id = DW_JAP.4
+						}
+				}
+
+	}
+	focus = {
+	id = ADW_JAP_early_moblization
+	icon = GFX_focus_generic_little_entente
+	cost = 5.00
+	x = 1
+	y = 3
+		completion_reward = {
+				add_idea = extensive_conscription
+				add_idea = partial_economic_mobilisation
+			}
+	}
+}
+
