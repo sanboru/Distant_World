@@ -9,7 +9,7 @@ state={
 	history={
 		owner = MGR
 		victory_points = {
-			3456 3 
+			3456 10
 		}
 		buildings = {
 			infrastructure = 3 #was: 5
