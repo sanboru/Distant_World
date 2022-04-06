@@ -7,7 +7,7 @@ state={
 	}
 
 	history={
-		owner = RAJ
+		owner = EIN
 		buildings = {
 			infrastructure = 3
 			industrial_complex = 1
