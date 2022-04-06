@@ -56,3 +56,168 @@ country_event = {
 		name = DW_JAP.2.a
 	}
 }
+
+country_event = {
+	id = DW_JAP.3
+	title = DW_JAP.3.t
+	desc = DW_JAP.3.d
+	picture = 
+
+	fire_only_once = yes
+
+	option = {
+		name = DW_JAP.3.a
+	}
+}
+
+country_event = {
+	id = DW_JAP.4
+	title = DW_JAP.4.t
+	desc = DW_JAP.4.d
+	picture = 
+
+	fire_only_once = yes
+
+	option = {
+		name = DW_JAP.4.a
+	}
+}
+
+country_event = {
+	id = DW_JAP.5
+	title = DW_JAP.5.t
+	desc = DW_JAP.5.d
+	picture = 
+
+	fire_only_once = yes
+
+	option = {
+		name = DW_JAP.5.a
+		add_state_core = 536
+		country_event ={
+			id = DW_JAP.6
+		}
+	}
+
+	option = {
+		name = DW_JAP.5.b
+		add_state_core = 536
+		add_state_claim = 555
+		add_political_power = -50
+		diplomatic_relation = {
+			country = CHI
+			relation = docking_rights
+			active = yes
+		}
+		country_event ={
+			id = DW_JAP.6
+		}
+	}
+
+		option = {
+		name = DW_JAP.5.c
+		add_state_core = 536
+		add_state_core = 555
+		add_political_power = -150
+			add_opinion_modifier = {
+			target = CHI
+			modifier = ADW_JAP_refused_chishima_island_docking_rights
+			}
+			country_event ={
+			id = DW_JAP.6
+			}
+		}
+
+	}
+
+	country_event = {
+		id = DW_JAP.6
+		title = DW_JAP.6.t
+		desc = DW_JAP.6.d
+		picutre = 
+
+		fire_only_once = yes
+
+		option = {
+			name = DW_JAP.6.a
+			add_state_core = 645
+			add_state_claim = 646
+			add_state_claim = 638
+			add_state_claim = 526
+			country_event ={
+				id = DW_JAP.6
+			}
+		}
+	
+		option = {
+			name = DW_JAP.6.b
+			add_political_power = -50
+			add_state_core = 526
+			add_state_core = 645
+			add_state_claim = 646
+			add_state_claim = 638
+			country_event ={
+				id = DW_JAP.6
+			}
+		}
+	
+		option = {
+			name = DW_JAP.6.c
+			add_state_core = 526
+			add_state_core = 645
+			add_state_core = 646
+			add_state_core = 638
+			add_political_power = -150
+			country_event ={
+				id = DW_JAP.6
+			}
+		
+	}
+}
+
+country_event = {
+	id = DW_JAP.7
+	title = DW_JAP.7.t
+	desc = DW_JAP.7.d
+	picture = 
+
+	fire_only_once = yes
+
+	option = {
+		name = DW_JAP.7.a
+		
+		country_event ={
+			id = DW_JAP.8
+		}
+	}
+
+	option = {
+		name = DW_JAP.7.b
+		add_political_power = -50
+		
+		country_event ={
+			id = DW_JAP.8
+		}
+	}
+
+	option = {
+		name = DW_JAP.7.c
+		
+		add_political_power = -150
+		country_event ={
+			id = DW_JAP.8
+		}
+}
+
+country_event = {
+	id = DW_JAP.8
+	title = DW_JAP.8.t
+	desc = DW_JAP.8.d
+	picture = 
+
+	fire_only_once = yes
+
+	option = {
+		name = DW_JAP.8.a
+	}
+}
