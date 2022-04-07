@@ -93,8 +93,48 @@ ideas = {
                 conscription_factor = 0.1
             }
         }
-        
 
+        DW_JAP_chinese_tribunary ={
+            allowed = {
+                always = no
+            }
+
+            allowed_civil_war = {
+                NOT = {
+                    has_government = communism
+                }
+            }
+
+            modifier = {
+                consumer_goods_factor = 0.1
+                industrial_capacity_factory	= -0.1
+            }
+
+        }
+
+        DW_JAP_shinko = {
+            allowed = {
+                always =no
+            }
+
+            allowed_civil_war = {
+                always = no
+            }
+
+            modifier = {
+                consumer_goods_factor = -0.2
+                industrial_capacity_dockyard = 0.5
+                industrial_capacity_factory = 0.5
+                war_support_weekly = 0.01
+                surrender_limit	= -0.2
+                army_core_defence_factor = 0.2
+                army_core_attack_factor = 0.2
+                army_morale = 10
+                experience_gain_army = 0.5
+                land_night_attack = 0.5
+                special_forces_cap = 2
+                recruitable_population_factor = 0.1
+            }
         }
     }
 }
