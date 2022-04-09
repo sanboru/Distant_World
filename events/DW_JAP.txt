@@ -61,7 +61,7 @@ country_event = { #今後の方針
 	id = DW_JAP.3
 	title = DW_JAP.3.t
 	desc = DW_JAP.3.d
-	picture = 
+	picture = GFXreport_event_asian_politicians
 
 	fire_only_once = yes
 
@@ -74,12 +74,13 @@ country_event = { #釜山会議開幕
 	id = DW_JAP.4
 	title = DW_JAP.4.t
 	desc = DW_JAP.4.d
-	picture = 
+	picture = GFX_report_event_aid_pact
 
 	fire_only_once = yes
 
 	option = {
 		name = DW_JAP.4.a
+		custom_effect_tooltip = "ADW_JAP_must_choose_carefully"
 		country_event = {
 			id = DW_JAP.5
 			days = 1
@@ -94,7 +95,7 @@ country_event = { #北方領土交渉
 	id = DW_JAP.5
 	title = DW_JAP.5.t
 	desc = DW_JAP.5.d
-	picture = 
+	picture = GFX_report_event_ast_navy
 
 	fire_only_once = yes
 
@@ -144,7 +145,7 @@ country_event = { #北方領土交渉
 		id = DW_JAP.6
 		title = DW_JAP.6.t
 		desc = DW_JAP.6.d
-		picutre = 
+		picutre = GFX_report_event_hol_polderen
 
 		fire_only_once = yes
 
@@ -192,7 +193,7 @@ country_event = { #朝貢交渉
 	id = DW_JAP.7
 	title = DW_JAP.7.t
 	desc = DW_JAP.7.d
-	picture = 
+	picture = GFX_report_event_hitler_croatia_handshake
 
 	fire_only_once = yes
 
@@ -219,11 +220,12 @@ country_event = { #朝貢交渉
 
 	option = {
 		name = DW_JAP.7.c
-		declare_war_on = {
-			target = CHI
+		add_political_power = -150
+		custom_effect_tooltip = "ADW_JAP_this_will_anger_CHI_are_you_sure"
+		CHI = {
+			decleare_war_on = JAP
 			type = annex_everything
 		}
-		add_political_power = -150
 		country_event ={
 			id = DW_JAP.9
 			days = 1
@@ -234,7 +236,7 @@ country_event = { #釜山会議閉幕
 	id = DW_JAP.8
 	title = DW_JAP.8.t
 	desc = DW_JAP.8.d
-	picture = 
+	picture = GFX_report_event_japan_europe_pact
 
 	fire_only_once = yes
 
@@ -250,7 +252,7 @@ country_event = { #釜山会議の決裂
 	id = DW_JAP.9
 	title = DW_JAP.9.t
 	desc = DW_JAP.9.d
-	picture = 
+	picture = GFX_report_event_gre_city_devastated
 	
 	fire_only_once = yes
 
@@ -272,7 +274,7 @@ country_event = {
 	id = ADW_JAP.10
 	title = DW_JAP.10.t
 	desc = DW_JAP.10.d
-	picture = 
+	picture = GFX_report_event_gre_trial
 
 	fire_only_once = yes
 
@@ -283,5 +285,11 @@ country_event = {
 		}
 		JAP = {
 			add_to_faction = AIN
+		}
+		RYU = {
+			add_idea = DW_JAP_shinko
+		}
+		AIN = {
+			add_idea = DW_JAP_shinko
 		}
 }

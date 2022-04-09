@@ -4,7 +4,7 @@ news_event = {
     id = ADW_JAP_N.1
     title = ADW_JAP_N.1.t
     desc = ADW_JAP_N.1.d
-    picutre = 
+    picutre = GFX_news_event_009
 
     major = yes
 
@@ -19,7 +19,7 @@ news_event = {
     id = ADW_JAP_N.2
     title = ADW_JAP_N.2.t
     desc = ADW_JAP_N.2.d
-    picture = 
+    picture = GFX_news_event_017
 
     major = yes
 
@@ -34,7 +34,7 @@ news_event = {
     id = ADW_JAP_N.3
     title = ADW_JAP_N.3.t
     desc = ADW_JAP_N.3.d
-    picture = 
+    picture = GFX_news_event_047
 
     major = yes
 
