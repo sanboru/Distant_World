@@ -72,27 +72,6 @@ ideas = {
                 industrial_capacity_factory = 0.10
             }
         }
-        
-        DW_JAP_young_military_1 = {
-            allowed = {
-                original_tag = JAP
-        }
-
-            allowed_civil_war = {
-                always = yes
-            }
-            
-            removal_cost = -1
-            
-            modifier = {
-                army_defence_factor = -0.2
-                army_attack_factor = -0.2
-                army_morale_factor = -0.2
-                supply_consumption_factor = 0.5
-                experience_gain_army_factor = 0.1
-                conscription_factor = 0.1
-            }
-        }
 
         DW_JAP_chinese_tribunary ={
             allowed = {
@@ -126,15 +105,53 @@ ideas = {
                 industrial_capacity_dockyard = 0.5
                 industrial_capacity_factory = 0.5
                 war_support_weekly = 0.01
-                surrender_limit	= -0.2
-                army_core_defence_factor = 0.2
                 army_core_attack_factor = 0.2
                 army_morale = 10
                 experience_gain_army = 0.5
                 land_night_attack = 0.5
                 special_forces_cap = 2
-                recruitable_population_factor = 0.1
             }
+        }
+
+        ADW_JAP_defend_the_holy_nation = {
+            allowed = {
+                always = no
+            }
+
+            allowed_civil_war = {
+                always = no
+            }
+
+            modifier = {
+                surrender_limit	= -0.2
+                army_core_defence_factor = 0.5
+                recruitable_population_factor = 0.1
+                terrain_penalty_reduction = 0.3
+                max_planning = 100
+                max_dig_in = 50
+            }
+        }
+
+        ADW_JAP_victory_against_quing = [
+        allowed = {
+            always = no
+        }
+
+        allowed_civil_war = {
+            NOT = {
+                has_government = communism
+            }
+        }
+
+        modifier = {
+            consumer_goods_factor = -0.2
+            army_attack_factor = 0.5
+            army_defence_factor = 0.5
+            army_morale = 10
+            max_planning = 180
+            experience_gain_army = 0.25
+            experience_gain_navy = 0.25
+            experience_gain_air = 0.25
         }
     }
 }
