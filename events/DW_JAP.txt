@@ -293,3 +293,25 @@ country_event = {
 			add_idea = DW_JAP_shinko
 		}
 } 
+
+country_event = {
+	id = ADW_JAP.11
+	title = DW_JAP.11.t
+	desc = DW_JAP.11.d
+	picture = GFX_
+
+	fire_only_once = yes
+
+	option = {
+		name = DW_JAP.11.a
+		white_peace = CHI
+		news_event = {
+			id = ADW_JAP_N.4
+		}
+		swap_ideas = {
+			remove_idea = ADW_JAP_defend_the_holy_nation
+			remove_idea = ADW_JAP_shinko
+			add_idea = ADW_JAP_victory_against_quing
+		}
+	}
+}

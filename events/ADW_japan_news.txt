@@ -44,3 +44,33 @@ news_event = {
         name = ADW_JAP_N.3.a
     }
 }
+
+news_event = {
+    id = ADW_JAP_N.4
+    title = ADW_JAP_N.4.t
+    desc = ADW_JAP_N.4.d
+    picture = GFX_news_event_041
+
+    major = yes
+    
+    fire_only_once = yes
+
+    option = {
+        name = ADW_JAP_N.4.a
+    }
+}
+
+news_event = {
+    id = ADW_JAP_N.5
+    title = ADW_JAP_N.5.t
+    desc = ADW_JAP_N.5.d
+    picture = GFX_news_event_047
+
+    major = yes
+
+    fire_only_once = yes
+
+    option = {
+        name = ADW_JAP_N.5.a
+    }
+}
