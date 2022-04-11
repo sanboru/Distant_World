@@ -259,7 +259,7 @@ country_event = { #釜山会議の決裂
 	option = {
 		name = DW_JAP.9.a
 		add_idea = DW_JAP_shinko
-		create_faction = 日本防衛同盟
+		create_faction = Japan_defence_coalition
 		country_event = {
 			id = DW_JAP.10
 			days = 1
@@ -292,4 +292,4 @@ country_event = {
 		AIN = {
 			add_idea = DW_JAP_shinko
 		}
-}
+} 
