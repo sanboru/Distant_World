@@ -11,3 +11,174 @@ music = {
 		}		
 	}
 }
+
+music = {
+    song = "À_La_Volonté_Du_Peuple"
+    chance = {
+        modifier = {
+            factor = 3
+            tag = FRA
+            has_government = democratic
+            has_government = communist
+        }
+    }
+}
+
+music = {
+    song = "A_Nightingale_Sang_In_Berkeley_Square"
+    chance = {
+        modifier = {
+            factor = 2
+            tag = USA
+            tag = ENG
+        }
+    }
+}
+
+music = {
+    song = "Battle_cry_of_freedom"
+    chance = {
+        modifier = {
+            factor = 3 
+            tag = USA
+        }
+        
+        modifier = {
+            factor = 2 
+            has_govenment = democratic
+        }
+    }
+}
+
+music = {
+    song = "Dark_Eyes"
+
+}
+
+music = {
+    song = "Himno_Nacional_Mexicano"
+    chance = {
+        modifier = {
+            factor = 3 
+            tag = MEX
+        }
+    }
+}
+
+music = {
+    song = "I'm_saving_a_dime_out_of_every_dollar"
+    chance = {
+        modifier = {
+            factor = 3 
+            tag = USA
+            tag = ENG
+        }
+        
+        modifier = {
+            factor = 2 
+            has_govenment = democratic
+        }
+    }
+}
+
+music = {
+    song = "Kawaii_suchan"
+    chance = {
+        modifier = {
+            factor = 3
+            tag = JAP
+            tag = JRG
+            tag = EZO
+        }
+    }
+}
+
+music = {
+    song = "Milk_Cow_Blues"
+    chance = {
+        modifier = {
+            factor = 3
+            tag = USA
+            tag = ENG
+        }
+    }
+}
+
+music = {
+    song = "Nessun_dorma"
+    chance = {
+        modifier = {
+            factor = 3
+            tag = ITA
+        }
+    }
+}
+
+music = {
+    song = "Praise_the_lord_and_pass_the_ammunition"
+    chance = {
+        modifier = {
+            factor = 3 
+            tag = USA
+            tag = ENG
+        }
+        
+        modifier = {
+            factor = 2 
+            has_govenment = democratic
+        }
+    }
+}
+
+music = {
+    song = "Propeller_of_clever"
+    chance = {
+        modifier = {
+            factor = 3
+            tag = JAP
+            tag = JRG
+        }
+    }
+}
+
+music = {
+    song = "Sendo_Kawaiya"
+    chance = {
+        modifier = {
+            factor = 3
+            tag = JAP
+            tag = JRG
+        }
+    }
+}
+
+music = {
+    song = "senyu_no_ikotsu_wo_daite"
+    chance = {
+        modifier = {
+            factor = 4
+            tag = JAP
+            tag = JRG
+        }
+    }
+}
+
+music = {
+    song = "The_Bandit"
+}
+
+music = {
+    song = "Славься"
+    chance = {
+        modifier = {
+            factor = 3
+            tag = SOV
+            tag = RUS
+        }
+        
+        modifier = {
+            factor = 2
+            has_government = communism
+        }
+    }
+}

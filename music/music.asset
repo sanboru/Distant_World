@@ -49,12 +49,12 @@ music = { #No one shall sleep
 }
 
 music = {
-    name = "_Praise_the_lord_and_pass_the_ammunition"
+    name = "Praise_the_lord_and_pass_the_ammunition"
     file = "ADW_Praise_the_lord_and_pass_the_ammunition.ogg"
 }
 
 music = { #賢者のプロペラ
-    name = "ADW_Propeller_of_clever"
+    name = "Propeller_of_clever"
     file = "ADW_Propeller_of_clever.ogg"
 }
 
