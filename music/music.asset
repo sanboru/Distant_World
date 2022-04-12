@@ -3,6 +3,77 @@ music = { #Anthem of USSR (Remixed By Tea_lover)
     file = "DW_Anthem_of_USSR_Remixed"
 }
 
+music = { #Do you hear the people sing?
+    name = "À_La_Volonté_Du_Peuple"
+    file = "ADW_À_La_Volonté_Du_Peuple.ogg"
+}
+
 music = {
-    name = ""
+    name = "A_Nightingale_Sang_In_Berkeley_Square"
+    file = "ADW_A_Nightingale_Sang_In_Berkeley_Square.ogg"
+}
+
+music = {
+    name = "Battle_cry_of_freedom"
+    file = "ADW_Battle_cry_of_freedom.ogg"
+}
+
+music = {
+    name = "Dark_Eyes"
+    file = "ADW_Dark_Eyes.ogg"
+}
+
+music = { #Mexican Anthem
+    name = "Himno_Nacional_Mexicano"
+    file = "ADW_Himno_Nacional_Mexicano.ogg"
+}
+
+music = {
+    name = "I'm_saving_a_dime_out_of_every_dollar"
+    file = "ADW_I'm_saving_a_dime.ogg"
+}
+
+music = {
+    name = "Kawaii_suchan"
+    file = "ADW_Kawaii_suchan.ogg"
+}
+
+music ={
+    name = "Milk_Cow_Blues"
+    file = "ADW_Milk_Cow_Blues.ogg"
+}
+
+music = { #No one shall sleep
+    name = "Nessun_dorma"
+    file = "ADW_Nessun_dorma.ogg"
+}
+
+music = {
+    name = "_Praise_the_lord_and_pass_the_ammunition"
+    file = "ADW_Praise_the_lord_and_pass_the_ammunition.ogg"
+}
+
+music = { #賢者のプロペラ
+    name = "ADW_Propeller_of_clever"
+    file = "ADW_Propeller_of_clever.ogg"
+}
+
+music = {
+    name = "Sendo_Kawaiya"
+    file = "ADW_Sendo_Kawaiya.ogg"
+}
+
+music = { #戦友の遺骨を抱いて
+    name = "senyu_no_ikotsu_wo_daite"
+    file = "ADW_senyu_no_ikotsu_wo_daite.ogg"
+}
+
+music = {
+    name = "The_Bandit"
+    file = "ADW_The_Bandit.ogg"
+}
+
+music = { #Slavsya/栄光あれ！
+    name = "Славься"
+    file = "ADW_Славься.ogg"
 }
