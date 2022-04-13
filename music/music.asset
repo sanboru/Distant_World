@@ -1,6 +1,6 @@
 music = { #Anthem of USSR (Remixed By Tea_lover)
     name = "Anthem_of_USSR_Remixed"
-    file = "DW_Anthem_of_USSR_Remixed"
+    file = "DW_Anthem_of_USSR_Remixed.ogg"
 }
 
 music = { #Do you hear the people sing?
@@ -76,4 +76,79 @@ music = {
 music = { #Slavsya/栄光あれ！
     name = "Славься"
     file = "ADW_Славься.ogg"
+}
+
+music = {
+    name = "1812_overture"
+    file = "ADW_1812_overture.ogg"
+}
+
+music = {
+    name = "Anchors_aweigh(Japanese)"
+    file = "ADW_Anchors_aweigh(Japanese).ogg"
+}
+
+music = { 
+    name = "Beethoven_fifth_Symphony"
+    file = "ADW_Beethoven_fifth_Symphony.ogg"
+}
+
+music = { #門出の時
+    name = "Chant_du_Départ"
+    file = "ADW_Chant_du_Départ.ogg"
+}
+
+music = { #怒りの日
+    name = "Dias_irae"
+    file = "ADW_Dias_irae.ogg"
+}
+
+music = { #International(German)
+    name = "Die_Internationale"
+    file = "ADW_Die_Internationale.ogg"
+}
+
+music = { #我が祖国、よりモルダウ
+    name = "Die_Moldau"
+    file = "ADW_Die_Moldau.ogg"
+}
+
+music = {
+    name = "Dixie"
+    file = "ADW_Dixie.ogg"
+}
+
+music = {
+    name = "Eirik_Jarl"
+    file = "ADW_Eirik_Jarl.ogg"
+}
+
+music = { #イタリア国歌・若き者の歌
+    name = "Giovinezza"
+    file = "ADW_Giovinezza.ogg"
+}
+
+music = {
+    name = "God_Save_the_Queen"
+    file = "ADW_God_Save_the_Queen.ogg"
+}
+
+music = { #フィジターの戦い
+    name = "Håkon_Den_Gode"
+    file = "ADW_Håkon_Den_Gode.ogg"
+}
+
+music = { #私は兵士だった
+    name = "Ich_Bin_Soldat"
+    file = "ADW_Ich_Bin_Soldat.ogg"
+}
+
+music = { #イタリア国歌・マメーリの賛歌
+    name = "Il_Canto_degli_Italiani"
+    file = "ADW_Il_Canto_degli_Italiani"
+}
+
+music = {
+    name = "Kadam_Kadam_Badhaye_Ja"
+    file = "ADW_Kadam_Kadam_Badhaye_Ja.ogg"
 }
