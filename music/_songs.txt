@@ -183,3 +183,400 @@ music = {
     }
 }
 
+music = {
+    song = "1812_overture"
+    chance = {
+        modifier = {
+            factor = 2
+            tag = FRA
+            tag = RUS
+            tag = SOV
+        }
+    }
+}
+
+music = {
+    song = "Anchors_aweigh(Japanese)"
+    chance = {
+        modifier = {
+            factor = 3
+            tag = JAP
+            tag = USA
+        }
+
+        modifier = {
+            factor = 2 
+            has_government = democratic
+        }
+    }
+}
+
+music = {
+    song = "Beethoven_fifth_Symphony"
+    chance = {
+        modifier = {
+            factor = 3
+            tag = GER
+        }
+    }
+}
+
+music = {
+    song = "Chant_du_Départ"
+    chance = {
+        modifier = {
+            factor = 3
+            tag = FRA
+        }
+    }
+}
+
+music = {
+    song = "Dias_irae"
+    chance = {
+        modifier = {
+            factor = 4
+            tag = TEX
+        }
+    }
+}
+
+music = {
+    song = "Die_Internationale"
+    chance = {
+        modifier = {
+            factor = 3
+            tag = GER
+        }
+
+        modifier = {
+            factor = 2
+            has_government = communism
+        }
+    }
+}
+
+music = {
+    song = "Die_Moldau"
+    chance = {
+        modifier = {
+            factor = 3 
+            tag = CZE
+            tag = AUS
+        }
+    }
+}
+
+music = {
+    song = "Dixie"
+    chance = {
+        modifier = {
+            factor = 3
+            tag = USA
+            tag = LOU
+        }
+
+        modifier = {
+            factor = 2
+            has_government = democratic
+        }
+    }
+}
+
+music = {
+    song  = "Eirik_Jarl"
+    chance = {
+        modifier = {
+            factor = 3
+            tag = VIL
+        }
+    }
+}
+
+music = {
+    song = "Giovinezza"
+    chance = {
+        modifier = {
+            factor = 3
+            tag = ITA
+        }
+
+        modifier = {
+            factor = 2
+            has_government = fascism
+        }
+    }
+}
+
+music = {
+    song = "God_Save_the_Queen"
+    chance = {
+        modifier = {
+            factor = 3
+            tag = GBR
+        }
+    }
+}
+
+music = {
+    song = "Håkon_Den_Gode"
+    chance = {
+        modifier = {
+            factor = 3
+            tag = VIL
+        }
+    }
+}
+
+music = {
+    song = "Ich_Bin_Soldat"
+    chance = {
+        modifier = {
+            factor = 3
+            tag = GER
+        }
+
+        modifier = {
+            factor = 2
+            has_war = yes
+        }
+    }
+}
+
+music = {
+    song = "Il_Canto_degli_Italiani"
+    chance = {
+        modifier = {
+            factor = 3
+            tag = ITA
+        }
+    }
+}
+
+music = {
+    song = "Kadam_Kadam_Badhaye_Ja"
+    chance = {
+        modifier = {
+            factor = 3
+            tag = MGR
+        }
+    }
+}
+
+music = {
+    song = "L'Arlésienne"
+    chance = { #WIP
+        modifier = {
+            factor = 1
+        }
+    }
+}
+
+music = {
+    song = "L'Internationale_Noire"
+    chance = {
+        modifier = {
+            factor = 2
+            tag = JRG
+            has_government = communism
+        }
+    }
+}
+
+music = {
+    song = "L'Internazionale"
+    chance = {
+        modifier = {
+            factor = 3 
+            tag = ITA
+        }
+
+        modifier = {
+            factor = 3
+            has_government = communism
+        }
+    }
+}
+
+music = {
+    song = "My_Country_Tis_of_Thee"
+    chance = {
+        modifier = {
+            factor = 3
+            tag = LOU
+        }
+
+        modifier = {
+            factor = 2
+            has_government = democracy
+        }
+    }
+}
+
+music = {
+    song = "Panzerlied"
+    chance = {
+        modifier = {
+            factor = 3
+            tag = GER
+        }
+    }
+}
+
+music = {
+    song = "sleeping_beauty"
+    chance = {
+        modifier = { #WIP
+            factor = 1
+        }
+    }
+}
+
+music = {
+    song = "Traditionell_Musette"
+    chance = {
+        modifier = {
+            factor = 3
+            tag = FRA
+        }
+    }
+}
+
+music = {
+    song = "Ved_Stanford_Brua"
+    chance = {
+        modifier = {
+            factor = 3
+            tag = VIL
+        }
+    }
+}
+
+music = {
+    song = "Vinland_det_fagre"
+    chance = {
+        modifier = {
+            factor = 3
+            tag = VIL
+        }
+    }
+}
+
+music = {
+    song = "Wilhelm_Tell_Overture"
+    chance = {
+        modifier = {
+            factor = 3
+            tag = GER
+            tag = FRA
+            tag = ITA
+        }
+    }
+}
+
+music = {
+    song = "Wo_alle_Straßen_enden"
+    chance = {
+        modifier = {
+            factor = 3
+            tag = GER
+        }
+
+        modifier = {
+            factor = 2
+            has_war = yes
+        }
+    }
+}
+
+music = {
+    song = "Авиамарш"
+    chance = {
+        modifier = {
+            factor = 3
+            tag = RUS
+        }
+    }
+}
+
+music = {
+    song = "Последняя_электричка"
+    chance = {
+        modifier = {
+            factor = 3
+            tag = RUS
+        }
+    }
+}
+
+music = {
+    song = "do_our_best"
+    chance = {
+        modifier = {
+            factor = 3
+            tag = JRG
+        }
+
+        modifier = {
+            factor = 2
+            has_government = communism
+        }
+    }
+}
+
+music = {
+    song = "Warszawianka(Japanese)"
+    chance = {
+        modifier = {
+            factor = 3
+            tag = JRG
+        }
+        
+        modifier = {
+            factor = 3
+            has_government = communism
+        }
+    }
+}
+
+music = {
+    song = "我現在要出征"
+    chance = {
+        modifier = {
+            factor = 3
+            tag = CHI
+        }
+    }
+}
+
+music = {
+    song = "勝利之歌・胜利之歌"
+    chance = {
+        modifier = {
+            factor = 3
+            tag = CHI
+        }
+    }
+}
+
+music = {
+    song = "閃光のハサウェイ"
+    chance = {
+        modifier = {
+            factor = 3
+            tag = JAP
+            tag = JRG
+        }
+    }
+}
+
+music = {
+    song = "東京節"
+    chance = {
+        modifier = {
+            factor = 3
+            tag = JAP
+            tag = JRG
+        }
+    }
+}
