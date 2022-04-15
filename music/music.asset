@@ -148,7 +148,102 @@ music = { #イタリア国歌・マメーリの賛歌
     file = "ADW_Il_Canto_degli_Italiani"
 }
 
-music = {
+music = { #インド軍歌・前進せよ！
     name = "Kadam_Kadam_Badhaye_Ja"
     file = "ADW_Kadam_Kadam_Badhaye_Ja.ogg"
+}
+
+music = { #アルルの女
+    name = "L'Arlésienne"
+    file = "ADW_L'Arlésienne.ogg"
+}
+
+music = { #黒色インターナショナル・日本語
+    name = "L'Internationale_Noire"
+    file = "ADW_L'Internationale_Noire.ogg"
+}
+
+music = { #インターナショナル・イタリア語
+    name = "L'Internazionale"
+    file = "ADW_L'Internazionale.ogg"
+}
+
+music = {
+    name = "My_Country_Tis_of_Thee"
+    file = "ADW_My_Country_Tis_of_Thee.ogg"
+}
+
+music = {
+    name = "Panzerlied"
+    file = "ADW_Panzerlied.ogg"
+}
+
+music = {
+    name = "sleeping_beauty"
+    file = "ADW_sleeping_beauty.ogg"
+}
+
+music = { #フランス・ミュゼット
+    name = "Traditionell_Musette"
+    file = "ADW_Traditionell_Musette.ogg"
+}
+
+music = { #スタンフォード僑の戦い
+    name = "Ved_Stanford_Brua"
+    file = "ADW_Ved_Stanford_Brua.ogg"
+}
+
+music = { #ヴィンランドの歌
+    name = "Vinland_det_fagre"
+    file = "ADW_Vinland_det_fagre.ogg"
+}
+
+music = {
+    name = "Wilhelm_Tell_Overture"
+    file = "ADW_Wilhelm_Tell_Overture.ogg"
+}
+
+music = { #すべての道の終着点
+    name = "Wo_alle_Straßen_enden"
+    file = "ADW_Wo_alle_Straßen_enden.ogg"
+}
+
+music = { #ロシア航空行進曲
+    name = "Авиамарш"
+    file = "ADW_Авиамарш.ogg"
+}
+
+music = { #ソ連音楽・終電
+    name = "Последняя_электричка"
+    file = "ADW_Последняя_электричка.ogg"
+}
+
+music = { #がんばろう
+    name = "do_our_best"
+    file = "ADW_do_our_best.ogg"
+}
+
+music = { #ワルシャワ労働歌
+    name = "Warszawianka(Japanese)"
+    file = "ADW_Warszawianka(Japanese).ogg"
+}
+
+music = { #私は、国を守りに行く。
+    name = "我現在要出征"
+    file = "ADW_我現在要出征.ogg"
+}
+
+music = { #勝利之歌
+    name = "勝利之歌・胜利之歌"
+    file = "ADW_勝利之歌・胜利之歌.ogg"
+}
+
+music = {
+    name = "閃光のハサウェイ"
+    file = "ADW_閃光のハサウェイ.ogg"
+}
+
+music = {
+    name = "東京節"
+    file = "ADW_東京節.ogg"
 }
