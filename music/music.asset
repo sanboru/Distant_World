@@ -1,8 +1,249 @@
+music = { #Anthem of USSR (Remixed By Tea_lover)
+    name = "Anthem_of_USSR_Remixed"
+    file = "DW_Anthem_of_USSR_Remixed.ogg"
+}
 
-#Anthem of USSR (Remixed By Tea_lover)
+music = { #Do you hear the people sing?
+    name = "À_La_Volonté_Du_Peuple"
+    file = "ADW_À_La_Volonté_Du_Peuple.ogg"
+}
 
 music = {
-    name = "Anthem_of_USSR_Remixed"
-    file = "DW_Anthem_of_USSR_Remixed"
-    volume = 0.65
+    name = "A_Nightingale_Sang_In_Berkeley_Square"
+    file = "ADW_A_Nightingale_Sang_In_Berkeley_Square.ogg"
+}
+
+music = {
+    name = "Battle_cry_of_freedom"
+    file = "ADW_Battle_cry_of_freedom.ogg"
+}
+
+music = {
+    name = "Dark_Eyes"
+    file = "ADW_Dark_Eyes.ogg"
+}
+
+music = { #Mexican Anthem
+    name = "Himno_Nacional_Mexicano"
+    file = "ADW_Himno_Nacional_Mexicano.ogg"
+}
+
+music = {
+    name = "I'm_saving_a_dime_out_of_every_dollar"
+    file = "ADW_I'm_saving_a_dime.ogg"
+}
+
+music = {
+    name = "Kawaii_suchan"
+    file = "ADW_Kawaii_suchan.ogg"
+}
+
+music ={
+    name = "Milk_Cow_Blues"
+    file = "ADW_Milk_Cow_Blues.ogg"
+}
+
+music = { #No one shall sleep
+    name = "Nessun_dorma"
+    file = "ADW_Nessun_dorma.ogg"
+}
+
+music = {
+    name = "Praise_the_lord_and_pass_the_ammunition"
+    file = "ADW_Praise_the_lord_and_pass_the_ammunition.ogg"
+}
+
+music = { #賢者のプロペラ
+    name = "Propeller_of_clever"
+    file = "ADW_Propeller_of_clever.ogg"
+}
+
+music = {
+    name = "Sendo_Kawaiya"
+    file = "ADW_Sendo_Kawaiya.ogg"
+}
+
+music = { #戦友の遺骨を抱いて
+    name = "senyu_no_ikotsu_wo_daite"
+    file = "ADW_senyu_no_ikotsu_wo_daite.ogg"
+}
+
+music = {
+    name = "The_Bandit"
+    file = "ADW_The_Bandit.ogg"
+}
+
+music = { #Slavsya/栄光あれ！
+    name = "Славься"
+    file = "ADW_Славься.ogg"
+}
+
+music = {
+    name = "1812_overture"
+    file = "ADW_1812_overture.ogg"
+}
+
+music = {
+    name = "Anchors_aweigh(Japanese)"
+    file = "ADW_Anchors_aweigh(Japanese).ogg"
+}
+
+music = { 
+    name = "Beethoven_fifth_Symphony"
+    file = "ADW_Beethoven_fifth_Symphony.ogg"
+}
+
+music = { #門出の時
+    name = "Chant_du_Départ"
+    file = "ADW_Chant_du_Départ.ogg"
+}
+
+music = { #怒りの日
+    name = "Dias_irae"
+    file = "ADW_Dias_irae.ogg"
+}
+
+music = { #International(German)
+    name = "Die_Internationale"
+    file = "ADW_Die_Internationale.ogg"
+}
+
+music = { #我が祖国、よりモルダウ
+    name = "Die_Moldau"
+    file = "ADW_Die_Moldau.ogg"
+}
+
+music = {
+    name = "Dixie"
+    file = "ADW_Dixie.ogg"
+}
+
+music = {
+    name = "Eirik_Jarl"
+    file = "ADW_Eirik_Jarl.ogg"
+}
+
+music = { #イタリア国歌・若き者の歌
+    name = "Giovinezza"
+    file = "ADW_Giovinezza.ogg"
+}
+
+music = {
+    name = "God_Save_the_Queen"
+    file = "ADW_God_Save_the_Queen.ogg"
+}
+
+music = { #フィジターの戦い
+    name = "Håkon_Den_Gode"
+    file = "ADW_Håkon_Den_Gode.ogg"
+}
+
+music = { #私は兵士だった
+    name = "Ich_Bin_Soldat"
+    file = "ADW_Ich_Bin_Soldat.ogg"
+}
+
+music = { #イタリア国歌・マメーリの賛歌
+    name = "Il_Canto_degli_Italiani"
+    file = "ADW_Il_Canto_degli_Italiani"
+}
+
+music = { #インド軍歌・前進せよ！
+    name = "Kadam_Kadam_Badhaye_Ja"
+    file = "ADW_Kadam_Kadam_Badhaye_Ja.ogg"
+}
+
+music = { #アルルの女
+    name = "L'Arlésienne"
+    file = "ADW_L'Arlésienne.ogg"
+}
+
+music = { #黒色インターナショナル・日本語
+    name = "L'Internationale_Noire"
+    file = "ADW_L'Internationale_Noire.ogg"
+}
+
+music = { #インターナショナル・イタリア語
+    name = "L'Internazionale"
+    file = "ADW_L'Internazionale.ogg"
+}
+
+music = {
+    name = "My_Country_Tis_of_Thee"
+    file = "ADW_My_Country_Tis_of_Thee.ogg"
+}
+
+music = {
+    name = "Panzerlied"
+    file = "ADW_Panzerlied.ogg"
+}
+
+music = {
+    name = "sleeping_beauty"
+    file = "ADW_sleeping_beauty.ogg"
+}
+
+music = { #フランス・ミュゼット
+    name = "Traditionell_Musette"
+    file = "ADW_Traditionell_Musette.ogg"
+}
+
+music = { #スタンフォード僑の戦い
+    name = "Ved_Stanford_Brua"
+    file = "ADW_Ved_Stanford_Brua.ogg"
+}
+
+music = { #ヴィンランドの歌
+    name = "Vinland_det_fagre"
+    file = "ADW_Vinland_det_fagre.ogg"
+}
+
+music = {
+    name = "Wilhelm_Tell_Overture"
+    file = "ADW_Wilhelm_Tell_Overture.ogg"
+}
+
+music = { #すべての道の終着点
+    name = "Wo_alle_Straßen_enden"
+    file = "ADW_Wo_alle_Straßen_enden.ogg"
+}
+
+music = { #ロシア航空行進曲
+    name = "Авиамарш"
+    file = "ADW_Авиамарш.ogg"
+}
+
+music = { #ソ連音楽・終電
+    name = "Последняя_электричка"
+    file = "ADW_Последняя_электричка.ogg"
+}
+
+music = { #がんばろう
+    name = "do_our_best"
+    file = "ADW_do_our_best.ogg"
+}
+
+music = { #ワルシャワ労働歌
+    name = "Warszawianka(Japanese)"
+    file = "ADW_Warszawianka(Japanese).ogg"
+}
+
+music = { #私は、国を守りに行く。
+    name = "我現在要出征"
+    file = "ADW_我現在要出征.ogg"
+}
+
+music = { #勝利之歌
+    name = "勝利之歌・胜利之歌"
+    file = "ADW_勝利之歌・胜利之歌.ogg"
+}
+
+music = {
+    name = "閃光のハサウェイ"
+    file = "ADW_閃光のハサウェイ.ogg"
+}
+
+music = {
+    name = "東京節"
+    file = "ADW_東京節.ogg"
 }

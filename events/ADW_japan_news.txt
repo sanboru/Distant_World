@@ -49,7 +49,7 @@ news_event = {
     id = ADW_JAP_N.4
     title = ADW_JAP_N.4.t
     desc = ADW_JAP_N.4.d
-    picture = GFX_news_event_041
+    picture = GFX_news_event_050
 
     major = yes
     
