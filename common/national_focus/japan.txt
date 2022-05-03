@@ -1,5 +1,5 @@
 focus_tree = {
-	id = japan
+	id = japan_reunion_focus
 	country = {
 		factor = 1
 	}
@@ -64,11 +64,15 @@ focus_tree = {
 		icon = GFX_focus_chi_one_china_policy
 		cost = 1
 
-		x = 0 
+		x = -1 
 		y = 3
 
 		prerequisite = {
 			focus = ADW_JAP_negotiations_with_china
+		}
+
+		mutually_exclusive = {
+			focus = ADW_JAP_early_moblization
 		}
 
 		available = {
@@ -94,7 +98,7 @@ focus_tree = {
 		focus = ADW_JAP_negotiations_with_china
 	}
 
-		completion_reward = {
+	completion_reward = {
 				add_idea = extensive_conscription
 				add_idea = partial_economic_mobilisation
 			}
@@ -105,7 +109,7 @@ focus_tree = {
 		icon = GFX_focus_focus_fra_fascist_threat
 		cost = 5
 
-		x = 0
+		x = -1
 		y = 4
 
 		prerequisite = {
@@ -120,9 +124,9 @@ focus_tree = {
 	focus = {
 		id = ADW_fall_of_tokyo
 		icon = GFX_goal_unknown
-		cost = 1
+		cost = 0
 
-		x = 1
+		x = 0
 		y = 5
 
 		prerequisite = {
@@ -149,7 +153,7 @@ focus_tree = {
 		icon = GFX_goal_unknown
 		cost = 5
 
-		x = 0
+		x = -2
 		y = 5
 
 		prerequisite = {
@@ -165,9 +169,82 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			load_focus_tree	= japan_sino_victory_tree
 			country_event = {
+				id = ADW_JAP.11
+			}
+		}
+	}
+
+	focus = {
+		id = ADW_JAP_sothern_islands
+		icon = GFX_goal_unknown
+		cost = 5
+
+		x = 1
+		y = 4
+
+		prerequisite = {
+			focus = ADW_JAP_early_mobilization
+		}
+
+		completion_reward = {
+			declare_war_on = {
+				tag = RYU
+				wargoal = annex_everything
+			}
+		}
+	}
+
+	focus = {
+		id = ADW_JAP_northern_shogunate
+		icon = GFX_goal_unknown
+		cost = 5
+		x = 3
+		y = 4
+
+		prerequisite = {
+			focus = ADW_JAP_early_mobilization
+		}
+
+		completion_reward = {
+			declare_war_on = {
+				tag = AIN
+				wargoal = annex_everything
+			}
+		}
+	}
+
+	focus = {
+		id = ADW_JAP_reunification
+		icon = GFX_goal_unknown
+		cost = 1
+		x = 2
+		y = 5
+
+		prerequisite = {
+			focus = ADW_JAP_southern_islands
+		}
+
+		prerequisite = {
+			focus = ADW_JAP_northern_shogunate
+		}
+
+		available = {
+			NOT = {
+				country_exists = RYU
+				country_exists = AIN
+			}
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = "ADW_JAP_reunion_again"
+			add_political_power = 150
+			set_stability = 0.8
+			hidden_effect = {
 				country_event = {
-					id = ADW_JAP.11
+					id = ADW_JAP.12
+					random = 50
 				}
 			}
 		}

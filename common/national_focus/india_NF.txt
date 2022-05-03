@@ -52,7 +52,9 @@ focus_tree = {
 		id = RAJ_mil_country
 		icon = GFX_focus_RAJ_seek_help_from_germany
 		prerequisite = { focus = RAJ_unite_by_mil }
-		mutually_exclusive = {focus = }
+		mutually_exclusive = { 
+			focus = PLACEHOLDER
+		}
 		x = 0
 		y = 2
 
@@ -218,7 +220,9 @@ focus_tree = {
 	}
 	focus = { #インド独立連盟に協力を求める
 		id = india_kokumin_renme
-		prerequisite = { focus =  }
+		prerequisite = { 
+			focus =  PLACEHOLDER
+		}
 		mutually_exclusive = { focus = NGR_RAJ_help_with_RSS }
 		mutually_exclusive = { focus = india_koku_mil }
 		prerequisite = { focus = NGR_RAJ_mil_country }
