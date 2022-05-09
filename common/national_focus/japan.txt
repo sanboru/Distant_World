@@ -219,7 +219,7 @@ focus_tree = {
 		id = ADW_JAP_reunification
 		icon = GFX_goal_unknown
 		cost = 1
-		x = 2
+		x = 1
 		y = 5
 
 		prerequisite = {
@@ -241,11 +241,46 @@ focus_tree = {
 			custom_effect_tooltip = "ADW_JAP_reunion_again"
 			add_political_power = 150
 			set_stability = 0.8
+			remove_idea = DW_JAP_divided_nation 
 			hidden_effect = {
 				country_event = {
 					id = ADW_JAP.12
 					random = 50
 				}
+			}
+		}
+	}
+
+	focus = {
+		id = ADW_JAP_falire_of_reunification
+		icon = GFX_goal_unknown
+		cost = 5
+		x = 3
+		y = 5
+
+		prerequisite = {
+			focus = ADW_JAP_southern_islands
+		}
+
+		prerequisite = {
+			focus = ADW_JAP_northern_shogunate
+		}
+
+		available = {
+			surrender_progress > 0.03
+			country_exists = RYU
+			country_exists = AIN
+		}
+
+		completion_reward = {
+			add_politica_power = -150
+			add_popularity = {
+				ideology = communism
+				popularity = 0.3
+			}
+			swap_ideas = {
+				remove_idea = DW_JAP_scars_of_revolution
+				add_idea = Placeholder
 			}
 		}
 	}

@@ -318,4 +318,4 @@ country_event = {
 			add_idea = ADW_JAP_victory_against_quing
 		}
 	}
-}
+} 
