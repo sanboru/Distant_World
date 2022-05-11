@@ -274,7 +274,7 @@ country_event = { #釜山会議の決裂
 	}
 }
 
-country_event = {
+country_event = { #日本防衛同盟の結成
 	id = ADW_JAP.10
 	title = DW_JAP.10.t
 	desc = DW_JAP.10.d
@@ -285,13 +285,7 @@ country_event = {
 	option = {
 		name = DW_JAP.10.a
 		JAP = {
-			add_to_faction = RYU
-		}
-		JAP = {
 			add_to_faction = AIN
-		}
-		RYU = {
-			add_idea = DW_JAP_shinko
 		}
 		AIN = {
 			add_idea = DW_JAP_shinko

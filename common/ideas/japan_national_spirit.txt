@@ -53,7 +53,7 @@ ideas = {
             }
         } 
 
-        ADW_JAP_dissolving_nation = {
+        ADW_JAP_total_chaos = {
             allowed = {
                 always = no
             }
@@ -156,25 +156,25 @@ ideas = {
         }
 
         ADW_JAP_victory_against_quing = {
-        allowed = {
-            always = no
-        }
-
-        allowed_civil_war = {
-            NOT = {
-                has_government = communism
+            allowed = {
+                always = no
+            }
+    
+            allowed_civil_war = {
+                NOT = {
+                    has_government = communism
+                }
+            }
+    
+            modifier = {
+                consumer_goods_factor = -0.2
+                army_attack_factor = 0.5
+                army_defence_factor = 0.5
+                army_morale = 10
+                max_planning = 180
+                experience_gain_army = 0.25
+                experience_gain_navy = 0.25
+                experience_gain_air = 0.25
             }
         }
-
-        modifier = {
-            consumer_goods_factor = -0.2
-            army_attack_factor = 0.5
-            army_defence_factor = 0.5
-            army_morale = 10
-            max_planning = 180
-            experience_gain_army = 0.25
-            experience_gain_navy = 0.25
-            experience_gain_air = 0.25
-        }
-    }
 }

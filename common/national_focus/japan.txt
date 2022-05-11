@@ -280,8 +280,13 @@ focus_tree = {
 			}
 			swap_ideas = {
 				remove_idea = DW_JAP_scars_of_revolution
-				add_idea = Placeholder
+				add_idea = ADW_JAP_total_chaos
 			}
+			country_event = {
+				id = placeholder
+				random = 50
+			}
+			custom_effect_tooltip = "ADW_JAP_falire_of_reunification"
 		}
 	}
 }
