@@ -52,6 +52,29 @@ ideas = {
                 communism_drift = 0.01
             }
         } 
+
+        ADW_JAP_total_chaos = {
+            allowed = {
+                always = no
+            }
+
+            allowed_civil_war = {
+                NOT = {
+                    has_government = communism
+                }
+            }
+
+            removal_cost  = -1
+
+            modifier = {
+                communism_drift = 0.2
+                generate_wargoal_tension = 1
+                war_support_factor = -0.5
+                stability_factor = -0.5
+                drift_defence_factor = -0.75
+                political_power_gain = -0.5
+            }
+        }
         
         DW_JAP_divided_nation = {
             allowed = {
@@ -132,26 +155,26 @@ ideas = {
             }
         }
 
-        ADW_JAP_victory_against_quing = [
-        allowed = {
-            always = no
-        }
-
-        allowed_civil_war = {
-            NOT = {
-                has_government = communism
+        ADW_JAP_victory_against_quing = {
+            allowed = {
+                always = no
+            }
+    
+            allowed_civil_war = {
+                NOT = {
+                    has_government = communism
+                }
+            }
+    
+            modifier = {
+                consumer_goods_factor = -0.2
+                army_attack_factor = 0.5
+                army_defence_factor = 0.5
+                army_morale = 10
+                max_planning = 180
+                experience_gain_army = 0.25
+                experience_gain_navy = 0.25
+                experience_gain_air = 0.25
             }
         }
-
-        modifier = {
-            consumer_goods_factor = -0.2
-            army_attack_factor = 0.5
-            army_defence_factor = 0.5
-            army_morale = 10
-            max_planning = 180
-            experience_gain_army = 0.25
-            experience_gain_navy = 0.25
-            experience_gain_air = 0.25
-        }
-    }
 }

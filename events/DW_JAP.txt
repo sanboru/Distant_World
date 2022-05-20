@@ -111,8 +111,8 @@ country_event = { #北方領土交渉
 	option = {
 		name = DW_JAP.5.b
 		add_state_core = 536
-		add_state_claim = 555
-		add_political_power = -50
+		add_state_core = 555
+		add_political_power = 50
 		diplomatic_relation = {
 			country = CHI
 			relation = docking_rights
@@ -128,7 +128,7 @@ country_event = { #北方領土交渉
 		name = DW_JAP.5.c
 		add_state_core = 536
 		add_state_core = 555
-		add_political_power = -150
+		add_political_power = -100
 			add_opinion_modifier = {
 			target = CHI
 			modifier = ADW_JAP_refused_chishima_island_docking_rights
@@ -168,6 +168,10 @@ country_event = { #北方領土交渉
 			add_state_core = 645
 			add_state_claim = 646
 			add_state_claim = 638
+			diplomatic_relation = {
+				country = CHI
+				relation = docking_rights
+				active = yes
 			country_event = {
 				id = DW_JAP.7
 				days = 1
@@ -270,7 +274,7 @@ country_event = { #釜山会議の決裂
 	}
 }
 
-country_event = {
+country_event = { #日本防衛同盟の結成
 	id = ADW_JAP.10
 	title = DW_JAP.10.t
 	desc = DW_JAP.10.d
@@ -281,13 +285,7 @@ country_event = {
 	option = {
 		name = DW_JAP.10.a
 		JAP = {
-			add_to_faction = RYU
-		}
-		JAP = {
 			add_to_faction = AIN
-		}
-		RYU = {
-			add_idea = DW_JAP_shinko
 		}
 		AIN = {
 			add_idea = DW_JAP_shinko
@@ -314,4 +312,4 @@ country_event = {
 			add_idea = ADW_JAP_victory_against_quing
 		}
 	}
-}
+} 
