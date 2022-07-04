@@ -141,20 +141,21 @@ country_event = { #北方領土交渉
 
 	}
 
-	country_event = { #南方領土交渉
+	country_event = { #旧南方領土交渉、現防共協定
 		id = DW_JAP.6
 		title = DW_JAP.6.t
 		desc = DW_JAP.6.d
-		picutre = GFX_report_event_hol_polderen
+		picutre = GFX_report_event_hol_polderen #将来変更予定
 
 		fire_only_once = yes
 
 		option = {
 			name = DW_JAP.6.a
-			add_state_core = 645
-			add_state_claim = 646
-			add_state_claim = 638
-			add_state_claim = 526
+			add_political_power = -50
+			add_popularity = {
+				ideology = communism
+				popularity = -0.3
+			}
 			country_event = {
 				id = DW_JAP.7
 				days = 1
@@ -163,32 +164,16 @@ country_event = { #北方領土交渉
 	
 		option = {
 			name = DW_JAP.6.b
-			add_political_power = -50
-			add_state_core = 526
-			add_state_core = 645
-			add_state_claim = 646
-			add_state_claim = 638
-			diplomatic_relation = {
-				country = CHI
-				relation = docking_rights
-				active = yes
+			add_political_power = 50
+			add_popularity = {
+				ideology = communism
+				popularity = 0.3
+			}
 			country_event = {
 				id = DW_JAP.7
 				days = 1
 			}
 		}
-	
-		option = {
-			name = DW_JAP.6.c
-			add_state_core = 526
-			add_state_core = 645
-			add_state_core = 646
-			add_state_core = 638
-			add_political_power = -150
-			country_event = {
-				id = DW_JAP.7
-				days = 1
-			}
 		
 	}
 }
