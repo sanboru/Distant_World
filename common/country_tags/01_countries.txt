@@ -1,0 +1,7 @@
+IND = "countries/central_india.txt"
+EIN = "countries/central_india.txt"
+MGR = "countries/central_india.txt"
+ENG = "countries/central_india.txt"
+GIN = "countries/central_india.txt"
+FND = "countries/central_india.txt"
+CND = "countries/central_india.txt"
