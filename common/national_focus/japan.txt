@@ -32,7 +32,7 @@ focus_tree = {
 		cost = 1.00
 
 		prerequisite = {
-			focus = ADW_JAP_current_status
+			focus = ADW_JAP_current_stats
 		}
 		
 		x = 2
@@ -64,7 +64,7 @@ focus_tree = {
 
 	}
 
-	focus = {
+	#focus = { #Disabling for debug
 		id = ADW_JAP_def_shino_japanese_war
 		icon = GFX_focus_chi_one_china_policy
 		cost = 1
@@ -109,7 +109,7 @@ focus_tree = {
 			}
 	}
 
-	focus = {
+	#focus = { #
 		id = ADW_JAP_defend_the_holy_nation_NF
 		icon = GFX_focus_focus_fra_fascist_threat
 		cost = 5
@@ -126,7 +126,7 @@ focus_tree = {
 		}
 	}
 
-	focus = {
+	#focus = {
 		id = ADW_fall_of_tokyo
 		icon = GFX_goal_unknown
 		cost = 0
@@ -153,7 +153,7 @@ focus_tree = {
 		}
 	}
 
-	focus = {
+	#focus = {
 		id = ADW_fall_of_peking
 		icon = GFX_goal_unknown
 		cost = 5
@@ -184,7 +184,7 @@ focus_tree = {
 		}
 	}
 
-	focus = {
+	#focus = {
 		id = ADW_JAP_sothern_islands
 		icon = GFX_goal_unknown
 		cost = 5

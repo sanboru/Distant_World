@@ -1,0 +1,24 @@
+state={
+	id=838
+	name="STATE_838"
+
+	history = {
+		owner = JAP
+		add_core_of = JAP
+		buildings = {
+			infrastructure = 2
+			10011 = {
+				naval_base = 3
+			}
+		}
+	}
+
+	provinces={
+		10011 
+	}
+	
+	manpower=27,276
+	buildings_max_level_factor=1.000
+	state_category = small_island
+	local_supplies=7.000
+}

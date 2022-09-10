@@ -1,0 +1,39 @@
+state={
+	id=836
+	name="STATE_836"
+	resources = {
+		steel = 8.000
+	}
+
+	history = {
+		owner = JAP
+		add_core_of = JAP
+		buildings = {
+			infrastructure = 5
+			arms_factory = 3
+			industrial_complex = 5
+			dockyard = 3
+			1182 = {
+				naval_base = 9
+			}
+			9998 = {
+				naval_base = 5
+			}
+	}
+
+	vicotry_points = {
+		1182 75
+	}
+
+	vicotry_points = {
+		9998 25
+	}
+
+	provinces={
+		1182 9998 
+	}
+	manpower=83700000
+	buildings_max_level_factor=1.000
+	state_category = megalopolis
+	local_supplies=10.000
+}
