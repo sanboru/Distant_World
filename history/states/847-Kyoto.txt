@@ -1,0 +1,28 @@
+state={
+	id=847
+	name="STATE_847"
+	resources = {
+		steel = 1.000
+	}
+
+	history = {
+		owner = JAP
+		#add_core_of = KYO
+		add_core_of = JAP
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+			anti_air_building = 1
+		}
+	vicotry_points = {
+		11960 50
+	}
+	}
+	provinces={
+		11960 
+	}
+	manpower=17030000	
+	buildings_max_level_factor=1.000
+	state_category = large_city
+	local_supplies=9.000
+}
