@@ -1,0 +1,1 @@
+JAP = "countries/ADW_japan.txt"

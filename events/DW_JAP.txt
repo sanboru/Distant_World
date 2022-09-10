@@ -277,7 +277,7 @@ country_event = { #日本防衛同盟の結成
 		}
 } 
 
-country_event = {
+country_event = { #清朝への勝利
 	id = ADW_JAP.11
 	title = DW_JAP.11.t
 	desc = DW_JAP.11.d

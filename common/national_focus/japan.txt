@@ -1,8 +1,13 @@
 focus_tree = {
 	id = japan_reunion_focus
 	country = {
-		factor = 1
-	}
+		factor = 0
+		modifier = {
+			add = 20
+			tag = JAP
+		}
+}
+
 	default = yes
 
 	focus = {
@@ -169,7 +174,10 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			load_focus_tree	= japan_sino_victory_tree
+			load_focus_tree	= {
+				tree = japan_sino_victory_tree
+				keep_completed = yes
+			}
 			country_event = {
 				id = ADW_JAP.11
 			}
