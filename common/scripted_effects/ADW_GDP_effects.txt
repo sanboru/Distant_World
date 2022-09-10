@@ -1,0 +1,352 @@
+the_first_ADW_calculation = {
+	JAP = {
+		set_variable = {
+			var = small_company
+			value = 200
+		}
+		set_variable = { #階層
+			var = SCB_floar_improved
+			value = 250
+		}
+		set_variable = {
+			var = middle_company
+			value = 50
+		}
+		set_variable = { #階層
+			var = MCB_floar_improved
+			value = 300
+		}
+	}
+}
+
+Calculation_of_gikai = {
+	set_variable = { MIN_gikai_pct = MIN_gikai }
+	set_variable = { KIZ_gikai_pct = KIZ_gikai }
+	set_variable = { RIK_gikai_pct = RIK_gikai }
+	set_variable = { NVY_KYO_giin_pct = NVY_KYO_giin }
+	set_variable = { NVY_AIR_giin_pct = NVY_AIR_giin }
+	set_variable = { FAS_giin_pct = FAS_giin }
+	set_variable = { FAS_COM_giin_pct = FAS_COM_giin }
+	set_variable = { DEM_giin_pct = DEM_giin }
+	set_variable = { CHU_giin_pct = CHU_giin }
+	set_variable = { num_blank_giseki_pct = num_blank_giseki }
+	
+	divide_variable = { MIN_gikai_pct = gikai_person_of_numbar }
+	divide_variable = { KIZ_gikai_pct = gikai_person_of_numbar }
+	divide_variable = { RIK_gikai_pct = gikai_person_of_numbar }
+	divide_variable = { NVY_KYO_giin_pct = gikai_person_of_numbar }
+	divide_variable = { NVY_AIR_giin_pct = gikai_person_of_numbar }
+	divide_variable = { FAS_giin_pct = gikai_person_of_numbar }
+	divide_variable = { FAS_COM_giin_pct = gikai_person_of_numbar }
+	divide_variable = { DEM_giin_pct = gikai_person_of_numbar }
+	divide_variable = { CHU_giin_pct = gikai_person_of_numbar }
+	divide_variable = { num_blank_giseki_pct = gikai_person_of_numbar }
+	
+	set_variable = { the_count_variable = MIN_gikai }
+	add_to_variable = { the_count_variable = KIZ_gikai }
+	add_to_variable = { the_count_variable = RIK_gikai }
+	add_to_variable = { the_count_variable = NVY_KYO_giin }
+	add_to_variable = { the_count_variable = NVY_AIR_giin }
+	add_to_variable = { the_count_variable = FAS_giin }
+	add_to_variable = { the_count_variable = FAS_COM_giin }
+	add_to_variable = { the_count_variable = DEM_giin }
+	add_to_variable = { the_count_variable = CHU_giin }
+	set_variable = { ADW_GDP_giin_cost = the_count_variable }
+	add_to_variable = { the_count_variable = num_blank_giseki }
+	
+	###MIN###
+	set_variable = { MIN_mod = MIN_gikai }
+	divide_variable = { MIN_mod = 3 }
+	multiply_variable = { MIN_mod = 0.01 }
+	
+	###KIZ###
+	set_variable = { KIZ_mod = KIZ_gikai }
+	divide_variable = { KIZ_mod = 3 }
+	multiply_variable = { KIZ_mod = 0.02 }
+	
+	###RIK###
+	set_variable = { RIK_mod = RIK_gikai }
+	divide_variable = { RIK_mod = 4 }
+	multiply_variable = { RIK_mod = 0.01 }
+	###NVY###
+	set_variable = { NVY_mod = NVY_KYO_giin }
+	divide_variable = { NVY_mod = 3 }
+	multiply_variable = { NVY_mod = 0.015 }
+	###ANV###
+	set_variable = { ANV_mod = NVY_AIR_giin }
+	divide_variable = { ANV_mod = 6 }
+	multiply_variable = { ANV_mod = 0.015 }
+	
+	###FAS###
+	set_variable = { FAS_com = FAS_giin }
+	multiply_variable = { FAS_com = 0.002 }
+	divide_variable = { FAS_com = 4 }
+
+	###COM###
+	set_variable = { COM_com = FAS_COM_giin }
+	multiply_variable = { COM_com = 0.002 }
+	divide_variable = { COM_com = 4 }
+	
+	###DEM###
+	set_variable = { DEM_mod = FAS_DEM_giin }
+	multiply_variable = { DEM_mod = 0.005 }
+	divide_variable = { DEM_mod = 4 }
+	
+	###CHU###
+	set_variable = { CHU_mod = CHU_giin }
+	multiply_variable = { CHU_mod = 0.003 }
+	divide_variable = { CHU_mod = 4 }
+	
+	###cost###
+	multiply_variable = { ADW_GDP_giin_cost = 0.013 }
+	set_variable = { ADW_GDP_add_new_kizoku_cost = the_count_variable }
+	multiply_variable = { ADW_GDP_add_new_kizoku_cost = 0.7 }
+	add_to_variable = { ADW_GDP_giin_cost = ADW_GDP_add_new_kizoku_cost }
+}
+ADW_the_array_add = {
+	clear_array = ROOT.ADW_state_list
+	every_controlled_state = {
+		limit = {
+			NOT = {
+				check_variable = { checked_variable = 1 }
+			}
+			check_variable = {
+				var = percent_of_kenko
+				value = ROOT.the_cheker_variable_of_iryo
+				compare = less_than_or_equals
+			}
+		}
+		add_to_array = { ROOT.ADW_state_list = THIS }
+	}
+}
+ADW_GDP_reset_variable_every_country = {
+	every_controlled_state = {
+		set_variable = { checked_variable = 0 }
+	}
+}
+ADW_GDP_iryo_keisan = {
+	set_variable = { ADW_GDP_sougou_1 = 5000 }
+	multiply_variable = { ADW_GDP_sougou_1 = ADW_hospital_1_sougou } #総合病院
+	
+	set_variable = { ADW_GDP_dai_2 = 2000 }
+	multiply_variable = { ADW_GDP_dai_2 = ADW_hospital_2_dai } #大病院
+	
+	set_variable = { ADW_GDP_chu_3 = 800 }
+	multiply_variable = { ADW_GDP_chu_3 = ADW_hospital_3_chuu } #中病院
+	
+	set_variable = { ADW_GDP_yuu_4 = 350 }
+	multiply_variable = { ADW_GDP_yuu_4 = ADW_hospital_4_yuu } #有床
+	
+	set_variable = { ADW_GDP_capa = ADW_GDP_sougou_1 }
+	add_to_variable = { ADW_GDP_capa = ADW_GDP_dai_2 }
+	add_to_variable = { ADW_GDP_capa = ADW_GDP_chu_3 }
+	add_to_variable = { ADW_GDP_capa = ADW_GDP_yuu_4 }
+	
+	set_variable = { ADW_GDP_sougou_1_keihi = 0.1 }
+	multiply_variable = { ADW_GDP_sougou_1_keihi = ADW_hospital_1_sougou }
+	
+	set_variable = { ADW_GDP_dai_2_keihi = 0.05 }
+	multiply_variable = { ADW_GDP_dai_2_keihi = ADW_hospital_2_dai }
+	
+	set_variable = { ADW_GDP_chu_3_keihi = 0.025 }
+	multiply_variable = { ADW_GDP_chu_3_keihi = ADW_hospital_3_chuu }
+	
+	set_variable = { ADW_GDP_yuu_4_keihi = 0.01 }
+	multiply_variable = { ADW_GDP_yuu_4_keihi = ADW_hospital_4_yuu }
+	
+	set_variable = { ADW_GDP_capa_keihi = ADW_GDP_sougou_1_keihi }
+	add_to_variable = { ADW_GDP_capa_keihi = ADW_GDP_dai_2_keihi }
+	add_to_variable = { ADW_GDP_capa_keihi = ADW_GDP_chu_3_keihi }
+	add_to_variable = { ADW_GDP_capa_keihi = ADW_GDP_yuu_4_keihi }
+}
+
+ADW_RAJ_state_var_col = {
+	set_variable = { ROOT.count_state_entr_one = 0 }
+	set_variable = { ROOT.count_state_entr = 0 }
+	every_state	= {
+		limit = {
+			AND = {
+				is_owned_by = RAJ
+				OR = {
+					state = 429
+					state = 427
+					state = 836
+					state = 433
+					state = 438
+					state = 437
+					state = 439
+					state = 428
+					state = 435
+					state = 426
+					state = 838
+					state = 436
+					state = 839
+					state = 837
+					state = 321
+					state = 424
+					state = 425
+					state = 423
+					state = 320
+					state = 835
+					state = 431
+					state = 430
+					state = 432
+					state = 434
+				}
+				check_variable = {
+					var = THIS.ADW_RAJ_each_state_yonindo
+					value = 0.8
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		add_to_variable = { ROOT.count_state_entr = 1 }
+	}
+	every_state	= {
+		limit = {
+			AND = {
+				is_owned_by = RAJ
+				OR = {
+					state = 429
+					state = 427
+					state = 836
+					state = 433
+					state = 438
+					state = 437
+					state = 439
+					state = 428
+					state = 435
+					state = 426
+					state = 838
+					state = 436
+					state = 839
+					state = 837
+					state = 321
+					state = 424
+					state = 425
+					state = 423
+					state = 320
+					state = 835
+					state = 431
+					state = 430
+					state = 432
+					state = 434
+				}
+			}
+		}
+		add_to_variable = { ROOT.count_state_entr_one = 1 }
+	}
+}
+ADW_RAJ_state_var_col_danatsu = {
+	set_variable = { ROOT.count_ADW_danatsu = 0 }
+	set_variable = { ROOT.count_ADW_danatsu_perfect = 0 }
+	every_state	= {
+		limit = {
+			AND = {
+				is_owned_by = RAJ
+				OR = {
+					state = 429
+					state = 427
+					state = 836
+					state = 433
+					state = 438
+					state = 437
+					state = 439
+					state = 428
+					state = 435
+					state = 426
+					state = 838
+					state = 436
+					state = 839
+					state = 837
+					state = 321
+					state = 424
+					state = 425
+					state = 423
+					state = 320
+					state = 835
+					state = 431
+					state = 430
+					state = 432
+					state = 434
+				}
+				check_variable = {
+					var = THIS.ADW_RAJ_each_state_danatsudo
+					value = 0.8
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		add_to_variable = { ROOT.count_ADW_danatsu_perfect = 1 }
+	}
+	every_state	= {
+		limit = {
+			AND = {
+				is_owned_by = RAJ
+				OR = {
+					state = 429
+					state = 427
+					state = 836
+					state = 433
+					state = 438
+					state = 437
+					state = 439
+					state = 428
+					state = 435
+					state = 426
+					state = 838
+					state = 436
+					state = 839
+					state = 837
+					state = 321
+					state = 424
+					state = 425
+					state = 423
+					state = 320
+					state = 835
+					state = 431
+					state = 430
+					state = 432
+					state = 434
+				}
+			}
+		}
+		add_to_variable = { ROOT.count_ADW_danatsu = 1 }
+	}
+}
+
+ADW_IND_eikyo_do = {
+	set_variable = { fas_real_percent = IND_seito_do_fas }
+	set_variable = { com_real_percent = IND_seito_do_com }
+	set_variable = { dem_real_percent = IND_seito_do_dem }
+	
+	set_variable = { amou_eikyo_a_adw = fas_real_percent }
+	add_to_variable = { amou_eikyo_a_adw = com_real_percent }
+	add_to_variable = { amou_eikyo_a_adw = dem_real_percent }
+	
+	divide_variable = { fas_real_percent = amou_eikyo_a_adw }
+	divide_variable = { com_real_percent = amou_eikyo_a_adw }
+	divide_variable = { dem_real_percent = amou_eikyo_a_adw }
+}
+
+ADW_IND_eikyo_social = {
+	if = {
+		limit = {
+			check_variable = {
+				var = ADW_IND_stability_social
+				value = 1
+				compare = equals
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					var = ADW_IND_stability_social
+					value = 0.9
+					compare = greater_than_or_equals
+				}
+			}
+			add_ideas = ADW_IND_fuante_keza_10
+		}
+	}
+}
