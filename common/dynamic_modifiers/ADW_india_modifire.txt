@@ -1,0 +1,6 @@
+ADW_IND_dokuritsu_minshu = {
+	icon = "GFX_idea_unknown"
+	enable = { always = yes }
+	
+	ai_focus_defense_factor = 10
+}

@@ -1,0 +1,77 @@
+	additional_consumer_cauntry = {
+		icon = "GFX_idea_unknown"
+		enable = { always = yes }
+		
+		consumer_goods_factor = ROOT.add_consumer
+	}
+	
+	the_mod_of_MIN = {
+		icon = "GFX_idea_unknown"
+		enable = { always = yes }
+		
+		political_power_gain = ROOT.MIN_mod
+	}
+	the_mod_of_KIZ = {
+		icon = "GFX_idea_unknown"
+		enable = { always = yes }
+		
+		command_power_gain = ROOT.KIZ_mod
+		max_command_power = ROOT.KIZ_gikai
+	}
+	the_mod_of_RIK = {
+		icon = "GFX_idea_unknown"
+		enable = { always = yes }
+		
+		experience_gain_army = ROOT.RIK_mod
+	}
+	the_mod_of_NVY = {
+		icon = "GFX_idea_unknown"
+		enable = { always = yes }
+		
+		experience_gain_navy = ROOT.NVY_mod
+	}
+	the_mod_of_ANV = {
+		icon = "GFX_idea_unknown"
+		enable = { always = yes }
+		
+		experience_gain_navy = ROOT.ANV_mod
+		experience_gain_air = ROOT.ANV_mod
+	}
+	the_mod_of_FAS = {
+		icon = "GFX_idea_unknown"
+		enable = { always = yes }
+		
+		war_support_weekly = ROOT.FAS_com
+	}
+	the_mod_of_COM = {
+		icon = "GFX_idea_unknown"
+		enable = { always = yes }
+		
+		stability_weekly = ROOT.COM_com
+	}
+	the_mod_of_DEM = {
+		icon = "GFX_idea_unknown"
+		enable = { always = yes }
+		
+		stability_weekly = ROOT.DEM_mod
+		political_power_factor = ROOT.DEM_mod
+	}
+	the_mod_of_CHU = {
+		icon = "GFX_idea_unknown"
+		enable = { always = yes }
+		
+		stability_weekly = ROOT.CHU_mod
+		political_power_factor = ROOT.CHU_mod
+	}
+	ADW_GDP_mod_iryo = {
+		icon = "GFX_idea_unknown"
+		enable = { always = yes }
+		
+		monthly_population = ROOT.ADW_GDP_kouka_ritsu
+		weekly_manpower = ROOT.ADW_GDP_kouka_ritsu
+		stability_factor = ROOT.ADW_GDP_kouka_ritsu
+		production_factory_efficiency_gain_factor = ROOT.ADW_GDP_kouka_ritsu
+		recruitable_population = ROOT.ADW_GDP_kouka_ritsu
+		conscription_factor = ROOT.ADW_GDP_kouka_ritsu
+		conscription = ROOT.ADW_GDP_kouka_ritsu
+	}
