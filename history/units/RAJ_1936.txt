@@ -1,0 +1,85 @@
+division_template = {
+	name = "the RAJ military"
+	
+	division_names_group = RAJ_FRST_1
+	
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+	}
+	priority = 0
+}
+
+	units = {
+		division = {
+			name = "(SR) English India infantry"
+			location = 8087
+			division_template = "the RAJ military"
+			start_experience_factor = 0.1
+			start_equipment_factor = 0.02
+		}
+		division = {
+			name = "2India infantry"
+			location = 1349
+			division_template = "the RAJ military"
+			start_experience_factor = 0.1
+			start_equipment_factor = 0.02
+		}
+		division = {
+			name = "3India infantry"
+			location = 9975
+			division_template = "the RAJ military"
+			start_experience_factor = 0.1
+			start_equipment_factor = 0.02
+		}
+		division = {
+			name = "(SR) English India infantry3"
+			location = 2054
+			division_template = "the RAJ military"
+			start_experience_factor = 0.1
+			start_equipment_factor = 0.02
+		}
+		division = {
+			name = "2India infantry4"
+			location = 12114
+			division_template = "the RAJ military"
+			start_experience_factor = 0.1
+			start_equipment_factor = 0.02
+		}
+		division = {
+			name = "3India infantry5"
+			location = 9975
+			division_template = "the RAJ military"
+			start_experience_factor = 0.1
+			start_equipment_factor = 0.1
+		}
+		division = {
+			name = "3India infantry6"
+			location = 1021
+			division_template = "the RAJ military"
+			start_experience_factor = 0.1
+			start_equipment_factor = 0.1
+		}
+		division = {
+			name = "2India infantry41"
+			location = 12114
+			division_template = "the RAJ military"
+			start_experience_factor = 0.1
+			start_equipment_factor = 0.02
+		}
+		division = {
+			name = "3India infantry51"
+			location = 9975
+			division_template = "the RAJ military"
+			start_experience_factor = 0.1
+			start_equipment_factor = 0.1
+		}
+		division = {
+			name = "3India infantry61"
+			location = 1021
+			division_template = "the RAJ military"
+			start_experience_factor = 0.1
+			start_equipment_factor = 0.1
+		}
+	}
