@@ -1,0 +1,50 @@
+capital = 423
+
+oob = "EIN_1936"
+
+set_research_slots = 2
+set_stability = 0.4
+set_war_support = 0.8
+set_convoys = 100
+news_event = { id = ADW_NEWS.5 days = 30 random_days = 30 }
+set_technology = {
+	infantry_weapons = 1
+}
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "1917.5.17"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	democratic = 70
+	fascism = 0
+	communism = 0
+	neutrality = 30
+}
+create_country_leader = {
+	name = "インド人"
+	desc = "POLITICS_Vyner_Brooke_DESC"
+	expire = "1965.1.1"
+	ideology = despotism
+}
+create_country_leader = {
+	name = "インド人"
+	desc = "POLITICS_Vyner_Brooke_DESC"
+	expire = "1965.1.1"
+	ideology = falangism
+}
+create_country_leader = {
+	name = "インド人"
+	desc = "POLITICS_Vyner_Brooke_DESC"
+	expire = "1965.1.1"
+	ideology = marxism
+}
+create_country_leader = {
+	name = "インド人"
+	desc = "POLITICS_Vyner_Brooke_DESC"
+	expire = "1965.1.1"
+	ideology = socialism
+}
