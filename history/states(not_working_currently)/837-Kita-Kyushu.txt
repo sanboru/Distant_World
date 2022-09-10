@@ -1,0 +1,48 @@
+state={
+	id=837
+	name="STATE_837"
+	resources = {
+		aluminium = 5.000
+		chromium = 8.000
+	}
+
+	history = {
+		owner = JAP
+		add_core_of = JAP
+		buildings = {
+			infrastructure = 3
+			arms_factory = 3
+			industrial_complex = 1
+		}
+		9950 = {
+			naval_base = 8
+		}
+		1025 = {
+			naval_base = 5
+		}
+		7110 = {
+			naval_base = 3
+		}
+	}
+
+	provinces={
+		1025 1158 4027 4164 7110 9950 10020 10092 
+	}
+
+	victory_points = {
+		9950 50
+	}
+
+	victory_points = {
+		1025 25
+	}
+
+	victory_points = {
+		7110 10
+	}
+
+	manpower=4000000
+	buildings_max_level_factor=1.000
+	state_category = large_town
+	local_supplies = 9.000
+}

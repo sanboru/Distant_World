@@ -3,7 +3,7 @@
 ideas = {
     country = {
 
-        DW_JAP_reunification_of_nation = {
+        DW_JAP_reunification_of_nation = { #初期から付与
             allowed = {
                 always = no
             }
@@ -31,7 +31,7 @@ ideas = {
             }
         }
 
-        DW_JAP_scars_of_revolution = {
+        DW_JAP_scars_of_revolution = { #同じく初期から 
             allowed = {
                 original_tag = JAP
             }
@@ -53,7 +53,7 @@ ideas = {
             }
         } 
 
-        ADW_JAP_total_chaos = {
+        ADW_JAP_total_chaos = { #上記の国民精神が統一の失敗で進化したもの
             allowed = {
                 always = no
             }
@@ -76,7 +76,7 @@ ideas = {
             }
         }
         
-        DW_JAP_divided_nation = {
+        DW_JAP_divided_nation = { #初期から
             allowed = {
                 original_tag = JAP
             }
@@ -96,7 +96,7 @@ ideas = {
             }
         }
 
-        DW_JAP_chinese_tribunary ={
+        DW_JAP_chinese_tribunary ={ #釜山会議でとある選択肢を取ることで一定期間付与
             allowed = {
                 always = no
             }
@@ -114,7 +114,7 @@ ideas = {
 
         }
 
-        DW_JAP_shinko = {
+        DW_JAP_shinko = { #ゲーム開始年で清と戦争する場合に付与
             allowed = {
                 always =no
             }
@@ -136,7 +136,7 @@ ideas = {
             }
         }
 
-        ADW_JAP_defend_the_holy_nation = {
+        ADW_JAP_defend_the_holy_nation = { #上記のような状況下で取得可能なNFで付与
             allowed = {
                 always = no
             }
@@ -155,7 +155,7 @@ ideas = {
             }
         }
 
-        ADW_JAP_victory_against_quing = {
+        ADW_JAP_victory_against_quing = { #ゲーム初期で清朝に勝利した場合付与
             allowed = {
                 always = no
             }
