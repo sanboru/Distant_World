@@ -1,0 +1,26 @@
+EIN_FRS_1 = {
+	name = "the english india infantry"
+
+	for_countries = { EIN }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+
+	fallback_name = "%d English India infantry"
+
+	ordered ={
+		1 = { "%dst English India infantry" }
+		2 = { "%dnd English India infantry" }
+		3 = { "%drd English India infantry" }
+		4 = { "%dth English India infantry" }
+		5 = { "%dth English India infantry" }
+		6 = { "%dth English India infantry" }
+		7 = { "%dth English India infantry" }
+		8 = { "%dth English India infantry" }
+		9 = { "%dth English India infantry" }
+		10 = { "%dth English India infantry" }
+		100 = { "(SR) English India infantry" }
+	}
+}

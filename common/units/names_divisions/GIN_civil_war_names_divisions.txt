@@ -1,0 +1,26 @@
+GIN_civil_war_WITH_EIN = {
+	name = "the minpei of GIN"
+
+	for_countries = { GIN }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+
+	fallback_name = "%d the minpei of GIN"
+
+	ordered ={
+		1 = { "%dst the minpei of GIN10" }
+		2 = { "%dnd the minpei of GIN9" }
+		3 = { "%drd the minpei of GIN8" }
+		4 = { "%dth the minpei of GIN7" }
+		5 = { "%dth the minpei of GIN6" }
+		6 = { "%dth the minpei of GIN5" }
+		7 = { "%dth the minpei of GIN4" }
+		8 = { "%dth the minpei of GIN3" }
+		9 = { "%dth the minpei of GIN2" }
+		10 = { "%dth the minpei of GIN1" }
+		100 = { "(SR) the minpei of GIN" }
+	}
+}
