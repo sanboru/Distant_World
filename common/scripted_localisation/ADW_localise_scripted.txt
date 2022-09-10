@@ -1,0 +1,436 @@
+defined_text = {
+	name = text_greater
+	text = {
+		trigger = {
+			ROOT = {
+				check_variable = {
+					var = GDP_amou
+					value = 100000000
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		localization_key = text_greater_3
+	}
+	text = {
+		trigger = {
+			ROOT = {
+				check_variable = {
+					var = GDP_amou
+					value = 10000
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		localization_key = text_greater_2
+	}
+	text = {
+		localization_key = text_greater_1
+	}
+}
+
+defined_text = {
+	name = the_text_of_p
+	text = {
+		trigger = {
+			ROOT = {
+				check_variable = {
+					var = the_woker_high_level
+					value = 100000000
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		localization_key = the_text_of_p_oku
+	}
+	text = {
+		trigger = {
+			ROOT = {
+				check_variable = {
+					var = the_woker_high_level
+					value = 10000
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		localization_key = the_text_of_p_man
+	}
+	text = {
+		localization_key = the_text_of_p_f
+	}
+}
+
+defined_text = {
+	name = the_money_of_that
+	text = {
+		trigger = {
+			ROOT = {
+				check_variable = {
+					var = all_kyoikuhi_aonother
+					value = 100000000
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		localization_key = the_money_of_that_kei
+	}
+	text = {
+		trigger = {
+			ROOT = {
+				check_variable = {
+					var = all_kyoikuhi_aonother
+					value = 10000
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		localization_key = the_money_of_that_cho
+	}
+	text = {
+		localization_key = the_money_of_that_oku
+	}
+}
+
+defined_text = { #小企業投資
+	name = the_money_of_company_toshi
+	text = {
+		trigger = {
+			ROOT = {
+				check_variable = {
+					var = toushi_money_amount
+					value = 10000
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		localization_key = the_money_of_company_toshi_cho
+	}
+	text = {
+		trigger = {
+			ROOT = {
+				check_variable = {
+					var = toushi_money_amount
+					value = 1
+					compare = less_than
+				}
+			}
+		}
+		localization_key = the_money_of_company_toshi_man
+	}
+	text = {
+		localization_key = the_money_of_company_toshi_oku
+	}
+}
+defined_text = { #中企業投資
+	name = the_money_of_company_toshi_mid
+	text = {
+		trigger = {
+			ROOT = {
+				check_variable = {
+					var = toushi_money_amount_mid
+					value = 10000
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		localization_key = the_money_of_company_toshi_cho_mid
+	}
+	text = {
+		trigger = {
+			ROOT = {
+				check_variable = {
+					var = toushi_money_amount_mid
+					value = 1
+					compare = less_than
+				}
+			}
+		}
+		localization_key = the_money_of_company_toshi_man_mid
+	}
+	text = {
+		localization_key = the_money_of_company_toshi_oku_mid
+	}
+}
+defined_text = { #大企業投資
+	name = the_money_of_company_toshi_big
+	text = {
+		trigger = {
+			ROOT = {
+				check_variable = {
+					var = toushi_money_amount_big
+					value = 10000
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		localization_key = the_money_of_company_toshi_cho_big
+	}
+	text = {
+		trigger = {
+			ROOT = {
+				check_variable = {
+					var = toushi_money_amount_big
+					value = 1
+					compare = less_than
+				}
+			}
+		}
+		localization_key = the_money_of_company_toshi_man_big
+	}
+	text = {
+		localization_key = the_money_of_company_toshi_oku_big
+	}
+}
+
+defined_text = {
+	name = this_country_is_1
+	text = {
+		localization_key = this_country_is_2
+	}
+}
+
+defined_text = {
+	name = tax_dec
+	text = {
+		localization_key = tax_deca
+	}
+}
+defined_text = {
+	name = up_taxc
+	text = {
+		localization_key = up_tax_a
+	}
+}
+defined_text = {
+	name = dawn_taxc
+	text = {
+		localization_key = dawn_taxa
+	}
+}
+defined_text = { #プロパガンダ
+	name = the_check_ankert
+	text = {
+		trigger = {
+			ROOT = {
+				has_country_flag = the_ankert_for_kokumin_flag
+			}
+		}
+		localization_key = the_check_ankert_ok
+	}
+	text = {
+		localization_key = the_check_ankert_batsu
+	}
+}
+defined_text = { #プロパガンダ
+	name = the_check_shinmitsu
+	text = {
+		trigger = {
+			ROOT = {
+				has_country_flag = the_shinmitsu_sakusen_flag
+			}
+		}
+		localization_key = the_shinmitsu_ok
+	}
+	text = {
+		localization_key = the_shinmitsu_batsu
+	}
+}
+defined_text = { #プロパガンダ
+	name = the_letter_vote
+	text = {
+		trigger = {
+			ROOT = {
+				has_country_flag = the_letter_vote_flag
+			}
+		}
+		localization_key = the_letter_vote_ok
+	}
+	text = {
+		localization_key = the_letter_vote_batsu
+	}
+}
+defined_text = { #プロパガンダ
+	name = the_hide_of_spy
+	text = {
+		trigger = {
+			ROOT = {
+				has_country_flag = the_hide_of_spy_flag
+			}
+		}
+		localization_key = the_hide_of_spy_ok
+	}
+	text = {
+		localization_key = the_hide_of_spy_batsu
+	}
+}
+defined_text = {
+	name = civilian_fac_20
+	text = {
+		trigger = {
+			ROOT = {
+				NOT = {
+					num_of_civilian_factories_available_for_projects > 20
+				}
+			}
+		}
+		localization_key = civilian_fac_20_no
+	}
+	text = {
+		localization_key = civilian_fac_20_yes
+	}
+}
+defined_text = {
+	name = money_fac_50
+	text = {
+		trigger = {
+			ROOT = {
+				NOT = {
+					check_variable = {
+						var = GDP_amou
+						value = 50
+						compare = greater_than_or_equals
+					}
+				}
+			}
+		}
+		localization_key = money_fac_20_no
+	}
+	text = {
+		localization_key = money_fac_20_yes
+	}
+}
+
+defined_text = {
+	name = civilian_fac_10
+	text = {
+		trigger = {
+			ROOT = {
+				NOT = {
+					num_of_civilian_factories_available_for_projects > 10
+				}
+			}
+		}
+		localization_key = civilian_fac_10_no
+	}
+	text = {
+		localization_key = civilian_fac_10_yes
+	}
+}
+defined_text = {
+	name = money_fac_25
+	text = {
+		trigger = {
+			ROOT = {
+				NOT = {
+					check_variable = {
+						var = GDP_amou
+						value = 25
+						compare = greater_than_or_equals
+					}
+				}
+			}
+		}
+		localization_key = money_fac_25_no
+	}
+	text = {
+		localization_key = money_fac_25_yes
+	}
+}
+
+defined_text = {
+	name = civilian_fac_5
+	text = {
+		trigger = {
+			ROOT = {
+				NOT = {
+					num_of_civilian_factories_available_for_projects > 5
+				}
+			}
+		}
+		localization_key = civilian_fac_5_no
+	}
+	text = {
+		localization_key = civilian_fac_5_yes
+	}
+}
+defined_text = {
+	name = money_fac_10
+	text = {
+		trigger = {
+			ROOT = {
+				NOT = {
+					check_variable = {
+						var = GDP_amou
+						value = 10
+						compare = greater_than_or_equals
+					}
+				}
+			}
+		}
+		localization_key = money_fac_10_no
+	}
+	text = {
+		localization_key = money_fac_10_yes
+	}
+}
+
+defined_text = {
+	name = civilian_fac_2
+	text = {
+		trigger = {
+			ROOT = {
+				NOT = {
+					num_of_civilian_factories_available_for_projects > 2
+				}
+			}
+		}
+		localization_key = civilian_fac_2_no
+	}
+	text = {
+		localization_key = civilian_fac_2_yes
+	}
+}
+defined_text = {
+	name = money_fac_5
+	text = {
+		trigger = {
+			ROOT = {
+				NOT = {
+					check_variable = {
+						var = GDP_amou
+						value = 5
+						compare = greater_than_or_equals
+					}
+				}
+			}
+		}
+		localization_key = money_fac_5_no
+	}
+	text = {
+		localization_key = money_fac_5_yes
+	}
+}
+
+defined_text = { #インド内戦我が勢力
+	name = ADW_IND_my_seiryoku
+	text = {
+		trigger = {
+			ROOT = {
+				has_country_flag = ADW_IND_fas
+			}
+		}
+		localization_key = ADW_IND_my_seiryoku_fas
+	}
+	text = {
+		trigger = {
+			has_country_flag = ADW_IND_demo
+		}
+		localization_key = ADW_IND_my_seiryoku_dem
+	}
+	text = {
+		trigger = {
+			has_country_flag = ADW_IND_comu
+		}
+		localization_key = ADW_IND_my_seiryoku_com
+	}
+}
