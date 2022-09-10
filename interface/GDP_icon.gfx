@@ -1,0 +1,97 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_icon_dishes"
+		texturefile = "gfx/interface/aaakeizai_gui_ui.dds"
+	}
+	spriteType = {
+		name = "GFX_shita_icon"
+		texturefile = "gfx/interface/SHIta_muki_yajirushi_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_ue_icon"
+		texturefile = "gfx/interface/UEmuki_yajirushi_icon.dds"
+	}
+	spriteType = {
+		name = "the_bug_of_it"
+		texturefile = "gfx/interface/the_bug.dds"
+	}
+	spriteType = {
+		name = "GFX_add_but_but"
+		texturefile = "gfx/interface/add_but_but.dds"
+	}
+	spriteType = {
+		name = "GFX_subtract_but_but"
+		texturefile = "gfx/interface/subtract_but_but.dds"
+	}
+	spriteType = {
+		name = "GFX_agency_header_button"
+		texturefile = "gfx/interface/agency_header_button.dds"
+	}
+	spriteType = {
+		name = "GFX_the_cutting_line"
+		texturefile = "gfx/interface/the_cutting_line.dds"
+	}
+	spriteType = { #議会写真
+		name = "GFX_the_picture_of_gikai"
+		texturefile = "gfx/interface/the_picture_of_gikai.dds"
+	}
+	spriteType = { #議会背景
+		name = "GFX_the_buck_of_gikai"
+		texturefile = "gfx/interface/the_buck_of_gikai.dds"
+	}
+	spriteType = { #プロパガンダ
+		name = "GFX_the_back_of_india_propaganda"
+		texturefile = "gfx/interface/the_back_of_india_propaganda.dds"
+	}
+	spriteType = { #鉱山
+		name = "GFX_ADW_kouzan_3"
+		texturefile = "gfx/interface/ADW_kouzan_3.dds"
+	}
+	spriteType = { #鉱山
+		name = "GFX_ADW_kouzan_2"
+		texturefile = "gfx/interface/ADW_kouzan_2.dds"
+	}
+	spriteType = { #鉱山
+		name = "GFX_ADW_kouzan_1"
+		texturefile = "gfx/interface/ADW_kouzan_1.dds"
+	}
+	spriteType = {
+		name = "GFX_ADW_GD_black_buck"
+		texturefile = "gfx/interface/ADW_GD_black_buck.dds"
+	}
+	spriteType = {
+		name = "GFX_ADW_GDP_state_option_orange"
+		texturefile = "gfx/interface/ADW_GDP_state_option_orange.dds"
+	}
+	spriteType = {
+		name = "GFX_ADW_RAJ_push_box_of_state"
+		texturefile = "gfx/interface/ADW_RAJ_push_box_of_state.dds"
+	}
+	spriteType = {
+		name = "GFX_ADW_GDP_icon_money"
+		texturefile = "gfx/interface/ADW_GDP_icon_money.dds"
+	}
+	spriteType = {
+		name = "GFX_ADW_GDP_icon_money_txi"
+		texturefile = "gfx/interface/texticons/ADW_GDP_icon_money_txi.dds"
+		legacy_lazy_load = no
+	}
+	
+	spriteType = {
+		name = "GFX_ADW_button_left"
+		texturefile = "gfx/interface/button_left.dds"
+	}
+	spriteType = {
+		name = "GFX_ADW_button_right"
+		texturefile = "gfx/interface/button_right.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ADW_GDP_police_bag"
+		texturefile = "gfx/interface/ADW_GDP_police_bag.dds"
+	}
+	spriteType = {
+		name = "GFX_police_GDP_ADW_each"
+		texturefile = "gfx/interface/police_GDP_ADW_each.dds"
+	}
+}
