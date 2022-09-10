@@ -1,0 +1,8 @@
+scripted_gui = {
+
+	the_agency_ADW_inthe = {
+		window_name = "the_agency_ADW"
+		context_type = player_context
+		parent_window_token = countryintelligenceagencyview
+	}
+}

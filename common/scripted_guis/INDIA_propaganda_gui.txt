@@ -1,0 +1,112 @@
+scripted_gui = {
+
+	the_india_propaganda_bag = {
+		window_name = "IND_propaganda"
+		visible = {
+			has_country_flag = RAJ_ADW_the_propaganda_dec
+			tag = RAJ
+		}
+		effects = {
+			the_ankert_for_kokumin_button_click = {
+				ROOT = {
+					if = {
+						limit = {
+							has_country_flag = the_ankert_for_kokumin_flag
+						}
+						clr_country_flag = the_ankert_for_kokumin_flag
+						else = {
+							set_country_flag = the_ankert_for_kokumin_flag
+						}
+					}
+				}
+			}
+			the_shinmitsu_sakusen_buton_click = {
+				ROOT = {
+					if = {
+						limit = {
+							has_country_flag = the_shinmitsu_sakusen_flag
+						}
+						clr_country_flag = the_shinmitsu_sakusen_flag
+						else = {
+							set_country_flag = the_shinmitsu_sakusen_flag
+						}
+					}
+				}
+			}
+			the_letter_operation_buton_click = {
+				ROOT = {
+					if = {
+						limit = {
+							has_country_flag = the_letter_vote_flag
+						}
+						clr_country_flag = the_letter_vote_flag
+						else = {
+							set_country_flag = the_letter_vote_flag
+						}
+					}
+				}
+			}
+			the_hide_of_spy_buton_click = {
+				ROOT = {
+					if = {
+						limit = {
+							has_country_flag = the_hide_of_spy_flag
+						}
+						clr_country_flag = the_hide_of_spy_flag
+						else = {
+							set_country_flag = the_hide_of_spy_flag
+						}
+					}
+				}
+			}
+			complete_propaganda_click = {
+				ROOT = {
+					clr_country_flag = RAJ_ADW_the_propaganda_dec
+					country_event = { id = IND_ADW.60 days = 52 }
+					if = {
+						limit = {
+							has_country_flag = the_ankert_for_kokumin_flag
+						}
+						country_event = { id = IND_ADW.56 days = 45 }
+						add_political_power = -30
+					}
+					if = {
+						limit = {
+							has_country_flag = the_shinmitsu_sakusen_flag
+						}
+						country_event = { id = IND_ADW.57 days = 45 }
+						add_political_power = -40
+					}
+					if = {
+						limit = {
+							has_country_flag = the_letter_vote_flag
+						}
+						country_event = { id = IND_ADW.58 days = 45 }
+						add_political_power = -35
+					}
+					if = {
+						limit = {
+							has_country_flag = the_hide_of_spy_flag
+						}
+						country_event = { id = IND_ADW.59 days = 45 }
+						add_political_power = -20
+					}
+				}
+			}
+		}
+	}
+	
+	ADW_SUE_2_op = {
+		window_name = "ADW_SUE_2"
+		visible = {
+			has_country_flag = RAJ_ADW_perfect_improve_ADE
+		}
+		effects = {
+			ADW_SUE_2_bt_click = {
+				ROOT = {
+					clr_country_flag = RAJ_ADW_perfect_improve_ADE
+				}
+			}
+		}
+	}
+}
