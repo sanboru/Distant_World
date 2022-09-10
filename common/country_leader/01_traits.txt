@@ -1,0 +1,19 @@
+leader_traits = {
+	ganzy_india_fas = {
+		random = no
+		political_power_factor = 0.05
+	}
+	ganzy_india_fas_omg = {
+		random = no
+		fascism_drift = 0.01
+	}
+	ganzy_kari = {
+		random = no
+		stability_factor = 0.2
+		war_support_factor = 0.2
+	}
+	IND_neru_father = {
+		random = no
+		stability_factor = 0.05
+	}
+}
