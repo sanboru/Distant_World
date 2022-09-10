@@ -1,0 +1,4 @@
+RAJ_UNITE = {
+	color = rgb { 143 12 125 }
+	color_ui = rgb { 143 12 125 }
+}
