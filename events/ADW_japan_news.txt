@@ -1,6 +1,6 @@
 add_namespace = ADW_JAP_N
 
-news_event = {
+news_event = {#釜山会議
     id = ADW_JAP_N.1
     title = ADW_JAP_N.1.t
     desc = ADW_JAP_N.1.d
@@ -15,7 +15,7 @@ news_event = {
     }
 }
 
-news_event = {
+news_event = {#釜山会議成功
     id = ADW_JAP_N.2
     title = ADW_JAP_N.2.t
     desc = ADW_JAP_N.2.d
@@ -30,7 +30,7 @@ news_event = {
     }
 }
 
-news_event = {
+news_event = {#釜山会議決裂(現在未使用)
     id = ADW_JAP_N.3
     title = ADW_JAP_N.3.t
     desc = ADW_JAP_N.3.d
@@ -45,7 +45,7 @@ news_event = {
     }
 }
 
-news_event = {
+news_event = {#北京陥落(ゲーム開始年)(現在未使用)
     id = ADW_JAP_N.4
     title = ADW_JAP_N.4.t
     desc = ADW_JAP_N.4.d
@@ -60,7 +60,7 @@ news_event = {
     }
 }
 
-news_event = {
+news_event = {#東京陥落(ゲーム開始年)(現在未使用)
     id = ADW_JAP_N.5
     title = ADW_JAP_N.5.t
     desc = ADW_JAP_N.5.d

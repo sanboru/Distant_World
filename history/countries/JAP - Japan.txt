@@ -3,8 +3,9 @@ CAPITAL = 837
 set_stability = 0.3
 set_war_support = 0.5
 
-set_research_slot = 4
+set_research_slots = 4
 set_fuel_ratio = 1.0
+
 add_ideas = {
     civilian_economy
     limited_conscription
@@ -47,7 +48,7 @@ if = {
 		gwtank = 1
 		basic_light_tank = 1
 	}
-	set_oob = PLACEHOLDER
+	set_oob = ADW_JAP_1936
 }
 if = {
 	limit = {
@@ -57,7 +58,7 @@ if = {
 		gwtank_chassis = 1
 		basic_light_tank_chassis = 1
 	}
-	set_oob = PLACEHOLDER
+	set_oob = ADW_JAP_1936
 }
 if = {
 	limit = {

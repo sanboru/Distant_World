@@ -14,9 +14,9 @@ state={
 			industrial_complex = 1
 			anti_air_building = 1
 		}
-	vicotry_points = {
-		11960 50
-	}
+		vicotry_points = {
+			11960 50
+		}
 	}
 	provinces={
 		11960 
