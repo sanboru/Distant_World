@@ -64,34 +64,6 @@ focus_tree = {
 
 	}
 
-	#focus = { #Disabling for debug
-		id = ADW_JAP_def_shino_japanese_war
-		icon = GFX_focus_chi_one_china_policy
-		cost = 1
-
-		x = -1 
-		y = 3
-
-		prerequisite = {
-			focus = ADW_JAP_negotiations_with_china
-		}
-
-		mutually_exclusive = {
-			focus = ADW_JAP_early_moblization
-		}
-
-		available = {
-			has_war_with = CHI
-			is_defender = yes
-		}
-
-		completion_reward = {
-			add_political_power = 300
-		}
-
-
-	}
-
 	focus = {
 	id = ADW_JAP_early_moblization
 	icon = GFX_focus_generic_little_entente
@@ -107,81 +79,6 @@ focus_tree = {
 				add_idea = extensive_conscription
 				add_idea = partial_economic_mobilisation
 			}
-	}
-
-	#focus = { #
-		id = ADW_JAP_defend_the_holy_nation_NF
-		icon = GFX_focus_focus_fra_fascist_threat
-		cost = 5
-
-		x = -1
-		y = 4
-
-		prerequisite = {
-			focus = ADW_JAP_def_shino_japanese_war
-		}
-
-		completion_reward = {
-			add_idea = ADW_JAP_defend_the_holy_nation
-		}
-	}
-
-	#focus = {
-		id = ADW_fall_of_tokyo
-		icon = GFX_goal_unknown
-		cost = 0
-
-		x = 0
-		y = 5
-
-		prerequisite = {
-			focus = ADW_JAP_defend_the_holy_nation_NF
-		}
-
-		available = {
-			CHI = {
-				contorls_state = 282
-			}
-		}
-
-		mutually_exclusive = {
-			focus = ADW_JAP_fall_of_peking
-		}
-
-		completion_reward = {
-			custom_effect_tooltip = "ADW_JAP_tokyo_has_fallen_we_lost"
-		}
-	}
-
-	#focus = {
-		id = ADW_fall_of_peking
-		icon = GFX_goal_unknown
-		cost = 5
-
-		x = -2
-		y = 5
-
-		prerequisite = {
-			focus = ADW_JAP_defend_the_holy_nation_NF
-		}
-
-		available = {
-			controls_state = 608
-		}
-
-		mutually_exclusive = {
-			focus = ADW_JAP_fall_of_tokyo
-		}
-
-		completion_reward = {
-			load_focus_tree	= {
-				tree = japan_sino_victory_tree
-				keep_completed = yes
-			}
-			country_event = {
-				id = ADW_JAP.11
-			}
-		}
 	}
 
 	#focus = {

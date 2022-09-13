@@ -237,7 +237,7 @@ country_event = { #釜山会議閉幕
 	}
 }
 
-country_event = { #釜山会議の決裂
+country_event = { #釜山会議の決裂(現在未使用)
 	id = DW_JAP.9
 	title = DW_JAP.9.t
 	desc = DW_JAP.9.d
@@ -259,7 +259,7 @@ country_event = { #釜山会議の決裂
 	}
 }
 
-country_event = { #日本防衛同盟の結成
+country_event = { #日本防衛同盟の結成(現在未使用)
 	id = ADW_JAP.10
 	title = DW_JAP.10.t
 	desc = DW_JAP.10.d
@@ -277,7 +277,7 @@ country_event = { #日本防衛同盟の結成
 		}
 } 
 
-country_event = { #清朝への勝利
+country_event = { #清朝への勝利(現在未使用)
 	id = ADW_JAP.11
 	title = DW_JAP.11.t
 	desc = DW_JAP.11.d

@@ -1,6 +1,6 @@
 state={
 	id=843
-	name="STATE_843"
+	name = STATE_843
 
 	history = {
 		owner = JAP
@@ -22,5 +22,6 @@ state={
 	}
 	manpower=0
 	buildings_max_level_factor=1.000
+	state_category=large_city
 	local_supplies=0.000
 }
