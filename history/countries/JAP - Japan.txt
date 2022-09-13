@@ -1,10 +1,12 @@
-CAPITAL = 837
+CAPITAL = 846
 
 set_stability = 0.3
 set_war_support = 0.5
 
 set_research_slots = 4
 set_fuel_ratio = 1.0
+
+recruit_character = ADW_JAP_shidehara_kijyuro
 
 add_ideas = {
     civilian_economy
@@ -39,6 +41,20 @@ set_technology = {
 	synth_oil_experiments = 1
 	fuel_refining = 1
 }
+
+set_popularities = {
+	democratic = 0
+	communism = 30
+	fascism = 10
+	neutrality = 60
+}
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1932.2.26"
+	elections_allowed = no
+}
+
 
 if = {
 	limit = {
@@ -89,7 +105,7 @@ if = {
 		basic_cruiser_armor_scheme = 1
 		cruiser_submarines = 1
 	}
-	set_naval_oob = PLACEHOLDER
+	set_naval_oob = ADW_JAP_1936_naval
 }
 if = {
 	limit = { not = { has_dlc = "Man the Guns" } }
@@ -108,7 +124,7 @@ if = {
 		basic_carrier = 1
 		transport = 1
 	}
-	set_naval_oob = PLACEHOLDER
+	set_naval_oob = ADW_JAP_1936_naval_legacy
 }
 
 if = {
