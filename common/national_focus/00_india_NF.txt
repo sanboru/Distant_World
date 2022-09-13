@@ -7881,7 +7881,7 @@ focus_tree = {
 	}
     shared_focus = ADW_IND_SHR_experience
 	shared_focus = ADW_IND_SHR_economy_tree
-	shared_focus = ADW_IND_SHR_industry
+	shared_focus = ADW_IND_SHR_industry_ideas
 	default = no
 
 	continuous_focus_position = { x = 20 y = 2800 }
