@@ -1,0 +1,14 @@
+characters = {
+    ADW_KYO_emperor_hirohito={
+    name = ADW_KYO_emperor_hirohito
+    desc = ADW_KYO_emperor_hirohito_desc
+    portraits={
+        civilian={
+            large = GFX_portrait_JAP_emperor_hirohito
+        }
+    }
+    country_leader={
+        ideology = despotism
+        traits={ emperor_showa imperial_sanction }
+    }
+}
