@@ -119,6 +119,24 @@ ADW_the_array_add = {
 		add_to_array = { ROOT.ADW_state_list = THIS }
 	}
 }
+ADW_array_shogun_add = {
+	clear_array = ROOT.ADW_shogun_array
+	every_country = {
+		limit = {
+			is_subject_of = ROOT
+		}
+		every_army_leader = {
+			add_to_array = { ROOT.ADW_shogun_array = THIS }
+			set_variable = { THIS.ADW_GDP_EMS_moneya = THIS.planning_skill_level }
+			add_to_variable = { THIS.ADW_GDP_EMS_moneya = THIS.logistics_skill_level }
+			multiply_variable = { THIS.ADW_GDP_EMS_moneya = 0.9 }
+			set_variable = { THIS.ADW_GDP_EMS_money = THIS.army_defense_level }
+			add_to_variable = { THIS.ADW_GDP_EMS_money = THIS.army_attack_level }
+			multiply_variable = { THIS.ADW_GDP_EMS_money = 0.5 }
+			add_to_variable = { THIS.ADW_GDP_EMS_money = THIS.ADW_GDP_EMS_moneya }
+		}
+	}
+}
 ADW_GDP_reset_variable_every_country = {
 	every_controlled_state = {
 		set_variable = { checked_variable = 0 }
@@ -329,7 +347,76 @@ ADW_IND_eikyo_do = {
 	divide_variable = { dem_real_percent = amou_eikyo_a_adw }
 }
 
+ADW_each_country = {
+	IND = { set_variable = { ADW_GDP_kenko_d_kari = 0.3 } }
+	GER = { set_variable = { ADW_GDP_kenko_d_kari = 0.8 } }
+	ENG = { set_variable = { ADW_GDP_kenko_d_kari = 0.8 } }
+	SOV = { set_variable = { ADW_GDP_kenko_d_kari = 0.8 } }
+}
+ADW_GDP_iryodo = {
+	every_controlled_state = {
+		randomize_temp_variable = {
+			var = ADW_GDP_var_h
+			distribution = uniform
+			min = 0.98
+			max = 1.02
+		}
+		set_variable = { ADW_GDP_kenko_d_kari_A = ADW_GDP_var_h }
+		multiply_variable = { ADW_GDP_kenko_d_kari_A = THIS.state_population_k }#受人
+		multiply_variable = { ADW_GDP_kenko_d_kari_A = ROOT.ADW_GDP_kenko_d_kari }
+		
+		set_variable = { ADW_GDP_kenko_d_kari_B = THIS.state_population_k }
+		set_variable = { ADW_GDP_AHS_infra = 1 }
+		divide_variable = { ADW_GDP_AHS_infra = THIS.infrastructure_level }
+		multiply_variable = { ADW_GDP_kenko_d_kari_B = ADW_GDP_AHS_infra }
+		divide_variable = { ADW_GDP_kenko_d_kari_B = 500 } #重地a
+		
+		subtract_from_variable = { ADW_GDP_kenko_d_kari_A = ADW_GDP_kenko_d_kari_B } #キャパ
+		multiply_variable = { ADW_GDP_kenko_d_kari_A = 1.5 }
+		set_variable = { GDP_ADW_AHS_YUU = ADW_GDP_kenko_d_kari_A }
+		set_variable = { GDP_ADW_AHS_SHO = ADW_GDP_kenko_d_kari_A }
+		set_variable = { GDP_ADW_AHS_CHU = ADW_GDP_kenko_d_kari_A }
+		set_variable = { GDP_ADW_AHS_SOU = ADW_GDP_kenko_d_kari_A }
+		
+		##有
+		multiply_variable = { GDP_ADW_AHS_YUU = 0.5 }
+		divide_variable = { GDP_ADW_AHS_YUU = 70 }
+		round_variable = GDP_ADW_AHS_YUU
+		set_variable = { ADW_hospital_4_yuu = GDP_ADW_AHS_YUU }
+		
+		##小
+		multiply_variable = { GDP_ADW_AHS_SHO = 0.3 }
+		divide_variable = { GDP_ADW_AHS_SHO = 200 }
+		round_variable = GDP_ADW_AHS_SHO
+		set_variable = { ADW_hospital_3_chuu = GDP_ADW_AHS_SHO }
+		
+		##中
+		multiply_variable = { GDP_ADW_AHS_CHU = 0.2 }
+		divide_variable = { GDP_ADW_AHS_CHU = 700 }
+		round_variable = GDP_ADW_AHS_CHU
+		set_variable = { ADW_hospital_2_dai = GDP_ADW_AHS_CHU }
+
+		##総
+		multiply_variable = { GDP_ADW_AHS_SOU = 0.1 }
+		divide_variable = { GDP_ADW_AHS_SOU = 1000 }
+		round_variable = GDP_ADW_AHS_SOU
+		set_variable = { ADW_hospital_1_sougou = GDP_ADW_AHS_SOU }
+		
+		ADW_GDP_iryo_keisan = yes
+	}
+}
 ADW_IND_eikyo_social = {
+	hidden_effect = {
+	remove_ideas = ADW_IND_fuante_keza_10
+	remove_ideas = ADW_IND_fuante_keza_9
+	remove_ideas = ADW_IND_fuante_keza_8
+	remove_ideas = ADW_IND_fuante_keza_7
+	remove_ideas = ADW_IND_fuante_keza_6
+	remove_ideas = ADW_IND_fuante_keza_5
+	remove_ideas = ADW_IND_fuante_keza_4
+	remove_ideas = ADW_IND_fuante_keza_3
+	remove_ideas = ADW_IND_fuante_keza_2
+	remove_ideas = ADW_IND_fuante_keza_1
 	if = {
 		limit = {
 			check_variable = {
@@ -347,6 +434,97 @@ ADW_IND_eikyo_social = {
 				}
 			}
 			add_ideas = ADW_IND_fuante_keza_10
+		else_if = {
+			limit = {
+				check_variable = {
+					var = ADW_IND_stability_social
+					value = 0.8
+					compare = greater_than_or_equals
+				}
+			}
+			add_ideas = ADW_IND_fuante_keza_9
+		else_if = {
+			limit = {
+				check_variable = {
+					var = ADW_IND_stability_social
+					value = 0.7
+					compare = greater_than_or_equals
+				}
+			}
+			add_ideas = ADW_IND_fuante_keza_8
+		else_if = {
+			limit = {
+				check_variable = {
+					var = ADW_IND_stability_social
+					value = 0.6
+					compare = greater_than_or_equals
+				}
+			}
+			add_ideas = ADW_IND_fuante_keza_7
+		else_if = {
+			limit = {
+				check_variable = {
+					var = ADW_IND_stability_social
+					value = 0.5
+					compare = greater_than_or_equals
+				}
+			}
+			add_ideas = ADW_IND_fuante_keza_6
+		else_if = {
+			limit = {
+				check_variable = {
+					var = ADW_IND_stability_social
+					value = 0.4
+					compare = greater_than_or_equals
+				}
+			}
+			add_ideas = ADW_IND_fuante_keza_5
+		else_if = {
+			limit = {
+				check_variable = {
+					var = ADW_IND_stability_social
+					value = 0.3
+					compare = greater_than_or_equals
+				}
+			}
+			add_ideas = ADW_IND_fuante_keza_4
+		else_if = {
+			limit = {
+				check_variable = {
+					var = ADW_IND_stability_social
+					value = 0.2
+					compare = greater_than_or_equals
+				}
+			}
+			add_ideas = ADW_IND_fuante_keza_3
+		else_if = {
+			limit = {
+				check_variable = {
+					var = ADW_IND_stability_social
+					value = 0.1
+					compare = greater_than_or_equals
+				}
+			}
+			add_ideas = ADW_IND_fuante_keza_2
+		else_if = {
+			limit = {
+				check_variable = {
+					var = ADW_IND_stability_social
+					value = 0
+					compare = greater_than_or_equals
+				}
+			}
+			add_ideas = ADW_IND_fuante_keza_1
 		}
+		}
+		}
+		}
+		}
+		}
+		}
+		}
+		}
+		}
+	}
 	}
 }
