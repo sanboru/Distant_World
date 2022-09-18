@@ -2,6 +2,10 @@ IND = {
 	color = rgb { 0 153 89 }
 	color_ui = rgb { 255 255 255 }
 }
+QIE = {
+	color = rgb { 255 182 114 }
+	color_ui = rgb { 255 255 255 }
+}
 FND = {
 	color = rgb { 64 51 37 }
 	color_ui = rgb { 255 255 255 }
