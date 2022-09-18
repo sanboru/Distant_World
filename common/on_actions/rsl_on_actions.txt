@@ -16,7 +16,22 @@ on_actions = {
 		}
 	}
 }
-
+on_actions = {
+	on_startup = {
+		effect = {
+			every_country = {
+				ADW_each_country = yes
+				country_event = { id = IND_ADW.101 hours = 1 }
+			}
+			every_country = {
+				limit = {
+					is_ai = no
+				}
+				country_event = { id = ADW_GDP_EXP.1 }
+			}
+		}
+	}
+}
 on_actions = {
 	on_daily = {
 		effect = {
@@ -169,6 +184,7 @@ on_actions = {
 	on_weekly = {
 		effect = {
 			ROOT = {
+				ADW_array_shogun_add = yes
 				set_variable = { country_people = max_available_manpower_k }
 				set_variable = { country_people_mi = manpower_k }
 				subtract_from_variable = {
@@ -1087,7 +1103,10 @@ on_actions = {
 				every_owned_state = {
 					set_variable = { GDP_ADW_each_state_kenkoud = state_population_k }
 					round_variable = GDP_ADW_each_state_kenkoud
-					divide_variable = { GDP_ADW_each_state_kenkoud = infrastructure_level }
+					set_variable = { THIS.AdW_kenkodo_infra = THIS.infrastructure_level }
+					multiply_variable = { THIS.AdW_kenkodo_infra = 1.25 }
+					round_variable = THIS.AdW_kenkodo_infra
+					divide_variable = { GDP_ADW_each_state_kenkoud = THIS.AdW_kenkodo_infra }
 					multiply_variable = { GDP_ADW_each_state_kenkoud = 15 }
 					set_variable = { iryo_futan_able = 2 }
 					subtract_from_variable = { iryo_futan_able = ADW_iryo_ftan_percent }
