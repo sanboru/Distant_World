@@ -1,5 +1,9 @@
 spriteTypes = {
 	spriteType = {
+		name = "GFX_ADW_GDP_port_display"
+		texturefile = "gfx/interface/ADW_GDP_port_display.dds"
+	}
+	spriteType = {
 		name = "GFX_icon_dishes"
 		texturefile = "gfx/interface/aaakeizai_gui_ui.dds"
 	}

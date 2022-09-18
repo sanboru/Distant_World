@@ -2,7 +2,83 @@
 #医療リスト
 #医療画面
 guiTypes = {
-
+	containerWindowType = {
+		name = "ADW_GDP_emplpy_system_buttom"
+		position = { x = 1100 y = -215}
+		size = { width = 200 height=300 }
+		moveable = no
+		buttonType = {
+			name = "ADW_GDP_emplpy_system_buttom_bt"
+			position = { x = 80 y = 220 }
+			spriteType = "GFX_agency_header_button"
+			frame = 1
+			font = "hoi_18mbs"
+			buttonText = "ADW_GDP_emplpy_system_buttom_text"
+		}
+	}
+	containerWindowType = {
+		name = "ADW_GDP_emplpy_system"
+		position = { x = 1030 y = 40}
+		size = { width = 500 height= 480 }
+		moveable = yes
+		background = {
+			name = "bg_impact"
+			spriteType = "GFX_the_back_of_india_propaganda"
+		}
+		containerWindowType = {
+			name = "emplyee_shogun_grid"
+			position = { x = 17 y = 10 }
+			size = { width = 480 height = 480 }
+			verticalScrollbar = "right_vertical_slider"
+			background = {
+				name = "bg_GDP"
+			}
+			gridboxtype = {
+				name = "emplyee_shogun_grid"
+				position = { x = 0 y = 0 }
+				size = { width = 100%% height = 100%% }
+				slotsize = { width = 30 height = 75 }
+				max_slots_horizontal = 1
+				format = "UPPER_LEFT"
+			}
+			gridboxtype = {
+				name = "emplyee_shogun_a_grid"
+				position = { x = 0 y = 0 }
+				size = { width = 100%% height = 100%% }
+				slotsize = { width = 30 height = 75 }
+				max_slots_horizontal = 1
+				format = "UPPER_LEFT"
+			}
+		}
+	}
+	containerWindowType = {
+		name = "ADW_GDP_fuku_shidosha_window"
+		position = { x = 0 y = 0}
+		size = { width = 200 height=300 }
+		moveable = no
+		buttonType = {
+			name = "open_the_ADW_GDP_fuku_shidosha_window"
+			position = { x = 80 y = 260 }
+			spriteType = "GFX_ADW_GDP_port_display"
+			frame = 1
+			borderSize = { x = 3 y = 3 }
+			pdx_tooltip = "appear_the_jishitsu_shidosha"
+		}
+	}
+	containerWindowType = {
+		name = "ADW_GDP_fuku_shidosha_window_2"
+		position = { x = 0 y = 0}
+		size = { width = 200 height=300 }
+		moveable = no
+		iconType = {
+			name = "ADW_GDP_DIP_IND"
+			position = { x = 140 y = 120 }
+			spriteType = "GFX_portrait_ger_felix_steiner"
+			frame = 1
+			alwaystransparent = yes
+			scale = 0.75
+		}
+	}
 	containerWindowType = {
 		name = "my_name_GDP_window"
 		position = { x= 1440 y = 6}
@@ -387,6 +463,34 @@ guiTypes = {
 			font = "hoi_18mbs"
 			buttonText = "PD_STATE_LIST_ENTRY"
 			scale = 0.5
+		}
+	}
+	containerWindowType = { #将軍リスト
+		name = "shido_list_entry"
+		size = { width = 0 height = 0 }
+		instantTextBoxType = {
+			name ="shido_list_entry_text"
+			position = { x = 0 y = 0 }
+			font = "hoi_18b"
+			text = "shido_list_entry_text"
+			maxWidth = 455
+			format = left
+			fixedsize = yes
+		}
+	}
+	containerWindowType = { #将軍リスト
+		name = "shido_list_bt_entry"
+		size = { width = 0 height = 0 }
+		
+		buttonType = {
+			name = "shido_list_bt_entry_a"
+			spriteType = "GFX_button_221x34"
+			frame = 1
+			position = { x = 10 y = 40 }
+			font = "hoi_18mbs"
+			buttonText = "shido_list_bt_entry_a_txt"
+			pdx_tooltip = "shido_list_bt_entry_a_txt"
+			fixedsize = yes
 		}
 	}
 	
