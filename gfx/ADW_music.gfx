@@ -1,0 +1,7 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_ADW_Raido_cover"
+		textureFile = "gfx/ADW_Radio_cover.dds"
+		noOfFrames = 2
+	}
+}

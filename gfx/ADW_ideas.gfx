@@ -1,0 +1,22 @@
+spriteTypes = {
+    
+    spriteType = {
+        name = "gfx_idea_DW_JAP_reunification_of_nation"
+        texturefile = "PLACEHOLDER"
+    }
+
+    spriteType = {
+        name = "GFX_idea_DW_JAP_scars_of_revolution"
+        texturefile = "gfx/interface/ideas/idea_SOV_factionalism_modifier.dds"
+    }
+
+    spriteType = {
+        name = "gfx_idea_DW_JAP_divided_nation"
+        texturefile = "PLACEHOLDER"
+    }
+
+    #spriteType = {
+    #    name = gfx_idea_DW_JAP_chinese_tribunary
+    #    texturefile = 
+    #}
+}
