@@ -1,0 +1,896 @@
+﻿add_namespace = ADW_NEWS
+
+news_event = {
+	id = ADW_NEWS.1
+	title = ADW_NEWS.1.t
+	desc = ADW_NEWS.1.de
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = ADW_NEWS.1.a
+	}
+}
+
+news_event = {
+	id = ADW_NEWS.2
+	title = ADW_NEWS.2.t
+	desc = ADW_NEWS.2.de
+	picture = GFX_news_event_generic_sign_treaty2
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = ADW_NEWS.2.a
+	}
+}
+
+news_event = {
+	id = ADW_NEWS.3
+	title = ADW_NEWS.3.t
+	desc = ADW_NEWS.3.de
+	picture = GFX_news_event_generic_sign_treaty2
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = ADW_NEWS.3.a
+	}
+}
+news_event = {
+	id = ADW_NEWS.4
+	title = ADW_NEWS.4.t
+	desc = ADW_NEWS.4.de
+	picture = GFX_news_event_election_vote
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = ADW_NEWS.4.a
+	}
+}
+news_event = {
+	id = ADW_NEWS.5
+	title = ADW_NEWS.5.t
+	desc = ADW_NEWS.5.de
+	picture = GFX_news_event_ast_troops_landing
+	major = yes
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+		if = {
+			limit = {
+				tag = EIN
+			}
+			EIN = {
+				country_event = { id = IND_ADW.7 }
+				add_ideas = the_fight_of_geria_kurushimu
+				division_template = {
+					name = "the minpei of EIN"
+					division_names_group = GIN_civil_war_WITH_EIN
+					regiments = {
+						infantry = { x = 0 y = 1 }
+					}
+				}
+			}
+			GIN = {
+				add_ideas = the_fight_of_geria
+				set_country_flag = thewar_of_ENG
+				transfer_state = 835
+				add_state_core = 835
+				transfer_state = 423
+				add_state_core = 423
+				transfer_state = 320
+				add_state_core = 320
+				add_state_core = 425
+				add_state_core = 424
+				add_state_core = 837
+				add_state_core = 321
+				declare_war_on = {
+					target = EIN
+					type = annex_everything
+				}
+				division_template = {
+					name = "the minpei of GIN"
+					division_names_group = GIN_civil_war_WITH_EIN
+					regiments = {
+						infantry = { x = 0 y = 0 }
+					}
+				}
+				425 = {
+					create_unit = {
+						division = "division_template = \"the minpei of EIN\"start_experience_factor = 0.1 start_equipment_factor = 0.02"
+						owner = EIN
+						prioritize_location = 7391
+					}
+					create_unit = {
+						division = "division_template = \"the minpei of EIN\"start_experience_factor = 0.1 start_equipment_factor = 0.02"
+						owner = EIN
+						prioritize_location = 4315
+					}
+					create_unit = {
+						division = "division_template = \"the minpei of EIN\"start_experience_factor = 0.1 start_equipment_factor = 0.02"
+						owner = EIN
+						prioritize_location = 12146
+					}
+					create_unit = {
+						division = "division_template = \"the minpei of EIN\"start_experience_factor = 0.1 start_equipment_factor = 0.02"
+						owner = EIN
+						prioritize_location = 7391
+					}
+					create_unit = {
+						division = "division_template = \"the minpei of EIN\"start_experience_factor = 0.1 start_equipment_factor = 0.02"
+						owner = EIN
+						prioritize_location = 8011
+					}
+					create_unit = {
+						division = "division_template = \"the minpei of EIN\"start_experience_factor = 0.1 start_equipment_factor = 0.02"
+						owner = EIN
+						prioritize_location = 12734
+					}
+					create_unit = {
+						division = "division_template = \"the minpei of EIN\"start_experience_factor = 0.1 start_equipment_factor = 0.02"
+						owner = EIN
+						prioritize_location = 7391
+					}
+					create_unit = {
+						division = "division_template = \"the minpei of EIN\"start_experience_factor = 0.1 start_equipment_factor = 0.02"
+						owner = EIN
+						prioritize_location = 4315
+					}
+					create_unit = {
+						division = "division_template = \"the minpei of EIN\"start_experience_factor = 0.1 start_equipment_factor = 0.02"
+						owner = EIN
+						prioritize_location = 12146
+					}
+					create_unit = {
+						division = "division_template = \"the minpei of EIN\"start_experience_factor = 0.1 start_equipment_factor = 0.02"
+						owner = EIN
+						prioritize_location = 7391
+					}
+					create_unit = {
+						division = "division_template = \"the minpei of EIN\"start_experience_factor = 0.1 start_equipment_factor = 0.02"
+						owner = EIN
+						prioritize_location = 8011
+					}
+					create_unit = {
+						division = "division_template = \"the minpei of EIN\"start_experience_factor = 0.1 start_equipment_factor = 0.02"
+						owner = EIN
+						prioritize_location = 12734
+					}
+				}
+				424 = {
+					create_unit = {
+						division = "division_template = \"the minpei of EIN\"start_experience_factor = 0.1 start_equipment_factor = 0.02"
+						owner = EIN
+						prioritize_location = 1344
+					}
+					create_unit = {
+						division = "division_template = \"the minpei of EIN\"start_experience_factor = 0.1 start_equipment_factor = 0.02"
+						owner = EIN
+						prioritize_location = 12180
+					}
+					create_unit = {
+						division = "division_template = \"the minpei of EIN\"start_experience_factor = 0.1 start_equipment_factor = 0.02"
+						owner = EIN
+						prioritize_location = 1344
+					}
+					create_unit = {
+						division = "division_template = \"the minpei of EIN\"start_experience_factor = 0.1 start_equipment_factor = 0.02"
+						owner = EIN
+						prioritize_location = 12180
+					}
+				}
+			}
+				423 = {
+					create_unit = {
+						division = "division_template = \"the minpei of GIN\"start_experience_factor = 0.1 start_equipment_factor = 0.02"
+						owner = GIN
+						prioritize_location = 10278
+					}
+					create_unit = {
+						division = "division_template = \"the minpei of GIN\"start_experience_factor = 0.1 start_equipment_factor = 0.02"
+						owner = GIN
+						prioritize_location = 10278
+					}
+					create_unit = {
+						division = "division_template = \"the minpei of GIN\"start_experience_factor = 0.1 start_equipment_factor = 0.02"
+						owner = GIN
+						prioritize_location = 10278
+					}
+					
+					create_unit = {
+						division = "division_template = \"the minpei of GIN\"start_experience_factor = 0.1 start_equipment_factor = 0.02"
+						owner = GIN
+						prioritize_location = 7436
+					}
+					
+					create_unit = {
+						division = "division_template = \"the minpei of GIN\"start_experience_factor = 0.1 start_equipment_factor = 0.02"
+						owner = GIN
+						prioritize_location = 4420
+					}
+					create_unit = {
+						division = "division_template = \"the minpei of GIN\"start_experience_factor = 0.1 start_equipment_factor = 0.02"
+						owner = GIN
+						prioritize_location = 10808
+					}
+					create_unit = {
+						division = "division_template = \"the minpei of GIN\"start_experience_factor = 0.1 start_equipment_factor = 0.02"
+						owner = GIN
+						prioritize_location = 10808
+					}
+					create_unit = {
+						division = "division_template = \"the minpei of GIN\"start_experience_factor = 0.1 start_equipment_factor = 0.02"
+						owner = GIN
+						prioritize_location = 8067
+					}
+					create_unit = {
+						division = "division_template = \"the minpei of GIN\"start_experience_factor = 0.1 start_equipment_factor = 0.02"
+						owner = GIN
+						prioritize_location = 10278
+					}
+					create_unit = {
+						division = "division_template = \"the minpei of GIN\"start_experience_factor = 0.1 start_equipment_factor = 0.02"
+						owner = GIN
+						prioritize_location = 10278
+					}
+					create_unit = {
+						division = "division_template = \"the minpei of GIN\"start_experience_factor = 0.1 start_equipment_factor = 0.02"
+						owner = GIN
+						prioritize_location = 10278
+					}
+					
+					create_unit = {
+						division = "division_template = \"the minpei of GIN\"start_experience_factor = 0.1 start_equipment_factor = 0.02"
+						owner = GIN
+						prioritize_location = 7436
+					}
+					
+					create_unit = {
+						division = "division_template = \"the minpei of GIN\"start_experience_factor = 0.1 start_equipment_factor = 0.02"
+						owner = GIN
+						prioritize_location = 4420
+					}
+					create_unit = {
+						division = "division_template = \"the minpei of GIN\"start_experience_factor = 0.1 start_equipment_factor = 0.02"
+						owner = GIN
+						prioritize_location = 10808
+					}
+					create_unit = {
+						division = "division_template = \"the minpei of GIN\"start_experience_factor = 0.1 start_equipment_factor = 0.02"
+						owner = GIN
+						prioritize_location = 10808
+					}
+					create_unit = {
+						division = "division_template = \"the minpei of GIN\"start_experience_factor = 0.1 start_equipment_factor = 0.02"
+						owner = GIN
+						prioritize_location = 8067
+					}
+					create_unit = {
+						division = "division_template = \"the minpei of GIN\"start_experience_factor = 0.1 start_equipment_factor = 0.02"
+						owner = GIN
+						prioritize_location = 10278
+					}
+					create_unit = {
+						division = "division_template = \"the minpei of GIN\"start_experience_factor = 0.1 start_equipment_factor = 0.02"
+						owner = GIN
+						prioritize_location = 10278
+					}
+					create_unit = {
+						division = "division_template = \"the minpei of GIN\"start_experience_factor = 0.1 start_equipment_factor = 0.02"
+						owner = GIN
+						prioritize_location = 10278
+					}
+					
+					create_unit = {
+						division = "division_template = \"the minpei of GIN\"start_experience_factor = 0.1 start_equipment_factor = 0.02"
+						owner = GIN
+						prioritize_location = 7436
+					}
+					
+					create_unit = {
+						division = "division_template = \"the minpei of GIN\"start_experience_factor = 0.1 start_equipment_factor = 0.02"
+						owner = GIN
+						prioritize_location = 4420
+					}
+					create_unit = {
+						division = "division_template = \"the minpei of GIN\"start_experience_factor = 0.1 start_equipment_factor = 0.02"
+						owner = GIN
+						prioritize_location = 10808
+					}
+					create_unit = {
+						division = "division_template = \"the minpei of GIN\"start_experience_factor = 0.1 start_equipment_factor = 0.02"
+						owner = GIN
+						prioritize_location = 10808
+					}
+					create_unit = {
+						division = "division_template = \"the minpei of GIN\"start_experience_factor = 0.1 start_equipment_factor = 0.02"
+						owner = GIN
+						prioritize_location = 8067
+					}
+				}
+				835 = {
+					create_unit = {
+						division = "division_template = \"the minpei of GIN\"start_experience_factor = 0.1 start_equipment_factor = 0.02"
+						owner = GIN
+						prioritize_location = 7363
+					}
+					create_unit = {
+						division = "division_template = \"the minpei of GIN\"start_experience_factor = 0.1 start_equipment_factor = 0.02"
+						owner = GIN
+						prioritize_location = 12275
+					}
+					create_unit = {
+						division = "division_template = \"the minpei of GIN\"start_experience_factor = 0.1 start_equipment_factor = 0.02"
+						owner = GIN
+						prioritize_location = 7447
+					}
+					create_unit = {
+						division = "division_template = \"the minpei of GIN\"start_experience_factor = 0.1 start_equipment_factor = 0.02"
+						owner = GIN
+						prioritize_location = 7447
+					}
+					create_unit = {
+						division = "division_template = \"the minpei of GIN\"start_experience_factor = 0.1 start_equipment_factor = 0.02"
+						owner = GIN
+						prioritize_location = 7363
+					}
+					create_unit = {
+						division = "division_template = \"the minpei of GIN\"start_experience_factor = 0.1 start_equipment_factor = 0.02"
+						owner = GIN
+						prioritize_location = 12275
+					}
+					create_unit = {
+						division = "division_template = \"the minpei of GIN\"start_experience_factor = 0.1 start_equipment_factor = 0.02"
+						owner = GIN
+						prioritize_location = 7447
+					}
+					create_unit = {
+						division = "division_template = \"the minpei of GIN\"start_experience_factor = 0.1 start_equipment_factor = 0.02"
+						owner = GIN
+						prioritize_location = 7447
+					}
+					create_unit = {
+						division = "division_template = \"the minpei of GIN\"start_experience_factor = 0.1 start_equipment_factor = 0.02"
+						owner = GIN
+						prioritize_location = 7363
+					}
+					create_unit = {
+						division = "division_template = \"the minpei of GIN\"start_experience_factor = 0.1 start_equipment_factor = 0.02"
+						owner = GIN
+						prioritize_location = 12275
+					}
+					create_unit = {
+						division = "division_template = \"the minpei of GIN\"start_experience_factor = 0.1 start_equipment_factor = 0.02"
+						owner = GIN
+						prioritize_location = 7447
+					}
+					create_unit = {
+						division = "division_template = \"the minpei of GIN\"start_experience_factor = 0.1 start_equipment_factor = 0.02"
+						owner = GIN
+						prioritize_location = 7447
+					}
+				}
+		}
+		}
+	}
+	option = {
+		name = ADW_NEWS.5.a
+	}
+}
+news_event = {
+	id = ADW_NEWS.6
+	title = ADW_NEWS.6.t
+	desc = ADW_NEWS.6.de
+	picture = GFX_news_event_ast_troops_landing
+	major = yes
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+		if = {
+			limit = {
+				tag = RAJ
+			}
+			RAJ = {
+				country_event = { id = IND_ADW.7 }
+			}
+			GIN = {
+				if = {
+					limit = {
+						835 = {
+							owner = {
+								or = {
+									tag = RAJ
+									is_subject_of = RAJ
+								}
+							}
+						}
+					}
+					transfer_state = 835
+				}
+				if = {
+					limit = {
+						423 = {
+							owner = {
+								or = {
+									tag = RAJ
+									is_subject_of = RAJ
+								}
+							}
+						}
+					}
+					transfer_state = 423
+				}
+				if = {
+					limit = {
+						320 = {
+							owner = {
+								or = {
+									tag = RAJ
+									is_subject_of = RAJ
+								}
+							}
+						}
+					}
+					transfer_state = 320
+				}
+				add_state_core = 835
+				add_state_core = 423
+				add_state_core = 320
+				declare_war_on = {
+					target = RAJ
+					type = annex_everything
+				}
+				division_template = {
+					name = "GIN hanran military"
+					division_names_group = GIN_civil_war_WITH_EIN
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+					}
+				}
+			}
+			if = {
+				limit = {
+					GIN = {
+						controls_state = 423
+					}
+				}
+				423 = {
+					create_unit = {
+						division = "division_template = \"GIN hanran military\"start_experience_factor = 0.1 start_equipment_factor = 0.50"
+						owner = GIN
+						prioritize_location = 10278
+					}
+					create_unit = {
+						division = "division_template = \"GIN hanran military\"start_experience_factor = 0.1 start_equipment_factor = 0.50"
+						owner = GIN
+						prioritize_location = 10278
+					}
+					create_unit = {
+						division = "division_template = \"GIN hanran military\"start_experience_factor = 0.1 start_equipment_factor = 0.50"
+						owner = GIN
+						prioritize_location = 7436
+					}
+					create_unit = {
+						division = "division_template = \"GIN hanran military\"start_experience_factor = 0.1 start_equipment_factor = 0.50"
+						owner = GIN
+						prioritize_location = 7436
+					}
+					create_unit = {
+						division = "division_template = \"GIN hanran military\"start_experience_factor = 0.1 start_equipment_factor = 0.50"
+						owner = GIN
+						prioritize_location = 4420
+					}
+					create_unit = {
+						division = "division_template = \"GIN hanran military\"start_experience_factor = 0.1 start_equipment_factor = 0.50"
+						owner = GIN
+						prioritize_location = 4420
+					}
+					create_unit = {
+						division = "division_template = \"GIN hanran military\"start_experience_factor = 0.1 start_equipment_factor = 0.50"
+						owner = GIN
+						prioritize_location = 10808
+					}
+					create_unit = {
+						division = "division_template = \"GIN hanran military\"start_experience_factor = 0.1 start_equipment_factor = 0.50"
+						owner = GIN
+						prioritize_location = 10808
+					}
+				}
+				if = {
+					limit = {
+						GIN = {
+							controls_state = 835
+						}
+					}
+					835 = {
+						create_unit = {
+							division = "division_template = \"GIN hanran military\"start_experience_factor = 0.1 start_equipment_factor = 0.50"
+							owner = GIN
+							prioritize_location = 7363
+						}
+						create_unit = {
+							division = "division_template = \"GIN hanran military\"start_experience_factor = 0.1 start_equipment_factor = 0.50"
+							owner = GIN
+							prioritize_location = 12275
+						}
+						create_unit = {
+							division = "division_template = \"GIN hanran military\"start_experience_factor = 0.1 start_equipment_factor = 0.50"
+							owner = GIN
+							prioritize_location = 7447
+						}
+						create_unit = {
+							division = "division_template = \"GIN hanran military\"start_experience_factor = 0.1 start_equipment_factor = 0.50"
+							owner = GIN
+							prioritize_location = 7363
+						}
+						create_unit = {
+							division = "division_template = \"GIN hanran military\"start_experience_factor = 0.1 start_equipment_factor = 0.50"
+							owner = GIN
+							prioritize_location = 12275
+						}
+						create_unit = {
+							division = "division_template = \"GIN hanran military\"start_experience_factor = 0.1 start_equipment_factor = 0.50"
+							owner = GIN
+							prioritize_location = 7447
+						}
+						create_unit = {
+							division = "division_template = \"GIN hanran military\"start_experience_factor = 0.1 start_equipment_factor = 0.50"
+							owner = GIN
+							prioritize_location = 7363
+						}
+						create_unit = {
+							division = "division_template = \"GIN hanran military\"start_experience_factor = 0.1 start_equipment_factor = 0.50"
+							owner = GIN
+							prioritize_location = 12275
+						}
+						create_unit = {
+							division = "division_template = \"GIN hanran military\"start_experience_factor = 0.1 start_equipment_factor = 0.50"
+							owner = GIN
+							prioritize_location = 7447
+						}
+					}
+				}
+			}
+		}
+		}
+	}
+	option = {
+		name = ADW_NEWS.6.a
+	}
+}
+news_event = {
+	id = ADW_NEWS.7
+	title = ADW_NEWS.7.t
+	desc = ADW_NEWS.7.de
+	picture = GFX_news_event_canada_patriation
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = ADW_NEWS.7.a
+		if = {
+			limit = {
+				tag = RAJ
+				ENG = {
+					has_country_flag = the_countrty_ENG
+				}
+			}
+			RAJ = {
+				country_event = { id = IND_ADW.27 days = 1 }
+			}
+		}
+		ai_chance = {
+			factor = 5
+		}
+	}
+}
+
+news_event = {
+	id = ADW_NEWS.8
+	title = ADW_NEWS.8.t
+	picture = GFX_news_event_mex_civil_war
+	major = yes
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			IND = {
+				add_ideas = ADW_IND_civilwar
+				add_ideas = ADW_IND_civil_support_demo
+				remove_ideas = ADW_IND_the_de_buff_of_1
+				country_event = { id = IND_ADW.97 days = 7 }
+				add_dynamic_modifier = { modifier = ADW_IND_dokuritsu_minshu }
+				division_template = {
+					name = "Cvilwar hanran military I"
+					division_names_group = GINa_civil_war_WITH_EIN
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 1 y = 1 }
+					}
+				}
+				438 = {
+					create_unit = {
+						division = "division_template = \"Cvilwar hanran military I\"start_experience_factor = 0.1 start_equipment_factor = 0.1"
+						owner = IND
+						count = 3
+						prioritize_location = 5096
+					}
+					create_unit = {
+						division = "division_template = \"Cvilwar hanran military I\"start_experience_factor = 0.1 start_equipment_factor = 0.1"
+						owner = IND
+						count = 4
+						prioritize_location = 4410
+					}
+					create_unit = {
+						division = "division_template = \"Cvilwar hanran military I\"start_experience_factor = 0.1 start_equipment_factor = 0.1"
+						owner = IND
+						count = 3
+						prioritize_location = 10332
+					}
+				}
+				435 = {
+					create_unit = {
+						division = "division_template = \"Cvilwar hanran military I\"start_experience_factor = 0.1 start_equipment_factor = 0.1"
+						owner = IND
+						count = 2
+						prioritize_location = 10471
+					}
+					create_unit = {
+						division = "division_template = \"Cvilwar hanran military I\"start_experience_factor = 0.1 start_equipment_factor = 0.1"
+						owner = IND
+						count = 1
+						prioritize_location = 12307
+					}
+				}
+				CND = {
+					add_ideas = ADW_IND_civilwar
+					add_ideas = ADW_IND_civil_support_com
+					remove_ideas = ADW_IND_the_de_buff_of_1
+					transfer_state = 839
+					add_state_core = 839
+					transfer_state = 436
+					add_state_core = 436
+					add_dynamic_modifier = { modifier = ADW_IND_dokuritsu_minshu }
+					division_template = {
+						name = "Cvilwar hanran military C"
+						division_names_group = GINa_civil_war_WITH_EIN
+						regiments = {
+							infantry = { x = 0 y = 0 }
+							infantry = { x = 0 y = 1 }
+							infantry = { x = 1 y = 1 }
+						}
+					}
+					839 = {
+						create_unit = {
+							division = "division_template = \"Cvilwar hanran military C\"start_experience_factor = 0.1 start_equipment_factor = 0.1"
+							owner = CND
+							count = 2
+							prioritize_location = 4953
+						}
+						create_unit = {
+							division = "division_template = \"Cvilwar hanran military C\"start_experience_factor = 0.1 start_equipment_factor = 0.1"
+							owner = CND
+							count = 1
+							prioritize_location = 10801
+						}
+						create_unit = {
+							division = "division_template = \"Cvilwar hanran military C\"start_experience_factor = 0.1 start_equipment_factor = 0.1"
+							owner = CND
+							count = 2
+							prioritize_location = 7619
+						}
+					}
+					436 = {
+						create_unit = {
+							division = "division_template = \"Cvilwar hanran military C\"start_experience_factor = 0.1 start_equipment_factor = 0.1"
+							owner = CND
+							count = 2
+							prioritize_location = 8120
+						}
+						create_unit = {
+							division = "division_template = \"Cvilwar hanran military C\"start_experience_factor = 0.1 start_equipment_factor = 0.1"
+							owner = CND
+							count = 1
+							prioritize_location = 12480
+						}
+						create_unit = {
+							division = "division_template = \"Cvilwar hanran military C\"start_experience_factor = 0.1 start_equipment_factor = 0.1"
+							owner = CND
+							count = 2
+							prioritize_location = 7497
+						}
+						create_unit = {
+							division = "division_template = \"Cvilwar hanran military C\"start_experience_factor = 0.1 start_equipment_factor = 0.1"
+							owner = CND
+							count = 2
+							prioritize_location = 12375
+						}
+						create_unit = {
+							division = "division_template = \"Cvilwar hanran military C\"start_experience_factor = 0.1 start_equipment_factor = 0.1"
+							owner = CND
+							count = 2
+							prioritize_location = 7574
+						}
+						create_unit = {
+							division = "division_template = \"Cvilwar hanran military C\"start_experience_factor = 0.1 start_equipment_factor = 0.1"
+							owner = CND
+							count = 2
+							prioritize_location = 12420
+						}
+						create_unit = {
+							division = "division_template = \"Cvilwar hanran military C\"start_experience_factor = 0.1 start_equipment_factor = 0.1"
+							owner = CND
+							count = 2
+							prioritize_location = 4557
+						}
+					}
+				}
+				FND = {
+					add_ideas = ADW_IND_civilwar
+					add_ideas = ADW_IND_civil_support_fas
+					remove_ideas = ADW_IND_the_de_buff_of_1
+					transfer_state = 838
+					add_state_core = 838
+					transfer_state = 426
+					add_state_core = 426
+					add_dynamic_modifier = { modifier = ADW_IND_dokuritsu_minshu }
+					division_template = {
+						name = "Cvilwar hanran military F"
+						division_names_group = GINa_civil_war_WITH_EIN
+						regiments = {
+							infantry = { x = 0 y = 0 }
+							infantry = { x = 0 y = 1 }
+							infantry = { x = 1 y = 1 }
+						}
+					}
+					838 = {
+						create_unit = {
+							division = "division_template = \"Cvilwar hanran military F\"start_experience_factor = 0.1 start_equipment_factor = 0.1"
+							owner = FND
+							count = 3
+							prioritize_location = 10171
+						}
+						create_unit = {
+							division = "division_template = \"Cvilwar hanran military F\"start_experience_factor = 0.1 start_equipment_factor = 0.1"
+							owner = FND
+							count = 3
+							prioritize_location = 12490
+						}
+						create_unit = {
+							division = "division_template = \"Cvilwar hanran military F\"start_experience_factor = 0.1 start_equipment_factor = 0.1"
+							owner = FND
+							count = 3
+							prioritize_location = 1579
+						}
+					}
+					426 = {
+						create_unit = {
+							division = "division_template = \"Cvilwar hanran military F\"start_experience_factor = 0.1 start_equipment_factor = 0.1"
+							owner = FND
+							count = 3
+							prioritize_location = 9946
+						}
+						create_unit = {
+							division = "division_template = \"Cvilwar hanran military F\"start_experience_factor = 0.1 start_equipment_factor = 0.1"
+							owner = FND
+							count = 3
+							prioritize_location = 4513
+						}
+						create_unit = {
+							division = "division_template = \"Cvilwar hanran military F\"start_experience_factor = 0.1 start_equipment_factor = 0.1"
+							owner = FND
+							count = 3
+							prioritize_location = 12490
+						}
+						create_unit = {
+							division = "division_template = \"Cvilwar hanran military F\"start_experience_factor = 0.1 start_equipment_factor = 0.1"
+							owner = FND
+							count = 2
+							prioritize_location = 1538
+						}
+						create_unit = {
+							division = "division_template = \"Cvilwar hanran military F\"start_experience_factor = 0.1 start_equipment_factor = 0.1"
+							owner = FND
+							count = 2
+							prioritize_location = 1059
+						}
+					}
+				}
+				remove_state_core = 839
+				remove_state_core = 838
+				remove_state_core = 436
+				remove_state_core = 426
+				set_cosmetic_tag = IND_rinji_demo
+				BAN = {
+					limit = {
+						BAN = {
+							exists = yes
+						}
+					}
+					country_event = { id = IND_ADW.94 days = 2 }
+				}
+				if = {
+					limit = {
+						has_country_flag = ADW_IND_fas
+					}
+					change_tag_from = FND
+					else_if = {
+						limit = {
+							has_country_flag = ADW_IND_comu
+						}
+						change_tag_from = CND
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = ADW_NEWS.8.a
+		trigger = {
+			ROOT = {
+				AND = {
+					NOT = {original_tag = IND}
+					NOT = {original_tag = FND}
+					NOT = {original_tag = CND}
+					NOT = {original_tag = RAJ}
+				}
+			}
+		}
+		ai_chance = {
+			factor = 5
+		}
+	}
+	option = {
+		name = ADW_NEWS.8.b
+		trigger = {
+			ROOT = {
+				OR = {
+					original_tag = IND
+					original_tag = FND
+					original_tag = CND
+				}
+			}
+		}
+		ai_chance = {
+			factor = 5
+		}
+	}
+	option = {
+		name = ADW_NEWS.8.c
+		trigger = {
+			ROOT = {
+				original_tag = RAJ
+			}
+		}
+		ai_chance = {
+			factor = 5
+		}
+	}
+	
+	desc = {
+		text = ADW_NEWS.8.de
+		trigger = {
+			NOT = {
+				ROOT = {
+					OR = {
+						original_tag = IND
+						original_tag = FND
+						original_tag = CND
+					}
+				}
+			}
+		}
+	}
+	desc = {
+		text = ADW_NEWS.8.db
+		trigger = {
+			ROOT = {
+				OR = {
+					original_tag = IND
+					original_tag = FND
+					original_tag = CND
+				}
+			}
+		}
+	}
+}

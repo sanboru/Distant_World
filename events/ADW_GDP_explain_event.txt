@@ -1,0 +1,51 @@
+add_namespace = ADW_GDP_EXP
+
+country_event = { #はじめ
+	id = ADW_GDP_EXP.1
+	title = ADW_GDP_EXP.1.t
+	desc = ADW_GDP_EXP.1.de
+	is_triggered_only = yes
+	picture = GFX_report_event_generic_read_write
+	option = {
+		name = ADW_GDP_EXP.1.a
+		ai_chance = {
+			factor = 90
+		}
+	}
+	option = {
+		name = ADW_GDP_EXP.1.b
+		country_event = {id = ADW_GDP_EXP.2}
+	}
+	option = {
+		name = ADW_GDP_EXP.1.c
+		country_event = {id = ADW_GDP_EXP.3}
+	}
+}
+country_event = { #はじめ
+	id = ADW_GDP_EXP.2
+	title = ADW_GDP_EXP.2.t
+	desc = ADW_GDP_EXP.2.de
+	is_triggered_only = yes
+	picture = GFX_report_event_generic_read_write
+	option = {
+		name = ADW_GDP_EXP.1.a
+	}
+	option = {
+		name = ADW_GDP_EXP.1.anext
+		country_event = {id = ADW_GDP_EXP.1}
+	}
+}
+country_event = { #健康度はじめ
+	id = ADW_GDP_EXP.3
+	title = ADW_GDP_EXP.3.t
+	desc = ADW_GDP_EXP.3.de
+	is_triggered_only = yes
+	picture = GFX_report_event_generic_read_write
+	option = {
+		name = ADW_GDP_EXP.1.a
+	}
+	option = {
+		name = ADW_GDP_EXP.1.anext
+		country_event = {id = ADW_GDP_EXP.1}
+	}
+}
