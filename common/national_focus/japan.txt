@@ -97,7 +97,7 @@ focus_tree = {
 		y = 4
 
 		prerequisite = {
-			focus = ADW_JAP_early_mobilization
+			focus = ADW_JAP_early_moblization
 		}
 
 		completion_reward = {
@@ -116,7 +116,7 @@ focus_tree = {
 		y = 4
 
 		prerequisite = {
-			focus = ADW_JAP_early_mobilization
+			focus = ADW_JAP_early_moblization
 		}
 
 		completion_reward = {
@@ -193,6 +193,10 @@ focus_tree = {
 			}
 		}
 
+		mutually_exclusive = {
+			focus = ADW_JAP_falire_of_reunification
+		}
+
 		completion_reward = {
 			add_political_power = 150
 			set_stability = 0.8
@@ -224,6 +228,10 @@ focus_tree = {
 			surrender_progress > 0.03
 
 			country_exists = AIN
+		}
+
+		mutually_exclusive ={
+			focus = ADW_JAP_reunification
 		}
 
 		completion_reward = {
