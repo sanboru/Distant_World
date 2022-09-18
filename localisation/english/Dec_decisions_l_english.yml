@@ -109,3 +109,7 @@
  ADW_IND_social_improve:0 "社会改革"
  ADW_IND_social_improve_desc:0 "現在の改革度:[?ADW_IND_stability_social|Y0%]"
  improve_0_3:0 "改善度を1~3％上げる"
+ 
+ ADW_GDP_explain_dec:0 "ADW独自システム説明ディシジョン"
+ ADW_GDP_read_all_from_beginning:0 "初めから読む"
+ ADW_GDP_read_all_from_iryo:0 "医療システムと健康度について"

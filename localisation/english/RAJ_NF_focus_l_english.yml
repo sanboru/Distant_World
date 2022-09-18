@@ -703,3 +703,6 @@
  ADW_IND_SHR_expand_the_economy_get_1_desc:0 "経済を促進させ、資金を得る。"
  ADW_IND_SHR_improve_economy:0 "社会改革"
  ADW_IND_SHR_improve_economy_desc:0 "社会改革を実施する。"
+ ADW_IND_social_improve_flag:0 "社会改革ディシジョンを解放する。"
+ ADW_IND_SHR_industry_ideas:0 "工業促進"
+ ADW_IND_SHR_industry_ideas_desc:0 "工業を促進させる。"
