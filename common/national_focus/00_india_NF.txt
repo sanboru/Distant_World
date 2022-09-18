@@ -7865,7 +7865,742 @@ shared_focus = { #1239
 		factor = 4
 	}
     completion_reward = {
+		add_ideas = ADW_IND_SHR_industry_improve
+    }
+}
+shared_focus = { #1239
+    id = ADW_IND_SHR_build_indust
+    x = 22
+    y = 1
+    icon = GFX_goal_generic_construct_civ_factory
+	cost = 15
+    search_filters = { FOCUS_FILTER_INDUSTRY }
+	prerequisite = { focus = ADW_IND_SHR_industry_ideas }
+	
+	ai_will_do = {
+		factor = 4
+	}
+    completion_reward = {
+		random_controlled_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
 		
+    }
+}
+shared_focus = { #1239
+    id = ADW_IND_SHR_build_army_factory
+    x = 19
+    y = 1
+    icon = GFX_goal_generic_construct_civ_factory
+	cost = 15
+    search_filters = { FOCUS_FILTER_INDUSTRY }
+	prerequisite = { focus = ADW_IND_SHR_industry_ideas }
+	
+	ai_will_do = {
+		factor = 4
+	}
+    completion_reward = {
+		random_controlled_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+		
+    }
+}
+shared_focus = { #1239
+    id = ADW_IND_SHR_build_army_factory_1
+    x = 19
+    y = 2
+    icon = GFX_goal_generic_construct_civ_factory
+	cost = 15
+    search_filters = { FOCUS_FILTER_INDUSTRY }
+	prerequisite = { focus = ADW_IND_SHR_build_army_factory }
+	
+	ai_will_do = {
+		factor = 4
+	}
+    completion_reward = {
+		random_controlled_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+		
+    }
+}
+shared_focus = { #1939
+    id = ADW_IND_SHR_build_army_factory_2
+    x = 19
+    y = 3
+    icon = GFX_goal_generic_construct_civ_factory
+	cost = 15
+    search_filters = { FOCUS_FILTER_INDUSTRY }
+	prerequisite = { focus = ADW_IND_SHR_build_army_factory_1 }
+	
+	ai_will_do = {
+		factor = 4
+	}
+    completion_reward = {
+		random_controlled_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+		
+    }
+}
+shared_focus = { #1939
+    id = ADW_IND_SHR_build_navy_factory_1
+    x = 25
+    y = 1
+    icon = GFX_goal_generic_navy_battleship
+	cost = 15
+    search_filters = { FOCUS_FILTER_INDUSTRY }
+	prerequisite = { focus = ADW_IND_SHR_industry_ideas }
+	cancel_if_invalid = yes
+	ai_will_do = {
+		factor = 4
+	}
+	available = {
+		any_controlled_state = {
+			is_coastal = yes
+		}
+	}
+    completion_reward = {
+		random_controlled_state = {
+			limit = {
+				is_coastal = yes
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+		
+    }
+}
+shared_focus = { #1939
+    id = ADW_IND_SHR_build_navy_factory_2
+    x = 25
+    y = 2
+    icon = GFX_goal_generic_navy_battleship
+	cost = 15
+    search_filters = { FOCUS_FILTER_INDUSTRY }
+	prerequisite = { focus = ADW_IND_SHR_build_navy_factory_1 }
+	cancel_if_invalid = yes
+	ai_will_do = {
+		factor = 4
+	}
+	available = {
+		any_controlled_state = {
+			is_coastal = yes
+		}
+	}
+    completion_reward = {
+		random_controlled_state = {
+			limit = {
+				is_coastal = yes
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+		
+    }
+}
+shared_focus = { #2254
+    id = ADW_IND_SHR_build_navy_factory_3
+    x = 25
+    y = 3
+    icon = GFX_goal_generic_navy_battleship
+	cost = 15
+    search_filters = { FOCUS_FILTER_INDUSTRY }
+	prerequisite = { focus = ADW_IND_SHR_build_navy_factory_2 }
+	cancel_if_invalid = yes
+	ai_will_do = {
+		factor = 4
+	}
+	available = {
+		any_controlled_state = {
+			is_coastal = yes
+		}
+	}
+    completion_reward = {
+		random_controlled_state = {
+			limit = {
+				is_coastal = yes
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+		
+    }
+}
+shared_focus = { #1239
+    id = ADW_IND_SHR_build_indust_1
+    x = 21
+    y = 2
+    icon = GFX_goal_generic_demand_territory
+	cost = 15
+    search_filters = { FOCUS_FILTER_INDUSTRY }
+	prerequisite = { focus = ADW_IND_SHR_build_indust }
+	
+	ai_will_do = {
+		factor = 4
+	}
+    completion_reward = {
+		random_controlled_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+		
+    }
+}
+shared_focus = { #1239
+    id = ADW_IND_SHR_build_indust_2
+    x = 21
+    y = 3
+    icon = GFX_goal_generic_demand_territory
+	cost = 15
+    search_filters = { FOCUS_FILTER_INDUSTRY }
+	prerequisite = { focus = ADW_IND_SHR_build_indust_1 }
+	
+	ai_will_do = {
+		factor = 4
+	}
+    completion_reward = {
+		random_controlled_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+		
+    }
+}
+shared_focus = { #1239
+    id = ADW_IND_SHR_expand_vase
+    x = 23
+    y = 2
+    icon = GFX_goal_generic_construction
+	cost = 5
+    search_filters = { FOCUS_FILTER_INDUSTRY }
+	prerequisite = { focus = ADW_IND_SHR_build_indust }
+	
+	ai_will_do = {
+		factor = 4
+	}
+    completion_reward = {
+		random_controlled_state = {
+			add_extra_state_shared_building_slots = 1
+		}
+		
+    }
+}
+shared_focus = { #1239
+    id = ADW_IND_SHR_expand_vase_1
+    x = 23
+    y = 3
+    icon = GFX_goal_generic_construction
+	cost = 5
+    search_filters = { FOCUS_FILTER_INDUSTRY }
+	prerequisite = { focus = ADW_IND_SHR_expand_vase }
+	
+	ai_will_do = {
+		factor = 4
+	}
+    completion_reward = {
+		random_controlled_state = {
+			add_extra_state_shared_building_slots = 1
+		}
+		
+    }
+}
+shared_focus = { #2254
+    id = ADW_IND_SHR_expand_vase_1
+    x = 23
+    y = 3
+    icon = GFX_goal_generic_construction
+	cost = 5
+    search_filters = { FOCUS_FILTER_INDUSTRY }
+	prerequisite = { focus = ADW_IND_SHR_expand_vase }
+	
+	ai_will_do = {
+		factor = 4
+	}
+    completion_reward = {
+		random_controlled_state = {
+			add_extra_state_shared_building_slots = 1
+		}
+		
+    }
+}
+shared_focus = { #2254
+    id = ADW_IND_SHR_army_technology
+    x = 19
+    y = 5
+    icon = GFX_focus_RAJ_indianisation_of_army
+	cost = 5
+    search_filters = { FOCUS_FILTER_INDUSTRY }
+	
+	ai_will_do = {
+		factor = 4
+	}
+    completion_reward = {
+		add_ideas = ADW_IND_SHR_army_upgrade
+    }
+}
+shared_focus = { #2254
+    id = ADW_IND_SHR_army_technology_1
+    x = 20
+    y = 6
+    icon = GFX_focus_POL_belarus_army
+	cost = 10
+    search_filters = { FOCUS_FILTER_ARMY_XP }
+	search_filters = { FOCUS_FILTER_RESEARCH }
+	prerequisite = { focus = ADW_IND_SHR_army_technology }
+	
+	ai_will_do = {
+		factor = 4
+	}
+    completion_reward = {
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 1
+			category = infantry_weapons
+		}
+    }
+}
+shared_focus = { #2254
+    id = ADW_IND_SHR_army_technology_2
+    x = 20
+    y = 8
+    icon = GFX_focus_SOV_the_glory_of_the_red_army_alternative
+	cost = 20
+    search_filters = { FOCUS_FILTER_ARMY_XP }
+	search_filters = { FOCUS_FILTER_RESEARCH }
+	prerequisite = { focus = ADW_IND_SHR_army_technology_1 }
+	
+	ai_will_do = {
+		factor = 4
+	}
+    completion_reward = {
+		add_tech_bonus = {
+			bonus = 0.3
+			uses = 1
+			category = cat_light_armor
+		}
+		add_tech_bonus = {
+			bonus = 0.3
+			uses = 1
+			category = cat_medium_armor
+		}
+		add_tech_bonus = {
+			bonus = 0.3
+			uses = 1
+			category = cat_heavy_armor
+		}
+    }
+}
+shared_focus = { #2499
+    id = ADW_IND_SHR_army_technology_3
+    x = 20
+    y = 10
+    icon = GFX_goal_continuous_suppression
+	cost = 10
+    search_filters = { FOCUS_FILTER_ARMY_XP }
+	search_filters = { FOCUS_FILTER_RESEARCH }
+	prerequisite = { focus = ADW_IND_SHR_army_technology_2 }
+	
+	ai_will_do = {
+		factor = 4
+	}
+    completion_reward = {
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 1
+			category = support_tech
+		}
+    }
+}
+shared_focus = { #2499
+    id = ADW_IND_SHR_army_technology_up
+    x = 19
+    y = 7
+    icon = GFX_focus_generic_japanese_imperial_glory
+	cost = 8
+    search_filters = { FOCUS_FILTER_ARMY_XP }
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	prerequisite = { focus = ADW_IND_SHR_army_technology }
+	
+	ai_will_do = {
+		factor = 4
+	}
+    completion_reward = {
+		swap_ideas = {
+			remove_idea = ADW_IND_SHR_army_upgrade
+			add_idea = ADW_IND_SHR_army_upgrade_1
+		}
+    }
+}
+shared_focus = { #2499
+    id = ADW_IND_SHR_army_technology_up_2
+    x = 19
+    y = 9
+    icon = GFX_focus_CZE_military_research_institute
+	cost = 8
+    search_filters = { FOCUS_FILTER_ARMY_XP }
+	search_filters = { FOCUS_FILTER_RESEARCH }
+	prerequisite = { focus = ADW_IND_SHR_army_technology_up }
+	
+	ai_will_do = {
+		factor = 4
+	}
+    completion_reward = {
+		swap_ideas = {
+			remove_idea = ADW_IND_SHR_army_upgrade_1
+			add_idea = ADW_IND_SHR_army_upgrade_2
+		}
+    }
+}
+shared_focus = { #2499
+    id = ADW_IND_SHR_research_1
+    x = 19
+    y = 11
+    icon = GFX_focus_research
+	cost = 20
+	search_filters = { FOCUS_FILTER_RESEARCH }
+	prerequisite = { focus = ADW_IND_SHR_army_technology_up_2 }
+	
+	ai_will_do = {
+		factor = 4
+	}
+    completion_reward = {
+		add_research_slot = 1
+    }
+}
+shared_focus = { #2499
+    id = ADW_IND_SHR_air_research
+    x = 22
+    y = 5
+    icon = GFX_focus_generic_air_defense
+	cost = 8
+	search_filters = { FOCUS_FILTER_AIR_XP }
+	
+	ai_will_do = {
+		factor = 4
+	}
+    completion_reward = {
+		add_ideas = ADW_IND_SHR_air_upgrade_0
+    }
+}
+shared_focus = { #2499
+    id = ADW_IND_SHR_army_technology_air
+    x = 22
+    y = 6
+    icon = GFX_focus_chi_legislative_yuan
+	cost = 5
+    search_filters = { FOCUS_FILTER_ARMY_XP }
+	search_filters = { FOCUS_FILTER_RESEARCH }
+	prerequisite = { focus = ADW_IND_SHR_air_research }
+	
+	ai_will_do = {
+		factor = 4
+	}
+    completion_reward = {
+		air_experience = 10
+    }
+}
+shared_focus = { #2499
+    id = ADW_IND_SHR_technology_air_1
+    x = 22
+    y = 8
+    icon = GFX_focus_YUG_rogozarski
+	cost = 5
+    search_filters = { FOCUS_FILTER_ARMY_XP }
+	prerequisite = { focus = ADW_IND_SHR_army_technology_air }
+	
+	ai_will_do = {
+		factor = 4
+	}
+    completion_reward = {
+		swap_ideas = {	
+			remove_idea = ADW_IND_SHR_air_upgrade_0
+			add_idea = ADW_IND_SHR_air_upgrade_1
+		}
+    }
+}
+shared_focus = { #2499
+    id = ADW_IND_SHR_technology_air_2
+    x = 22
+    y = 10
+    icon = GFX_focus_YUG_ikarus
+	cost = 5
+    search_filters = { FOCUS_FILTER_ARMY_XP }
+	prerequisite = { focus = ADW_IND_SHR_technology_air_1 }
+	
+	ai_will_do = {
+		factor = 4
+	}
+    completion_reward = {
+		swap_ideas = {	
+			remove_idea = ADW_IND_SHR_air_upgrade_1
+			add_idea = ADW_IND_SHR_air_upgrade_2
+		}
+    }
+}
+shared_focus = { #2499
+    id = ADW_IND_SHR_army_technology_fighter
+    x = 21
+    y = 7
+    icon = GFX_goal_generic_air_fighter2
+	cost = 10
+    search_filters = { FOCUS_FILTER_ARMY_XP }
+	search_filters = { FOCUS_FILTER_RESEARCH }
+	prerequisite = { focus = ADW_IND_SHR_army_technology_1 }
+	prerequisite = { focus = ADW_IND_SHR_army_technology_air }
+	
+	ai_will_do = {
+		factor = 4
+	}
+    completion_reward = {
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 1
+			category = light_fighter
+		}
+    }
+}
+shared_focus = { #2499
+    id = ADW_IND_SHR_army_technology_fighter_1
+    x = 21
+    y = 9
+    icon = GFX_focus_generic_aircraft_production
+	cost = 10
+    search_filters = { FOCUS_FILTER_ARMY_XP }
+	search_filters = { FOCUS_FILTER_RESEARCH }
+	prerequisite = { focus = ADW_IND_SHR_army_technology_air }
+	prerequisite = { focus = ADW_IND_SHR_technology_air_1 }
+	prerequisite = { focus = ADW_IND_SHR_army_technology_2 }
+	
+	ai_will_do = {
+		factor = 4
+	}
+    completion_reward = {
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 1
+			category = cas_bomber
+		}
+    }
+}
+shared_focus = { #2499
+    id = ADW_IND_SHR_navy_research
+    x = 25
+    y = 5
+    icon = GFX_goal_generic_navy_cruiser
+	cost = 8
+	search_filters = { FOCUS_FILTER_NAVY_XP }
+	
+	ai_will_do = {
+		factor = 4
+	}
+    completion_reward = {
+		add_ideas = ADW_IND_SHR_navy_upgrade_0
+    }
+}
+shared_focus = { #2499
+    id = ADW_IND_SHR_navy_research_buff_0
+    x = 24
+    y = 6
+    icon = GFX_focus_generic_navy_battleship2
+	cost = 10
+    search_filters = { FOCUS_FILTER_AIR_XP }
+	search_filters = { FOCUS_FILTER_RESEARCH }
+	prerequisite = { focus = ADW_IND_SHR_navy_research }
+	
+	ai_will_do = {
+		factor = 4
+	}
+    completion_reward = {
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 1
+			category = dd_tech
+		}
+    }
+}
+shared_focus = { #2499
+    id = ADW_IND_SHR_navy_research_buff_1
+    x = 24
+    y = 8
+    icon = GFX_goal_generic_navy_submarine
+	cost = 10
+    search_filters = { FOCUS_FILTER_AIR_XP }
+	search_filters = { FOCUS_FILTER_RESEARCH }
+	prerequisite = { focus = ADW_IND_SHR_navy_research_buff_0 }
+	
+	ai_will_do = {
+		factor = 4
+	}
+    completion_reward = {
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 1
+			category = ss_tech
+		}
+    }
+}
+shared_focus = { #2499
+    id = ADW_IND_SHR_navy_research_buff_2
+    x = 24
+    y = 10
+    icon = GFX_goal_generic_navy_carrier
+	cost = 12
+    search_filters = { FOCUS_FILTER_AIR_XP }
+	search_filters = { FOCUS_FILTER_RESEARCH }
+	prerequisite = { focus = ADW_IND_SHR_navy_research_buff_1 }
+	
+	ai_will_do = {
+		factor = 4
+	}
+    completion_reward = {
+		add_tech_bonus = {
+			bonus = 0.3
+			uses = 1
+			category = bb_tech
+		}
+		add_tech_bonus = {
+			bonus = 0.3
+			uses = 1
+			category = cv_tech
+		}
+    }
+}
+shared_focus = { #2499
+    id = ADW_IND_SHR_navy_research_buff_exp_0
+    x = 25
+    y = 7
+    icon = GFX_goal_generic_build_navy
+	cost = 10
+    search_filters = { FOCUS_FILTER_AIR_XP }
+	prerequisite = { focus = ADW_IND_SHR_navy_research }
+	
+	ai_will_do = {
+		factor = 4
+	}
+    completion_reward = {
+		navy_experience = 10
+    }
+}
+shared_focus = { #2499
+    id = ADW_IND_SHR_navy_research_buff_exp_1
+    x = 25
+    y = 9
+    icon = GFX_goal_generic_navy_doctrines_tactics
+	cost = 10
+    search_filters = { FOCUS_FILTER_AIR_XP }
+	prerequisite = { focus = ADW_IND_SHR_navy_research_buff_exp_0 }
+	
+	ai_will_do = {
+		factor = 4
+	}
+    completion_reward = {
+		swap_ideas = {
+			remove_idea = ADW_IND_SHR_navy_upgrade_0
+			add_idea = ADW_IND_SHR_navy_upgrade_1
+		}
+    }
+}
+shared_focus = { #2499
+    id = ADW_IND_SHR_navy_research_buff_exp_2
+    x = 25
+    y = 11
+    icon = GFX_focus_research2
+	cost = 10
+    search_filters = { FOCUS_FILTER_AIR_XP }
+	prerequisite = { focus = ADW_IND_SHR_navy_research_buff_exp_1 }
+	
+	ai_will_do = {
+		factor = 4
+	}
+    completion_reward = {
+		add_research_slot = 1
+    }
+}
+shared_focus = { #2499
+    id = ADW_IND_SHR_navy_research_buff_2_NA_1
+    x = 23
+    y = 7
+    icon = GFX_goal_generic_navy_carrier
+	cost = 10
+    search_filters = { FOCUS_FILTER_AIR_XP }
+	search_filters = { FOCUS_FILTER_RESEARCH }
+	prerequisite = { focus = ADW_IND_SHR_navy_research_buff_0 }
+	prerequisite = { focus = ADW_IND_SHR_army_technology_air }
+	
+	ai_will_do = {
+		factor = 4
+	}
+    completion_reward = {
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 1
+			category = naval_bomber
+		}
+    }
+}
+shared_focus = { #3612
+    id = ADW_IND_SHR_navy_research_buff_2_NA
+    x = 23
+    y = 9
+    icon = GFX_goal_generic_build_airforce
+	cost = 10
+    search_filters = { FOCUS_FILTER_AIR_XP }
+	search_filters = { FOCUS_FILTER_RESEARCH }
+	prerequisite = { focus = ADW_IND_SHR_navy_research_buff_1 }
+	prerequisite = { focus = ADW_IND_SHR_technology_air_1 }
+	prerequisite = { focus = ADW_IND_SHR_navy_research_buff_2_NA_1 }
+	
+	ai_will_do = {
+		factor = 4
+	}
+    completion_reward = {
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 1
+			category = naval_air
+		}
     }
 }
 
@@ -7882,11 +8617,14 @@ focus_tree = {
     shared_focus = ADW_IND_SHR_experience
 	shared_focus = ADW_IND_SHR_economy_tree
 	shared_focus = ADW_IND_SHR_industry_ideas
+	shared_focus = ADW_IND_SHR_army_technology
+	shared_focus = ADW_IND_SHR_air_research
+	shared_focus = ADW_IND_SHR_navy_research
 	default = no
 
 	continuous_focus_position = { x = 20 y = 2800 }
 	
-	focus = { 
+	focus = {
 		id = IND_ADW_the_effort_of_politic
 		icon = GFX_goal_generic_intelligence_exchange
 		x = 2
