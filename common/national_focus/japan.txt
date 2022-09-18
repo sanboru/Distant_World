@@ -6,7 +6,7 @@ focus_tree = {
 			add = 20
 			tag = JAP
 		}
-}
+	}
 
 	default = yes
 
@@ -18,14 +18,15 @@ focus_tree = {
 		x = 2
 		y = 0
 
-			completion_reward = {
-					JAP = {
-						country_event = {
-							id = DW_JAP.2
-						}
-				}
+		completion_reward = {
+			JAP = {
+				country_event = {
+				id = DW_JAP.2
+					}
+			}
 
-	}
+		}
+}
 
 	focus = {
 		id = ADW_JAP_our_focus
@@ -35,17 +36,17 @@ focus_tree = {
 		prerequisite = {
 			focus = ADW_JAP_current_stats
 		}
-		
+	
 		x = 2
 		y = 1
 			completion_reward = {
-					JAP = {
-						country_event = {
-							id = DW_JAP.3
-						}
+				JAP = {
+					country_event = {
+					id = DW_JAP.3
 				}
-
-	}
+			}
+		}
+}
 
 	focus = {
 		id = ADW_JAP_negotiations_with_china
@@ -64,6 +65,7 @@ focus_tree = {
 							id = DW_JAP.4
 						}
 				}
+			}
 			completion_reward = {
 				add_political_power = 150
 			}
@@ -71,40 +73,20 @@ focus_tree = {
 	}
 
 	focus = {
-	id = ADW_JAP_early_moblization
-	icon = GFX_focus_generic_little_entente
-	cost = 5.00
-	x = 2
-	y = 3
-
-	prerequisite = {
-		focus = ADW_JAP_negotiations_with_china
-	}
-
-	completion_reward = {
-				add_idea = extensive_conscription
-				add_idea = partial_economic_mobilisation
-			}
-	}
-
-	#focus = {
-		id = ADW_JAP_sothern_islands
-		icon = GFX_goal_unknown
-		cost = 5
-
-		x = 1
-		y = 4
-
+		id = ADW_JAP_early_moblization
+		icon = GFX_focus_generic_little_entente
+		cost = 5.00
+		x = 2
+		y = 3
+	
 		prerequisite = {
-			focus = ADW_JAP_early_mobilization
+			focus = ADW_JAP_negotiations_with_china
 		}
-
+	
 		completion_reward = {
-			declare_war_on = {
-				tag = RYU
-				wargoal = annex_everything
-			}
-		}
+					add_idea = extensive_conscription
+					add_idea = partial_economic_mobilisation
+				}
 	}
 
 	focus = {
@@ -127,24 +109,87 @@ focus_tree = {
 	}
 
 	focus = {
-		id = ADW_JAP_reunification
-		icon = GFX_goal_unknown
-		cost = 1
+		id = ADW_JAP_revise_army_tactic
+		icon = GFX_focus_secret_rearmament
+		cost = 5
+		x = 1
+		y = 4
+
+		prerequisite = {
+			focus = ADW_JAP_early_mobilization
+		}
+
+		completion_reward = {
+			army_experience = 75
+		}
+
+		available ={
+			has_war = yes
+	}
+}
+
+	focus = {
+		id = ADW_JAP_snowtop_transport
+		icon = GFX_focus_generic_rubber
+		cost = 3
 		x = 1
 		y = 5
 
 		prerequisite = {
-			focus = ADW_JAP_southern_islands
+			focus = ADW_JAP_revise_army_tactic
+			focus = ADW_JAP_northern_shogunate
 		}
 
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				technology = tech_logistics_company 
+				technology = tech_logistics_company2
+			}
+		}
+	}
+
+	focus = {
+		id = ADW_JAP_media_censorship
+		icon = GFX_focus_eng_move_to_secure_the_dominions
+		cost = 3
+		x = 3
+		y = 5
+
 		prerequisite = {
+			focus = ADW_JAP_revise_army_tactic
 			focus = ADW_JAP_northern_shogunate
+		}
+
+		completion_reward = {
+			add_popularity = {
+				ideology = facism
+				popularity = -0.2
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = -0.2
+			}
+	}
+}
+
+	focus = {
+		id = ADW_JAP_reunification
+		icon = GFX_goal_unknown
+		cost = 1
+		x = 0
+		y = 6
+
+		prerequisite = {
+			focus = ADW_JAP_snowtop_transport
+			focus = ADW_JAP_media_censorship
 		}
 
 		available = {
 			NOT = {
-				country_exists = RYU
 				country_exists = AIN
+				has_war = yes
 			}
 		}
 
@@ -160,26 +205,24 @@ focus_tree = {
 				}
 			}
 		}
+		}
 	}
 
 	focus = {
 		id = ADW_JAP_falire_of_reunification
 		icon = GFX_goal_unknown
 		cost = 5
-		x = 3
-		y = 5
+		x = 4
+		y = 6
 
 		prerequisite = {
-			focus = ADW_JAP_southern_islands
-		}
-
-		prerequisite = {
-			focus = ADW_JAP_northern_shogunate
+			focus = ADW_JAP_snowtop_transport
+			focus = ADW_JAP_media_censorship
 		}
 
 		available = {
 			surrender_progress > 0.03
-			
+
 			country_exists = AIN
 		}
 
@@ -204,5 +247,7 @@ focus_tree = {
 					random = 50
 				}
 			}
+			}
 		}
 	}
+}

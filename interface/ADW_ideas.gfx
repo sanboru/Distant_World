@@ -17,6 +17,6 @@ spriteTypes = {
 
     spriteType = {
         name = gfx_idea_DW_JAP_chinese_tribunary
-        texturefile = 
+        texturefile = gfx_interface/ideas/idea_chi_hyper_inflation3
     }
 }
