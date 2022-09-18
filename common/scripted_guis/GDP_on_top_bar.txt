@@ -1,5 +1,92 @@
 scripted_gui = {
-
+	ADW_GDP_fuku_shidosha_window = {
+		context_type = selected_country_context
+		parent_window_token = selected_country_view_diplomacy
+		window_name = "ADW_GDP_fuku_shidosha_window"
+		effects = {
+			open_the_ADW_GDP_fuku_shidosha_window_click = {
+				ROOT = {
+					if = {
+						limit = {
+							has_country_flag = open_ui_saiko
+						}
+						clr_country_flag = open_ui_saiko
+						else = {
+							set_country_flag = open_ui_saiko
+						}
+					}
+				}
+			}
+		}
+	}
+	ADW_GDP_emplpy_system_buttom = {
+		window_name = "ADW_GDP_emplpy_system_buttom"
+		visible = {
+			ROOT = { num_subjects > 0 }
+		}
+		effects = {
+			ADW_GDP_emplpy_system_buttom_bt_click = {
+				ADW_array_shogun_add = yes
+				ROOT = {
+					if = {
+						limit = {
+							has_country_flag = open_ui_EMS
+						}
+						clr_country_flag = open_ui_EMS
+						else = {
+							set_country_flag = open_ui_EMS
+						}
+					}
+				}
+			}
+		}
+	}
+	ADW_GDP_emplpy_system = {
+		window_name = "ADW_GDP_emplpy_system"
+		visible = {
+			ROOT = { has_country_flag = open_ui_EMS }
+			ROOT = { num_subjects > 1 }
+		}
+		dynamic_lists = {
+			emplyee_shogun_grid = {
+				array = ROOT.ADW_shogun_array
+				change_scope = yes
+				entry_container = "shido_list_entry" 
+			}
+			emplyee_shogun_a_grid = {
+				array = ROOT.ADW_shogun_array
+				change_scope = yes
+				entry_container = "shido_list_bt_entry" 
+			}
+		}
+		effects = {
+			shido_list_bt_entry_a_click = {
+				THIS = {
+					set_nationality = ROOT
+				}
+				ROOT = {
+					subtract_from_variable = {
+						var = ROOT.GDP_amou
+						value = PREV.ADW_GDP_EMS_money
+					}
+				}
+				ADW_array_shogun_add = yes
+			}
+		}
+	}
+	ADW_GDP_fuku_shidosha_window_2 = {
+		context_type = selected_country_context
+		parent_window_token = selected_country_view_diplomacy
+		window_name = "ADW_GDP_fuku_shidosha_window_2"
+		visible = {
+			ROOT = { has_country_flag = open_ui_saiko }
+		}
+		triggers = {
+			ADW_GDP_DIP_IND_visible = {
+				THIS = { tag = IND }
+			}
+		}
+	}
 	my_name_GDP_window_no = {
 		window_name = "my_name_GDP_window"
 		
@@ -1928,7 +2015,6 @@ scripted_gui = {
 			}
 		}
 	}
-	
 	#############各州#########
 	ADW_GDP_option_of_each_states = {
 		window_name = "ADW_GDP_option_of_each_state"
