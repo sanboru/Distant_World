@@ -13,13 +13,14 @@ focus_tree = {
 	focus = {
 		id = ADW_JAP_current_stats
 		icon = GFX_focus_chi_collaboration_with_the_japanese
-		cost = 1.00
+		cost = 3.00
 
 		x = 2
 		y = 0
 
 			completion_reward = {
-					country_event = {
+					JAP = {
+						country_event = {
 							id = DW_JAP.2
 						}
 				}
@@ -29,7 +30,7 @@ focus_tree = {
 	focus = {
 		id = ADW_JAP_our_focus
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
-		cost = 1.00
+		cost = 5.00
 
 		prerequisite = {
 			focus = ADW_JAP_current_stats
@@ -38,7 +39,8 @@ focus_tree = {
 		x = 2
 		y = 1
 			completion_reward = {
-					country_event = {
+					JAP = {
+						country_event = {
 							id = DW_JAP.3
 						}
 				}
@@ -47,7 +49,7 @@ focus_tree = {
 
 	focus = {
 		id = ADW_JAP_negotiations_with_china
-		icon = GFX_goal_unknown
+		icon = GFX_focus_ADW_JAP_negotiations_with_quing
 		cost = 10.00
 
 		prerequisite = {
@@ -56,11 +58,15 @@ focus_tree = {
 
 		x = 2
 		y = 2
-			completion_reward = {
-					country_event = {
+			select_effect = {
+					JAP = {
+						country_event = {
 							id = DW_JAP.4
 						}
 				}
+			completion_reward = {
+				add_political_power = 150
+			}
 
 	}
 
@@ -143,12 +149,12 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			custom_effect_tooltip = "ADW_JAP_reunion_again"
 			add_political_power = 150
 			set_stability = 0.8
 			remove_idea = DW_JAP_divided_nation 
 			hidden_effect = {
-				country_event = {
+				JAP = {
+					country_event = {
 					id = ADW_JAP.12
 					random = 50
 				}
@@ -173,7 +179,7 @@ focus_tree = {
 
 		available = {
 			surrender_progress > 0.03
-			country_exists = RYU
+			
 			country_exists = AIN
 		}
 
@@ -187,18 +193,16 @@ focus_tree = {
 				remove_idea = DW_JAP_scars_of_revolution
 				add_idea = ADW_JAP_total_chaos
 			}
-			country_event = {
+			JAP = {
+				country_event = {
 				id = placeholder
 				random = 50
 			}
 			hidden_effect = {
 				country_event = {
-					id = placeholder.1
+					id = placeholder
 					random = 50
 				}
 			}
-			custom_effect_tooltip = "ADW_JAP_falire_of_reunification"
 		}
 	}
-}
-
