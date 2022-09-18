@@ -1,6 +1,0 @@
-spriteTypes = {
-	spriteType = {
-		name = gfx_focus_DW_JAP_northern_union
-		textureFile = gfx_interface/goals/JAP/focus_JAP_attack_ainu.dds
-	}
-}
