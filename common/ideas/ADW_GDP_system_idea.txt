@@ -1,0 +1,21 @@
+ideas = {
+	country = {
+		ADW_consumer_industry = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			
+			}
+			
+			removal_cost = -50
+			
+			picture = generic_goods_red_bonus
+			
+			modifier = {
+				consumer_goods_factor = 0.03
+			}
+		}
+	}
+}

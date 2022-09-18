@@ -1,0 +1,2068 @@
+ideas = {
+	country = {
+		the_creation_of_equip = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			
+			}
+			
+			removal_cost = -50
+			
+			picture = ast_volunteer_defence_corps
+			
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.1
+			}
+		}
+		prepare_more_people_1 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			
+			}
+			
+			removal_cost = -50
+			
+			picture = generic_reserve_divisions
+			modifier = {
+				conscription_factor = 0.05
+			}
+		}
+		prepare_more_people_2 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			
+			}
+			
+			removal_cost = -50
+			
+			picture = generic_reserve_divisions
+			modifier = {
+				conscription_factor = 0.1
+			}
+		}
+		decrease_minju = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			
+			}
+			
+			removal_cost = -50
+			
+			picture = generic_goods_red_bonus
+			modifier = {
+				consumer_goods_factor = -0.1
+			}
+		}
+		increase_researcher = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			
+			}
+			
+			removal_cost = -50
+			
+			picture = jap_supremacy_of_technology
+			modifier = {
+				research_speed_factor = 0.15
+				political_power_gain = -0.1
+			}
+		}
+		farmer_social = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			
+			}
+			
+			removal_cost = -50
+			
+			picture = generic_industrial_concern_1
+			modifier = {
+				political_power_gain = 0.05
+			}
+		}
+		factory_country_1 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			
+			}
+			
+			removal_cost = -50
+			
+			picture = generic_agrarian_reform
+			modifier = {
+				production_speed_buildings_factor = 0.05
+			}
+		}
+		factory_country_2 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			
+			}
+			
+			removal_cost = -50
+			
+			picture = generic_agrarian_reform
+			modifier = {
+				production_speed_buildings_factor = 0.1
+				industrial_capacity_factory = 0.1
+			}
+		}
+		factory_country_3 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			
+			}
+			
+			removal_cost = -50
+			
+			picture = generic_agrarian_reform
+			modifier = {
+				production_speed_buildings_factor = 0.1
+				industrial_capacity_factory = 0.15
+			}
+		}
+		factory_country_4 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			
+			}
+			
+			removal_cost = -50
+			
+			picture = generic_agrarian_reform
+			modifier = {
+				production_speed_buildings_factor = 0.1
+				industrial_capacity_factory = 0.15
+			}
+		}
+		sell_faremer = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			
+			}
+			
+			removal_cost = -50
+			
+			picture = can_wartime_prices_and_trade_board
+			modifier = {
+				political_power_gain = 0.5
+			}
+		}
+		sell_faremer_1 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			
+			}
+			
+			removal_cost = -50
+			
+			picture = can_wartime_prices_and_trade_board
+			modifier = {
+				political_power_gain = 0.75
+			}
+		}
+		sell_faremer_2 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			
+			}
+			
+			removal_cost = -50
+			
+			picture = can_wartime_prices_and_trade_board
+			modifier = {
+				political_power_gain = 1
+			}
+		}
+		increase_manpa = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			
+			}
+			
+			removal_cost = -50
+			
+			picture = generic_reserve_divisions
+			modifier = {
+				conscription_factor = 0.15
+			}
+		}
+		the_promote_of_factory = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			
+			}
+			
+			removal_cost = -50
+			
+			picture = FRA_factory_strikes
+			
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.05
+			}
+		}
+		the_promote_of_tanks = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			
+			}
+			
+			removal_cost = -50
+			
+			picture = generic_acquire_tanks
+			
+			modifier = {
+				army_armor_speed_factor = 0.05
+			}
+		}
+		the_promote_of_tanks_1 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			
+			}
+			
+			removal_cost = -50
+			
+			picture = generic_acquire_tanks
+			
+			modifier = {
+				army_armor_speed_factor = 0.05
+				army_armor_attack_factor = 0.05
+			}
+		}
+		the_promote_of_hohe = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			
+			}
+			
+			removal_cost = -50
+			
+			picture = generic_acquire_tanks
+			
+			modifier = {
+				army_infantry_attack_factor = 0.03
+			}
+		}
+		
+		the_promote_of_hohe_1 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			
+			}
+			
+			removal_cost = -50
+			
+			picture = generic_acquire_tanks
+			
+			modifier = {
+				army_infantry_attack_factor = 0.07
+			}
+		}
+		the_promote_of_hohe_2 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			
+			}
+			
+			removal_cost = -50
+			
+			picture = generic_acquire_tanks
+			
+			modifier = {
+				army_infantry_attack_factor = 0.07
+				army_infantry_defence_factor = 0.05
+			}
+		}
+		the_promote_of_tanks_2 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			
+			}
+			
+			removal_cost = -50
+			
+			picture = generic_acquire_tanks
+			
+			modifier = {
+				army_armor_speed_factor = 0.05
+				army_armor_attack_factor = 0.05
+				army_armor_defence_factor = 0.05
+			}
+		}
+		no_oshoku_seiji = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			
+			}
+			
+			removal_cost = -50
+			
+			picture = generic_acquire_tanks
+			
+			modifier = {
+				political_power_gain = 0.05
+			}
+		}
+		shukusei_effect = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			
+			}
+			
+			removal_cost = -50
+			
+			picture = saf_soviet_advisers
+			
+			modifier = {
+				political_power_gain = -0.1
+				stability_factor = -0.3
+				war_support_factor = -0.3
+			}
+		}
+		shukusei_effect_1 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			
+			}
+			
+			removal_cost = -50
+			
+			picture = saf_soviet_advisers
+			
+			modifier = {
+				stability_factor = -0.25
+				war_support_factor = -0.3
+			}
+		}
+		shukusei_effect_2 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			
+			}
+			
+			removal_cost = -50
+			
+			picture = saf_soviet_advisers
+			
+			modifier = {
+				stability_factor = -0.15
+			}
+		}
+		
+		promote_of_keizai = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			
+			}
+			
+			removal_cost = -50
+			
+			picture = saf_soviet_advisers
+			
+			modifier = {
+				political_power_gain = 0.05
+			}
+		}
+		promote_of_keizai_1 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			
+			}
+			
+			removal_cost = -50
+			
+			picture = saf_soviet_advisers
+			
+			modifier = {
+				political_power_gain = 0.1
+			}
+		}
+		promote_of_keizai_2 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			
+			}
+			
+			removal_cost = -50
+			
+			picture = saf_soviet_advisers
+			
+			modifier = {
+				political_power_gain = 0.2
+			}
+		}
+		the_gunju_indus = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			
+			}
+			
+			removal_cost = -50
+			
+			picture = generic_purge
+			
+			modifier = {
+				production_speed_arms_factory_factor = 0.1
+			}
+		}
+		the_promo_of_minjhu = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			
+			}
+			
+			removal_cost = -50
+			
+			picture = generic_goods_red_bonus
+			
+			modifier = {
+				production_speed_industrial_complex_factor = 0.1
+			}
+		}
+		the_shineitai = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			
+			removal_cost = -50
+			
+			picture = generic_reserve_divisions
+			
+			modifier = {
+				offence = 0.02
+			}
+		}
+		the_shineitai_1 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			
+			removal_cost = -50
+			
+			picture = generic_reserve_divisions
+			
+			modifier = {
+				army_defence_factor = 0.02
+				offence = 0.03
+			}
+		}
+		strong_army = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			
+			removal_cost = -50
+			
+			picture = generic_reserve_divisions
+			
+			modifier = {
+				army_infantry_attack_factor = 0.05
+				army_infantry_defence_factor = 0.05
+			}
+		}
+		the_economy_of_shihon = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			
+			removal_cost = -50
+			
+			picture = ast_abandon_the_westminster_system
+			
+			modifier = {
+				production_factory_max_efficiency_factor = 0.05
+			}
+		}
+		
+		choushuu_of_mil = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			
+			removal_cost = -50
+			
+			picture = ast_abandon_the_westminster_system
+			
+			modifier = {
+				conscription = 0.05
+			}
+		}
+		the_military_of_democracy = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			
+			removal_cost = -50
+			
+			picture = generic_war_preparation
+			
+			modifier = {
+				generate_wargoal_tension = -0.4
+				justify_war_goal_time = -0.1
+				fascism_acceptance = 50
+				supply_consumption_factor = 0.1
+			}
+		}
+		THE_border_war_RAJ_1 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			
+			removal_cost = -50
+			
+			picture = generic_war_preparation
+			
+			modifier = {
+				production_speed_arms_factory_factor = -0.08
+				army_core_defence_factor = 0.05
+			}
+		}
+		THE_border_war_RAJ_2 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			
+			removal_cost = -50
+			
+			picture = generic_war_preparation
+			
+			modifier = {
+				production_speed_arms_factory_factor = -0.1
+				training_time_factor = 0.08
+				supply_consumption_factor = 0.1
+				army_core_defence_factor = 0.08
+				defence = 0.02
+			}
+		}
+		THE_border_war_RAJ_3 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			
+			removal_cost = -50
+			
+			picture = generic_war_preparation
+			
+			modifier = {
+				production_speed_arms_factory_factor = -0.11
+				supply_consumption_factor = 0.11
+				training_time_factor = 0.09
+				army_core_defence_factor = 0.1
+				defence = 0.025
+			}
+		}
+		
+		NOT_stability_because_of_unite_1 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			
+			removal_cost = -50
+			
+			picture = great_depression
+			
+			modifier = {
+				stability_factor = -0.15
+				stability_weekly = -0.03
+				war_support_factor = -0.1
+			
+				army_core_defence_factor = -0.1
+				army_core_attack_factor = -0.1
+				
+				production_speed_industrial_complex_factor = -0.05
+				production_speed_arms_factory_factor = -0.05
+				
+				local_resources = -0.1
+				
+				consumer_goods_factor = 0.07
+				
+				conscription = 0.05
+				political_power_factor = 0.1
+			}
+		}
+		NOT_stability_because_of_unite_2 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			
+			removal_cost = -50
+			
+			picture = great_depression
+			
+			modifier = {
+				stability_factor = -0.15
+				stability_weekly = -0.03
+				war_support_factor = -0.1
+				
+				army_core_defence_factor = -0.1
+				army_core_attack_factor = -0.1
+				
+				production_speed_industrial_complex_factor = -0.03
+				production_speed_arms_factory_factor = -0.03
+				
+				local_resources = -0.1
+				
+				consumer_goods_factor = 0.1
+				
+				conscription = 0.05
+				political_power_factor = 0.1
+			}
+		}
+		NOT_stability_because_of_unite_3 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			
+			removal_cost = -50
+			
+			picture = great_depression
+			
+			modifier = {
+				stability_factor = -0.15
+				stability_weekly = -0.03
+				war_support_factor = -0.1
+				
+				army_core_defence_factor = -0.1
+				army_core_attack_factor = -0.1
+				
+				production_speed_industrial_complex_factor = -0.01
+				production_speed_arms_factory_factor = -0.01
+				
+				local_resources = -0.1
+				
+				consumer_goods_factor = 0.1
+				
+				conscription = 0.05
+				political_power_factor = 0.1
+			}
+		}
+		NOT_stability_because_of_unite_4 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			
+			removal_cost = -50
+			
+			picture = great_depression
+			
+			modifier = {
+				stability_factor = -0.15
+				stability_weekly = -0.03
+				war_support_factor = -0.1
+				
+				army_core_defence_factor = -0.1
+				army_core_attack_factor = -0.1
+				
+				local_resources = -0.1
+				
+				consumer_goods_factor = 0.1
+				
+				conscription = 0.05
+				political_power_factor = 0.1
+			}
+		}
+		
+		NOT_stability_because_of_unite_5 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			
+			removal_cost = -50
+			
+			picture = great_depression
+			
+			modifier = {
+				stability_factor = -0.15
+				stability_weekly = -0.03
+				war_support_factor = -0.1
+				
+				army_core_defence_factor = -0.1
+				army_core_attack_factor = -0.1
+				
+				local_resources = -0.05
+				
+				consumer_goods_factor = 0.1
+				
+				conscription = 0.05
+				political_power_factor = 0.1
+			}
+		}
+		NOT_stability_because_of_unite_6 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			
+			removal_cost = -50
+			
+			picture = great_depression
+			
+			modifier = {
+				stability_factor = -0.15
+				stability_weekly = -0.03
+				war_support_factor = -0.1
+				
+				army_core_defence_factor = -0.1
+				army_core_attack_factor = -0.1
+				
+				consumer_goods_factor = 0.08
+				
+				conscription = 0.05
+				political_power_factor = 0.1
+			}
+		}
+		
+		NOT_stability_because_of_unite_7 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			
+			removal_cost = -50
+			
+			picture = great_depression
+			
+			modifier = {
+				stability_factor = -0.15
+				stability_weekly = -0.03
+				war_support_factor = -0.1
+				
+				army_core_defence_factor = -0.08
+				army_core_attack_factor = -0.08
+				
+				consumer_goods_factor = 0.05
+				
+				conscription = 0.05
+				political_power_factor = 0.1
+			}
+		}
+		NOT_stability_because_of_unite_8 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			
+			removal_cost = -50
+			
+			picture = great_depression
+			
+			modifier = {
+				stability_factor = -0.15
+				stability_weekly = -0.03
+				war_support_factor = -0.1
+				
+				army_core_defence_factor = -0.08
+				army_core_attack_factor = -0.01
+				
+				consumer_goods_factor = 0.05
+				
+				conscription = 0.05
+				political_power_factor = 0.1
+			}
+		}
+		NOT_stability_because_of_unite_9 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			
+			removal_cost = -50
+			
+			picture = great_depression
+			
+			modifier = {
+				stability_factor = -0.15
+				stability_weekly = -0.03
+				war_support_factor = -0.1
+				
+				army_core_defence_factor = -0.01
+				army_core_attack_factor = -0.01
+				
+				consumer_goods_factor = 0.05
+				
+				conscription = 0.05
+				political_power_factor = 0.1
+			}
+		}
+		NOT_stability_because_of_unite_10 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			
+			removal_cost = -50
+			
+			picture = great_depression
+			
+			modifier = {
+				stability_factor = -0.15
+				stability_weekly = -0.03
+				war_support_factor = -0.1
+				
+				consumer_goods_factor = 0.03
+				
+				conscription = 0.05
+				political_power_factor = 0.1
+			}
+		}
+		NOT_stability_because_of_unite_11 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			
+			removal_cost = -50
+			
+			picture = great_depression
+			
+			modifier = {
+				stability_factor = -0.1
+				stability_weekly = -0.01
+				war_support_factor = -0.08
+				
+				consumer_goods_factor = 0.025
+				
+				conscription = 0.05
+				political_power_factor = 0.1
+			}
+		}
+		NOT_stability_because_of_unite_12 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			
+			removal_cost = -50
+			
+			picture = great_depression
+			
+			modifier = {
+				war_support_factor = -0.07
+				
+				consumer_goods_factor = 0.02
+				
+				conscription = 0.05
+				political_power_factor = 0.1
+			}
+		}
+		NOT_stability_because_of_unite_13 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			
+			removal_cost = -50
+			
+			picture = great_depression
+			
+			modifier = {
+				war_support_factor = -0.03
+				
+				consumer_goods_factor = 0.01
+				
+				conscription = 0.05
+				political_power_factor = 0.1
+			}
+		}
+		NOT_stability_because_of_unite_14 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			
+			removal_cost = -50
+			
+			picture = raj_all_india_forward_bloc
+			
+			modifier = {
+				conscription = 0.05
+				political_power_factor = 0.1
+			}
+		}
+		
+		the_resistans_samall_1 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			
+			removal_cost = -50
+			
+			picture = raj_all_india_forward_bloc
+			
+			modifier = {
+				political_power_factor = -0.06
+				state_resources_factor = -0.1
+				stability_weekly = -0.03
+			}
+		}
+		the_resistans_samall_2 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			
+			removal_cost = -50
+			
+			picture = raj_all_india_forward_bloc
+			
+			modifier = {
+				political_power_factor = -0.04
+				state_resources_factor = -0.06
+				stability_weekly = -0.02
+			}
+		}
+		the_resistans_samall_3 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			
+			removal_cost = -50
+			
+			picture = raj_all_india_forward_bloc
+			
+			modifier = {
+				political_power_factor = -0.02
+				state_resources_factor = -0.03
+				stability_weekly = -0.01
+			}
+		}
+		the_fight_of_geria = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			
+			removal_cost = -50
+			
+			picture = ENG_the_war_to_end_all_wars
+			
+			modifier = {
+				army_speed_factor = -0.8
+				army_core_attack_factor = 0.1
+				army_core_defence_factor = 0.1
+				ai_focus_aggressive_factor = 100
+			}
+		}
+		the_fight_of_geria_kurushimu = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			
+			removal_cost = -50
+			
+			picture = ENG_the_war_to_end_all_wars
+			
+			modifier = {
+				army_core_attack_factor = -0.2
+				army_core_defence_factor = -0.2
+				ai_focus_aggressive_factor = 100
+			}
+		}
+		hanrabn_mil = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			
+			removal_cost = -50
+			
+			picture = ENG_the_war_to_end_all_wars
+			
+			modifier = {
+				army_core_attack_factor = -0.15
+				army_core_defence_factor = -0.15
+			}
+		}
+		jido_rodo = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			
+			removal_cost = -50
+			
+			picture = raj_risk_of_famine
+			
+			modifier = {
+				stability_weekly = -0.05
+				conscription = -0.03
+				research_speed_factor = -0.03
+				industrial_capacity_factory = 0.06
+				political_power_factor = 0.03
+			}
+		}
+		hi_jido_rodo = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			
+			removal_cost = -50
+			
+			picture = generic_agrarian_society
+			
+			modifier = {
+				stability_weekly = 0.02
+				conscription = 0.01
+				research_speed_factor = 0.03
+				industrial_capacity_factory = -0.05
+				political_power_factor = -0.01
+			}
+		}
+		
+		white_kigyo = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			
+			removal_cost = -50
+			
+			picture = generic_agrarian_society
+			
+			modifier = {
+				stability_weekly = 0.02
+				research_speed_factor = 0.01
+				industrial_capacity_factory = -0.02
+				political_power_factor = -0.02
+			}
+		}
+		improved_beach = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			
+			removal_cost = -50
+			
+			picture = air_support_focus
+			
+			modifier = {
+				stability_weekly = 0.01
+				political_power_factor = 0.03
+			}
+		}
+		the_hotel_of_this = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			
+			removal_cost = -50
+			
+			picture = air_support_focus
+			
+			modifier = {
+				stability_weekly = -0.01
+				political_power_factor = 0.03
+			}
+		}
+		the_hotel_of_this_good = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			
+			removal_cost = -50
+			
+			picture = air_support_focus
+			
+			modifier = {
+				stability_weekly = -0.02
+				political_power_factor = 0.05
+			}
+		}
+		the_hotel_of_this_best = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			
+			removal_cost = -50
+			
+			picture = air_support_focus
+			
+			modifier = {
+				stability_weekly = -0.02
+				political_power_factor = 0.1
+			}
+		}
+		the_check_effect_to_SIA = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = warrior_traditions_idea
+			targeted_modifier = {
+				tag = SIA
+				attack_bonus_against = 0.1
+			}
+			modifier = {
+				political_power_factor = -0.23
+			}
+		}
+		the_training_of_ase = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = caproni
+			modifier = {
+				political_power_factor = -0.05
+				air_ace_generation_chance_factor = 0.07
+			}
+		}
+		the_bakugeki_pwer = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = the_long_lance
+			modifier = {
+				political_power_factor = -0.05
+				air_ace_generation_chance_factor = 0.07
+			}
+		}
+		the_bakugeki_pwer_1 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = the_long_lance
+			modifier = {
+				political_power_factor = -0.05
+				air_ace_generation_chance_factor = 0.07
+				air_strategic_bomber_bombing_factor = 0.05
+			}
+		}
+		the_bomber_power_111 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = generic_spy_intel
+			modifier = {
+				air_strategic_bomber_attack_factor = 0.02
+				air_close_air_support_attack_factor = 0.02
+			}
+		}
+		
+		RAJ_the_agent_1 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = generic_artillery_manufacturer_2
+			modifier = {
+				operative_slot = 1
+			}
+		}
+		RAJ_the_agent_2 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = generic_secret_police
+			modifier = {
+				intelligence_agency_defense = 0.02
+			}
+		}
+		RAJ_the_agent_3 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = generic_artillery_manufacturer_2
+			modifier = {
+				operative_slot = 2
+			}
+		}
+		RAJ_navy_air = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = generic_coastal_navy
+			modifier = {
+				naval_strike_attack_factor = 0.02
+				naval_strike_targetting_factor = 0.01
+			}
+		}
+		RAJ_perfect_road_improved = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = SOV_the_road_of_life
+			modifier = {
+				supply_consumption_factor = -0.02
+			}
+		}
+		RAJ_RAJ_good_koan = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = SOV_the_road_of_life
+			modifier = {
+				stability_weekly_factor = 0.005
+			}
+		}
+		
+		RAJ_ADW_shitsugyou_ooku = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = generic_purge
+			modifier = {
+				stability_weekly_factor = -0.1
+				political_power_factor = -0.15
+			}
+		}
+		RAJ_ADW_shitsugyou_ooku_1 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = generic_purge
+			modifier = {
+				stability_weekly_factor = -0.05
+				political_power_factor = -0.1
+			}
+		}
+		RAJ_ADW_shitsugyou_ooku_2 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = generic_purge
+			modifier = {
+				political_power_factor = -0.05
+			}
+		}
+		RAJ_ADW_factory_use = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = generic_local_self_management
+			modifier = {
+				civilian_factory_use = 10
+			}
+		}
+		
+		RAJ_ADW_teimei_economy = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = usa_great_depression_3
+			modifier = {
+				political_power_factor = -0.25
+				political_power_gain = -0.1
+				production_factory_max_efficiency_factor = -0.1
+				production_speed_buildings_factor = -0.5
+				consumer_goods_factor = 0.5
+				research_speed_factor = -0.1
+				own_operative_detection_chance_factor = 0.1
+			}
+		}
+		RAJ_ADW_teimei_economy_1 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = usa_great_depression_3
+			modifier = {
+				political_power_factor = -0.25
+				political_power_gain = -0.1
+				production_factory_max_efficiency_factor = -0.1
+				production_speed_buildings_factor = -0.5
+				consumer_goods_factor = 0.5
+				research_speed_factor = -0.1
+			}
+		}
+		RAJ_ADW_teimei_economy_2 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = usa_great_depression_3
+			modifier = {
+				political_power_factor = -0.1
+				political_power_gain = -0.05
+				production_factory_max_efficiency_factor = -0.1
+				production_speed_buildings_factor = -0.5
+				consumer_goods_factor = 0.45
+				research_speed_factor = -0.1
+			}
+		}
+		RAJ_ADW_teimei_economy_3 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = usa_great_depression_3
+			modifier = {
+				production_factory_max_efficiency_factor = -0.1
+				production_speed_buildings_factor = -0.5
+				consumer_goods_factor = 0.4
+				research_speed_factor = -0.1
+			}
+		}
+		RAJ_ADW_teimei_economy_4 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = usa_great_depression_3
+			modifier = {
+				production_factory_max_efficiency_factor = -0.05
+				production_speed_buildings_factor = -0.3
+				consumer_goods_factor = 0.3
+				research_speed_factor = -0.1
+			}
+		}
+		RAJ_ADW_teimei_economy_5 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = usa_great_depression_3
+			modifier = {
+				production_speed_buildings_factor = -0.2
+				consumer_goods_factor = 0.25
+				research_speed_factor = -0.1
+			}
+		}
+		RAJ_ADW_teimei_economy_6 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = usa_great_depression_3
+			modifier = {
+				consumer_goods_factor = 0.2
+				research_speed_factor = -0.1
+			}
+		}
+		RAJ_ADW_teimei_economy_7 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = usa_great_depression_3
+			modifier = {
+				consumer_goods_factor = 0.1
+				research_speed_factor = -0.05
+			}
+		}
+		RAJ_ADW_good_holi = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = generic_foreign_capital
+			modifier = {
+				political_power_gain = -0.03
+				stability_factor = 0.05
+			}
+		}
+		RAJ_ADW_the_economy_of_company = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = tur_second_five_year_plan_cakmak
+			modifier = {
+				political_power_gain = 0.03
+				production_factory_max_efficiency_factor = -0.05
+				consumer_goods_factor = 0.15
+				stability_factor = -0.05
+			}
+		}
+		RAJ_ADW_the_economy_of_company_1 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = tur_second_five_year_plan_cakmak
+			modifier = {
+				political_power_gain = 0.02
+				production_factory_max_efficiency_factor = -0.03
+				consumer_goods_factor = 0.1
+				stability_factor = -0.03
+			}
+		}
+		RAJ_ADW_the_economy_of_company_2 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = tur_second_five_year_plan_cakmak
+			modifier = {
+				political_power_gain = 0.01
+				production_factory_max_efficiency_factor = -0.01
+				stability_factor = -0.01
+			}
+		}
+		RAJ_ADW_oshok_of_navy = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = generic_oppression
+			modifier = {
+				navy_capital_ship_attack_factor = -0.05
+				navy_capital_ship_defence_factor = -0.05
+				navy_submarine_attack_factor = -0.05
+				navy_submarine_defence_factor = -0.05
+				navy_screen_attack_factor = -0.05
+				navy_screen_defence_factor = -0.05
+				convoy_escort_efficiency = -0.1
+			}
+		}
+		ADW_RAJ_resource_out = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = great_depression
+			modifier = {
+				stability_factor = -0.3
+				political_power_factor = -0.1
+				local_resources_factor = -0.5
+				consumer_goods_factor = 0.1
+			}
+		}
+		ADW_RAJ_tabunka = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = SOV_scientist_defect
+			modifier = {
+				stability_factor = 0.1
+				war_support_factor = -0.1
+			}
+		}
+		
+		ADW_RAJ_touitsu_teki_bunka = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = ast_abandon_the_westminster_system
+			modifier = {
+				stability_factor = -0.05
+				war_support_factor = 0.15
+			}
+		}
+		
+		
+####### IND #################
+		ADW_IND_the_de_buff_of_1 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = chi_war_of_resistance3
+			modifier = {
+				neutrality_drift = -1
+				justify_war_goal_time = 100
+				generate_wargoal_tension = 1
+			}
+		}
+		ADW_IND_dai_shitsu_gyo_1 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = chi_hyper_inflation5
+			modifier = {
+				stability_factor = -0.1
+				production_factory_max_efficiency_factor = -0.3
+				industrial_capacity_factory = -0.1
+				consumer_goods_factor = 0.3
+			}
+		}
+		ADW_IND_fuante_keza_1 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = great_depression
+			modifier = {
+				stability_factor = -0.5
+			}
+		}
+		ADW_IND_fuante_keza_2 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = great_depression
+			modifier = {
+				stability_factor = -0.45
+			}
+		}
+		ADW_IND_fuante_keza_3 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = great_depression
+			modifier = {
+				stability_factor = -0.4
+			}
+		}
+		ADW_IND_fuante_keza_4 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = great_depression
+			modifier = {
+				stability_factor = -0.35
+			}
+		}
+		ADW_IND_fuante_keza_5 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = great_depression
+			modifier = {
+				stability_factor = -0.3
+			}
+		}
+		ADW_IND_fuante_keza_6 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = great_depression
+			modifier = {
+				stability_factor = -0.25
+			}
+		}
+		ADW_IND_fuante_keza_7 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = great_depression
+			modifier = {
+				stability_factor = -0.2
+			}
+		}
+		ADW_IND_fuante_keza_8 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = great_depression
+			modifier = {
+				stability_factor = -0.15
+			}
+		}
+		ADW_IND_fuante_keza_9 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = great_depression
+			modifier = {
+				stability_factor = -0.1
+			}
+		}
+		ADW_IND_fuante_keza_10 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = great_depression
+			modifier = {
+				stability_factor = -0.05
+			}
+		}
+		
+		ADW_IND_areta_farme_1 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = man_low_legitimacy
+			modifier = {
+				conscription_factor = -0.5
+			}
+		}
+		ADW_IND_garira_war = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = jap_militarism_showa
+			modifier = {
+				defence = 0.05
+			}
+		}
+		
+		ADW_IND_civilwar = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = MEX_politicised_army_2
+			modifier = {
+				forced_surrender_limit = 1
+				recruitable_population = 0.1
+				war_support_factor = 0.1
+				political_power_factor = -0.07
+				stability_factor = -0.1
+				justify_war_goal_time = 100
+			}
+		}
+		ADW_IND_civil_support_fas = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = generic_fascism_drift_bonus
+			modifier = {
+				fascism_drift = 0.3
+			}
+		}
+		ADW_IND_civil_support_demo = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = generic_democratic_drift_bonus
+			modifier = {
+				democratic_drift = 0.3
+			}
+		}
+		ADW_IND_civil_support_com = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = generic_communism_drift_bonus
+			modifier = {
+				communism_drift = 0.3
+			}
+		}
+		ADW_IND_keizai_Kakuchou = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = raj_all_india_forward_bloc
+			modifier = {
+				political_power_gain = 0.01
+			}
+		}
+		ADW_IND_SHR_industry_improve = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = combined_bomber_offensive
+			modifier = {
+				production_factory_max_efficiency_factor = 0.05
+				industrial_capacity_factory = 0.01
+			}
+		}
+		ADW_IND_SHR_army_upgrade = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = por_colonial_army
+			modifier = {
+				army_core_attack_factor = 0.005
+				army_core_defence_factor = 0.005
+			}
+		}
+		ADW_IND_SHR_army_upgrade_1 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = por_colonial_army
+			modifier = {
+				army_core_attack_factor = 0.005
+				army_core_defence_factor = 0.005
+				production_speed_arms_factory_factor = 0.01
+			}
+		}
+		ADW_IND_SHR_army_upgrade_2 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = por_colonial_army
+			modifier = {
+				army_core_attack_factor = 0.005
+				army_core_defence_factor = 0.005
+				production_speed_arms_factory_factor = 0.01
+				research_speed_factor = 0.005
+			}
+		}
+		ADW_IND_SHR_air_upgrade_0 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = air_support_focus
+			modifier = {
+				air_ace_generation_chance_factor = 0.05
+				experience_gain_air = 0.005
+			}
+		}
+		ADW_IND_SHR_air_upgrade_1 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = air_support_focus
+			modifier = {
+				air_ace_generation_chance_factor = 0.1
+				experience_gain_air = 0.005
+			}
+		}
+		ADW_IND_SHR_air_upgrade_2 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = air_support_focus
+			modifier = {
+				air_ace_generation_chance_factor = 0.1
+				experience_gain_air = 0.005
+				air_interception_attack_factor = 0.03
+			}
+		}
+		ADW_IND_SHR_navy_upgrade_0 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = generic_navy_bonus
+			modifier = {
+				convoy_escort_efficiency = 0.005
+			}
+		}
+		ADW_IND_SHR_navy_upgrade_1 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = generic_navy_bonus
+			modifier = {
+				convoy_escort_efficiency = 0.005
+				experience_gain_navy = 0.01
+			}
+		}
+	}
+}
