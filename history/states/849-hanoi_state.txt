@@ -1,0 +1,30 @@
+state={
+	id=849
+	name="STATE_849"
+	provinces={
+		1185 4075 4119 
+	}
+	history={
+		add_core_of = VIN
+		owner = VIN
+		victory_points = {
+			4075 10
+		}
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+			dockyard = 1
+			air_base = 1
+			1185 = {
+				naval_base = 1
+
+			}
+
+		}
+
+	}
+	manpower=4000000
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	state_category=large_city
+}

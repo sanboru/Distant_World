@@ -1,0 +1,22 @@
+state={
+	id=852
+	name="STATE_852"
+	provinces={
+		1073 1157 4529 7015 7093 7518 9948 10075 10103 12008 12048 12065 12075 12319 
+	}
+	history={
+		add_core_of = VIN
+		owner = VIN
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+			air_base = 3
+
+		}
+
+	}
+	manpower=3750000
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	state_category=large_town
+}
