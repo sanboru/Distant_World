@@ -1,0 +1,1826 @@
+ADW_GDP_explain_dec = {
+	ADW_GDP_read_all_from_beginning = {
+		complete_effect = {
+			country_event = { id = ADW_GDP_EXP.1 }
+		}
+	}
+	ADW_GDP_read_all_from_iryo = {
+		complete_effect = {
+			country_event = { id = ADW_GDP_EXP.3 }
+		}
+	}
+}
+make_ganzy_fas = {
+	give_ganzy_fas_book = {
+		icon = GFX_decision_ger_mefo_bills
+		cost = 25
+		days_remove = 7
+		complete_effect = {
+			set_country_flag = select_ganzy_ef
+		}
+		remove_effect = {
+			add_days_mission_timeout = {
+				mission = ganzy_piece_ideo
+				days = 3
+			}
+			custom_trigger_tooltip = {
+				tooltip = increse_fas
+				clr_country_flag = select_ganzy_ef
+				add_to_variable = {
+					var = india_ganzy
+					value = 0.05
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	come_india_of_fas_p = {
+		icon = GFX_decision_hol_exchange_intelligence_data
+		cost = 50
+		days_remove = 25
+		complete_effect = {
+			set_country_flag = select_ganzy_ef
+		}
+		remove_effect = {
+			add_days_mission_timeout = {
+				mission = ganzy_piece_ideo
+				days = 7
+			}
+			custom_trigger_tooltip = {
+				tooltip = increse_fas
+				clr_country_flag = select_ganzy_ef
+				add_to_variable = {
+					var = india_ganzy
+					value = 0.1
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	the_keep_touch_of_fas_group = {
+		icon = GFX_decision_hol_exchange_intelligence_data
+		cost = 50
+		days_remove = 20
+		complete_effect = {
+			set_country_flag = select_ganzy_ef
+		}
+		remove_effect = {
+			add_days_mission_timeout = {
+				mission = ganzy_piece_ideo
+				days = 5
+			}
+			custom_trigger_tooltip = {
+				tooltip = increse_fas
+				clr_country_flag = select_ganzy_ef
+				add_to_variable = {
+					var = india_ganzy
+					value = 0.15
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 5
+		}
+	}
+    ganzy_piece_ideo = {
+        allowed = { tag = RAJ }
+		icon = GFX_decision_bul_destroy_bs
+        available = {
+			has_country_leader_with_trait = ganzy_india_fas
+        }
+        activation = {
+			NOT = {
+				has_country_leader_with_trait = ganzy_india_fas
+			}
+			has_country_flag = ganzy_fas_tp
+        }
+		visible = {
+			NOT = {
+				has_country_flag = ganzy_fas
+			}
+		}
+        is_good = no
+        days_mission_timeout = 50
+        timeout_effect = {
+			custom_trigger_tooltip = {
+				tooltip = decrease_fas
+				subtract_from_variable = {
+					var = india_ganzy
+					value = 0.2
+				}
+			}
+        }
+		ai_will_do = {
+			factor = 5
+		}
+    }
+}
+selection_of_indian_king = {
+	the_CM_of_azam = { #派閥支持
+		icon = GFX_decision_eng_blackshirt_speech
+		cost = 30
+		days_remove = 10
+		complete_effect = {
+			set_country_flag = selected
+		}
+		remove_effect = {
+			custom_trigger_tooltip = {
+				tooltip = increse_shiji
+				clr_country_flag = selected
+				
+				randomize_temp_variable = {
+					var = add_shiji_of_king
+					distribution = uniform
+					min = -0.01
+					max = 0.02
+				}
+				if = {
+					limit = {
+						has_country_flag = RAJ_azam_shiji
+					}
+					add_to_variable = {
+						var = azam_shiji
+						value = add_shiji_of_king
+					}
+					clamp_variable = {
+						var = azam_shiji
+						min = 0
+						max = 1
+					}
+					set_variable = {
+						var = Hari_shiji
+						value = 1
+					}
+					subtract_from_variable = {
+						var = Hari_shiji
+						value = azam_shiji
+					}
+					clamp_variable = {
+						var = Hari_shiji
+						min = 0
+						max = 1
+					}
+					
+					else_if = {
+						limit = {
+							has_country_flag = RAJ_Hari_shiji
+						}
+						add_to_variable = {
+							var = Hari_shiji
+							value = add_shiji_of_king
+						}
+						clamp_variable = {
+							var = Hari_shiji
+							min = 0
+							max = 1
+						}
+						set_variable = {
+							var = azam_shiji
+							value = 1
+						}
+						subtract_from_variable = {
+							var = azam_shiji
+							value = Hari_shiji
+						}
+						clamp_variable = {
+							var = azam_shiji
+							min = 0
+							max = 1
+						}
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 5
+		}
+	}
+    the_selection_ene = { #敵の派閥支持
+        allowed = { tag = RAJ }
+		icon = GFX_decision_bul_repress_zveno
+        activation = {
+			has_country_flag = FLAG_the_selection_of_india
+			OR = {
+				has_country_flag = RAJ_Hari_shiji
+				has_country_flag = RAJ_azam_shiji
+			}
+        }
+		available = {
+			ROOT = {
+				exists = no
+			}
+		}
+		visible = {
+			tag = RAJ
+			has_country_flag = FLAG_the_selection_of_india
+		}
+        is_good = yes
+        days_mission_timeout = 10
+        timeout_effect = {
+			custom_trigger_tooltip = {
+				tooltip = increse_shiji_ene
+				clr_country_flag = selected
+				
+				randomize_temp_variable = {
+					var = add_shiji_of_king
+					distribution = uniform
+					min = 0
+					max = 0.02
+				}
+				if = {
+					limit = {
+						has_country_flag = RAJ_Hari_shiji
+					}
+					add_to_variable = {
+						var = azam_shiji
+						value = add_shiji_of_king
+					}
+					clamp_variable = {
+						var = azam_shiji
+						min = 0
+						max = 1
+					}
+					set_variable = {
+						var = Hari_shiji
+						value = 1
+					}
+					subtract_from_variable = {
+						var = Hari_shiji
+						value = azam_shiji
+					}
+					clamp_variable = {
+						var = Hari_shiji
+						min = 0
+						max = 1
+					}
+					
+					else_if = {
+						limit = {
+							has_country_flag = RAJ_azam_shiji
+						}
+						add_to_variable = {
+							var = Hari_shiji
+							value = add_shiji_of_king
+						}
+						clamp_variable = {
+							var = Hari_shiji
+							min = 0
+							max = 1
+						}
+						set_variable = {
+							var = azam_shiji
+							value = 1
+						}
+						subtract_from_variable = {
+							var = azam_shiji
+							value = Hari_shiji
+						}
+						clamp_variable = {
+							var = azam_shiji
+							min = 0
+							max = 1
+						}
+					}
+				}
+			}
+        }
+		ai_will_do = {
+			factor = 5
+		}		
+    }
+    the_selection = { #選挙
+        allowed = { tag = RAJ }
+		icon = GFX_decision_eng_trade_unions_demand
+        activation = {
+			has_country_flag = FLAG_the_selection_of_india
+        }
+		available = {
+			ROOT = {
+				exists = no
+			}
+		}
+		visible = {
+			tag = RAJ
+			has_country_flag = FLAG_the_selection_of_india
+		}
+        is_good = yes
+        days_mission_timeout = 180
+        timeout_effect = {
+			custom_trigger_tooltip = {
+				tooltip = start_selection
+				clr_country_flag = FLAG_the_selection_of_india
+				if = {
+					limit = {
+						check_variable = { azam_shiji < Hari_shiji }
+					}
+					news_event = { id = ADW_NEWS.2 days = 1 }
+					create_country_leader = {
+						name = "アーザム・シャー"
+						desc = "hanoh_of_nizam"
+						ideology = despotism
+					}
+					set_country_flag = azam_fight
+					else = {
+						news_event = { id = ADW_NEWS.3 days = 1 }
+						create_country_leader = {
+							name = "ハリ・シング"
+							desc = "hari_the_desc"
+							ideology = despotism
+						}
+						set_country_flag = hari_fight
+					}
+				}
+			}
+        }
+    }
+}
+###病院建設###
+ADW_the_hospital_build_cate = {
+	ADW_the_hospital_build_1 = {
+		icon = GFX_decision_generic_construction
+		days_remove = 365
+        modifier = {
+            civilian_factory_use = 20
+        }
+		remove_effect = {
+			set_variable = { state_number_ADW_GDP_1 = hospital_array_1^1 }
+			var:state_number_ADW_GDP_1 = {
+				add_to_variable = {
+					var = ADW_hospital_1_sougou
+					value = 1
+				}
+			}
+			remove_from_array = {
+				array = hospital_array_1
+				index = 1
+			}
+			every_owned_state = {
+				ADW_GDP_iryo_keisan = yes
+			}
+		}
+	}
+	ADW_the_hospital_build_2 = {
+		icon = GFX_decision_generic_construction
+		days_remove = 210
+        modifier = {
+            civilian_factory_use = 10
+        }
+		remove_effect = {
+			set_variable = { state_number_ADW_GDP_2 = hospital_array_2^1 }
+			var:state_number_ADW_GDP_2 = {
+				add_to_variable = {
+					var = ADW_hospital_2_dai
+					value = 1
+				}
+			}
+			remove_from_array = {
+				array = hospital_array_2
+				index = 1
+			}
+			every_owned_state = {
+				ADW_GDP_iryo_keisan = yes
+			}
+		}
+	}
+	ADW_the_hospital_build_3 = {
+		icon = GFX_decision_generic_construction
+		days_remove = 150
+        modifier = {
+            civilian_factory_use = 5
+        }
+		remove_effect = {
+			set_variable = { state_number_ADW_GDP_3 = hospital_array_3^1 }
+			var:state_number_ADW_GDP_3 = {
+				add_to_variable = {
+					var = ADW_hospital_3_chuu
+					value = 1
+				}
+			}
+			remove_from_array = {
+				array = hospital_array_3
+				index = 1
+			}
+			every_owned_state = {
+				ADW_GDP_iryo_keisan = yes
+			}
+		}
+	}
+	ADW_the_hospital_build_4 = {
+		icon = GFX_decision_generic_construction
+		days_remove = 1
+        modifier = {
+            civilian_factory_use = 2
+        }
+		remove_effect = {
+			set_variable = { state_number_ADW_GDP = hospital_array_4^1 }
+			var:state_number_ADW_GDP = {
+				add_to_variable = {
+					var = ADW_hospital_4_yuu
+					value = 1
+				}
+			}
+			remove_from_array = {
+				array = hospital_array_4
+				index = 1
+			}
+			every_owned_state = {
+				ADW_GDP_iryo_keisan = yes
+			}
+		}
+	}
+}
+
+ADW_RAJ_youni_of_shukyo_each_states = {
+	up_the_each_younindo_of_shukyo_ADW_RAJ = {
+		icon = GFX_decision_hol_radio_oranje
+		days_remove = 30
+		cost = 50
+		state_target = yes
+		target_trigger = {
+			FROM = {
+				owner = {
+					tag = RAJ
+				}
+				OR = {
+					state = 429
+					state = 427
+					state = 836
+					state = 433
+					state = 438
+					state = 437
+					state = 439
+					state = 428
+					state = 435
+					state = 426
+					state = 838
+					state = 436
+					state = 839
+					state = 837
+					state = 321
+					state = 424
+					state = 425
+					state = 423
+					state = 320
+					state = 835
+					state = 431
+					state = 430
+					state = 432
+					state = 434
+				}
+			}
+		}
+		on_map_mode = map_only
+		remove_effect = {
+			FROM = {
+				hidden_effect = {
+					randomize_temp_variable = {
+						var = ADW_younin_randam
+						distribution = uniform
+						min = 0.00
+						max = 0.03
+					}
+					add_to_variable = { ADW_RAJ_each_state_yonindo = ADW_younin_randam }
+					clamp_variable = {
+						var = ADW_RAJ_each_state_yonindo
+						min = 0
+						max = 1
+					}
+				}
+				custom_effect_tooltip = ADW_RAJ_each_state_yonindo_up
+			}
+			ADW_RAJ_state_var_col = yes
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+}
+
+ADW_RAJ_danatsu_of_shukyo_each_states = {
+	up_the_each_danatsudo_of_shukyo_ADW_RAJ = {
+		icon = GFX_decision_generic_civil_support
+		days_remove = 30
+		cost = 55
+		state_target = yes
+		target_trigger = {
+			FROM = {
+				owner = {
+					tag = RAJ
+				}
+				OR = {
+					state = 429
+					state = 427
+					state = 836
+					state = 433
+					state = 438
+					state = 437
+					state = 439
+					state = 428
+					state = 435
+					state = 426
+					state = 838
+					state = 436
+					state = 839
+					state = 837
+					state = 321
+					state = 424
+					state = 425
+					state = 423
+					state = 320
+					state = 835
+					state = 431
+					state = 430
+					state = 432
+					state = 434
+				}
+			}
+		}
+		on_map_mode = map_only
+		remove_effect = {
+			FROM = {
+				hidden_effect = {
+					randomize_temp_variable = {
+						var = ADW_younin_randam
+						distribution = uniform
+						min = 0.00
+						max = 0.02
+					}
+					add_to_variable = { ADW_RAJ_each_state_danatsudo = ADW_younin_randam }
+					clamp_variable = {
+						var = ADW_RAJ_each_state_danatsudo
+						min = 0
+						max = 1
+					}
+				}
+				custom_effect_tooltip = ADW_RAJ_each_state_danatsudo_up
+			}
+			ADW_RAJ_state_var_col_danatsu = yes
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+}
+
+the_company_build = {
+	small_company_build = {
+		icon = GFX_decision_eng_blackshirt_speech
+		days_remove = 5
+        modifier = {
+            civilian_factory_use = 5
+        }
+		remove_effect = {
+			add_to_variable = {
+				var = small_company
+				value = 1
+			}
+			add_to_variable = { #階層
+				var = SCB_floar_improved
+				value = 1
+			}
+		}
+	}
+	small_company_improve = {
+		icon = GFX_decision_gre_faction_management
+		days_remove = 5
+        modifier = {
+            civilian_factory_use = 5
+        }
+		remove_effect = {
+			add_to_variable = { #階層
+				var = SCB_floar_improved
+				value = 1
+			}
+		}
+	}
+	
+	middle_company_build = {
+		icon = GFX_decision_eng_blackshirt_speech
+		days_remove = 5
+        modifier = {
+            civilian_factory_use = 5
+        }
+		remove_effect = {
+			add_to_variable = {
+				var = middle_company
+				value = 1
+			}
+			add_to_variable = { #階層
+				var = MCB_floar_improved
+				value = 1
+			}
+		}
+	}
+	middle_company_improve = {
+		icon = GFX_decision_gre_faction_management
+		days_remove = 5
+        modifier = {
+            civilian_factory_use = 5
+        }
+		remove_effect = {
+			add_to_variable = { #階層
+				var = MCB_floar_improved
+				value = 1
+			}
+		}
+	}
+	
+	big_company_build = {
+		icon = GFX_decision_eng_blackshirt_speech
+		days_remove = 5
+        modifier = {
+            civilian_factory_use = 5
+        }
+		remove_effect = {
+			add_to_variable = {
+				var = big_company
+				value = 1
+			}
+			add_to_variable = { #階層
+				var = BCB_floar_improved
+				value = 1
+			}
+		}
+	}
+	big_company_improve = {
+		icon = GFX_decision_gre_faction_management
+		days_remove = 5
+        modifier = {
+            civilian_factory_use = 5
+        }
+		remove_effect = {
+			add_to_variable = { #階層
+				var = BCB_floar_improved
+				value = 1
+			}
+		}
+	}
+	
+    automatic_creat_building = {
+		icon = GFX_decision_bul_destroy_bs
+        available = {
+			ROOT = {
+				exists = no
+			}
+        }
+        activation = {
+			ROOT = {
+				check_variable = {
+					var = the_kakuritsu_of_the_auto
+					value = 100
+					compare = greater_than_or_equals
+				}
+			}
+        }
+        is_good = yes
+        days_mission_timeout = 1
+        timeout_effect = {
+			random_list = {
+				50 = {
+					custom_effect_tooltip = sucsess_of_creation_of_company
+					add_to_variable = {
+						var = small_company
+						value = 1
+					}
+					add_to_variable = { #階層
+						var = SCB_floar_improved
+						value = 1
+					}
+				}
+				50 = {
+					custom_effect_tooltip = fail_of_creation_of_company
+				}
+			}
+        }
+    }
+}
+the_improve_the_leader = {
+	improve_the_army_leader = {
+		icon = GFX_decision_bul_repress_zveno
+		days_re_enable = 60
+		custom_cost_trigger = {
+			has_army_experience > 64
+		}
+		custom_cost_text = decision_cost_ARMY_XP_65
+		complete_effect = {
+			hidden_effect = {
+				army_experience = -65
+			}
+			random_list = {
+				24 = {
+					random_army_leader = {
+						add_attack = 1
+					}
+				}
+				24 = {
+					random_army_leader = {
+						add_defense = 1
+					}
+				}
+				24 = {
+					random_army_leader = {
+						add_planning = 1
+					}
+				}
+				24 = {
+					random_army_leader = {
+						add_logistics = 1
+					}
+				}
+				1 = {
+					random_army_leader = {
+						add_max_trait = 1
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	improve_the_navy_leader = {
+		icon = GFX_decision_faction_gre_venezelist
+		days_re_enable = 60
+		custom_cost_trigger = {
+			has_navy_experience > 64
+		}
+		custom_cost_text = decision_cost_NAVY_XP_65
+		complete_effect = {
+			hidden_effect = {
+				navy_experience = -65
+			}
+			random_list = {
+				24 = {
+					random_navy_leader = {
+						add_attack = 1
+					}
+				}
+				24 = {
+					random_navy_leader = {
+						add_defense = 1
+					}
+				}
+				24 = {
+					random_navy_leader = {
+						add_coordination = 1
+					}
+				}
+				24 = {
+					random_navy_leader = {
+						add_maneuver = 1
+					}
+				}
+				1 = {
+					random_navy_leader = {
+						add_max_trait = 1
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}
+the_sell_of_gun = {
+	the_sell_of_gun_of_500 = {
+		icon = GFX_decision_bul_repress_zveno
+		days_remove = 30
+		custom_cost_trigger = {
+			has_equipment = {
+				infantry_equipment_1 > 499
+			}
+		}
+		custom_cost_text = decision_cost_infantry_500
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -500
+				producer = ROOT
+			}
+		}
+		remove_effect = {
+			custom_effect_tooltip = add_money
+			hidden_effect = {
+				add_to_variable = {
+					var = GDP_amou
+					value = 0.5
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 5
+		}
+	}
+}
+the_sell_of_ic = {
+	the_sell_of_ic_5 = {
+		icon = GFX_decision_generic_construction
+		days_remove = 30
+		custom_cost_trigger = {
+			num_of_civilian_factories_available_for_projects > 5
+		}
+		custom_cost_text = decision_cost_infantry_5
+		modifier = {
+			consumer_goods_factor = 5
+		}
+		remove_effect = {
+			custom_effect_tooltip = add_money_25
+			hidden_effect = {
+				add_to_variable = {
+					var = GDP_amou
+					value = 0.25
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 5
+		}
+	}
+}
+
+######インド内戦#########
+IND_ADW_india_civil_war = {
+	
+	###開始カウントダウン####
+	ADW_IND_start_of_civil_war = {
+        allowed = {
+			tag = IND
+		}
+		icon = GFX_decision_POL_sanation_right_opposition_4
+		priority = 10
+        available = {
+			custom_trigger_tooltip = {
+				tooltip = has_eikyo_100
+				if = {
+					limit = {
+						has_country_flag = ADW_IND_demo
+					}
+					check_variable = {
+						var = dem_real_percent
+						value = 1
+						compare = greater_than_or_equals
+					}
+					else_if = {
+						limit = {
+							has_country_flag = ADW_IND_fas
+						}
+						check_variable = {
+							var = fas_real_percent
+							value = 1
+							compare = greater_than_or_equals
+						}
+						else_if = {
+							limit = {
+								has_country_flag = ADW_IND_comu
+							}
+							check_variable = {
+								var = com_real_percent
+								value = 1
+								compare = greater_than_or_equals
+							}
+						}
+					}
+				}
+			}
+        }
+        activation = {
+			hidden_trigger = {
+				NOT = {
+					has_country_flag = ADW_IND_demo
+				}
+				OR = {
+					has_country_flag = ADW_IND_fas
+					has_country_flag = ADW_IND_comu
+				}
+			}
+        }
+        is_good = no
+        days_mission_timeout = 365
+		complete_effect = {
+			add_political_power = -50
+			clr_country_flag = ADW_IND_fas
+			clr_country_flag = ADW_IND_demo
+			clr_country_flag = ADW_IND_comu
+		}
+        timeout_effect = {
+			news_event = { id = ADW_NEWS.8 days = 1 }
+			clr_country_flag = ADW_IND_fas
+			clr_country_flag = ADW_IND_demo
+			clr_country_flag = ADW_IND_comu
+        }
+		ai_will_do = {
+			factor = 5
+		}
+    }
+	
+	
+	ADW_IND_kyosan_fite = {
+        allowed = {
+			tag = IND
+		}
+		icon = GFX_decision_revolt
+        available = {
+			hidden_trigger = {
+				OR = {
+					has_country_flag = ADW_IND_comu
+				}
+				NOT = {
+					has_country_flag = ADW_IND_demo
+					has_country_flag = ADW_IND_fas
+				}
+			}
+        }
+        activation = {
+			hidden_trigger = {
+				NOT = {
+					has_country_flag = ADW_IND_comu
+				}
+				OR = {
+					has_country_flag = ADW_IND_demo
+					has_country_flag = ADW_IND_fas
+				}
+			}
+        }
+		visible = {
+			NOT = {
+				has_country_flag = ADW_IND_comu
+			}
+			OR = {
+				has_country_flag = ADW_IND_demo
+				has_country_flag = ADW_IND_fas
+			}
+		}
+        is_good = no
+        days_mission_timeout = 25
+        timeout_effect = {
+			custom_effect_tooltip = ADW_IND_add_1_3_eikyo_comu
+			hidden_effect = {
+				randomize_temp_variable = {
+					var = add_IND_seito_do_fas
+					distribution = uniform
+					min = 0.001
+					max = 0.030
+				}
+				add_to_variable = {
+					var = IND_seito_do_com
+					value = add_IND_seito_do_fas
+				}
+				ADW_IND_eikyo_do = yes
+			}
+			activate_mission = ADW_IND_kyosan_fite
+        }
+		ai_will_do = {
+			factor = 5
+		}
+    }
+	ADW_IND_fasism_fite = {
+        allowed = {
+			tag = IND
+		}
+		icon = GFX_decision_revolt
+        available = {
+			hidden_trigger = {
+				OR = {
+					has_country_flag = ADW_IND_fas
+				}
+				NOT = {
+					has_country_flag = ADW_IND_demo
+					has_country_flag = ADW_IND_comu
+				}
+			}
+        }
+        activation = {
+			hidden_trigger = {
+				NOT = {
+					has_country_flag = ADW_IND_fas
+				}
+				OR = {
+					has_country_flag = ADW_IND_demo
+					has_country_flag = ADW_IND_comu
+				}
+			}
+        }
+		visible = {
+			NOT = {
+				has_country_flag = ADW_IND_fas
+			}
+			OR = {
+				has_country_flag = ADW_IND_demo
+				has_country_flag = ADW_IND_comu
+			}
+		}
+        is_good = no
+        days_mission_timeout = 25
+        timeout_effect = {
+			custom_effect_tooltip = ADW_IND_add_1_3_eikyo_comu
+			hidden_effect = {
+				randomize_temp_variable = {
+					var = add_IND_seito_do_fas
+					distribution = uniform
+					min = 0.001
+					max = 0.030
+				}
+				add_to_variable = {
+					var = IND_seito_do_fas
+					value = add_IND_seito_do_fas
+				}
+				ADW_IND_eikyo_do = yes
+			}
+			activate_mission = ADW_IND_fasism_fite
+        }
+		ai_will_do = {
+			factor = 5
+		}
+    }
+	ADW_IND_demo_fite = {
+        allowed = {
+			tag = IND
+		}
+		icon = GFX_decision_revolt
+        available = {
+			hidden_trigger = {
+				OR = {
+					has_country_flag = ADW_IND_demo
+				}
+				NOT = {
+					has_country_flag = ADW_IND_fas
+					has_country_flag = ADW_IND_comu
+				}
+			}
+        }
+        activation = {
+			hidden_trigger = {
+				NOT = {
+					has_country_flag = ADW_IND_demo
+				}
+				OR = {
+					has_country_flag = ADW_IND_fas
+					has_country_flag = ADW_IND_comu
+				}
+			}
+        }
+		visible = {
+			NOT = {
+				has_country_flag = ADW_IND_demo
+			}
+			OR = {
+				has_country_flag = ADW_IND_fas
+				has_country_flag = ADW_IND_comu
+			}
+		}
+        is_good = no
+        days_mission_timeout = 25
+        timeout_effect = {
+			custom_effect_tooltip = ADW_IND_add_1_3_eikyo_comu
+			hidden_effect = {
+				randomize_temp_variable = {
+					var = add_IND_seito_do_fas
+					distribution = uniform
+					min = 0.001
+					max = 0.030
+				}
+				add_to_variable = {
+					var = IND_seito_do_dem
+					value = add_IND_seito_do_fas
+				}
+				ADW_IND_eikyo_do = yes
+			}
+			activate_mission = ADW_IND_demo_fite
+        }
+		ai_will_do = {
+			factor = 5
+		}
+    }
+	ADW_IND_up_seito_do = {
+		icon = GFX_decision_hol_radio_oranje
+		cost = 20
+		days_remove = 30
+		remove_effect = {
+			custom_effect_tooltip = ADW_IND_add_1_3_eikyo
+			hidden_effect = {
+				randomize_temp_variable = {
+					var = add_IND_seito_do_fas
+					distribution = uniform
+					min = 0.000
+					max = 0.030
+				}
+				if = {
+					limit = {
+						has_country_flag = ADW_IND_fas
+					}
+					add_to_variable = {
+						var = IND_seito_do_fas
+						value = add_IND_seito_do_fas
+					}
+				}
+				if = {
+					limit = {
+						has_country_flag = ADW_IND_comu
+					}
+					add_to_variable = {
+						var = IND_seito_do_com
+						value = add_IND_seito_do_fas
+					}
+				}
+				if = {
+					limit = {
+						has_country_flag = ADW_IND_demo
+					}
+					add_to_variable = {
+						var = IND_seito_do_dem
+						value = add_IND_seito_do_fas
+					}
+				}
+				ADW_IND_eikyo_do = yes
+			}
+		}
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	ADW_IND_up_seito_do_propaganda = {
+		icon = GFX_decision_aluminium
+		cost = 100
+		days_remove = 70
+		days_re_enable = 50
+		remove_effect = {
+			custom_effect_tooltip = ADW_IND_add_10_15_eikyo
+			hidden_effect = {
+				randomize_temp_variable = {
+					var = add_IND_seito_do_fasa
+					distribution = uniform
+					min = 0.1
+					max = 0.15
+				}
+				if = {
+					limit = {
+						has_country_flag = ADW_IND_fas
+					}
+					add_to_variable = {
+						var = IND_seito_do_fas
+						value = add_IND_seito_do_fasa
+					}
+				}
+				if = {
+					limit = {
+						has_country_flag = ADW_IND_comu
+					}
+					add_to_variable = {
+						var = IND_seito_do_com
+						value = add_IND_seito_do_fasa
+					}
+				}
+				if = {
+					limit = {
+						has_country_flag = ADW_IND_demo
+					}
+					add_to_variable = {
+						var = IND_seito_do_dem
+						value = add_IND_seito_do_fasa
+					}
+				}
+				ADW_IND_eikyo_do = yes
+			}
+		}
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	
+	
+	ADW_IND_comunist_bogai = {
+		icon = GFX_decision_generic_civil_support
+		cost = 50
+        available = {
+			has_active_mission = ADW_IND_demo_fite
+        }
+		visible = {
+			NOT = {
+				has_country_flag = ADW_IND_comu
+			}
+			OR = {
+				has_country_flag = ADW_IND_demo
+				has_country_flag = ADW_IND_fas
+			}
+		}
+		days_remove = 5
+        remove_effect = {
+			add_days_mission_timeout = {
+				mission = ADW_IND_demo_fite
+				days = 8
+			}
+        }
+		ai_will_do = {
+			factor = 5
+		}
+    }
+	ADW_IND_dashizum_bogai = {
+		icon = GFX_decision_generic_civil_support
+		cost = 50
+        available = {
+			has_active_mission = ADW_IND_fasism_fite
+        }
+		visible = {
+			NOT = {
+				has_country_flag = ADW_IND_fas
+			}
+			OR = {
+				has_country_flag = ADW_IND_comu
+				has_country_flag = ADW_IND_demo
+			}
+		}
+		days_remove = 5
+        remove_effect = {
+			add_days_mission_timeout = {
+				mission = ADW_IND_fasism_fite
+				days = 8
+			}
+        }
+		ai_will_do = {
+			factor = 5
+		}
+    }
+	ADW_IND_demov_bogai = {
+		icon = GFX_decision_generic_civil_support
+		cost = 50
+        available = {
+			has_active_mission = ADW_IND_demo_fite
+        }
+		visible = {
+			NOT = {
+				has_country_flag = ADW_IND_demo
+			}
+			OR = {
+				has_country_flag = ADW_IND_fas
+				has_country_flag = ADW_IND_comu
+			}
+		}
+		days_remove = 5
+        remove_effect = {
+			add_days_mission_timeout = {
+				mission = ADW_IND_demo_fite
+				days = 8
+			}
+        }
+		ai_will_do = {
+			factor = 5
+		}
+    }
+}
+
+
+ADW_IND_social_improve = {
+	ADW_IND_social_improve_a = {
+		icon = GFX_decision_SOV_the_workers_dictatorship
+		cost = 50
+		visible_when_empty = yes
+		complete_effect = {
+			custom_effect_tooltip = improve_0_3
+			ADW_IND_eikyo_social = yes
+			days_re_enable = 10
+			randomize_temp_variable = {
+				var = randomize_temp_dogs
+				distribution = uniform
+				min = 0
+				max = 0.03
+			}
+			add_to_variable = {
+				var = ADW_IND_stability_social
+				value = randomize_temp_dogs
+			}
+			clamp_variable = {
+				var = ADW_IND_stability_social
+				min = 0
+				max = 1
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+}
+
+
+#########################
+the_kougyou_DEC_ADW_RAJ = {
+	correct_evidence_the_taiho_of_oshoku_top_ADW_RAJ = {
+		icon = GFX_decision_generic_decision
+		days_remove = 20
+		visible = {
+			NOT = { has_country_flag = ADW_RAJ_can_taiho_top_of_this }
+		}
+		custom_cost_trigger = {
+			check_variable = {
+				var = GDP_amou
+				value = 0.1
+				compare = greater_than_or_equals
+			}
+		}
+		custom_cost_text = money_of_01
+		complete_effect = {
+			hidden_effect = {
+				add_to_variable = {
+					var = GDP_amou
+					value = -0.1
+				}
+			}
+		}
+		remove_effect = {
+			custom_effect_tooltip = can_taiho_top_of_this
+			hidden_effect = {
+				set_country_flag = ADW_RAJ_can_taiho_top_of_this
+			}
+		}
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	taiho_of_oshoku_top_ADW_RAJ = {
+		icon = GFX_decision_POL_sanation_right_opposition_4
+		days_remove = 5
+		visible = {
+			has_country_flag = ADW_RAJ_can_taiho_top_of_this
+			check_variable = {
+				var = ADW_RAJ_oshoku_people
+				value = 0
+				compare = greater_than
+			}
+		}
+		custom_cost_trigger = {
+			check_variable = {
+				var = GDP_amou
+				value = 0.05
+				compare = greater_than_or_equals
+			}
+		}
+		custom_cost_text = money_of_005
+		complete_effect = {
+			country_event = { id = IND_ADW.89.t days = 1 }
+			hidden_effect = {
+				add_to_variable = {
+					var = GDP_amou
+					value = -0.05
+				}
+				clr_country_flag = ADW_RAJ_can_taiho_top_of_this
+			}
+		}
+		remove_effect = {
+			custom_effect_tooltip = ADW_RAJ_taiho_of_power
+			custom_effect_tooltip = ADW_RAJ_company_shiteki
+			hidden_effect = {
+				add_to_variable = {
+					var = ADW_RAJ_oshoku_people
+					value = -1
+				}
+				add_to_variable = {
+					var = RAJ_ADW_company_shiteki
+					value = 0.005
+				}
+				clamp_variable = {
+					var = RAJ_ADW_company_shiteki
+					max = 1
+					min = 0
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	ADW_RAJ_each_company_shiteki = {
+		icon = GFX_decision_generic_civil_support
+		days_remove = 10
+		visible = {
+			check_variable = {
+				var = RAJ_ADW_company_shiteki
+				value = 1
+				compare = less_than
+			}
+		}
+		custom_cost_trigger = {
+			check_variable = {
+				var = GDP_amou
+				value = 0.05
+				compare = greater_than_or_equals
+			}
+		}
+		custom_cost_text = money_of_005
+		complete_effect = {
+			hidden_effect = {
+				add_to_variable = {
+					var = GDP_amou
+					value = -0.05
+				}
+			}
+		}
+		remove_effect = {
+			custom_effect_tooltip = ADW_RAJ_company_shiteki
+			hidden_effect = {
+				add_to_variable = {
+					var = RAJ_ADW_company_shiteki
+					value = 0.02
+				}
+				clamp_variable = {
+					var = RAJ_ADW_company_shiteki
+					max = 1
+					min = 0
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	ADW_RAJ_increase_wage = {
+		icon = GFX_decision_generic_intelligence_operation
+		days_remove = 20
+		visible = {
+			check_variable = {
+				var = RAJ_ADW_company_wage
+				value = 1
+				compare = less_than
+			}
+		}
+		custom_cost_trigger = {
+			check_variable = {
+				var = GDP_amou
+				value = 0.05
+				compare = greater_than_or_equals
+			}
+		}
+		custom_cost_text = money_of_005
+		complete_effect = {
+			hidden_effect = {
+				add_to_variable = {
+					var = GDP_amou
+					value = -0.05
+				}
+			}
+		}
+		remove_effect = {
+			custom_effect_tooltip = ADW_RAJ_increase_wage_efe
+			hidden_effect = {
+				add_to_variable = {
+					var = RAJ_ADW_company_wage
+					value = 0.05
+				}
+				clamp_variable = {
+					var = RAJ_ADW_company_wage
+					max = 1
+					min = 0
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 5
+		}
+	}
+}
+####################################################################################################
+
+a = {
+	b = {
+		complete_effect = {
+			set_cosmetic_tag = RAJ_UNITE
+		}
+	}
+	c = {
+		complete_effect = {
+		ROOT = {
+				
+					division_template = {
+						name = "the minpei of GIN"
+						division_names_group = GIN_civil_war_WITH_EIN
+						regiments = {
+							infantry = { x = 0 y = 0 }
+							infantry = { x = 0 y = 1 }
+						}
+					}
+				835 = {
+			create_unit = {
+				division = "division_template = \"the minpei of GIN\"start_equipment_factor = 0.02"
+				owner = ROOT
+				prioritize_location = 10278
+			}
+			}
+		}
+		}
+	}
+	d = {
+		complete_effect = {
+			news_event = { id = ADW_NEWS.6 days = 0 }
+		}
+	}
+	e = {
+		complete_effect = {
+			news_event = { id = IND_ADW.10 days = 0 }
+		}
+	}
+	debug_for_event = {
+		visible = {
+			tag = RAJ
+		}
+		complete_effect = {
+			complete_national_focus = unite_india
+		}
+	}
+	f = {
+		visible = {
+			tag = RAJ
+		}
+		complete_effect = {
+			set_victory_points = {
+				province = 2092
+				value = 100
+			}
+			set_province_name = { id = 2092 name = "daito"}
+		}
+	}
+	g = { #一都市反攻
+		visible = {
+			tag = RAJ
+		}
+		available = {
+			controls_state = 266
+		}
+		complete_effect = {
+			PER = {
+				transfer_state = 266
+				declare_war_on = {
+					target = RAJ
+					type = annex_everything
+				}
+			}
+			RAJ = {
+				set_province_controller = 10768
+				set_province_controller = 4580
+				set_province_controller = 10385
+				set_province_controller = 7602
+			}
+		}
+	}
+	h = { #一都市反攻
+		modifier = {
+			join_faction_tension = 1.5
+		}
+		days_remove = 10
+	}
+	i = {
+		complete_effect = {
+			every_country = {
+				country_event = { id = IND_ADW.26 }
+			}
+		}
+	}
+	j = {
+		complete_effect = {
+			start_border_war = {
+				change_state_after_war = no
+				attacker = {
+					state = 429
+					num_provinces = 1
+					on_win = japan_border_conflict.2
+					on_lose = japan_border_conflict.3
+					on_cancel = japan_border_conflict.4
+				}
+				
+				defender = {
+					state = 837
+					num_provinces = 1
+					on_win = japan_border_conflict.3
+					on_lose = japan_border_conflict.2
+					on_cancel = japan_border_conflict.4
+				}
+			}
+		}
+	}
+	k = {
+		complete_effect = {
+			declare_war_on = {
+			    target = SIA
+    			type = annex_everything
+			}
+		}
+	}
+	l = {
+		complete_effect = {
+			country_event = { id = IND_ADW.45 }
+		}
+	}
+	m = {
+		complete_effect = {
+			set_variable = { avar = 0.1 }
+		}
+	}
+	n = {
+		complete_effect = {
+			add_stability = avar
+		}
+	}
+	o = {
+		complete_effect = {
+			set_country_flag = RAJ_ADW_the_propaganda_dec
+		}
+	}
+	p = {
+		complete_effect = {
+			clr_country_flag = RAJ_ADW_the_propaganda_dec
+		}
+	}
+	qr = {
+		complete_effect = {
+			RAJ = {
+				country_event = { id = IND_ADW.77 }
+			}
+		}
+	}
+	s = {
+		visible = {
+			tag = RAJ
+		}
+		complete_effect = {
+			RAJ = {
+				country_event = { id = IND_ADW.85 days = 0 }
+			}
+		}
+	}
+	t = {
+		visible = {
+			tag = RAJ
+		}
+		complete_effect = {
+			RAJ = {
+				country_event = { id = IND_ADW.88 days = 0 }
+			}
+		}
+	}
+	u = {
+		visible = {
+			tag = RAJ
+		}
+		complete_effect = {
+			custom_effect_tooltip = RAJ_ADW_perfect
+			hidden_effect = {
+				set_country_flag = RAJ_ADW_perfect_improve_ADE
+			}
+		}
+	}
+	v = {
+		complete_effect = {
+			every_owned_state = {
+				add_to_array = {
+					array = ROOT.pd_take_array_ADW
+					value = THIS
+				}
+			}
+		}
+	}
+	w = {
+		complete_effect = {
+			ADW_the_array_add = yes
+		}
+	}
+	x = {
+		complete_effect = {
+			every_owned_state = {
+				add_to_variable = {
+					var = ADW_hospital_1_sougou
+					value = 10
+				}
+				add_to_variable = {
+					var = ADW_hospital_2_dai
+					value = 10
+				}
+				add_to_variable = {
+					var = ADW_hospital_3_chuu
+					value = 5
+				}
+				add_to_variable = {
+					var = ADW_hospital_4_yuu
+					value = 1
+				}
+				ADW_GDP_iryo_keisan = yes
+			}
+		}
+	}
+	y = {
+		visible = {
+			tag = RAJ
+		}
+		complete_effect = {
+			RAJ = {
+				country_event = { id = IND_ADW.17 days = 0 }
+			}
+		}
+	}
+	
+	z = {
+		icon = GFX_decision_hol_radio_oranje
+		state_target = yes
+		visible = {
+			tag = RAJ
+		}
+		target_trigger = {
+			FROM = {
+				owner = {
+					tag = RAJ
+				}
+				OR = {
+					state = 429
+					state = 427
+					state = 836
+					state = 433
+					state = 438
+					state = 437
+					state = 439
+					state = 428
+					state = 435
+					state = 426
+					state = 838
+					state = 436
+					state = 839
+					state = 837
+					state = 321
+					state = 424
+					state = 425
+					state = 423
+					state = 320
+					state = 835
+					state = 431
+					state = 430
+					state = 432
+					state = 434
+				}
+			}
+		}
+		on_map_mode = map_only
+		complete_effect = {
+			FROM = {
+				hidden_effect = {
+					add_to_variable = { ADW_RAJ_each_state_yonindo = 0.85 }
+					clamp_variable = {
+						var = ADW_RAJ_each_state_yonindo
+						min = 0
+						max = 1
+					}
+				}
+				custom_effect_tooltip = ADW_RAJ_each_state_yonindo_up_80
+			}
+			ADW_RAJ_state_var_col = yes
+		}
+	}
+	aa = {
+		visible = { tag = IND }
+		complete_effect = { add_ideas = ADW_IND_the_de_buff_of_1 }
+	}
+	ab = {
+		complete_effect = {
+			news_event = { id = ADW_NEWS.8 }
+		}
+	}
+	ac = {
+		visible = { tag = IND }
+		complete_effect = {
+				division_template = {
+					name = "Cvilwar hanran military I"
+					division_names_group = GINa_civil_war_WITH_EIN
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 1 y = 1 }
+					}
+				}
+			438 = {
+				create_unit = {
+					division = "division_template = \"Cvilwar hanran military I\"start_experience_factor = 0.1 start_equipment_factor = 0.1"
+					owner = IND
+					count = 3
+					prioritize_location = 5096
+				}
+			}
+		}
+	}
+	ac_GDP = {
+		complete_effect = {
+			ADW_each_country = yes
+			country_event = { id = IND_ADW.101 hours = 1 }
+		}
+	}
+	ad_shogun = {
+		complete_effect = {
+			ADW_array_shogun_add = yes
+		}
+	}
+	ae = {
+		complete_effect = {
+			build_railway = {
+				path = { 4544 12452 }
+			}
+		}
+	}
+}
