@@ -8603,6 +8603,136 @@ shared_focus = { #3612
 		}
     }
 }
+shared_focus = { #3612
+    id = ADW_IND_SHR_supply_tree
+    x = 12
+    y = 10
+    icon = GFX_focus_POL_support_global_falangism
+	cost = 5
+    search_filters = { FOCUS_FILTER_AIR_XP }
+	search_filters = { FOCUS_FILTER_RESEARCH }
+	
+	ai_will_do = {
+		factor = 4
+	}
+    completion_reward = {
+		add_ideas = ADW_IND_SHR_supply_area
+    }
+}
+shared_focus = { #3612
+    id = ADW_IND_SHR_supply_tree_1
+    x = 9
+    y = 11
+    icon = GFX_focus_TUR_support_the_golden_square
+	cost = 15
+    search_filters = { FOCUS_FILTER_AIR_XP }
+	search_filters = { FOCUS_FILTER_RESEARCH }
+	prerequisite = { focus = ADW_IND_SHR_supply_tree }
+	
+	ai_will_do = {
+		factor = 4
+	}
+	available = {
+		ROOT = {
+			controls_state = 439
+		}
+	}
+    completion_reward = {
+		439 = {
+			add_building_construction = {
+				type = supply_node
+				level = 1
+				instant_build = yes
+				province = 3989
+			}
+		}
+    }
+}
+shared_focus = { #3612
+    id = ADW_IND_SHR_supply_tree_2
+    x = 9
+    y = 12
+    icon = GFX_goal_continuous_suppression
+	cost = 15
+    search_filters = { FOCUS_FILTER_AIR_XP }
+	search_filters = { FOCUS_FILTER_RESEARCH }
+	prerequisite = { focus = ADW_IND_SHR_supply_tree_1 }
+	
+	ai_will_do = {
+		factor = 4
+	}
+	available = {
+		ROOT = {
+			controls_state = 435
+		}
+	}
+    completion_reward = {
+		435 = {
+			add_building_construction = {
+				type = supply_node
+				level = 1
+				instant_build = yes
+				province = 12452
+			}
+		}
+    }
+}
+shared_focus = { #3612
+    id = ADW_IND_SHR_supply_tree_3
+    x = 9
+    y = 13
+    icon = GFX_focus_mex_support_general_cedillo
+	cost = 15
+    search_filters = { FOCUS_FILTER_AIR_XP }
+	search_filters = { FOCUS_FILTER_RESEARCH }
+	prerequisite = { focus = ADW_IND_SHR_supply_tree_2 }
+	
+	ai_will_do = {
+		factor = 4
+	}
+	available = {
+		ROOT = {
+			controls_state = 838
+		}
+	}
+    completion_reward = {
+		838 = {
+			add_building_construction = {
+				type = supply_node
+				level = 1
+				instant_build = yes
+				province = 4237
+			}
+		}
+    }
+}
+#
+#		build_railway = {
+#			path = { 4544 12452 }
+#		}
+#
+#
+shared_focus = { #3962
+    id = ADW_IND_SHR_supply_tree_4
+    x = 15
+    y = 11
+    icon = GFX_focus_mex_support_general_cedillo
+	cost = 15
+    search_filters = { FOCUS_FILTER_AIR_XP }
+	search_filters = { FOCUS_FILTER_RESEARCH }
+	prerequisite = { focus = ADW_IND_SHR_supply_tree }
+	
+	ai_will_do = {
+		factor = 4
+	}
+	available = {
+		ROOT = {
+			controls_state = 838
+		}
+	}
+    completion_reward = {
+    }
+}
 
 focus_tree = {
 	id = IND_ADW_focus_teree
@@ -8620,6 +8750,8 @@ focus_tree = {
 	shared_focus = ADW_IND_SHR_army_technology
 	shared_focus = ADW_IND_SHR_air_research
 	shared_focus = ADW_IND_SHR_navy_research
+	shared_focus = ADW_IND_SHR_supply_tree
+	
 	default = no
 
 	continuous_focus_position = { x = 20 y = 2800 }
