@@ -1,17 +1,17 @@
 spriteTypes = {
 	spriteType = {
-		name = gfx_focus_focus_DW_JAP_northern_union
-		texturefile = gfx_interface/goals/focus_JAP_attack_ainu.dds
+		name = "gfx_focus_focus_DW_JAP_northern_union"
+		texturefile = "gfx_interface/goals/focus_JAP_attack_ainu.dds"
 	}
 
 	spriteType = {
-		name = GFX_focus_ADW_JAP_negotiations_with_quing
-		texturefile = gfx/interface/goals/ADW_JAP_negotiations_with_quing.dds
+		name = "GFX_focus_ADW_JAP_negotiations_with_quing"
+		texturefile = "gfx/interface/goals/ADW_JAP_negotiations_with_quing.dds"
 	}
 	spriteType = {
-		name = GFX_focus_ADW_JAP_negotiations_with_quing
-		texturefile = gfx/interface/goals/ADW_JAP_negotiations_with_quing.dds
-		effectFile = gfx/FX/buttonstate.lua
+		name = "GFX_focus_ADW_JAP_negotiations_with_quing"
+		texturefile = "gfx/interface/goals/ADW_JAP_negotiations_with_quing.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
 			animationmaskfile = gfx/interface/goals/shine_overlay.dds
 			animationtexturefile = gfx/interface/goals/shine_overlay.dds    # <- the animated file
