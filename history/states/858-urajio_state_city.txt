@@ -1,0 +1,27 @@
+state={
+	id=858
+	name="STATE_858"
+	provinces={
+		957 3977 6961 11879 
+	}
+	history={
+		owner = QIE
+		victory_points = {
+			957 30
+		}
+		buildings = {
+			infrastructure = 3
+			dockyard = 1
+			air_base = 7
+			957 = {
+				naval_base = 8
+				coastal_bunker = 3
+			}
+		}
+		add_core_of = QIE
+	}
+	manpower=100000
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	state_category = large_city
+}
