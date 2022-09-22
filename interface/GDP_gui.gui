@@ -174,6 +174,14 @@ guiTypes = {
 			fixedsize = yes
 		}
 		instantTextBoxType = {
+			name ="ADW_GDP_keisa"
+			position = { x= 533 y = 14 }
+			font = "hoi_36header"
+			text = "ADW_GDP_keisa_txt"
+			format = UPPER_LEFT
+			fixedsize = yes
+		}
+		instantTextBoxType = {
 			name ="tax_of_it"
 			position = { x= 20 y = 50 }
 			font = "hoi_18mbs"

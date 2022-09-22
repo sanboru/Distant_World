@@ -3,4 +3,12 @@ spriteTypes = {
         name = "GFX_shidehara_kijyuro_portrait"
         texturefile = "gfx/leaders/JAP/ADW_shidehara_kijyuro.dds"
     }
+    spriteType = {
+        name = "GFX_ADW_RAJ_ke_shav"
+        texturefile = "gfx/leaders/RAJ/ADW_RAJ_ke_shav.dds"
+    }
+    spriteType = {
+        name = "GFX_ADW_ADW_RAJ_ganzy"
+        texturefile = "gfx/leaders/RAJ/ADW_RAJ_ganzy.dds"
+    }
 }
