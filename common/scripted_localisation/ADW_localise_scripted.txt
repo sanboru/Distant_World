@@ -434,3 +434,34 @@ defined_text = { #インド内戦我が勢力
 		localization_key = ADW_IND_my_seiryoku_com
 	}
 }
+
+defined_text = {
+	name = ADW_TXT_GDP
+	text = {
+		trigger = {
+			ROOT = {
+				check_variable = {
+					var = ROOT.GDP_yearly_for_faction
+					value = 100000000
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		localization_key = ADW_TXT_GDP_3
+	}
+	text = {
+		trigger = {
+			ROOT = {
+				check_variable = {
+					var = ROOT.GDP_yearly_for_faction
+					value = 10000
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		localization_key = ADW_TXT_GDP_2
+	}
+	text = {
+		localization_key = ADW_TXT_GDP_1
+	}
+}
