@@ -75,3 +75,8 @@
 		conscription_factor = ROOT.ADW_GDP_kouka_ritsu
 		conscription = ROOT.ADW_GDP_kouka_ritsu
 	}
+	ADW_GDP_shouhi_tax_effect = {
+		icon = "generic_flexible_foreign_policy2"
+		enable = { always = yes }
+		stability_weekly = ADW_GDP_shouhi_tax_effect
+	}
