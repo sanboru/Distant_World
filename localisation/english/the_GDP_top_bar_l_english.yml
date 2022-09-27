@@ -1,6 +1,6 @@
 ﻿l_english:
  the_GDP_text_s:0 "£GFX_ADW_GDP_icon_money_txi [text_greater]"
- the_GDP_text_s_pdx:0 "現在の所持金:[text_greater]\n毎日の増加量:[?GDP_daily|Y]億円\n毎週の増加量:[?GDP_weekly|Y]億円\n毎月の増加量:[?GDP_monthly|Y]億円"
+ the_GDP_text_s_pdx:0 "現在の所持金:[text_greater]\n我が国の予定GDP:[ADW_TXT_GDP]\n毎日の増加量:[?GDP_daily|Y]億円\n毎週の増加量:[?GDP_weekly|Y]億円\n毎月の増加量:[?GDP_monthly|Y]億円"
  text_greater_1:0 "[?GDP_amou|H]億円"
  text_greater_3:0 "[?GDP_amou_kei|H]京円"
  text_greater_2:0 "[?GDP_amou_cho|H]兆円"
@@ -71,10 +71,10 @@
  the_max_improved_company_tex_mid:0 "[ROOT.GetName]の完全に開発された中企業：[?the_parfect_improved_compa_mid]"
  
  improve_hte_flor_mid_tex:0 "企業を増築させる\n使用可能な工場が5以上ある。\n建設には6000万円(0.6億円)が必要になる"
- build_small_company_mid_tex:0 "中企業建設\n完全に開発された小企業がひとつ以上必要\n使用可能な工場が5以上ある。\n建設には4000万円(0.4億円)が必要になる"
+ build_small_company_mid_tex:0 "中企業建設\n完全に開発された小企業がひとつ以上必要\n使用可能な工場が10以上ある。\n建設には4000万円(0.4億円)が必要になる"
  
  ###大企業###
- build_small_company_big_tex:0 "大企業建設\n完全に開発された中企業がひとつ以上必要\n使用可能な工場が5以上ある。\n建設には5000万円(0.5億円)が必要になる"
+ build_small_company_big_tex:0 "大企業建設\n完全に開発された中企業がひとつ以上必要\n使用可能な工場が20以上ある。\n建設には5000万円(0.5億円)が必要になる"
  improve_hte_flor_big_tex:0 "企業を増築させる\n使用可能な工場が5以上ある。\n建設には1億円が必要になる"
  show_butten_middle_companuy_ui_big_nan:0 "大企業開発メニューを開く"
  this_country_big_company_tex:0 "[ROOT.GetName]の大企業数:\n[?big_company]"
@@ -208,7 +208,7 @@
  ADW_GDP_iryo_futan_up_pdx:0 "医療の負担率を上げる。"
  ADW_GDP_iryo_futan_down_pdx:0 "医療の負担率を下げる。"
  ADW_GDP_iryo_percent:0 "[?ADW_iryo_ftan_percent|%Y0]"
- ADW_GDP_KEN_this_state_medical_per:0 "[?THIS.GetName]の健康度:[?percent_of_kenko|%Y]\n[?ADW_GDP_kenko_d_kari_A]\n[?ADW_GDP_kenko_d_kari_B]"
+ ADW_GDP_KEN_this_state_medical_per:0 "[?THIS.GetName]の健康度:[?percent_of_kenko|%Y]"
  ADW_GDP_cheker_iryo_up_cheker:0 "リストにより高い健康度の州を表示させる。"
  ADW_GDP_cheker_iryo_down_cheker:0 "リストにより低い健康度の州を表示させる。"
  ADW_iryo_cheker:0 "健康度が[?the_cheker_variable_of_iryo|%Y0]以下の州が表示される"
@@ -218,3 +218,16 @@
  ADW_GDP_emplpy_system_buttom_text:0 "§b将軍・元帥・提督雇用§!"
  shido_list_entry_text:0 "§R[THIS.GetName]§!\n§Y£GFX_in_combat 攻撃§!§C[?THIS.army_attack_level]§! §Y£GFX_tank_niche_5 守備§!§C[?THIS.army_defense_level]§! §Y£GFX_fuel_texticon 兵站§!§C[?THIS.logistics_skill_level]§! §Y£GFX_infiltrate_state_texticon 立案力§!§C[?THIS.planning_skill_level]§! §Y£GFX_ADW_GDP_icon_money_txi 雇用料§C[?THIS.ADW_GDP_EMS_money]§! §Y億円§!"
  shido_list_bt_entry_a_txt:0 "§C[THIS.GetName]§!を雇う"
+ ADW_GDP_keisa_txt:0 "§C警察監視率§!"
+ ADW_GDP_shouhi_tax_effect:0 "税金の影響"
+ ADW_GDP_faction_txt:0 "陣営の盟主:§C[THIS.GetName]§!"
+ ADW_GDP_faction_window_the_name_txt:0 "§R[THIS.GetFactionName]§!"
+ ADW_GDP_faction_window_the_name_aaa_txt:0 "陣営全体のGDP[?THIS.ADW_GDP_faction_subete]"
+ ADW_GDP_faction_GDP_list_display_txt:0 "§Y世界の陣営リストを表示する。§!"
+ GDP_ADW_title_txt:0 "§R各国家GDPリスト§!"
+ 
+ ADW_TXT_GDP_3:0 "§Y[?ROOT.GDP_kei_of_dis]§!京円"
+ ADW_TXT_GDP_2:0 "§Y[?ROOT.GDP_cho_of_dis]§!兆円"
+ ADW_TXT_GDP_1:0 "§Y[?ROOT.GDP_yearly_for_faction]§!億円"
+ ADW_GDP_of_juni_txt_2nd_txt:0 "GDP順位"
+ ADW_GDP_of_juni_txt:0 "§Y[?ROOT.ADW_GDP_juni_of_GDP]§!"
