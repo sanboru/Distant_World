@@ -98,4 +98,29 @@ spriteTypes = {
 		name = "GFX_police_GDP_ADW_each"
 		texturefile = "gfx/interface/police_GDP_ADW_each.dds"
 	}
+	spriteType = {
+		name = "GFX_fukukomon_back"
+		texturefile = "gfx/interface/fukukomon_back.dds"
+	}
+	spriteType = {
+		name = "GFX_GDP_ADW_faction_mini_bg"
+		texturefile = "gfx/interface/GDP_ADW_faction_mini_bg.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ADW_RAJ_ganzy_attack"
+		texturefile = "gfx/interface/goals/ADW_RAJ_ganzy_attack.dds"
+	}
+	spriteType = {
+		name = "GFX_ADW_RAJ_Rash_Behari_Bose"
+		texturefile = "gfx/interface/goals/ADW_RAJ_Rash_Behari_Bose.dds"
+	}
+	spriteType = {
+		name = "GFX_ADW_RAJ_Subhas_Chandra_Bose"
+		texturefile = "gfx/interface/goals/ADW_RAJ_Subhas_Chandra_Bose.dds"
+	}
+	spriteType = {
+		name = "GFX_ADW_GDP_gui_list_of_infor"
+		texturefile = "gfx/interface/ADW_GDP_gui_list_of_infor.dds"
+	}
 }

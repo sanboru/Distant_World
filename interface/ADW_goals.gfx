@@ -1,7 +1,7 @@
 spriteTypes = {
 	spriteType = {
 		name = "gfx_focus_focus_DW_JAP_northern_union"
-		texturefile = "gfx_interface/goals/focus_JAP_attack_ainu.dds"
+		texturefile = "gfx/interface/goals/focus_JAP_attack_ainu.dds"
 	}
 
 	spriteType = {

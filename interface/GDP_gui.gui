@@ -52,6 +52,121 @@ guiTypes = {
 		}
 	}
 	containerWindowType = {
+		name = "ADW_GDP_any_system_button"
+		position = { x = 0 y = 80}
+		size = { width = 1500 height = 480 }
+		Orientation = UPPER_LEFT
+		background = {
+			name = "GFX_bg_impact"
+			spriteType = "GFX_GDP_ADW_faction_mini_bg"
+		}
+		
+		buttonType = { #世界陣営
+			name = "ADW_GDP_faction_GDP_list_display"
+			position = { x = 0 y = 5 }
+			spriteType = "GFX_decision_category_generic"
+			frame = 1
+			pdx_tooltip = "ADW_GDP_faction_GDP_list_display_txt"
+		}
+		buttonType = { #情報公開
+			name = "ADW_GDP_system_information_dis"
+			position = { x = 453 y = 15 }
+			spriteType = "button_right"
+			frame = 1
+			pdx_tooltip = "ADW_GDP_system_information_dis_pdx"
+		}
+	}
+	containerWindowType = {#ADW情報
+		name = "ADW_GDP_system_information"
+		position = { x = 474 y = 85}
+		size = { width = 1500 height = 480 }
+		Orientation = UPPER_LEFT
+		background = {
+			name = "GFX_bg_impact"
+			spriteType = "GFX_ADW_GDP_gui_list_of_infor"
+		}
+		
+		iconType = {
+			name = "ADW_dish_of_juni_of_GDP"
+			position = { x = 65 y = 6 }
+			spriteType = "GFX_generic_box_smallest"
+			frame = 1
+			alwaystransparent = no
+		}
+		
+		instantTextBoxType = {
+			name ="ADW_GDP_of_juni_txt"
+			position = { x= 58 y = 8 }
+			font = "hoi_18mbs"
+			text = "ADW_GDP_of_juni_txt"
+			format = right
+			maxWidth = 70
+			maxHeight = 24
+			fixedsize = yes
+		}
+		instantTextBoxType = {
+			name ="ADW_GDP_of_juni_txt_2nd"
+			position = { x= 3 y = 8 }
+			font = "hoi_18mbs"
+			text = "ADW_GDP_of_juni_txt_2nd_txt"
+			format = left
+			maxWidth = 70
+			maxHeight = 24
+			fixedsize = yes
+		}
+	}
+	containerWindowType = {
+		name = "ADW_GDP_faction_GDP_list"
+		position = { x = 1030 y = 40}
+		size = { width = 700 height= 560 }
+		moveable = yes
+		background = {
+			name = "bg_impact"
+			spriteType = "GFX_the_back_of_india_propaganda"
+		}
+		containerWindowType = {
+			name = "ADW_GDP_faction_GDP_grid"
+			position = { x = 17 y = 10 }
+			size = { width = 480 height = 480 }
+			verticalScrollbar = "right_vertical_slider"
+			background = {
+				name = "bg_GDP"
+			}
+			gridboxtype = {
+				name = "ADW_GDP_faction_GDP_b_grid"
+				position = { x = 120 y = 0 }
+				size = { width = 100%% height = 100%% }
+				slotsize = { width = 30 height = 90 }
+				max_slots_horizontal = 1
+				format = "UPPER_LEFT"
+			}
+			gridboxtype = {
+				name = "ADW_GDP_faction_GDP_a_grid"
+				position = { x = 120 y = 35 }
+				size = { width = 100%% height = 100%% }
+				slotsize = { width = 30 height = 90 }
+				max_slots_horizontal = 1
+				format = "UPPER_LEFT"
+			}
+			gridboxtype = {
+				name = "ADW_GDP_faction_GDP_c_grid"
+				position = { x = 120 y = 55 }
+				size = { width = 100%% height = 100%% }
+				slotsize = { width = 30 height = 90 }
+				max_slots_horizontal = 1
+				format = "UPPER_LEFT"
+			}
+			gridboxtype = {
+				name = "ADW_GDP_faction_GDP_d_grid"
+				position = { x = 3 y = 10 }
+				size = { width = 100%% height = 100%% }
+				slotsize = { width = 30 height = 90 }
+				max_slots_horizontal = 1
+				format = "UPPER_LEFT"
+			}
+		}
+	}
+	containerWindowType = {
 		name = "ADW_GDP_fuku_shidosha_window"
 		position = { x = 0 y = 0}
 		size = { width = 200 height=300 }
@@ -67,12 +182,20 @@ guiTypes = {
 	}
 	containerWindowType = {
 		name = "ADW_GDP_fuku_shidosha_window_2"
-		position = { x = 0 y = 0}
+		position = { x = 140 y = 100 }
 		size = { width = 200 height=300 }
-		moveable = no
+		moveable = yes
+		iconType = {
+			name = "ADW_GDP_DIP_INDaa"
+			position = { x = 0 y = 0 }
+			spriteType = "GFX_fukukomon_back"
+			frame = 1
+			alwaystransparent = no
+			scale = 0.75
+		}
 		iconType = {
 			name = "ADW_GDP_DIP_IND"
-			position = { x = 140 y = 120 }
+			position = { x = 10 y = 20 }
 			spriteType = "GFX_portrait_ger_felix_steiner"
 			frame = 1
 			alwaystransparent = yes
@@ -501,7 +624,65 @@ guiTypes = {
 			fixedsize = yes
 		}
 	}
+	containerWindowType = { #陣営リスト2
+		name = "ADW_GDP_faction_window_the_name"
+		instantTextBoxType = {
+			name ="ADW_GDP_faction"
+			position = { x = 0 y = 0 }
+			font = "vic_36s"
+			text = "ADW_GDP_faction_window_the_name_txt"
+			maxWidth = 455
+			format = left
+			fixedsize = yes
+		}
+	}
+	containerWindowType = { #陣営リスト3
+		name = "ADW_GDP_faction_window_the_name_aaa"
+		instantTextBoxType = {
+			name ="ADW_GDP_faction"
+			position = { x = 0 y = 0 }
+			font = "hoi_18mbs"
+			text = "ADW_GDP_faction_window_the_name_aaa_txt"
+			maxWidth = 455
+			format = left
+			fixedsize = yes
+		}
+	}
+	containerWindowType = { #陣営リスト
+		name = "ADW_GDP_faction_window"
+		instantTextBoxType = {
+			name ="ADW_GDP_faction"
+			position = { x = 0 y = 0 }
+			font = "hoi_18b"
+			text = "ADW_GDP_faction_txt"
+			maxWidth = 455
+			format = left
+			fixedsize = yes
+		}
+	}
+	containerWindowType = { #陣営リスト4
+		name = "ADW_GDP_faction_flag"
+		iconType = {
+			name = "ADW_GDP_flags"
+			quadTextureSprite ="GFX_flag_large"
+			position = { x = 0 y = 0 }
+			Orientation = "UPPER_LEFT"
+			allwaystransparent = yes
+		}
+	}
 	
+	containerWindowType = { #GDP順位リスト
+		name = "ADW_GDP_juni_country_name"
+		instantTextBoxType = {
+			name ="ADW_GDP_juni_country_namea"
+			position = { x = 0 y = 0 }
+			font = "hoi_18b"
+			text = "ADW_GDP_juni_country_name_txt"
+			maxWidth = 455
+			format = left
+			fixedsize = yes
+		}
+	}
 	containerWindowType = { #議会中身
 		name = "the_ui_of_gikai"
 		position = { x = 500 y = 150}
