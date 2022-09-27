@@ -82,6 +82,7 @@
 	}
 	focus = { #ガンジー暗殺ルート
 		id = NGR_RAJ_mil_country
+		icon = GFX_ADW_RAJ_ganzy_attack
 		prerequisite = { focus = RAJ_mil_country }
 		mutually_exclusive = { focus = MGF_RAJ_make_mil_country }
 		x = -1
@@ -140,7 +141,7 @@
 				desc = "Keshav_desc"
 				expire = "1940.6.21"
 				ideology = falangism
-				picture = GFX_portrait_Fallen_Government
+				picture = GFX_ADW_RAJ_ke_shav
 			}
 			set_party_name = { 
 				ideology = fascism 
@@ -267,6 +268,7 @@
 		mutually_exclusive = { focus = NGR_RAJ_help_with_RSS }
 		mutually_exclusive = { focus = india_koku_mil }
 		prerequisite = { focus = NGR_RAJ_mil_country }
+		icon = GFX_ADW_RAJ_Rash_Behari_Bose
 		x = 1
 		y = 4
 		cost = 5
@@ -304,6 +306,7 @@
 		mutually_exclusive = { focus = NGR_RAJ_help_with_RSS }
 		mutually_exclusive = { focus = india_kokumin_renme }
 		prerequisite = { focus = NGR_RAJ_mil_country }
+		icon = GFX_ADW_RAJ_Subhas_Chandra_Bose
 		x = 3
 		y = 4
 		cost = 5
@@ -8609,8 +8612,7 @@ shared_focus = { #3612
     y = 10
     icon = GFX_focus_POL_support_global_falangism
 	cost = 5
-    search_filters = { FOCUS_FILTER_AIR_XP }
-	search_filters = { FOCUS_FILTER_RESEARCH }
+	search_filters = { FOCUS_FILTER_INDUSTRY }
 	
 	ai_will_do = {
 		factor = 4
@@ -8625,8 +8627,7 @@ shared_focus = { #3612
     y = 11
     icon = GFX_focus_TUR_support_the_golden_square
 	cost = 15
-    search_filters = { FOCUS_FILTER_AIR_XP }
-	search_filters = { FOCUS_FILTER_RESEARCH }
+	search_filters = { FOCUS_FILTER_INDUSTRY }
 	prerequisite = { focus = ADW_IND_SHR_supply_tree }
 	
 	ai_will_do = {
@@ -8654,8 +8655,7 @@ shared_focus = { #3612
     y = 12
     icon = GFX_goal_continuous_suppression
 	cost = 15
-    search_filters = { FOCUS_FILTER_AIR_XP }
-	search_filters = { FOCUS_FILTER_RESEARCH }
+	search_filters = { FOCUS_FILTER_INDUSTRY }
 	prerequisite = { focus = ADW_IND_SHR_supply_tree_1 }
 	
 	ai_will_do = {
@@ -8683,8 +8683,7 @@ shared_focus = { #3612
     y = 13
     icon = GFX_focus_mex_support_general_cedillo
 	cost = 15
-    search_filters = { FOCUS_FILTER_AIR_XP }
-	search_filters = { FOCUS_FILTER_RESEARCH }
+	search_filters = { FOCUS_FILTER_INDUSTRY }
 	prerequisite = { focus = ADW_IND_SHR_supply_tree_2 }
 	
 	ai_will_do = {
@@ -8706,20 +8705,13 @@ shared_focus = { #3612
 		}
     }
 }
-#
-#		build_railway = {
-#			path = { 4544 12452 }
-#		}
-#
-#
 shared_focus = { #3962
     id = ADW_IND_SHR_supply_tree_4
     x = 15
     y = 11
-    icon = GFX_focus_mex_support_general_cedillo
-	cost = 15
-    search_filters = { FOCUS_FILTER_AIR_XP }
-	search_filters = { FOCUS_FILTER_RESEARCH }
+    icon = GFX_focus_generic_strike_at_democracy2
+	cost = 10
+	search_filters = { FOCUS_FILTER_INDUSTRY }
 	prerequisite = { focus = ADW_IND_SHR_supply_tree }
 	
 	ai_will_do = {
@@ -8727,12 +8719,318 @@ shared_focus = { #3962
 	}
 	available = {
 		ROOT = {
-			controls_state = 838
+			controls_state = 435
 		}
 	}
     completion_reward = {
+		build_railway = {
+			path = { 4544 12452 }
+		}
     }
 }
+shared_focus = { #3962
+    id = ADW_IND_SHR_supply_tree_5
+    x = 15
+    y = 12
+    icon = GFX_focus_spr_regional_defense_council_of_aragon
+	cost = 10
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	prerequisite = { focus = ADW_IND_SHR_supply_tree_4 }
+	
+	ai_will_do = {
+		factor = 4
+	}
+	available = {
+		ROOT = {
+			controls_state = 435
+		}
+	}
+    completion_reward = {
+		build_railway = {
+			path = { 12452 1444 }
+		}
+    }
+}
+shared_focus = { #3962
+    id = ADW_IND_SHR_supply_tree_6
+    x = 15
+    y = 13
+    icon = GFX_focus_focus_fra_national_resistance_council
+	cost = 10
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	prerequisite = { focus = ADW_IND_SHR_supply_tree_5 }
+	
+	ai_will_do = {
+		factor = 4
+	}
+	available = {
+		ROOT = {
+			controls_state = 435
+			controls_state = 426
+		}
+	}
+    completion_reward = {
+		build_railway = {
+			path = { 1444 1059 4104}
+		}
+    }
+}
+shared_focus = { #3962
+    id = ADW_IND_SHR_supply_tree_7
+    x = 13
+    y = 11
+    icon = GFX_focus_fra_devalue_the_franc
+	cost = 10
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	prerequisite = { focus = ADW_IND_SHR_supply_tree }
+	
+	ai_will_do = {
+		factor = 4
+	}
+    completion_reward = {
+		swap_ideas = {
+			add_idea = ADW_IND_SHR_supply_area_1
+			remove_idea = ADW_IND_SHR_supply_area
+		}
+    }
+}
+shared_focus = { #3962
+    id = ADW_IND_SHR_supply_tree_8
+    x = 13
+    y = 12
+    icon = GFX_focus_spr_torchbearers_of_tomorrow
+	cost = 10
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	prerequisite = { focus = ADW_IND_SHR_supply_tree_7 }
+	
+	ai_will_do = {
+		factor = 4
+	}
+    completion_reward = {
+		swap_ideas = {
+			add_idea = ADW_IND_SHR_supply_area_1
+			remove_idea = ADW_IND_SHR_supply_area_2
+		}
+    }
+}
+shared_focus = { #3962
+    id = ADW_IND_SHR_supply_tree_9
+    x = 13
+    y = 13
+    icon = GFX_focus_por_portuguese_legion
+	cost = 10
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	prerequisite = { focus = ADW_IND_SHR_supply_tree_8 }
+	
+	ai_will_do = {
+		factor = 4
+	}
+    completion_reward = {
+		swap_ideas = {
+			add_idea = ADW_IND_SHR_supply_area_2
+			remove_idea = ADW_IND_SHR_supply_area_3
+		}
+    }
+}
+shared_focus = { #4242
+    id = ADW_IND_SHR_supply_tree_10
+    x = 11
+    y = 11
+    icon = GFX_focus_generic_aegean_sea_focus
+	cost = 10
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	prerequisite = { focus = ADW_IND_SHR_supply_tree }
+	available = {
+		controls_state = 426
+	}
+	ai_will_do = {
+		factor = 4
+	}
+    completion_reward = {
+		426 = {
+			add_building_construction = {
+				type = naval_base
+				level = 1
+				instant_build = yes
+				province = 10088
+			}
+		}
+    }
+}
+shared_focus = { #4242
+    id = ADW_IND_SHR_supply_tree_11
+    x = 11
+    y = 12
+    icon = GFX_focus_generic_military_mission
+	cost = 10
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	prerequisite = { focus = ADW_IND_SHR_supply_tree_10 }
+	available = {
+		controls_state = 426
+	}
+	ai_will_do = {
+		factor = 4
+	}
+    completion_reward = {
+		build_railway = {
+			path = { 10088 10016 }
+		}
+    }
+}
+shared_focus = { #4242
+    id = ADW_IND_SHR_supply_tree_12
+    x = 11
+    y = 13
+    icon = GFX_goal_generic_build_navy
+	cost = 15
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	prerequisite = { focus = ADW_IND_SHR_supply_tree_11 }
+	available = {
+		controls_state = 426
+	}
+	ai_will_do = {
+		factor = 4
+	}
+    completion_reward = {
+		426 = {
+			add_building_construction = {
+				type = naval_base
+				level = 4
+				instant_build = yes
+				province = 10088
+			}
+		}
+    }
+}
+shared_focus = { #4242
+    id = ADW_IND_SHR_new_era_nuclear_0
+    x = 29
+    y = 0
+    icon = GFX_focus_smiling_buddha
+	cost = 30
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	search_filters = { FOCUS_FILTER_RESEARCH }
+	ai_will_do = {
+		factor = 5
+	}
+    completion_reward = {
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 1
+			category = nuclear
+		}
+    }
+}
+shared_focus = { #4837
+    id = ADW_IND_SHR_new_era_nuclear_1
+    x = 28
+    y = 1
+    icon = GFX_goal_tfv_generic_tech_sharing
+	cost = 30
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	search_filters = { FOCUS_FILTER_RESEARCH }
+	prerequisite = { focus = ADW_IND_SHR_new_era_nuclear_0 }
+	ai_will_do = {
+		factor = 5
+	}
+    completion_reward = {
+		ROOT = {
+			country_event = { id = IND_ADW.102 }
+		}
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 1
+			category = nuclear
+		}
+    }
+}
+shared_focus = { #4837
+    id = ADW_IND_SHR_new_era_nuclear_2
+    x = 28
+    y = 2
+    icon = GFX_focus_rocketry
+	cost = 20
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	search_filters = { FOCUS_FILTER_RESEARCH }
+	prerequisite = { focus = ADW_IND_SHR_new_era_nuclear_1 }
+	ai_will_do = {
+		factor = 5
+	}
+    completion_reward = {
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 1
+			category = rocketry
+		}
+    }
+}
+shared_focus = { #4837
+    id = ADW_IND_SHR_new_era_nuclear_4
+    x = 28
+    y = 3
+    icon = GFX_focus_research
+	cost = 15
+	search_filters = { FOCUS_FILTER_RESEARCH }
+	prerequisite = { focus = ADW_IND_SHR_new_era_nuclear_2 }
+	ai_will_do = {
+		factor = 5
+	}
+    completion_reward = {
+		add_research_slot = 1
+    }
+}
+shared_focus = { #4837
+    id = ADW_IND_SHR_new_era_nuclear_3
+    x = 30
+    y = 1
+    icon = GFX_focus_LIT_restore_order
+	cost = 15
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	prerequisite = { focus = ADW_IND_SHR_new_era_nuclear_0 }
+	ai_will_do = {
+		factor = 5
+	}
+    completion_reward = {
+		add_ideas = ADW_IND_SHR_new_technology
+    }
+}
+shared_focus = { #4837
+    id = ADW_IND_SHR_new_era_nuclear_5
+    x = 30
+    y = 2
+    icon = GFX_goal_generic_production2
+	cost = 10
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	prerequisite = { focus = ADW_IND_SHR_new_era_nuclear_3 }
+	ai_will_do = {
+		factor = 5
+	}
+    completion_reward = {
+		swap_ideas = {
+			remove_idea = ADW_IND_SHR_new_technology
+			add_idea = ADW_IND_SHR_new_technology_1
+		}
+    }
+}
+shared_focus = { #5187
+    id = ADW_IND_SHR_new_era_nuclear_6
+    x = 30
+    y = 3
+    icon = GFX_focus_SOV_proclaim_soviet_hegemony
+	cost = 10
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	prerequisite = { focus = ADW_IND_SHR_new_era_nuclear_5 }
+	ai_will_do = {
+		factor = 5
+	}
+    completion_reward = {
+		swap_ideas = {
+			remove_idea = ADW_IND_SHR_new_technology_1
+			add_idea = ADW_IND_SHR_new_technology_2
+		}
+    }
+}
+
 
 focus_tree = {
 	id = IND_ADW_focus_teree
@@ -8751,6 +9049,7 @@ focus_tree = {
 	shared_focus = ADW_IND_SHR_air_research
 	shared_focus = ADW_IND_SHR_navy_research
 	shared_focus = ADW_IND_SHR_supply_tree
+	shared_focus = ADW_IND_SHR_new_era_nuclear_0
 	
 	default = no
 
