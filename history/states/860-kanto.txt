@@ -1,22 +1,20 @@
-
 state={
-	id=286
-	name="STATE_286"
-	resources={
-		rubber=55.000
+	id=860
+	name="STATE_860"
+	provinces={
+		1423 4223 4284 4341 7303 7331 12133 
 	}
-
 	history={
 		add_core_of = VIN
 		owner = VIN
 		victory_points = {
-			4401 3 
+			12133 5
 		}
 		buildings = {
-			infrastructure = 3
+			infrastructure = 2
 			industrial_complex = 1
 			air_base = 2
-			4401 = {
+			7303 = {
 				naval_base = 4
 
 			}
@@ -24,12 +22,8 @@ state={
 		}
 
 	}
-
-	provinces={
-		1396 4401 7238 7347 10232 10261 12232 
-	}
-	manpower=1048333
+	manpower=1200000
 	buildings_max_level_factor=1.000
-	state_category=city
+	state_category=large_town
 	local_supplies=0.000
 }
