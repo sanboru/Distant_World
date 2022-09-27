@@ -1,0 +1,48 @@
+ADW_GDP_MID_country = {
+	ROOT = {
+		num_of_civilian_factories_available_for_projects > 10
+		check_variable = {
+			var = the_parfect_improved_compa
+			value = 1
+			compare = greater_than_or_equals
+		}
+		check_variable = {
+			var = GDP_amou
+			value = 0.4
+			compare = greater_than_or_equals
+		}
+	}
+}
+ADW_GDP_BIG_country = {
+	ROOT = {
+		num_of_civilian_factories_available_for_projects > 20
+		check_variable = {
+			var = the_parfect_improved_compa_mid
+			value = 1
+			compare = greater_than_or_equals
+		}
+		check_variable = {
+			var = GDP_amou
+			value = 0.5
+			compare = greater_than_or_equals
+		}
+	}
+}
+ADW_GDP_trigger_gikai_up = {
+	ROOT = {
+		check_variable = {
+			var = ADW_AI_GDP_kyoki_month_daily_p_50
+			value = ADW_GDP_giin_cost
+			compare = greater_than_or_equals
+		}
+	}
+}
+ADW_GDP_trigger_gikai_down = {
+	ROOT = {
+		check_variable = {
+			var = ADW_AI_GDP_kyoki_month_daily
+			value = ADW_GDP_giin_cost
+			compare = less_than
+		}
+	}
+}
