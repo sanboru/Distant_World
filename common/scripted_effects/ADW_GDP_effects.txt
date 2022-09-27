@@ -142,6 +142,10 @@ ADW_GDP_reset_variable_every_country = {
 		set_variable = { checked_variable = 0 }
 	}
 }
+ADW_GDP_keisan = {
+	set_variable = { ADW_GDP_keisan_var = ADW_iryo_ftan_percent }
+	multiply_variable = { ADW_GDP_keisan_var = ROOT.max_manpower_k }
+}
 ADW_GDP_iryo_keisan = {
 	set_variable = { ADW_GDP_sougou_1 = 5000 }
 	multiply_variable = { ADW_GDP_sougou_1 = ADW_hospital_1_sougou } #総合病院
@@ -526,5 +530,27 @@ ADW_IND_eikyo_social = {
 		}
 		}
 	}
+	}
+}
+ADW_the_gDP_narabekae = {
+	clear_array = global.ADW_GDP_faction_array 
+	every_country = {
+		limit = {
+			is_faction_leader = yes
+		}
+		add_to_array = { global.ADW_GDP_faction_array = THIS }
+	}
+}
+ADW_the_GDP_juni_effect = {
+	set_variable = { ROOT.ADW_GDP_juni_of_GDP = 1 }
+	every_country = {
+		limit = {
+			check_variable = {
+				var = THIS.GDP_yearly_for_faction
+				value = ROOT.GDP_yearly_for_faction
+				compare = greater_than
+			}
+		}
+		add_to_variable = { ROOT.ADW_GDP_juni_of_GDP = 1 }
 	}
 }
