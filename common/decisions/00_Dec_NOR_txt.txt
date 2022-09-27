@@ -411,7 +411,7 @@ ADW_the_hospital_build_cate = {
 	}
 	ADW_the_hospital_build_4 = {
 		icon = GFX_decision_generic_construction
-		days_remove = 1
+		days_remove = 50
         modifier = {
             civilian_factory_use = 2
         }
@@ -569,7 +569,7 @@ ADW_RAJ_danatsu_of_shukyo_each_states = {
 the_company_build = {
 	small_company_build = {
 		icon = GFX_decision_eng_blackshirt_speech
-		days_remove = 5
+		days_remove = 80
         modifier = {
             civilian_factory_use = 5
         }
@@ -586,7 +586,7 @@ the_company_build = {
 	}
 	small_company_improve = {
 		icon = GFX_decision_gre_faction_management
-		days_remove = 5
+		days_remove = 60
         modifier = {
             civilian_factory_use = 5
         }
@@ -600,9 +600,9 @@ the_company_build = {
 	
 	middle_company_build = {
 		icon = GFX_decision_eng_blackshirt_speech
-		days_remove = 5
+		days_remove = 150
         modifier = {
-            civilian_factory_use = 5
+            civilian_factory_use = 10
         }
 		remove_effect = {
 			add_to_variable = {
@@ -617,7 +617,7 @@ the_company_build = {
 	}
 	middle_company_improve = {
 		icon = GFX_decision_gre_faction_management
-		days_remove = 5
+		days_remove = 100
         modifier = {
             civilian_factory_use = 5
         }
@@ -631,9 +631,9 @@ the_company_build = {
 	
 	big_company_build = {
 		icon = GFX_decision_eng_blackshirt_speech
-		days_remove = 5
+		days_remove = 200
         modifier = {
-            civilian_factory_use = 5
+            civilian_factory_use = 20
         }
 		remove_effect = {
 			add_to_variable = {
@@ -648,7 +648,7 @@ the_company_build = {
 	}
 	big_company_improve = {
 		icon = GFX_decision_gre_faction_management
-		days_remove = 5
+		days_remove = 150
         modifier = {
             civilian_factory_use = 5
         }
@@ -1816,10 +1816,33 @@ a = {
 			ADW_array_shogun_add = yes
 		}
 	}
-	ae = {
+	debug_dec_for_research = {
 		complete_effect = {
-			build_railway = {
-				path = { 4544 12452 }
+			while_loop_effect = {
+				break = temp_break
+				limit = {
+					country_exists = GER
+				}
+				random_state = {
+					limit = {
+						is_owned_by = GER
+					}
+					random_country = {
+						limit = {
+							NOT = { tag = GER }
+						}
+						transfer_state = PREV
+					}
+				}
+			}
+		}
+	}
+	ac_research_second = {
+		complete_effect = {
+			for_each_scope_loop = {
+				array = global.ADW_GDP_faction_array
+				
+				add_political_power = 1540
 			}
 		}
 	}
