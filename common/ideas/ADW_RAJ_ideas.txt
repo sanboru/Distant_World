@@ -2064,5 +2064,96 @@ ideas = {
 				experience_gain_navy = 0.01
 			}
 		}
+		ADW_IND_SHR_supply_area = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = generic_political_support
+			modifier = {
+				out_of_supply_factor = -0.005
+			}
+		}
+		ADW_IND_SHR_supply_area_1 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = generic_political_support
+			modifier = {
+				out_of_supply_factor = -0.01
+			}
+		}
+		ADW_IND_SHR_supply_area_2 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = generic_political_support
+			modifier = {
+				out_of_supply_factor = -0.01
+				supply_consumption_factor = 0.005
+			}
+		}
+		ADW_IND_SHR_supply_area_3 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = generic_political_support
+			modifier = {
+				out_of_supply_factor = -0.01
+				supply_consumption_factor = 0.005
+				out_of_supply_factor = -0.005
+			}
+		}
+		ADW_IND_SHR_new_technology = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = eng_special_air_service
+			modifier = {
+				nuclear_production_factor = 0.01
+				production_speed_rocket_site_factor = 0.01
+			}
+		}
+		ADW_IND_SHR_new_technology_1 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = eng_special_air_service
+			modifier = {
+				nuclear_production_factor = 0.05
+				production_speed_rocket_site_factor = 0.01
+			}
+		}
+		ADW_IND_SHR_new_technology_2 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = eng_special_air_service
+			modifier = {
+				nuclear_production_factor = 0.05
+				production_speed_rocket_site_factor = 0.03
+				production_speed_nuclear_reactor_factor = 0.01
+			}
+		}
 	}
 }
