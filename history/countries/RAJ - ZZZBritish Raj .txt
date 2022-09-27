@@ -23,24 +23,28 @@ create_country_leader = {
 	desc = "POLITICS_Vyner_Brooke_DESC"
 	expire = "1965.1.1"
 	ideology = despotism
+	picture = GFX_ADW_ADW_RAJ_ganzy
 }
 create_country_leader = {
 	name = "ガンジー"
 	desc = "POLITICS_Vyner_Brooke_DESC"
 	expire = "1965.1.1"
 	ideology = falangism
+	picture = GFX_ADW_ADW_RAJ_ganzy
 }
 create_country_leader = {
 	name = "ガンジー"
 	desc = "POLITICS_Vyner_Brooke_DESC"
 	expire = "1965.1.1"
 	ideology = marxism
+	picture = GFX_ADW_ADW_RAJ_ganzy
 }
 create_country_leader = {
 	name = "ガンジー"
 	desc = "POLITICS_Vyner_Brooke_DESC"
 	expire = "1965.1.1"
 	ideology = socialism
+	picture = GFX_ADW_ADW_RAJ_ganzy
 }
 set_politics = {
 	ruling_party = communism
