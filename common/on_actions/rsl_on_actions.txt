@@ -15,6 +15,88 @@ on_actions = {
 			}
 		}
 	}
+	on_weekly = {
+		effect = {
+			clear_array = global.ADW_GDP_faction_array
+			every_country = {
+				limit = {
+					is_faction_leader = yes
+				}
+				add_to_array = { global.ADW_GDP_faction_array = THIS }
+			}
+
+			every_country = {
+				limit = {
+					is_in_faction = yes
+				}
+				set_variable = { ROOT.GDP_yearly_for_faction = 0.0001 }
+				multiply_variable = { ROOT.GDP_yearly_for_faction = ROOT.GDP_daily }
+				multiply_variable = { ROOT.GDP_yearly_for_faction = 365 }
+				set_variable = { ROOT.GDP_yearly_for_faction_a = ROOT.GDP_monthly }
+				multiply_variable = { ROOT.GDP_yearly_for_faction_a = 12 }
+				multiply_variable = { ROOT.GDP_yearly_for_faction_a = 0.00001 }
+				set_variable = { ROOT.GDP_yearly_for_faction_b = ROOT.GDP_weekly }
+				multiply_variable = { ROOT.GDP_yearly_for_faction_b = 48 }
+				multiply_variable = { ROOT.GDP_yearly_for_faction_b = 0.00001 }
+				add_to_variable = { ROOT.GDP_yearly_for_faction = ROOT.GDP_yearly_for_faction_a }
+				add_to_variable = { ROOT.GDP_yearly_for_faction = ROOT.GDP_yearly_for_faction_b }
+				multiply_variable = { ROOT.GDP_yearly_for_faction = 10000 }
+				set_variable = { ROOT.ADW_GDP_onf_country = ROOT.GDP_yearly_for_faction }
+				ADW_the_GDP_juni_effect = yes
+			}
+			every_country = {
+				limit = {
+					is_faction_leader = yes
+				}
+				set_variable = { THIS.ADW_GDP_faction_subete = 0 }
+			}
+			ROOT = {
+				faction_leader = {
+					add_to_variable = { THIS.ADW_GDP_faction_subete = ROOT.ADW_GDP_onf_country }
+				}
+			}
+			if = {
+				ROOT = {
+					if = {
+						limit = {
+							check_variable = {
+								var = GDP_yearly_for_faction
+								value = 100000000
+								compare = greater_than_or_equals
+							}
+						}
+						set_variable = {
+							var = GDP_kei_of_dis
+							value = GDP_yearly_for_faction
+						}
+						divide_variable = {
+							var = GDP_kei_of_dis
+							value = 100000000
+						}
+						else = {
+							if = {
+								limit = {
+									check_variable = {
+										var = GDP_yearly_for_faction
+										value = 10000
+										compare = greater_than_or_equals
+									}
+								}
+								set_variable = {
+									var = GDP_cho_of_dis
+									value = GDP_yearly_for_faction
+								}
+								divide_variable = {
+									var = GDP_cho_of_dis
+									value = 10000
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }
 on_actions = {
 	on_startup = {
@@ -28,6 +110,20 @@ on_actions = {
 					is_ai = no
 				}
 				country_event = { id = ADW_GDP_EXP.1 }
+			}
+			every_country = {
+				limit = {
+					is_ai = yes
+				}
+				set_country_flag = ADW_GDP_medical
+			}
+		}
+	}
+	on_daily = {
+		effect = {
+			clear_array = global.ADW_all_country_GDP_juni
+			every_country = {
+				add_to_array = { global.ADW_all_country_GDP_juni = THIS }
 			}
 		}
 	}
@@ -178,6 +274,12 @@ on_actions = {
 					var = manp_SHO
 					value = GDP_daily
 				}
+			}
+			ROOT = {
+				set_variable = { ADW_GDP_shouhi_tax_effect = 0.2 }
+				subtract_from_variable = { ADW_GDP_shouhi_tax_effect = shouhi_tax }
+				divide_variable = { ADW_GDP_shouhi_tax_effect = 5 }
+				add_dynamic_modifier = { modifier = ADW_GDP_shouhi_tax_effect }
 			}
 		}
 	}
@@ -469,6 +571,15 @@ on_actions = {
 				the_first_ADW_calculation = yes
 			}
 			every_country = {
+				limit = {
+					is_ai = yes
+				}
+				set_country_flag = open_ui_company
+				set_country_flag = open_small_compa
+				set_country_flag = open_middle_compa
+				set_country_flag = open_big_compa
+			}
+			every_country = {
 				set_variable = {
 					var = shouhi_tax
 					value = 0.15
@@ -492,6 +603,20 @@ on_actions = {
 					value = 0.3
 				}
 			}
+		}
+	}
+	on_daily = {
+		effect = {
+			set_variable = {
+				var = all_kyoikuhi_a
+				value = 0.001
+			}
+			multiply_variable = { all_kyoikuhi_a = 7 }
+			multiply_variable = { all_kyoikuhi_a = ROOT.all_this_manpower }
+			divide_variable = { all_kyoikuhi_a = 50 }
+			round_variable = all_kyoikuhi_a
+			set_variable = { all_kyoikuhi_a_tmp = all_kyoikuhi_a }
+			divide_variable = { all_kyoikuhi_a_tmp = 50 }
 		}
 	}
 	on_daily = {
@@ -1136,12 +1261,14 @@ on_actions = {
 							tag = ROOT
 						}
 					}
+					set_variable = { THIS.percent_of_kenko_people = THIS.percent_of_kenko }
+					multiply_variable = { THIS.percent_of_kenko_people = THIS.state_population_k }
 					add_to_variable = {
 						var = ROOT.the_country_percent_of_kenko
-						value = THIS.percent_of_kenko
+						value = THIS.percent_of_kenko_people
 					}
 				}
-				divide_variable = { the_country_percent_of_kenko = ROOT.num_owned_controlled_states }
+				divide_variable = { the_country_percent_of_kenko = ROOT.max_manpower_k }
 				set_variable = { GDP_the_country_percent_of_kenko_mainas = 1 }
 				subtract_from_variable = { GDP_the_country_percent_of_kenko_mainas = the_country_percent_of_kenko }
 				
@@ -1389,6 +1516,33 @@ on_actions = {
 					var = GDP_amou
 					value = GDP_daily
 				}
+			}
+		}
+	}
+	on_daily = {
+		effect = {
+			ROOT = {
+				#月
+				set_variable = { ADW_GDP_check_month = ADW_GDP_onf_country }
+				divide_variable = { ADW_GDP_check_month = 12 }
+				add_to_variable = { ADW_GDP_check_month = 5 }
+				#週
+				set_variable = { ADW_GDP_check_weeks = ADW_GDP_onf_country }
+				divide_variable = { ADW_GDP_check_weeks = 48 }
+				add_to_variable = { ADW_GDP_check_weeks = 5 }
+				#毎日
+				set_variable = { ADW_GDP_check_days = ADW_GDP_onf_country }
+				divide_variable = { ADW_GDP_check_days = 365 }
+				add_to_variable = { ADW_GDP_check_days = 5 }
+				#月+10
+				set_variable = { ADW_GDP_check_month_10 = ADW_GDP_check_month }
+				add_to_variable = { ADW_GDP_check_month_10 = 10 }
+				#月+30
+				set_variable = { ADW_GDP_check_month_30 = ADW_GDP_check_month }
+				add_to_variable = { ADW_GDP_check_month_30 = 30 }
+				#月+50
+				set_variable = { ADW_GDP_check_month_50 = ADW_GDP_check_month }
+				add_to_variable = { ADW_GDP_check_month_50 = 50 }
 			}
 		}
 	}
