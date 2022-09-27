@@ -2301,3 +2301,17 @@ country_event = {
 		ADW_GDP_iryodo = yes
 	}
 }
+country_event = {
+	id = IND_ADW.102
+	title = IND_ADW.102.t
+	desc = IND_ADW.102.d
+	picture = GFX_report_event_tur_inonu_diplomacy
+	is_triggered_only = yes
+	option = {
+		name = IND_ADW.102.a
+		add_political_power = 25
+		ai_chance = {
+			factor = 5
+		}
+	}
+}
