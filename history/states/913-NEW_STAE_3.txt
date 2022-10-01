@@ -1,0 +1,23 @@
+state={
+	id=913
+	name="STATE_913"
+	provinces={
+		4883 4950 4953 7430 7619 10030 10801 10872 12781 12799 
+	}
+	manpower=3923100
+	state_category=rural
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	resources={
+		chromium=1.000
+	}
+
+	history={
+		owner = IND
+		buildings = {
+			infrastructure = 1
+
+		}
+
+	}
+}

@@ -1,0 +1,22 @@
+state={
+	id=929
+	name="STATE_929"
+	provinces={
+		7519 12653 
+	}
+	history={
+		owner = QIE
+		buildings = {
+			infrastructure = 1
+			arms_factory = 1
+
+		}
+		add_core_of = QIE
+
+	}
+
+	manpower=600000
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	state_category=rural
+}

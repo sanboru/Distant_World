@@ -1,0 +1,23 @@
+state={
+	id=915
+	name="STATE_915"
+	provinces={
+		1213 4219 12258 
+	}
+	manpower=2200000
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	state_category=rural
+	resources={
+		rubber=30.000
+	}
+	history={
+		add_core_of = SRL
+		owner = ENG
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 2
+		}
+
+	}
+}

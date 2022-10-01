@@ -1,0 +1,19 @@
+state={
+	id=933
+	name="STATE_933"
+	provinces={
+		12260 12288 
+	}
+	history = {
+		add_core_of = VIN
+		owner = VIN
+		add_claim_by = CAM
+		buildings = {
+			infrastructure = 1
+		}
+	}
+	manpower=300000
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	state_category=town
+}
