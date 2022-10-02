@@ -1,0 +1,31 @@
+
+state={
+	id=293
+	name="STATE_293"
+	resources={
+		oil=1.000
+	}
+
+	history={
+		owner = YEM
+		buildings = {
+			infrastructure = 1
+			arms_factory = 1
+			industrial_complex = 1
+
+		}
+		victory_points = {
+			10840 3 
+		}
+		add_core_of = YEM
+
+	}
+
+	provinces={
+		1973 4924 
+	}
+	manpower=889500
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=0.000
+}
