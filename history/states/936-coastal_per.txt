@@ -1,0 +1,15 @@
+state={
+	id=936
+	name="STATE_936"
+	provinces={
+		4932 
+	}
+	history = {
+		owner = UAE
+		add_core_of = UAE
+	}
+	manpower=10000
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	state_category = pastoral
+}
