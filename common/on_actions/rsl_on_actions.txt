@@ -9,6 +9,8 @@ on_actions = {
 	}
 	on_daily = {
 		effect = {
+			ADW_the_gDP_narabekae = yes
+			ADW_the_GDP_juni_effect = yes
 			RAJ = {
 				ADW_RAJ_state_var_col = yes
 				ADW_RAJ_state_var_col_danatsu = yes
@@ -44,16 +46,14 @@ on_actions = {
 				set_variable = { ROOT.ADW_GDP_onf_country = ROOT.GDP_yearly_for_faction }
 				ADW_the_GDP_juni_effect = yes
 			}
-			every_country = {
-				limit = {
-					is_faction_leader = yes
-				}
+			faction_leader = {
 				set_variable = { THIS.ADW_GDP_faction_subete = 0 }
 			}
 			ROOT = {
 				faction_leader = {
 					add_to_variable = { THIS.ADW_GDP_faction_subete = ROOT.ADW_GDP_onf_country }
 				}
+				ADW_GDP_junin_narabekae = yes
 			}
 			if = {
 				ROOT = {
