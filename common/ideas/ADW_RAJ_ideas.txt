@@ -2155,5 +2155,119 @@ ideas = {
 				production_speed_nuclear_reactor_factor = 0.01
 			}
 		}
+		
+		ADW_IND_SHR_operative_ideas = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = generic_spy_intel
+			modifier = {
+				operative_slot = 1
+			}
+		}
+		ADW_IND_SHR_operative_ideas_1 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = generic_spy_intel
+			modifier = {
+				operative_slot = 2
+			}
+		}
+		ADW_IND_SHR_operative_ideas_2 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = generic_spy_intel
+			modifier = {
+				operative_slot = 3
+			}
+		}
+		
+		ADW_IND_spy_employ_0 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = generic_spy_political
+			modifier = {
+				new_operative_slot_bonus = 1
+			}
+		}
+		ADW_IND_spy_employ_1 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = generic_spy_political
+			modifier = {
+				new_operative_slot_bonus = 2
+			}
+		}
+		ADW_IND_spy_employ_2 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = generic_spy_political
+			modifier = {
+				new_operative_slot_bonus = 3
+			}
+		}
+		
+		ADW_IND_SHR_inteligence_1 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = SPR_torchbearers_of_tomorrow
+			modifier = {
+				army_intel_factor = 0.05
+			}
+		}
+		ADW_IND_SHR_inteligence_2 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = SPR_torchbearers_of_tomorrow
+			modifier = {
+				army_intel_factor = 0.05
+				navy_intel_factor = 0.05
+			}
+		}
+		ADW_IND_SHR_inteligence_3 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = SPR_torchbearers_of_tomorrow
+			modifier = {
+				army_intel_factor = 0.05
+				navy_intel_factor = 0.05
+				airforce_intel_factor = 0.05
+			}
+		}
 	}
 }
