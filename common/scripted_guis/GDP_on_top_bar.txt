@@ -45,7 +45,7 @@ scripted_gui = {
 		window_name = "ADW_GDP_emplpy_system"
 		visible = {
 			ROOT = { has_country_flag = open_ui_EMS }
-			ROOT = { num_subjects > 1 }
+			ROOT = { num_subjects > 0 }
 		}
 		dynamic_lists = {
 			emplyee_shogun_grid = {
@@ -71,6 +71,127 @@ scripted_gui = {
 					}
 				}
 				ADW_array_shogun_add = yes
+			}
+		}
+	}
+	ADW_GDP_faction_GDP_list = {
+		window_name = "ADW_GDP_faction_GDP_list"
+		visible = {
+			ROOT = { has_country_flag = open_ui_ADW_faction }
+		}
+		dynamic_lists = {
+			ADW_GDP_faction_GDP_b_grid = {
+				array = global.ADW_GDP_faction_array
+				change_scope = yes
+				entry_container = "ADW_GDP_faction_window_the_name" 
+			}
+			ADW_GDP_faction_GDP_a_grid = {
+				array = global.ADW_GDP_faction_array
+				change_scope = yes
+				entry_container = "ADW_GDP_faction_window" 
+			}
+			ADW_GDP_faction_GDP_c_grid = {
+				array = global.ADW_GDP_faction_array
+				change_scope = yes
+				entry_container = "ADW_GDP_faction_window_the_name_aaa" 
+			}
+			ADW_GDP_faction_GDP_d_grid = {
+				array = global.ADW_GDP_faction_array
+				change_scope = yes
+				entry_container = "ADW_GDP_faction_flag" 
+			}
+		}
+		effects = {
+		}
+        properties = {
+            ADW_GDP_flags = {
+                image = "[This.GetFlag]"
+            }
+		}
+	}
+	
+	ADW_sytem_of_international_trade = {
+		window_name = "ADW_sytem_of_international_trade"
+		visible = {
+			ROOT = { has_country_flag = AADW_GDP_trade }
+		}
+		dynamic_lists = {
+			ADW_GDP_trade_gun = {
+				array = global.ADW_GDP_trade_gun_country_list
+				change_scope = yes
+				entry_container = "ADW_sytem_of_international_trade_entry" 
+			}
+		}
+		effects = {
+		}
+	}
+	
+	ADQW_GDP_juni_list = {
+		window_name = "ADQW_GDP_juni_list"
+		dynamic_lists = {
+			ADQW_GDP_juni_list_grid = {
+				array = global.ADW_GDP_juni_of_country
+				change_scope = yes
+				entry_container = "ADW_GDP_system_juni_list_entry" 
+			}
+		}
+		effects = {
+		}
+	}
+	
+	ADW_GDP_system_information = {
+		window_name = "ADW_GDP_system_information"
+		visible = {
+			ROOT = { has_country_flag = open_information_tag_ADW }
+		}
+	}
+	ADW_GDP_any_system_button = {
+		window_name = "ADW_GDP_any_system_button"
+		parent_window_token = top_bar
+		
+		effects = {
+			ADW_GDP_faction_GDP_list_display_click = {
+				ADW_the_gDP_narabekae = yes
+				ROOT = {
+					if = {
+						limit = {
+							has_country_flag = open_ui_ADW_faction
+						}
+						clr_country_flag = open_ui_ADW_faction
+						else = {
+							set_country_flag = open_ui_ADW_faction
+						}
+					}
+				}
+			}
+			ADW_GDP_system_information_dis_click = {
+				ADW_the_gDP_narabekae = yes
+				ROOT = {
+					if = {
+						limit = {
+							has_country_flag = open_information_tag_ADW
+						}
+						clr_country_flag = open_information_tag_ADW
+						else = {
+							set_country_flag = open_information_tag_ADW
+						}
+					}
+				}
+			}
+			ADW_sytem_of_international_trade_dis_click = {
+				clear_array = global.ADW_GDP_trade_gun_country_list
+				ADW_GDP_trade_gun_country = yes
+				ROOT = {
+					if = {
+						limit = {
+							has_country_flag = AADW_GDP_trade
+						}
+						clr_country_flag = AADW_GDP_trade
+						else = {
+							set_country_flag = AADW_GDP_trade
+						}
+					}
+				}
 			}
 		}
 	}
