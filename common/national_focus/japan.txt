@@ -13,7 +13,7 @@ focus_tree = {
 	focus = {
 		id = ADW_JAP_current_stats
 		icon = GFX_focus_chi_collaboration_with_the_japanese
-		cost = 1.00
+		cost = 3.00
 
 		x = 2
 		y = 0
@@ -26,12 +26,12 @@ focus_tree = {
 			}
 
 		}
-	}
+}
 
 	focus = {
 		id = ADW_JAP_our_focus
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
-		cost = 3.00
+		cost = 5.00
 
 		prerequisite = {
 			focus = ADW_JAP_current_stats
@@ -46,7 +46,7 @@ focus_tree = {
 				}
 			}
 		}
-	}
+}
 
 	focus = {
 		id = ADW_JAP_negotiations_with_china
@@ -92,7 +92,7 @@ focus_tree = {
 	focus = {
 		id = ADW_JAP_northern_shogunate
 		icon = GFX_goal_unknown
-		cost = 3
+		cost = 5
 		x = 3
 		y = 4
 
@@ -153,7 +153,7 @@ focus_tree = {
 	focus = {
 		id = ADW_JAP_media_censorship
 		icon = GFX_focus_eng_move_to_secure_the_dominions
-		cost = 10.00
+		cost = 3
 		x = 3
 		y = 5
 
@@ -215,7 +215,7 @@ focus_tree = {
 	focus = {
 		id = ADW_JAP_falire_of_reunification
 		icon = GFX_goal_unknown
-		cost = 1
+		cost = 5
 		x = 4
 		y = 6
 

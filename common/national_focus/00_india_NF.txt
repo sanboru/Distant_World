@@ -986,14 +986,14 @@
 			count_triggers = {
 				amount = 13
 				controls_state = 321
-				controls_state = 837
+				controls_state = 911
 				controls_state = 425
-				controls_state = 835
+				controls_state = 909
 				controls_state = 423
 				controls_state = 320
 				controls_state = 424 #7
 				
-				controls_state = 836
+				controls_state = 910
 				controls_state = 427
 				controls_state = 429
 				controls_state = 437
@@ -1011,14 +1011,14 @@
 				add_ideas = NOT_stability_because_of_unite_1
 				set_cosmetic_tag = RAJ_UNITE
 				add_state_core = 321
-				add_state_core = 837
+				add_state_core = 911
 				add_state_core = 425
-				add_state_core = 835
+				add_state_core = 909
 				add_state_core = 423
 				add_state_core = 320
 				add_state_core = 424
 				
-				add_state_core = 836
+				add_state_core = 910
 				add_state_core = 427
 				add_state_core = 429
 				add_state_core = 437
@@ -1044,7 +1044,7 @@
 											}
 										}
 									}
-									835 = {
+									909 = {
 										owner = {
 											or = {
 												tag = RAJ
@@ -3392,14 +3392,14 @@
 			count_triggers = {
 				amount = 13
 				controls_state = 321
-				controls_state = 837
+				controls_state = 911
 				controls_state = 425
-				controls_state = 835
+				controls_state = 909
 				controls_state = 423
 				controls_state = 320
 				controls_state = 424 #7
 				
-				controls_state = 836
+				controls_state = 910
 				controls_state = 427
 				controls_state = 429
 				controls_state = 437
@@ -3427,7 +3427,7 @@
 											}
 										}
 									}
-									835 = {
+									909 = {
 										owner = {
 											or = {
 												tag = RAJ
@@ -3457,14 +3457,14 @@
 			RAJ = {
 				set_cosmetic_tag = RAJ_UNITE
 				add_state_core = 321
-				add_state_core = 837
+				add_state_core = 911
 				add_state_core = 425
-				add_state_core = 835
+				add_state_core = 909
 				add_state_core = 423
 				add_state_core = 320
 				add_state_core = 424
 				
-				add_state_core = 836
+				add_state_core = 910
 				add_state_core = 427
 				add_state_core = 429
 				add_state_core = 437
@@ -4607,13 +4607,13 @@
 			factor = 10
 		}
 		available = {
-			controls_state = 835
+			controls_state = 909
 		}
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			835 = {
+			909 = {
 				set_state_category = large_town
 			}
 			set_victory_points = {
@@ -8691,11 +8691,11 @@ shared_focus = { #3612
 	}
 	available = {
 		ROOT = {
-			controls_state = 838
+			controls_state = 912
 		}
 	}
     completion_reward = {
-		838 = {
+		912 = {
 			add_building_construction = {
 				type = supply_node
 				level = 1
@@ -9031,6 +9031,386 @@ shared_focus = { #5187
     }
 }
 
+shared_focus = { #5187
+    id = ADW_IND_agency_of_inteligence_1
+    x = 30
+    y = 5
+    icon = GFX_goal_generic_special_forces
+	cost = 10
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	available = {
+		has_intelligence_agency = yes
+	}
+	ai_will_do = {
+		factor = 5
+	}
+    completion_reward = {
+		add_ideas = ADW_IND_SHR_operative_ideas
+    }
+}
+shared_focus = { #5187
+    id = ADW_IND_agency_of_inteligence_2
+    x = 30
+    y = 6
+    icon = GFX_focus_GRE_reviving_the_spartan_warrior_spirit
+	cost = 10
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	prerequisite = { focus = ADW_IND_agency_of_inteligence_1 }
+	available = {
+		has_intelligence_agency = yes
+	}
+	ai_will_do = {
+		factor = 5
+	}
+    completion_reward = {
+		swap_ideas = {
+			remove_idea = ADW_IND_SHR_operative_ideas
+			add_idea = ADW_IND_SHR_operative_ideas_1
+		}
+    }
+}
+shared_focus = { #5187
+    id = ADW_IND_agency_of_inteligence_3
+    x = 30
+    y = 7
+    icon = GFX_focus_spa_the_phalanx_ascendant
+	cost = 10
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	prerequisite = { focus = ADW_IND_agency_of_inteligence_2 }
+	available = {
+		has_intelligence_agency = yes
+	}
+	ai_will_do = {
+		factor = 5
+	}
+    completion_reward = {
+		swap_ideas = {
+			remove_idea = ADW_IND_SHR_operative_ideas_1
+			add_idea = ADW_IND_SHR_operative_ideas_2
+		}
+    }
+}
+shared_focus = { #5187
+    id = ADW_IND_agency_of_inteligence_4
+    x = 30
+    y = 8
+    icon = GFX_focus_spa_save_the_alcazar
+	cost = 10
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	prerequisite = { focus = ADW_IND_agency_of_inteligence_3 }
+	available = {
+		has_intelligence_agency = yes
+	}
+	ai_will_do = {
+		factor = 5
+	}
+    completion_reward = {
+		add_political_power = 25
+    }
+}
+
+shared_focus = { #5187
+    id = ADW_IND_agency_of_inteligence_5
+    x = 28
+    y = 6
+    icon = GFX_focus_spr_masters_of_our_own_fate
+	cost = 10
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	prerequisite = { focus = ADW_IND_agency_of_inteligence_1 }
+	available = {
+		has_intelligence_agency = yes
+	}
+	ai_will_do = {
+		factor = 5
+	}
+    completion_reward = {
+		add_ideas = ADW_IND_spy_employ_0
+    }
+}
+shared_focus = { #5187
+    id = ADW_IND_agency_of_inteligence_6
+    x = 28
+    y = 7
+    icon = GFX_focus_spa_unify_the_nationalist_front
+	cost = 10
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	prerequisite = { focus = ADW_IND_agency_of_inteligence_5 }
+	available = {
+		has_intelligence_agency = yes
+	}
+	ai_will_do = {
+		factor = 5
+	}
+    completion_reward = {
+		swap_ideas = {
+			remove_idea = ADW_IND_spy_employ_0
+			add_idea = ADW_IND_spy_employ_1
+		}
+    }
+}
+shared_focus = { #5187
+    id = ADW_IND_agency_of_inteligence_7
+    x = 28
+    y = 8
+    icon = GFX_focus_spr_no_pasaran
+	cost = 10
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	prerequisite = { focus = ADW_IND_agency_of_inteligence_6 }
+	available = {
+		has_intelligence_agency = yes
+	}
+	ai_will_do = {
+		factor = 5
+	}
+    completion_reward = {
+		swap_ideas = {
+			remove_idea = ADW_IND_spy_employ_1
+			add_idea = ADW_IND_spy_employ_2
+		}
+    }
+}
+
+shared_focus = { #5187
+    id = ADW_IND_agency_of_inteligence_8
+    x = 32
+    y = 6
+    icon = GFX_focus_generic_army_tanks2
+	cost = 10
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	prerequisite = { focus = ADW_IND_agency_of_inteligence_1 }
+	available = {
+		has_intelligence_agency = yes
+	}
+	ai_will_do = {
+		factor = 5
+	}
+    completion_reward = {
+		add_ideas = ADW_IND_SHR_inteligence_1
+    }
+}
+shared_focus = { #5187
+    id = ADW_IND_agency_of_inteligence_9
+    x = 32
+    y = 7
+    icon = GFX_goal_generic_navy_doctrines_tactics
+	cost = 10
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	prerequisite = { focus = ADW_IND_agency_of_inteligence_8 }
+	available = {
+		has_intelligence_agency = yes
+	}
+	ai_will_do = {
+		factor = 5
+	}
+    completion_reward = {
+		swap_ideas = {
+			remove_idea = ADW_IND_SHR_inteligence_1
+			add_idea = ADW_IND_SHR_inteligence_2
+		}
+    }
+}
+shared_focus = { #5887
+    id = ADW_IND_agency_of_inteligence_10
+    x = 32
+    y = 8
+    icon = GFX_goal_generic_air_doctrine
+	cost = 10
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	prerequisite = { focus = ADW_IND_agency_of_inteligence_9 }
+	available = {
+		has_intelligence_agency = yes
+	}
+	ai_will_do = {
+		factor = 5
+	}
+    completion_reward = {
+		swap_ideas = {
+			remove_idea = ADW_IND_SHR_inteligence_2
+			add_idea = ADW_IND_SHR_inteligence_3
+		}
+    }
+}
+
+shared_focus = { #5887
+    id = ADW_IND_SHR_traffic_0
+    x = 38
+    y = 0
+    icon = GFX_focus_prc_infiltration
+	cost = 10
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	ai_will_do = {
+		factor = 5
+	}
+    completion_reward = {
+		add_political_power = 50
+    }
+}
+shared_focus = { #6000
+    id = ADW_IND_SHR_traffic_1
+    x = 38
+    y = 1
+    icon = GFX_goal_generic_army_tanks
+	cost = 10
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	prerequisite = { focus = ADW_IND_SHR_traffic_0 }
+	ai_will_do = {
+		factor = 5
+	}
+    completion_reward = {
+		add_equipment_to_stockpile = {
+			type = motorized_equipment
+			amount = 100
+		}
+    }
+}
+shared_focus = { #6000
+    id = ADW_IND_SHR_traffic_2
+    x = 38
+    y = 2
+    icon = GFX_focus_generic_license_production
+	cost = 10
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	prerequisite = { focus = ADW_IND_SHR_traffic_1 }
+	ai_will_do = {
+		factor = 5
+	}
+    completion_reward = {
+		add_equipment_to_stockpile = {
+			type = motorized_equipment
+			amount = 100
+		}
+    }
+}
+shared_focus = { #6140
+    id = ADW_IND_SHR_traffic_3
+    x = 38
+    y = 3
+    icon = GFX_focus_generic_diplomatic_treaty
+	cost = 10
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	prerequisite = { focus = ADW_IND_SHR_traffic_2 }
+	ai_will_do = {
+		factor = 5
+	}
+    completion_reward = {
+		add_equipment_to_stockpile = {
+			type = motorized_equipment
+			amount = 100
+		}
+    }
+}
+
+shared_focus = { #6000
+    id = ADW_IND_SHR_traffic_4
+    x = 36
+    y = 1
+    icon = GFX_focus_GRE_a_long_and_proud_tradition
+	cost = 10
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	prerequisite = { focus = ADW_IND_SHR_traffic_0 }
+	ai_will_do = {
+		factor = 5
+	}
+    completion_reward = {
+		add_equipment_to_stockpile = {
+			type = train_equipment
+			amount = 5
+		}
+    }
+}
+shared_focus = { #6000
+    id = ADW_IND_SHR_traffic_5
+    x = 36
+    y = 2
+    icon = GFX_goal_generic_build_airforce
+	cost = 10
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	prerequisite = { focus = ADW_IND_SHR_traffic_4 }
+	ai_will_do = {
+		factor = 5
+	}
+    completion_reward = {
+		add_equipment_to_stockpile = {
+			type = train_equipment
+			amount = 5
+		}
+    }
+}
+shared_focus = { #6140
+    id = ADW_IND_SHR_traffic_6
+    x = 36
+    y = 3
+    icon = GFX_focus_generic_rubber
+	cost = 10
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	prerequisite = { focus = ADW_IND_SHR_traffic_5 }
+	ai_will_do = {
+		factor = 5
+	}
+    completion_reward = {
+		add_equipment_to_stockpile = {
+			type = train_equipment
+			amount = 5
+		}
+    }
+}
+
+
+shared_focus = { #6000
+    id = ADW_IND_SHR_traffic_7
+    x = 40
+    y = 1
+    icon = GFX_focus_SOV_mobilization_plan
+	cost = 10
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	prerequisite = { focus = ADW_IND_SHR_traffic_0 }
+	ai_will_do = {
+		factor = 5
+	}
+    completion_reward = {
+		add_equipment_to_stockpile = {
+			type = transport_plane_equipment
+			amount = 15
+		}
+    }
+}
+shared_focus = { #6000
+    id = ADW_IND_SHR_traffic_8
+    x = 40
+    y = 2
+    icon = GFX_focus_POL_plan_west
+	cost = 10
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	prerequisite = { focus = ADW_IND_SHR_traffic_7 }
+	ai_will_do = {
+		factor = 5
+	}
+    completion_reward = {
+		add_equipment_to_stockpile = {
+			type = transport_plane_equipment
+			amount = 15
+		}
+    }
+}
+shared_focus = { #6560
+    id = ADW_IND_SHR_traffic_9
+    x = 40
+    y = 3
+    icon = GFX_focus_POL_plan_east
+	cost = 10
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	prerequisite = { focus = ADW_IND_SHR_traffic_8 }
+	ai_will_do = {
+		factor = 5
+	}
+    completion_reward = {
+		add_equipment_to_stockpile = {
+			type = transport_plane_equipment
+			amount = 15
+		}
+    }
+}
+
 
 focus_tree = {
 	id = IND_ADW_focus_teree
@@ -9050,6 +9430,8 @@ focus_tree = {
 	shared_focus = ADW_IND_SHR_navy_research
 	shared_focus = ADW_IND_SHR_supply_tree
 	shared_focus = ADW_IND_SHR_new_era_nuclear_0
+	shared_focus = ADW_IND_agency_of_inteligence_1
+	shared_focus = ADW_IND_SHR_traffic_0
 	
 	default = no
 
@@ -9123,6 +9505,44 @@ focus_tree = {
 			IND = {
 				country_event = { id = IND_ADW.80 }
 			}
+		}
+	}
+	focus = { #182
+		id = IND_ADW_koushin_of_gun_1
+		icon = GFX_goal_generic_cavalry
+		prerequisite = { focus = IND_ADW_koushin_of_gun }
+		x = 4
+		y = 2
+
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_STABILITY }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			IND = {
+				country_event = { id = IND_ADW.103 }
+			}
+		}
+	}
+	focus = { #6595
+		id = IND_ADW_the_effort_of_politic_2
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = IND_ADW_the_effort_of_politic_1 }
+		x = 2
+		y = 2
+
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 50
 		}
 	}
 }
