@@ -72,15 +72,15 @@ news_event = {
 			GIN = {
 				add_ideas = the_fight_of_geria
 				set_country_flag = thewar_of_ENG
-				transfer_state = 835
-				add_state_core = 835
+				transfer_state = 909
+				add_state_core = 909
 				transfer_state = 423
 				add_state_core = 423
 				transfer_state = 320
 				add_state_core = 320
 				add_state_core = 425
 				add_state_core = 424
-				add_state_core = 837
+				add_state_core = 911
 				add_state_core = 321
 				declare_war_on = {
 					target = EIN
@@ -306,7 +306,7 @@ news_event = {
 						prioritize_location = 8067
 					}
 				}
-				835 = {
+				909 = {
 					create_unit = {
 						division = "division_template = \"the minpei of GIN\"start_experience_factor = 0.1 start_equipment_factor = 0.02"
 						owner = GIN
@@ -394,7 +394,7 @@ news_event = {
 			GIN = {
 				if = {
 					limit = {
-						835 = {
+						909 = {
 							owner = {
 								or = {
 									tag = RAJ
@@ -403,7 +403,7 @@ news_event = {
 							}
 						}
 					}
-					transfer_state = 835
+					transfer_state = 909
 				}
 				if = {
 					limit = {
@@ -431,7 +431,7 @@ news_event = {
 					}
 					transfer_state = 320
 				}
-				add_state_core = 835
+				add_state_core = 909
 				add_state_core = 423
 				add_state_core = 320
 				declare_war_on = {
@@ -500,10 +500,10 @@ news_event = {
 				if = {
 					limit = {
 						GIN = {
-							controls_state = 835
+							controls_state = 909
 						}
 					}
-					835 = {
+					909 = {
 						create_unit = {
 							division = "division_template = \"GIN hanran military\"start_experience_factor = 0.1 start_equipment_factor = 0.50"
 							owner = GIN
@@ -646,8 +646,8 @@ news_event = {
 					add_ideas = ADW_IND_civilwar
 					add_ideas = ADW_IND_civil_support_com
 					remove_ideas = ADW_IND_the_de_buff_of_1
-					transfer_state = 839
-					add_state_core = 839
+					transfer_state = 913
+					add_state_core = 913
 					transfer_state = 436
 					add_state_core = 436
 					add_dynamic_modifier = { modifier = ADW_IND_dokuritsu_minshu }
@@ -660,7 +660,7 @@ news_event = {
 							infantry = { x = 1 y = 1 }
 						}
 					}
-					839 = {
+					913 = {
 						create_unit = {
 							division = "division_template = \"Cvilwar hanran military C\"start_experience_factor = 0.1 start_equipment_factor = 0.1"
 							owner = CND
@@ -729,8 +729,8 @@ news_event = {
 					add_ideas = ADW_IND_civilwar
 					add_ideas = ADW_IND_civil_support_fas
 					remove_ideas = ADW_IND_the_de_buff_of_1
-					transfer_state = 838
-					add_state_core = 838
+					transfer_state = 912
+					add_state_core = 912
 					transfer_state = 426
 					add_state_core = 426
 					add_dynamic_modifier = { modifier = ADW_IND_dokuritsu_minshu }
@@ -743,7 +743,7 @@ news_event = {
 							infantry = { x = 1 y = 1 }
 						}
 					}
-					838 = {
+					912 = {
 						create_unit = {
 							division = "division_template = \"Cvilwar hanran military F\"start_experience_factor = 0.1 start_equipment_factor = 0.1"
 							owner = FND
@@ -796,8 +796,8 @@ news_event = {
 						}
 					}
 				}
-				remove_state_core = 839
-				remove_state_core = 838
+				remove_state_core = 913
+				remove_state_core = 912
 				remove_state_core = 436
 				remove_state_core = 426
 				set_cosmetic_tag = IND_rinji_demo

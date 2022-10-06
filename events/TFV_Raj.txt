@@ -360,7 +360,7 @@ country_event = {
 		original_tag = RAJ
 		RAJ = {
 			owns_state = 426
-			owns_state = 838
+			owns_state = 912
 			owns_state = 436
 		}
 		IND = {
@@ -396,7 +396,7 @@ country_event = {
 				RAJ = {
 					or = {
 						controls_state = 426
-						controls_state = 838
+						controls_state = 912
 						controls_state = 436
 					}
 				}
@@ -450,7 +450,7 @@ country_event = {
 				}
 				if = {
 					limit = {
-						838 = {
+						912 = {
 							owner = {
 								or = {
 									tag = RAJ
@@ -459,11 +459,11 @@ country_event = {
 							}
 						}
 					}
-					transfer_state = 838
+					transfer_state = 912
 				}
 				add_state_core = 426
 				add_state_core = 436
-				add_state_core = 838
+				add_state_core = 912
 				declare_war_on = {
 					target = RAJ
 					type = annex_everything
@@ -524,7 +524,7 @@ country_event = {
 			if = {
 				limit = {
 					IND = {
-						controls_state = 838
+						controls_state = 912
 					}
 				}
 				436 = {
@@ -2310,6 +2310,34 @@ country_event = {
 	option = {
 		name = IND_ADW.102.a
 		add_political_power = 25
+		ai_chance = {
+			factor = 5
+		}
+	}
+}
+country_event = {
+	id = IND_ADW.103
+	title = IND_ADW.103.t
+	desc = IND_ADW.103.d
+	picture = GFX_report_event_tur_inonu_diplomacy
+	is_triggered_only = yes
+	option = {
+		name = IND_ADW.103.a
+		add_political_power = 40
+		ai_chance = {
+			factor = 5
+		}
+	}
+	option = {
+		name = IND_ADW.103.b
+		add_war_support = 0.05
+		ai_chance = {
+			factor = 5
+		}
+	}
+	option = {
+		name = IND_ADW.103.c
+		add_stability = 0.05
 		ai_chance = {
 			factor = 5
 		}
