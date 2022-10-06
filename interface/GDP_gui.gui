@@ -27,7 +27,7 @@ guiTypes = {
 		}
 		containerWindowType = {
 			name = "emplyee_shogun_grid"
-			position = { x = 17 y = 10 }
+			position = { x = 0 y = 10 }
 			size = { width = 480 height = 480 }
 			verticalScrollbar = "right_vertical_slider"
 			background = {
@@ -51,6 +51,7 @@ guiTypes = {
 			}
 		}
 	}
+	
 	containerWindowType = {
 		name = "ADW_GDP_any_system_button"
 		position = { x = 0 y = 80}
@@ -75,7 +76,59 @@ guiTypes = {
 			frame = 1
 			pdx_tooltip = "ADW_GDP_system_information_dis_pdx"
 		}
+		buttonType = { #国際貿易システム
+			name = "ADW_sytem_of_international_trade_dis"
+			position = { x = 60 y = 5 }
+			spriteType = "GFX_decision_category_generic"
+			frame = 1
+			pdx_tooltip = "ADW_GDP_system_information_dis_pdx"
+		}
 	}
+	
+	containerWindowType = { #国際貿易システム
+		name = "ADW_sytem_of_international_trade"
+		position = { x = 300 y = 300}
+		size = { width = 500 height = 600 }
+		Orientation = UPPER_LEFT
+		moveable = yes
+		background = {
+			name = "GFX_bg_impact"
+			spriteType = "GFX_icon_dishes"
+		}
+		
+		containerWindowType = {
+			name = "ADW_GDP_trade_gun"
+			position = { x = 13 y = 50 }
+			size = { width = 250 height = 540 }
+			verticalScrollbar = "right_vertical_slider"
+			background = {
+				name = "bg_GDP"
+			}
+			gridboxtype = {
+				name = "ADW_GDP_trade_gun"
+				position = { x = 0 y = 0 }
+				size = { width = 100%% height = 100%% }
+				slotsize = { width = 30 height = 30 }
+				max_slots_horizontal = 1
+				format = "UPPER_LEFT"
+			}
+		}
+	}
+	containerWindowType = {#国際貿易システム
+		name = "ADW_sytem_of_international_trade_entry"
+		instantTextBoxType = {
+			name ="ADW_sytem_of_international"
+			position = { x= 0 y = 0 }
+			font = "hoi_18mbs"
+			text = "ADW_sytem_of_international_txt"
+			format = left
+			maxWidth = 100
+			maxHeight = 24
+			fixedsize = yes
+		}
+	}
+	
+	
 	containerWindowType = {#ADW情報
 		name = "ADW_GDP_system_information"
 		position = { x = 474 y = 85}
@@ -629,7 +682,7 @@ guiTypes = {
 		instantTextBoxType = {
 			name ="ADW_GDP_faction"
 			position = { x = 0 y = 0 }
-			font = "vic_36s"
+			font = "vic_36"
 			text = "ADW_GDP_faction_window_the_name_txt"
 			maxWidth = 455
 			format = left
@@ -773,7 +826,7 @@ guiTypes = {
 		instantTextBoxType = { 
 			name ="the_country_of_gikai"
 			position = { x= 380 y = 11 }
-			font = "vic_36s"
+			font = "vic_36"
 			text = "the_country_of_gikai_txt"
 			maxWidth = 10000
 			format = UPPER_RIGHT
