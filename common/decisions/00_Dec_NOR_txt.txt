@@ -448,7 +448,7 @@ ADW_RAJ_youni_of_shukyo_each_states = {
 				OR = {
 					state = 429
 					state = 427
-					state = 836
+					state = 910
 					state = 433
 					state = 438
 					state = 437
@@ -456,16 +456,16 @@ ADW_RAJ_youni_of_shukyo_each_states = {
 					state = 428
 					state = 435
 					state = 426
-					state = 838
+					state = 912
 					state = 436
-					state = 839
-					state = 837
+					state = 913
+					state = 911
 					state = 321
 					state = 424
 					state = 425
 					state = 423
 					state = 320
-					state = 835
+					state = 909
 					state = 431
 					state = 430
 					state = 432
@@ -514,7 +514,7 @@ ADW_RAJ_danatsu_of_shukyo_each_states = {
 				OR = {
 					state = 429
 					state = 427
-					state = 836
+					state = 910
 					state = 433
 					state = 438
 					state = 437
@@ -522,16 +522,16 @@ ADW_RAJ_danatsu_of_shukyo_each_states = {
 					state = 428
 					state = 435
 					state = 426
-					state = 838
+					state = 912
 					state = 436
-					state = 839
-					state = 837
+					state = 913
+					state = 911
 					state = 321
 					state = 424
 					state = 425
 					state = 423
 					state = 320
-					state = 835
+					state = 909
 					state = 431
 					state = 430
 					state = 432
@@ -1501,7 +1501,7 @@ a = {
 							infantry = { x = 0 y = 1 }
 						}
 					}
-				835 = {
+				909 = {
 			create_unit = {
 				division = "division_template = \"the minpei of GIN\"start_equipment_factor = 0.02"
 				owner = ROOT
@@ -1590,7 +1590,7 @@ a = {
 				}
 				
 				defender = {
-					state = 837
+					state = 911
 					num_provinces = 1
 					on_win = japan_border_conflict.3
 					on_lose = japan_border_conflict.2
@@ -1733,7 +1733,7 @@ a = {
 				OR = {
 					state = 429
 					state = 427
-					state = 836
+					state = 910
 					state = 433
 					state = 438
 					state = 437
@@ -1741,16 +1741,16 @@ a = {
 					state = 428
 					state = 435
 					state = 426
-					state = 838
+					state = 912
 					state = 436
-					state = 839
-					state = 837
+					state = 913
+					state = 911
 					state = 321
 					state = 424
 					state = 425
 					state = 423
 					state = 320
-					state = 835
+					state = 909
 					state = 431
 					state = 430
 					state = 432
@@ -1843,6 +1843,38 @@ a = {
 				array = global.ADW_GDP_faction_array
 				
 				add_political_power = 1540
+			}
+		}
+	}
+	trarck_ADW_debug = {
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = motorized_equipment
+				amount = 500
+			}
+		}
+	}
+	the_attack_effect = { #海軍
+		complete_effect = {
+			damage_units = {
+				state = 64
+				damage = 0.5
+				org_damage = 0.5
+				str_damage = 0.5
+				ratio = yes
+				army = yes
+			}
+		}
+	}
+	the_attack_effect_navy = { #海軍
+		complete_effect = {
+			damage_units = {
+				region = 173
+				damage = 0.5
+				org_damage = 0.5
+				str_damage = 0.5
+				ratio = yes
+				navy = yes
 			}
 		}
 	}
