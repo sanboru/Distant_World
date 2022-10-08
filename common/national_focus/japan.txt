@@ -84,8 +84,8 @@ focus_tree = {
 		}
 	
 		completion_reward = {
-					add_idea = extensive_conscription
-					add_idea = partial_economic_mobilisation
+					add_ideas = extensive_conscription
+					add_ideas = partial_economic_mobilisation
 				}
 	}
 
@@ -103,7 +103,7 @@ focus_tree = {
 		completion_reward = {
 			declare_war_on = {
 				tag = AIN
-				wargoal = annex_everything
+				type = annex_everything
 			}
 		}
 	}
@@ -200,7 +200,7 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 150
 			set_stability = 0.8
-			remove_idea = DW_JAP_divided_nation 
+			remove_ideas = DW_JAP_divided_nation 
 			hidden_effect = {
 				JAP = {
 					country_event = {
@@ -235,7 +235,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			add_politica_power = -150
+			add_political_power = -150
 			add_popularity = {
 				ideology = communism
 				popularity = 0.3
