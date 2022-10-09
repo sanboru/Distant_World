@@ -7,6 +7,10 @@ focus_tree = {
 			tag = JAP
 		}
 	}
+	continuous_focus_position = {
+		x = 1000
+		y = 200
+	}
 
 	default = no
 
@@ -49,25 +53,18 @@ focus_tree = {
 }
 
 	focus = {
-		id = ADW_JAP_negotiations_with_china
-		icon = GFX_focus_ADW_JAP_negotiations_with_quing
-		cost = 10.00
+		id = ADW_JAP_economic_moblization
+		icon = GFX_focus_hol_abandon_the_gold_standard
+		cost = 5.00
 
 		prerequisite = {
 			focus = ADW_JAP_our_focus
 		}
 
-		x = 2
+		x = 1
 		y = 2
-			select_effect = {
-					JAP = {
-						country_event = {
-							id = DW_JAP.4
-						}
-				}
-			}
 			completion_reward = {
-				add_political_power = 150
+				add_ideas = partial_economic_mobilisation
 			}
 
 	}
@@ -76,16 +73,15 @@ focus_tree = {
 		id = ADW_JAP_early_moblization
 		icon = GFX_focus_generic_little_entente
 		cost = 5.00
-		x = 2
-		y = 3
+		x = 3
+		y = 2
 	
 		prerequisite = {
-			focus = ADW_JAP_negotiations_with_china
+			focus = ADW_JAP_our_focus
 		}
 	
 		completion_reward = {
 					add_ideas = extensive_conscription
-					add_ideas = partial_economic_mobilisation
 				}
 	}
 
@@ -98,6 +94,11 @@ focus_tree = {
 
 		prerequisite = {
 			focus = ADW_JAP_early_moblization
+
+		}
+
+		prerequisite = {
+			focus = ADW_JAP_economic_moblization
 		}
 
 		completion_reward = {
@@ -119,6 +120,10 @@ focus_tree = {
 			focus = ADW_JAP_early_moblization
 		}
 
+		prerequisite = {
+			focus = ADW_JAP_economic_moblization
+		}
+
 		completion_reward = {
 			army_experience = 75
 		}
@@ -130,7 +135,7 @@ focus_tree = {
 
 	focus = {
 		id = ADW_JAP_snowtop_transport
-		icon = GFX_focus_generic_rubber
+		icon = GFX_focus_generic_truck
 		cost = 3
 		x = 1
 		y = 5
@@ -175,11 +180,40 @@ focus_tree = {
 }
 
 	focus = {
+		id = ADW_JAP_demand_ryukyu_islands
+		icon = GFX_placeholder
+		cost = 5
+		x = 2
+		y = 6
+
+		prerequisite = {
+			focus = ADW_JAP_snowtop_transport
+			focus = ADW_JAP_media_censorship
+		}
+
+		available = {
+			NOT = {
+				country_exists = AIN
+				has_war = yes
+			}
+		}
+
+		completion_reward = {
+			QIN = {
+				country_event = {
+					id = placeholder
+				}
+			}
+		}
+
+	}
+
+	focus = {
 		id = ADW_JAP_reunification
 		icon = GFX_goal_unknown
 		cost = 1
 		x = 0
-		y = 6
+		y = 7
 
 		prerequisite = {
 			focus = ADW_JAP_snowtop_transport
@@ -217,7 +251,7 @@ focus_tree = {
 		icon = GFX_goal_unknown
 		cost = 5
 		x = 4
-		y = 6
+		y = 7
 
 		prerequisite = {
 			focus = ADW_JAP_snowtop_transport
