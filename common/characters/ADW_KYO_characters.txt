@@ -5,10 +5,11 @@ characters = {
     portraits={
         civilian={
             large = GFX_portrait_JAP_emperor_hirohito
+            }
         }
-    }
     country_leader={
         ideology = despotism
         traits={ emperor_showa imperial_sanction }
+        }
     }
 }

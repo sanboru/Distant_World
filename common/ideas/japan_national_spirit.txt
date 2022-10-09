@@ -95,24 +95,5 @@ ideas = {
                 industrial_capacity_factory = 0.10
             }
         }
-
-        DW_JAP_chinese_tribunary ={ #釜山会議でとある選択肢を取ることで一定期間付与
-            allowed = {
-                always = no
-            }
-
-            allowed_civil_war = {
-                NOT = {
-                    has_government = communism
-                }
-            }
-            removal_cost = -1
-
-            modifier = {
-                consumer_goods_factor = 0.1
-                industrial_capacity_factory	= -0.1
-            }
-
-        }
     }
 }
