@@ -80,3 +80,20 @@
 		enable = { always = yes }
 		stability_weekly = ADW_GDP_shouhi_tax_effect
 	}
+	ADW_GDP_keistaus = {
+		icon = "generic_flexible_foreign_policy2"
+		enable = { always = yes }
+		stability_weekly = ROOT.ADW_GDP_police_stabil
+	}
+	ADW_GDP_infra_use_factory = {
+		icon = "GFX_idea_unknown"
+		enable = { always = yes }
+		civilian_factory_use = ROOT.ADW_GDP_factory_use
+	}
+	ADW_infra_GDP_effect = {
+		icon = "GFX_idea_unknown"
+		enable = { always = yes }
+		stability_factor = ROOT.ADW_GDP_infra_effect
+		recruitable_population_factor = ROOT.ADW_GDP_infra_effect
+		non_core_manpower = ROOT.ADW_GDP_infra_effect
+	}
