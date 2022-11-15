@@ -1,0 +1,66 @@
+ADW_IND_debug_for_IND = {
+	icon = GFX_decision_category_generic_propaganda
+	visible = {
+		is_debug = yes
+		tag = IND
+	}
+	Priority = {
+		base = -10
+	}
+}
+
+ADW_IND_the_taisho_of_gerira = {
+	icon = GFX_decision_category_hol_war_on_pacifism
+	picture = GFX_decision_cat_picture_generic_border_conflicts
+	visible = {
+		OR = {
+			tag = IND
+			tag = CND
+			tag = FND
+		}
+		has_country_flag = the_taisho_of_gerira
+	}
+	Priority = {
+		base = 20
+	}
+}
+ADW_IND_buildings_breaking = {
+	icon = GFX_decision_category_border_conflicts
+	picture = GFX_decision_cat_picture_gateway_to_europe
+	visible_when_empty = yes
+	visible = {
+		OR = {
+			tag = IND
+			tag = CND
+			tag = FND
+		}
+		ROOT = {
+			OR = {
+				has_war_with = IND
+				has_war_with = CND
+				has_war_with = FND
+			}
+			has_country_flag = AWD_IND_attack_infra
+		}
+	}
+	Priority = {
+		base = 25
+	}
+}
+ADW_IND_fukko_from_civil_war = {
+	icon = GFX_decision_category_generic_prospect_for_resources
+	visible_when_empty = yes
+	visible = {
+		AND = {
+			OR = {
+				tag = IND
+				tag = CND
+				tag = FND
+			}
+			has_country_flag = ADW_naisen_fukko_DEC
+		}
+	}
+	Priority = {
+		base = 25
+	}
+}
