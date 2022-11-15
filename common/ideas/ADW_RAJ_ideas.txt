@@ -1894,6 +1894,7 @@ ideas = {
 				political_power_factor = -0.07
 				stability_factor = -0.1
 				justify_war_goal_time = 100
+				defence = -0.8
 			}
 		}
 		ADW_IND_civil_support_fas = {
@@ -2267,6 +2268,292 @@ ideas = {
 				army_intel_factor = 0.05
 				navy_intel_factor = 0.05
 				airforce_intel_factor = 0.05
+			}
+		}
+		
+		ADW_IND_war_for_CND = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = warrior_traditions_idea
+			targeted_modifier = {
+				tag = CND
+				attack_bonus_against = 0.03
+			}
+		}
+		ADW_IND_war_for_CND_1 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = warrior_traditions_idea
+			targeted_modifier = {
+				tag = CND
+				attack_bonus_against = 0.04
+			}
+		}
+		ADW_IND_war_for_CND_2 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = warrior_traditions_idea
+			targeted_modifier = {
+				tag = CND
+				attack_bonus_against = 0.05
+			}
+		}
+		ADW_IND_war_for_IND = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = warrior_traditions_idea
+			targeted_modifier = {
+				tag = IND
+				attack_bonus_against = 0.03
+			}
+		}
+		ADW_IND_war_for_IND_1 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = warrior_traditions_idea
+			targeted_modifier = {
+				tag = IND
+				attack_bonus_against = 0.04
+			}
+		}
+		ADW_IND_war_for_IND_2 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = warrior_traditions_idea
+			targeted_modifier = {
+				tag = IND
+				attack_bonus_against = 0.05
+			}
+		}
+		ADW_IND_war_for_FND = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = warrior_traditions_idea
+			targeted_modifier = {
+				tag = FND
+				attack_bonus_against = 0.03
+			}
+		}
+		ADW_IND_war_for_FND_1 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = warrior_traditions_idea
+			targeted_modifier = {
+				tag = FND
+				attack_bonus_against = 0.04
+			}
+		}
+		ADW_IND_war_for_FND_2 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = warrior_traditions_idea
+			targeted_modifier = {
+				tag = FND
+				attack_bonus_against = 0.05
+			}
+		}
+	
+		ADW_IND_civilwar_1 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = MEX_politicised_army_2
+			modifier = {
+				forced_surrender_limit = 1
+				recruitable_population = 0.1
+				war_support_factor = 0.1
+				political_power_factor = -0.07
+				stability_factor = -0.1
+				justify_war_goal_time = 100
+				defence = -0.7
+			}
+		}
+		ADW_IND_civilwar_2 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = MEX_politicised_army_2
+			modifier = {
+				forced_surrender_limit = 1
+				recruitable_population = 0.1
+				war_support_factor = 0.1
+				political_power_factor = -0.07
+				stability_factor = -0.1
+				justify_war_goal_time = 100
+				defence = -0.6
+			}
+		}
+		ADW_IND_civilwar_3 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = MEX_politicised_army_2
+			modifier = {
+				forced_surrender_limit = 1
+				recruitable_population = 0.1
+				war_support_factor = 0.1
+				political_power_factor = -0.07
+				stability_factor = -0.1
+				justify_war_goal_time = 100
+				defence = -0.5
+			}
+		}
+		ADW_IND_civilwar_4 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = MEX_politicised_army_2
+			modifier = {
+				forced_surrender_limit = 1
+				recruitable_population = 0.1
+				war_support_factor = 0.1
+				political_power_factor = -0.07
+				stability_factor = -0.1
+				justify_war_goal_time = 100
+				defence = -0.4
+			}
+		}
+		ADW_IND_civilwar_5 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = MEX_politicised_army_2
+			modifier = {
+				forced_surrender_limit = 1
+				recruitable_population = 0.1
+				war_support_factor = 0.1
+				political_power_factor = -0.07
+				stability_factor = -0.1
+				justify_war_goal_time = 100
+				defence = -0.3
+			}
+		}
+		ADW_IND_civilwar_6 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = MEX_politicised_army_2
+			modifier = {
+				forced_surrender_limit = 1
+				recruitable_population = 0.1
+				war_support_factor = 0.1
+				political_power_factor = -0.07
+				stability_factor = -0.1
+				justify_war_goal_time = 100
+				defence = -0.2
+			}
+		}
+		ADW_IND_civilwar_7 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = MEX_politicised_army_2
+			modifier = {
+				forced_surrender_limit = 1
+				recruitable_population = 0.1
+				war_support_factor = 0.1
+				political_power_factor = -0.07
+				stability_factor = -0.1
+				justify_war_goal_time = 100
+				defence = -0.1
+			}
+		}
+		ADW_IND_sphi_of_civilwar = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = SOV_the_true_tsars
+			modifier = {
+				stability_weekly = 0.03
+				production_factory_max_efficiency_factor = 0.03
+				industrial_capacity_factory = 0.03
+			}
+		}
+		ADW_IND_insen_mood = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = tfv_can_conscription_crisis
+			modifier = {
+				mobilization_laws_cost_factor = 0.3
+				justify_war_goal_time = 0.5
+				generate_wargoal_tension = 0.2
+			}
+		}
+		ADW_IND_perfectry_fukko = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = raj_all_india_forward_bloc
+			modifier = {
+				political_power_factor = 0.01
+				stability_weekly_factor = 0.01
 			}
 		}
 	}
