@@ -1,0 +1,236 @@
+ADW_IND_debug_for_IND = {
+	ADW_change_focus = {
+		complete_effect = {
+			load_focus_tree = IND_ADW_for_war
+		}
+	}
+}
+
+ADW_IND_the_taisho_of_gerira = {
+	the_training_to_gerira = {
+		icon = GFX_decision_generic_prepare_civil_war
+		cost = 20
+		days_remove = 7
+		remove_effect = {
+			custom_effect_tooltip = the_up_of_do
+			hidden_effect = {
+				add_to_variable = { ROOT.ADW_gerira_taisho_do = 0.01 }
+				clamp_variable = {
+					var = ROOT.ADW_gerira_taisho_do
+					min = 0
+					max = 1
+				}
+			}
+			ADWIND_civil_war_kaihen = yes
+		}
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	research_of_gerira = {
+		icon = GFX_decision_eng_trade_unions_demand
+		cost = 30
+		days_remove = 10
+		remove_effect = {
+			custom_effect_tooltip = the_up_of_do
+			hidden_effect = {
+				add_to_variable = { ROOT.ADW_gerira_taisho_do = 0.02 }
+				clamp_variable = {
+					var = ROOT.ADW_gerira_taisho_do
+					min = 0
+					max = 1
+				}
+			}
+			ADWIND_civil_war_kaihen = yes
+		}
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	the_class_of_gerira = {
+		icon = GFX_decision_border_war
+		cost = 75
+		days_remove = 25
+		fire_only_once = yes
+		remove_effect = {
+			custom_effect_tooltip = the_up_of_do
+			hidden_effect = {
+				add_to_variable = { ROOT.ADW_gerira_taisho_do = 0.1 }
+				clamp_variable = {
+					var = ROOT.ADW_gerira_taisho_do
+					min = 0
+					max = 1
+				}
+			}
+			ADWIND_civil_war_kaihen = yes
+		}
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	the_teacher_of_gerira = {
+		icon = GFX_decision_generic_army_support
+		cost = 120
+		days_remove = 50
+		fire_only_once = yes
+		remove_effect = {
+			custom_effect_tooltip = the_up_of_do
+			hidden_effect = {
+				add_to_variable = { ROOT.ADW_gerira_taisho_do = 0.07 }
+				clamp_variable = {
+					var = ROOT.ADW_gerira_taisho_do
+					min = 0
+					max = 1
+				}
+			}
+			ADWIND_civil_war_kaihen = yes
+		}
+		ai_will_do = {
+			factor = 15
+		}
+	}
+}
+
+ADW_IND_buildings_breaking = {
+	ADW_GDP_breake_infra = {
+		icon = GFX_decision_generic_construction
+		cost = 50
+		days_remove = 30
+		state_target = yes
+		target_trigger = {
+			FROM = {
+				owner = {
+					AND = {
+						OR = {
+							tag = IND
+							tag = CND
+							tag = FND
+							tag = BAN
+						}
+						NOT = {
+							tag = ROOT
+						}
+						has_war_with = ROOT
+					}
+				}
+			}
+		}
+		remove_effect = {
+			FROM = {
+				damage_building = {
+					type = infrastructure
+					damage = 0.3
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 15
+		}
+	}
+	ADW_GDP_breake_infra_perfectry = {
+		icon = GFX_decision_generic_operation
+		cost = 100
+		days_remove = 50
+		state_target = yes
+		target_trigger = {
+			FROM = {
+				owner = {
+					AND = {
+						OR = {
+							tag = IND
+							tag = CND
+							tag = FND
+							tag = BAN
+						}
+						NOT = {
+							tag = ROOT
+						}
+						has_war_with = ROOT
+					}
+				}
+			}
+		}
+		remove_effect = {
+			FROM = {
+				remove_building = {
+					type = infrastructure
+					level = 1
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 15
+		}
+	}
+	
+	ADW_GDP_army_building = {
+		icon = GFX_decision_generic_wreckers
+		cost = 50
+		days_remove = 30
+		state_target = yes
+		target_trigger = {
+			FROM = {
+				owner = {
+					AND = {
+						OR = {
+							tag = IND
+							tag = CND
+							tag = FND
+							tag = BAN
+						}
+						NOT = {
+							tag = ROOT
+						}
+						has_war_with = ROOT
+					}
+				}
+			}
+		}
+		remove_effect = {
+			FROM = {
+				damage_building = {
+					type = arms_factory
+					damage = 0.3
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 15
+		}
+	}
+	ADW_GDP_army_building_perfectly = {
+		icon = GFX_decision_generic_ignite_civil_war
+		cost = 110
+		days_remove = 60
+		state_target = yes
+		target_trigger = {
+			FROM = {
+				owner = {
+					AND = {
+						OR = {
+							tag = IND
+							tag = CND
+							tag = FND
+							tag = BAN
+						}
+						NOT = {
+							tag = ROOT
+						}
+						has_war_with = ROOT
+					}
+				}
+			}
+		}
+		remove_effect = {
+			FROM = {
+				remove_building = {
+					type = arms_factory
+					level = 1
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 15
+		}
+	}
+}
