@@ -9545,4 +9545,965 @@ focus_tree = {
 			add_political_power = 50
 		}
 	}
+	focus = { #6595
+		id = IND_ADW_shizumeru_kokumin_2
+		icon = GFX_focus_spr_war_of_independence
+		prerequisite = { focus = IND_ADW_shizumeru_kokumin }
+		x = 0
+		y = 2
+
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			add_war_support = 0.05
+		}
+	}
+	focus = { #6595
+		id = IND_ADW_shizumeru_kokumin_3
+		icon = GFX_focus_hol_war_on_pacifism
+		prerequisite = { focus = IND_ADW_shizumeru_kokumin_2 }
+		prerequisite = { focus = IND_ADW_the_effort_of_politic_2 }
+		x = 1
+		y = 3
+
+		cost = 6
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			add_war_support = 0.03
+			add_political_power = 25
+		}
+	}
+	focus = { #6714
+		id = IND_ADW_shizumeru_kokumin_34
+		icon = GFX_focus_RAJ_lions_of_the_great_war
+		prerequisite = { focus = IND_ADW_koushin_of_gun_1 }
+		prerequisite = { focus = IND_ADW_the_effort_of_politic_2 }
+		x = 3
+		y = 3
+
+		cost = 6
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			add_war_support = 0.03
+			add_stability = 0.02
+		}
+	}
+}
+focus_tree = {
+	id = IND_ADW_for_war
+	
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = IND
+		}
+	}
+    shared_focus = ADW_IND_SHR_experience
+	shared_focus = ADW_IND_SHR_economy_tree
+	shared_focus = ADW_IND_SHR_industry_ideas
+	shared_focus = ADW_IND_SHR_army_technology
+	shared_focus = ADW_IND_SHR_air_research
+	shared_focus = ADW_IND_SHR_navy_research
+	shared_focus = ADW_IND_SHR_supply_tree
+	shared_focus = ADW_IND_SHR_new_era_nuclear_0
+	shared_focus = ADW_IND_agency_of_inteligence_1
+	shared_focus = ADW_IND_SHR_traffic_0
+	
+	default = no
+
+	continuous_focus_position = { x = 20 y = 2800 }
+	
+	focus = {
+		id = IND_ADW_add_political
+		icon = GFX_goal_generic_political_pressure
+		x = 2
+		y = 0
+
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 30
+		}
+	}
+	focus = {
+		id = IND_ADW_add_political_1
+		icon = GFX_focus_generic_strike_at_democracy2
+		prerequisite = { focus = IND_ADW_add_political }
+		x = 5
+		y = 1
+
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 30
+		}
+	}
+	focus = {
+		id = IND_ADW_add_political_2
+		icon = GFX_goal_generic_major_alliance
+		prerequisite = { focus = IND_ADW_add_political_1 }
+		x = 5
+		y = 2
+
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			custom_effect_tooltip = the_taisho_of_gerira
+			hidden_effect = {
+				set_country_flag = the_taisho_of_gerira
+			}
+		}
+	}
+	focus = {
+		id = IND_ADW_add_political_3
+		icon = GFX_focus_generic_diplomatic_treaty
+		prerequisite = { focus = IND_ADW_add_political_2 }
+		x = 5
+		y = 3
+
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			custom_effect_tooltip = the_up_of_do
+			hidden_effect = {
+				add_to_variable = { ROOT.ADW_gerira_taisho_do = 0.07 }
+				clamp_variable = {
+					var = ROOT.ADW_gerira_taisho_do
+					min = 0
+					max = 1
+				}
+			}
+			ADWIND_civil_war_kaihen = yes
+		}
+	}
+	focus = {
+		id = IND_ADW_attack_of_CND
+		icon = GFX_focus_attack_india
+		prerequisite = { focus = IND_ADW_add_political }
+		x = 3
+		y = 1
+
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			NOT = {
+				tag = CND
+			}
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_ideas = ADW_IND_war_for_CND
+		}
+	}
+	focus = {
+		id = IND_ADW_attack_of_CND_1
+		icon = GFX_focus_generic_home_defense
+		prerequisite = { focus = IND_ADW_attack_of_CND }
+		x = 3
+		y = 2
+
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			NOT = {
+				tag = CND
+			}
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ADW_IND_war_for_CND
+				add_idea = ADW_IND_war_for_CND_1
+			}
+		}
+	}
+	focus = {
+		id = IND_ADW_attack_of_CND_2
+		icon = GFX_focus_generic_japanese_imperial_glory
+		prerequisite = { focus = IND_ADW_attack_of_CND_1 }
+		x = 3
+		y = 3
+
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			NOT = {
+				tag = CND
+			}
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ADW_IND_war_for_CND_1
+				add_idea = ADW_IND_war_for_CND_2
+			}
+		}
+	}
+	focus = {
+		id = IND_ADW_attack_of_IND
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		prerequisite = { focus = IND_ADW_add_political }
+		x = 1
+		y = 1
+
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			NOT = {
+				tag = IND
+			}
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_ideas = ADW_IND_war_for_IND
+		}
+	}
+	focus = {
+		id = IND_ADW_attack_of_IND_1
+		icon = GFX_goal_generic_military_sphere
+		prerequisite = { focus = IND_ADW_attack_of_IND }
+		x = 1
+		y = 2
+
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			NOT = {
+				tag = IND
+			}
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ADW_IND_war_for_IND
+				add_idea = ADW_IND_war_for_IND_1
+			}
+		}
+	}
+	focus = {
+		id = IND_ADW_attack_of_IND_2
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = IND_ADW_attack_of_IND_1 }
+		x = 1
+		y = 3
+
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			NOT = {
+				tag = IND
+			}
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ADW_IND_war_for_IND_1
+				add_idea = ADW_IND_war_for_IND_2
+			}
+		}
+	}
+	focus = { #7099
+		id = IND_ADW_attack_of_FND
+		icon = GFX_focus_hol_war_on_pacifism
+		prerequisite = { focus = IND_ADW_add_political }
+		x = -1
+		y = 1
+
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			NOT = {
+				tag = FND
+			}
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_ideas = ADW_IND_war_for_FND
+		}
+	}
+	focus = { #7099
+		id = IND_ADW_attack_of_FND_1
+		icon = GFX_focus_generic_support_the_left_right
+		prerequisite = { focus = IND_ADW_attack_of_FND }
+		x = -1
+		y = 2
+
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			NOT = {
+				tag = FND
+			}
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ADW_IND_war_for_FND
+				add_idea = ADW_IND_war_for_FND_1
+			}
+		}
+	}
+	focus = { #7099
+		id = IND_ADW_attack_of_FND_2
+		icon = GFX_focus_prc_infiltration
+		prerequisite = { focus = IND_ADW_attack_of_FND_1 }
+		x = -1
+		y = 3
+
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			NOT = {
+				tag = FND
+			}
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ADW_IND_war_for_FND_1
+				add_idea = ADW_IND_war_for_FND_2
+			}
+		}
+	}
+	
+	focus = { #7099
+		id = IND_ADW_theseisaku_for_civil
+		icon = GFX_focus_focus_fra_national_resistance_council
+		x = 2
+		y = 4
+
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_stability = 0.03
+		}
+	}
+	focus = { #7099
+		id = IND_ADW_theseisaku_for_civil_1
+		icon = GFX_focus_spr_the_anti_fascist_workers_revolution
+		prerequisite = { focus = IND_ADW_theseisaku_for_civil }
+		x = 2
+		y = 5
+
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_stability = 0.03
+		}
+	}
+	focus = { #7519
+		id = IND_ADW_theseisaku_for_civil_2
+		icon = GFX_focus_spr_torchbearers_of_tomorrow
+		prerequisite = { focus = IND_ADW_theseisaku_for_civil_1 }
+		x = 2
+		y = 6
+
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_stability = 0.03
+		}
+	}
+	focus = { #7519
+		id = IND_ADW_theseisaku_for_civil_3
+		icon = GFX_goal_generic_more_territorial_claims
+		prerequisite = { focus = IND_ADW_theseisaku_for_civil_2 }
+		x = 2
+		y = 7
+
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_stability = 0.03
+		}
+	}
+	
+	focus = { #7549
+		id = IND_ADW_infra_attack_1
+		icon = GFX_focus_generic_license_production
+		prerequisite = { focus = IND_ADW_theseisaku_for_civil }
+		x = 0
+		y = 5
+
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			custom_effect_tooltip = AWD_IND_attack_infra
+			hidden_effect = {
+				set_country_flag = AWD_IND_attack_infra
+			}
+		}
+	}
+	focus = { #7584
+		id = IND_ADW_infra_attack_2
+		icon = GFX_goal_generic_cavalry
+		prerequisite = { focus = IND_ADW_infra_attack_1 }
+		x = 0
+		y = 6
+
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_war_support = 0.05
+		}
+	}
+	focus = { #7584
+		id = IND_ADW_infra_attack_3
+		icon = GFX_focus_generic_strike_at_democracy2
+		prerequisite = { focus = IND_ADW_infra_attack_2 }
+		x = 0
+		y = 7
+
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_war_support = 0.05
+		}
+	}
+	focus = { #7549
+		id = IND_ADW_infra_attack_4
+		icon = GFX_focus_generic_japanese_imperial_glory
+		prerequisite = { focus = IND_ADW_theseisaku_for_civil }
+		x = 4
+		y = 5
+
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 40
+		}
+	}
+	focus = { #7549
+		id = IND_ADW_infra_attack_5
+		icon = GFX_focus_generic_support_the_left_right
+		prerequisite = { focus = IND_ADW_infra_attack_4 }
+		x = 4
+		y = 6
+
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 40
+		}
+	}
+	focus = { #7549
+		id = IND_ADW_infra_attack_56
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = IND_ADW_infra_attack_5 }
+		x = 4
+		y = 7
+
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 40
+		}
+	}
+	focus = { #7696
+		id = IND_sengen_of_shuuketsu_of_naisen
+		icon = GFX_focus_jap_manchurian_project
+		x = -4
+		y = 4
+
+		cost = 1
+		ai_will_do = {
+			factor = 50
+		}
+		available = {
+			if = {
+				limit = {
+					tag = IND
+				}
+				CND = { exists = no }
+				FND = { exists = no }
+			}
+			if = {
+				limit = {
+					tag = FND
+				}
+				CND = { exists = no }
+				IND = { exists = no }
+			}
+			if = {
+				limit = {
+					tag = CND
+				}
+				FND = { exists = no }
+				IND = { exists = no }
+			}
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			hidden_effect = {
+				clr_country_flag = AWD_IND_attack_infra
+				remove_ideas = ADW_IND_civilwar_7
+				remove_ideas = ADW_IND_civilwar_6
+				remove_ideas = ADW_IND_civilwar_5
+				remove_ideas = ADW_IND_civilwar_4
+				remove_ideas = ADW_IND_civilwar_3
+				remove_ideas = ADW_IND_civilwar_2
+				remove_ideas = ADW_IND_civilwar_1
+				remove_ideas = ADW_IND_civilwar
+			}
+			ROOT = {
+				country_event = { id = IND_ADW.106 }
+				news_event = { id = ADW_NEWS.9 }
+				load_focus_tree = { tree = IND_fukkatsu_from_civilian_war keep_completed = yes }
+				custom_effect_tooltip = ADW_naisen_fukko_DEC
+				hidden_effect = {
+					set_country_flag = ADW_naisen_fukko_DEC
+				}
+			}
+		}
+	}
+}
+focus_tree = {
+	id = IND_fukkatsu_from_civilian_war
+	
+	country = {
+		factor = 0
+		modifier = {
+			add = 11
+			tag = IND
+		}
+	}
+    shared_focus = ADW_IND_SHR_experience
+	shared_focus = ADW_IND_SHR_economy_tree
+	shared_focus = ADW_IND_SHR_industry_ideas
+	shared_focus = ADW_IND_SHR_army_technology
+	shared_focus = ADW_IND_SHR_air_research
+	shared_focus = ADW_IND_SHR_navy_research
+	shared_focus = ADW_IND_SHR_supply_tree
+	shared_focus = ADW_IND_SHR_new_era_nuclear_0
+	shared_focus = ADW_IND_agency_of_inteligence_1
+	shared_focus = ADW_IND_SHR_traffic_0
+	
+	default = no
+
+	continuous_focus_position = { x = 20 y = 2800 }
+	
+	focus = {
+		id = IND_ADW_power_of_gove
+		icon = GFX_goal_generic_political_pressure
+		x = 2
+		y = 0
+
+		cost = 8
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 30
+		}
+	}
+	focus = {
+		id = IND_ADW_power_of_gove_1
+		icon = GFX_focus_NZL_bob_semple_tank
+		prerequisite = { focus = IND_ADW_power_of_gove }
+		x = 2
+		y = 1
+
+		cost = 8
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 30
+		}
+	}
+	focus = {
+		id = IND_ADW_power_of_gove_2
+		icon = GFX_goal_generic_consumer_goods
+		prerequisite = { focus = IND_ADW_power_of_gove_1 }
+		x = 2
+		y = 2
+
+		cost = 8
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_to_variable = { GDP_amou = 10 }
+			custom_effect_tooltip = GDP_amou_10
+		}
+	}
+	focus = {
+		id = IND_ADW_power_of_gove_2
+		icon = GFX_goal_generic_consumer_goods
+		prerequisite = { focus = IND_ADW_power_of_gove_1 }
+		x = 2
+		y = 2
+
+		cost = 8
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_to_variable = { GDP_amou = 10 }
+			custom_effect_tooltip = GDP_amou_10
+		}
+	}
+	focus = {
+		id = IND_ADW_war_gunbi
+		icon = GFX_focus_eng_expose_the_belly_of_the_bear
+		prerequisite = { focus = IND_ADW_power_of_gove_2 }
+		x = 2
+		y = 3
+
+		cost = 8
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_AIR_XP }
+		search_filters = { FOCUS_FILTER_NAVY_XP }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			navy_experience = 5
+			army_experience = 5
+			air_experience = 5
+		}
+	}
+	focus = {
+		id = IND_ADW_industry_fac
+		icon = GFX_focus_NZL_bob_semple_tank
+		prerequisite = { focus = IND_ADW_power_of_gove }
+		x = 4
+		y = 1
+
+		cost = 20
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			random_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = IND_ADW_industry_fac_1
+		icon = GFX_focus_generic_self_management
+		prerequisite = { focus = IND_ADW_industry_fac }
+		x = 4
+		y = 2
+
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			random_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = ADW_IND_left_toot_of_fukko
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = IND_ADW_power_of_gove }
+		x = 0
+		y = 1
+		cost = 7
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_to_variable = { ADW_IND_buildings = 0.08 }
+			custom_effect_tooltip = ADW_IND_buildings_008
+			clamp_variable = {
+				var = ADW_IND_buildings
+				min = 0
+				max = 1
+			}
+		}
+	}
+	focus = { #8053
+		id = ADW_IND_left_toot_of_fukko_1
+		icon = GFX_goal_generic_military_sphere
+		prerequisite = { focus = ADW_IND_left_toot_of_fukko }
+		x = 0
+		y = 2
+		cost = 7
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_stability = 0.05
+			add_war_support = 0.05
+		}
+	}
+	focus = { #8102
+		id = ADW_IND_fukko_korekara
+		icon = GFX_focus_BUL_found_the_brannik
+		x = 2
+		y = 5
+		cost = 7
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ADW_fukko_do_max
+				check_variable = {
+					var = ADW_kannkyou_emprove_point
+					value = 1
+					compare = equals
+				}
+				check_variable = {
+					var = ADW_IND_kokumin_point
+					value = 1
+					compare = equals
+				}
+				check_variable = {
+					var = ADW_IND_buildings
+					value = 1
+					compare = equals
+				}
+			}
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			random_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = { #8102
+		id = ADW_politic_support
+		icon = GFX_focus_generic_strike_at_democracy2
+		prerequisite = { focus = ADW_IND_fukko_korekara }
+		x = 2
+		y = 6
+		cost = 4
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 30
+		}
+	}
+	focus = { #8102
+		id = ADW_politic_support_1
+		icon = GFX_focus_generic_anti_fascist_diplomacy
+		prerequisite = { focus = ADW_IND_fukko_korekara }
+		x = 0
+		y = 6
+		cost = 4
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.05
+		}
+	}
+	focus = { #8102
+		id = ADW_politic_support_2
+		icon = GFX_focus_NZL_bob_semple_tank
+		prerequisite = { focus = ADW_IND_fukko_korekara }
+		x = 4
+		y = 6
+		cost = 4
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_PROPAGANDA }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			add_stability = 0.05
+		}
+	}
+	focus = { #8193
+		id = ADW_shuuketsusengen
+		icon = GFX_focus_GRE_reviving_the_spartan_warrior_spirit
+		prerequisite = { focus = ADW_politic_support_2 }
+		prerequisite = { focus = ADW_politic_support_1 }
+		prerequisite = { focus = ADW_politic_support }
+		x = 2
+		y = 7
+		cost = 1
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			has_completed_focus = IND_ADW_war_gunbi
+			has_completed_focus = ADW_IND_SHR_army_equipment_4
+			has_completed_focus = ADW_IND_SHR_army_equipment_3
+			has_completed_focus = ADW_IND_SHR_ship_ex_convoy
+			has_completed_focus = ADW_IND_SHR_air_buy_fighter
+			has_completed_focus = ADW_IND_SHR_air_buy_bomber
+			has_completed_focus = ADW_IND_SHR_expand_the_economy
+			has_completed_focus = ADW_IND_SHR_economy_tree_effort_of_goverment_A
+			has_completed_focus = ADW_IND_SHR_expand_the_economy_get_1
+			has_completed_focus = ADW_IND_SHR_improve_economy
+			has_completed_focus = ADW_IND_SHR_supply_tree_3
+			has_completed_focus = ADW_IND_SHR_supply_tree_12
+			has_completed_focus = ADW_IND_SHR_supply_tree_9
+			has_completed_focus = ADW_IND_SHR_supply_tree_6
+			has_completed_focus = ADW_IND_SHR_build_army_factory_2
+			has_completed_focus = ADW_IND_SHR_build_indust_2
+			has_completed_focus = ADW_IND_SHR_expand_vase_1
+			has_completed_focus = ADW_IND_SHR_build_navy_factory_3
+			has_completed_focus = ADW_IND_SHR_research_1
+			has_completed_focus = ADW_IND_SHR_army_technology_3
+			has_completed_focus = ADW_IND_SHR_technology_air_2
+			has_completed_focus = ADW_IND_SHR_navy_research_buff_2
+			has_completed_focus = ADW_IND_SHR_navy_research_buff_exp_2
+			has_completed_focus = ADW_IND_SHR_new_era_nuclear_4
+			has_completed_focus = ADW_IND_SHR_new_era_nuclear_6
+			has_completed_focus = ADW_IND_agency_of_inteligence_7
+			has_completed_focus = ADW_IND_agency_of_inteligence_4
+			has_completed_focus = ADW_IND_agency_of_inteligence_10
+			has_completed_focus = ADW_IND_SHR_traffic_6
+			has_completed_focus = ADW_IND_SHR_traffic_3
+			has_completed_focus = ADW_IND_SHR_traffic_9
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			news_event = { id = ADW_NEWS.10 }
+		}
+	}
 }
