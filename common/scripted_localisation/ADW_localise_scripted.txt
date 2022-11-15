@@ -465,3 +465,168 @@ defined_text = {
 		localization_key = ADW_TXT_GDP_1
 	}
 }
+defined_text = {
+	name = ADW_TXT_GDP_for_THIS
+	text = {
+		trigger = {
+			THIS = {
+				check_variable = {
+					var = THIS.GDP_yearly_for_faction
+					value = 100000000
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		localization_key = ADW_TXT_GDP_for_THIS_3
+	}
+	text = {
+		trigger = {
+			THIS = {
+				check_variable = {
+					var = THIS.GDP_yearly_for_faction
+					value = 10000
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		localization_key = ADW_TXT_GDP_for_THIS_2
+	}
+	text = {
+		localization_key = ADW_TXT_GDP_for_THIS_1
+	}
+}
+
+defined_text = {
+	name = ADW_police_kanshi_ritsu
+	text = {
+		trigger = {
+			ROOT = {
+				check_variable = {
+					var = ROOT.kanshi_per
+					value = 0
+					compare = greater_than_or_equals
+				}
+				check_variable = {
+					var = ROOT.kanshi_per
+					value = 0.2
+					compare = less_than
+				}
+			}
+		}
+		localization_key = ADW_police_kanshi_ritsu_muho
+	}
+	text = {
+		trigger = {
+			ROOT = {
+				check_variable = {
+					var = ROOT.kanshi_per
+					value = 0.2
+					compare = greater_than_or_equals
+				}
+				check_variable = {
+					var = ROOT.kanshi_per
+					value = 0.5
+					compare = less_than
+				}
+			}
+		}
+		localization_key = ADW_police_kanshi_akuchiuan
+	}
+	text = {
+		trigger = {
+			ROOT = {
+				check_variable = {
+					var = ROOT.kanshi_per
+					value = 0.5
+					compare = greater_than_or_equals
+				}
+				check_variable = {
+					var = ROOT.kanshi_per
+					value = 0.7
+					compare = less_than
+				}
+			}
+		}
+		localization_key = ADW_police_kanshi_jun_chiankokka
+	}
+	text = {
+		trigger = {
+			ROOT = {
+				check_variable = {
+					var = ROOT.kanshi_per
+					value = 0.7
+					compare = greater_than_or_equals
+				}
+				check_variable = {
+					var = ROOT.kanshi_per
+					value = 0.8
+					compare = less_than
+				}
+			}
+		}
+		localization_key = ADW_police_kanshi_ryo_chian
+	}
+	text = {
+		trigger = {
+			ROOT = {
+				check_variable = {
+					var = ROOT.kanshi_per
+					value = 0.8
+					compare = greater_than_or_equals
+				}
+				check_variable = {
+					var = ROOT.kanshi_per
+					value = 1
+					compare = less_than_or_equals
+				}
+			}
+		}
+		localization_key = ADW_police_kanshi_kanshi_kokka
+	}
+}
+
+defined_text = {
+	name = text_ADW_real_GDP_amoun
+	text = {
+		trigger = {
+			ROOT = {
+				check_variable = {
+					var = ADW_real_GDP_amoun
+					value = 100000000
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		localization_key = text_ADW_real_GDP_amoun_kei
+	}
+	text = {
+		trigger = {
+			ROOT = {
+				check_variable = {
+					var = ADW_real_GDP_amoun
+					value = 10000
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		localization_key = text_ADW_real_GDP_amoun_cho
+	}
+	text = {
+		localization_key = text_ADW_real_GDP_amoun_oku
+	}
+}
+defined_text = {
+	name = text_ADW_seisaku_list_locali
+	text = {
+		trigger = { ROOT = { check_variable = { ADW_seisaku_list^ADW_seisaku_list_indx = 1 } } }
+		localization_key = text_ADW_seisaku_list_locali_1
+	}
+	text = {
+		trigger = { ROOT = { check_variable = { ADW_seisaku_list^ADW_seisaku_list_indx = 2 } } }
+		localization_key = text_ADW_seisaku_list_locali_2
+	}
+	text = {
+		trigger = { ROOT = { check_variable = { ADW_seisaku_list^ADW_seisaku_list_indx = 3 } } }
+		localization_key = text_ADW_seisaku_list_locali_3
+	}
+}
