@@ -894,3 +894,41 @@ news_event = {
 		}
 	}
 }
+news_event = {
+	id = ADW_NEWS.9
+	title = ADW_NEWS.9.t
+	desc = ADW_NEWS.9.d
+	picture = GFX_news_event_soldiers_marching
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = ADW_NEWS.9.a
+		ai_chance = {
+			factor = 5
+		}
+	}
+}
+news_event = {
+	id = ADW_NEWS.10
+	title = ADW_NEWS.10.t
+	desc = ADW_NEWS.10.d
+	picture = GFX_news_event_king_speech
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = ADW_NEWS.10.a
+		if = {
+			limit = {
+				OR = {
+					tag = IND
+					tag = FND
+					tag = CND
+				}
+			}
+			add_ideas = ADW_IND_perfectry_fukko
+		}
+		ai_chance = {
+			factor = 5
+		}
+	}
+}

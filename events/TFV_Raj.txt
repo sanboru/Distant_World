@@ -2299,6 +2299,8 @@ country_event = {
 	hidden = yes
 	immediate = {
 		ADW_GDP_iryodo = yes
+		ADW_GDP_fac_company_infra = yes
+		ADW_GDP_keisan_of_infra = yes
 	}
 }
 country_event = {
@@ -2340,6 +2342,92 @@ country_event = {
 		add_stability = 0.05
 		ai_chance = {
 			factor = 5
+		}
+	}
+}
+country_event = {
+	id = IND_ADW.104
+	title = IND_ADW.104.t
+	desc = IND_ADW.104.d
+	picture = GFX_report_event_vienna_award_negotiations
+	is_triggered_only = yes
+	option = {
+		name = IND_ADW.104.a
+		add_stability = 0.03
+		ai_chance = {
+			factor = 5
+		}
+	}
+	desc = {
+		text = IND_ADW.104.da
+		trigger = {
+			has_government = democratic
+		}
+	}
+	desc = {
+		text = IND_ADW.104.db
+		trigger = {
+			NOT = {
+				has_government = democratic
+			}
+		}
+	}
+}
+country_event = {
+	id = IND_ADW.105
+	title = IND_ADW.105.t
+	desc = IND_ADW.105.d
+	hidden = yes
+	is_triggered_only = yes
+	immediate = {
+		ROOT = {
+			add_to_array = { global.GDP_ADW_juni_array = ROOT }
+			add_to_variable = { global.ADW_juni_the_var = 1 }
+		}
+		every_country = {
+			limit = {
+				check_variable = { THIS.ADW_GDP_juni_of_GDP = global.ADW_juni_the_var }
+			}
+			country_event = { id = IND_ADW.105 }
+		}
+	}
+}
+country_event = {
+	id = IND_ADW.106
+	title = IND_ADW.106.t
+	desc = IND_ADW.106.d
+	picture = GFX_report_event_tur_inonu_diplomacy
+	is_triggered_only = yes
+	option = {
+		name = IND_ADW.106.a
+		add_political_power = 15
+		add_stability = 0.2
+		add_war_support = 0.1
+		
+		add_timed_idea = {
+			idea = ADW_IND_sphi_of_civilwar
+			days = 50
+		}
+		add_timed_idea = {
+			idea = ADW_IND_insen_mood
+			days = 120
+		}
+		ai_chance = {
+			factor = 5
+		}
+	}
+}
+country_event = {
+	id = IND_ADW.107
+	title = IND_ADW.107.t
+	desc = IND_ADW.107.d
+	picture = GFX_report_event_tur_inonu_diplomacy
+	is_triggered_only = yes
+	option = {
+		name = IND_ADW.107.a
+			damage_building = {
+			type = infrastructure
+			damage = 1
 		}
 	}
 }
