@@ -123,4 +123,8 @@ spriteTypes = {
 		name = "GFX_ADW_GDP_gui_list_of_infor"
 		texturefile = "gfx/interface/ADW_GDP_gui_list_of_infor.dds"
 	}
+	spriteType = {
+		name = "GFX_ADW_GDP_infor_bug"
+		texturefile = "gfx/interface/ADW_GDP_infor_bg.dds"
+	}
 }

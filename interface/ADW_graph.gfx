@@ -1,0 +1,84 @@
+spriteTypes = {
+	progressbartype = {
+		name = "GFX_ADW_GDP_graph"
+		textureFile1 = "/gfx/interface/graph_gfx/ADW_graph_full.dds"
+		textureFile2 = "/gfx/interface/graph_gfx/ADW_graph_empty.dds"
+		size = {
+			x = 5
+			y = 200
+		}
+		effectFile = "gfx/FX/ADW_graph.lua"
+		horizontal = yes
+	}
+	spriteType = {
+		name = "GFX_memori_line_upper"
+		texturefile = "gfx/interface/ADW_memori_of_graph.dds"
+	}
+	progressbartype = {
+		name = "GFX_graph_red"
+		textureFile1 = "/gfx/interface/graph_gfx/RED_graph_line.dds"
+		textureFile2 = "/gfx/interface/graph_gfx/ADW_graph_empty.dds"
+		size = {
+			x = 5
+			y = 200
+		}
+		effectFile = "gfx/FX/ADW_graph.lua"
+		horizontal = yes
+	}
+	progressbartype = {
+		name = "GFX_graph_blue"
+		textureFile1 = "/gfx/interface/graph_gfx/BLUE_line_graph.dds"
+		textureFile2 = "/gfx/interface/graph_gfx/ADW_graph_empty.dds"
+		size = {
+			x = 5
+			y = 200
+		}
+		effectFile = "gfx/FX/ADW_graph.lua"
+		horizontal = yes
+	}
+	progressbartype = {
+		name = "GFX_graph_yellow"
+		textureFile1 = "/gfx/interface/graph_gfx/YELLOW_graph_line.dds"
+		textureFile2 = "/gfx/interface/graph_gfx/ADW_graph_empty.dds"
+		size = {
+			x = 10
+			y = 200
+		}
+		effectFile = "gfx/FX/ADW_graph.lua"
+		horizontal = yes
+	}
+	spriteType = {
+		name = "GFX_ADW_en_graph_3_bbb"
+		texturefile = "gfx//interface//engaraph_youso_3_b_b_b.dds"
+		noOfFrames = 3 # change to how many frames you have, index starts at 1
+	}
+	spriteType = {
+		name = "GFX_infor_icon_smaple_bbb"
+		texturefile = "gfx//interface//ADW_icon_sample.dds"
+		noOfFrames = 3 # change to how many frames you have, index starts at 1
+	}
+	spriteType = {
+		name = "GFX_memori_line_red"
+		texturefile = "gfx/interface/red_memory.dds"
+	}
+	
+	progressbartype = {
+		name = "GFX_yoko_bow_graph"
+		textureFile1 = "gfx/interface/ADW_graph_green.dds"
+		textureFile2 = "gfx/interface/ADW_graph_blue.dds"
+		color = { 0.0 0.0 0.0 }
+		colortwo = { 0.0 0.0 0.0 }
+		size = { 
+			x = 43
+			y = 169
+		}
+		effectFile = "gfx/FX/progress.lua"
+		horizontal = no
+	}
+	
+	spriteType = {
+		name = "GFX_ADW_icon_sample_bow_graph"
+		texturefile = "gfx//interface//ADW_icon_sample_bow_graph.dds"
+		noOfFrames = 2
+	}
+}
