@@ -1,21 +1,108 @@
-the_first_ADW_calculation = {
-	JAP = {
-		set_variable = {
-			var = small_company
-			value = 200
+ADW_GDP_fac_company_infra = {
+	set_variable = { ROOT.ADW_indra_small = ROOT.small_company }
+	set_variable = { ROOT.ADW_indra_middle = ROOT.middle_company }
+	set_variable = { ROOT.ADW_indra_big = ROOT.big_company }
+	
+	divide_variable = { ROOT.ADW_indra_small = 3 }
+	divide_variable = { ROOT.ADW_indra_middle = 3 }
+	divide_variable = { ROOT.ADW_indra_big = 3 }
+	
+	round_variable = ROOT.ADW_indra_small
+	round_variable = ROOT.ADW_indra_middle
+	round_variable = ROOT.ADW_indra_big
+}
+ADW_GDP_keisan_of_infra = {
+	ROOT = {
+		add_dynamic_modifier = { modifier = ADW_GDP_infra_use_factory }
+		
+		set_variable = { ADW_nokori_of_big = ADW_indra_big }
+		subtract_from_variable = { ADW_nokori_of_big = ADW_indra_big_use }
+		
+		set_variable = { ADW_nokori_of_middle = ADW_indra_middle }
+		subtract_from_variable = { ADW_nokori_of_middle = ADW_indra_middle_use }
+		
+		set_variable = { ADW_nokori_of_small = ADW_indra_small }
+		subtract_from_variable = { ADW_nokori_of_small = ADW_indra_small_use }
+	}
+}
+ADW_shutsuryoku_effect = {
+	ROOT = {
+		set_variable = { ADW_shutsuryoku_fac = ADW_GDP_factory_use }
+		set_variable = { ADW_shikin_fac = ADW_GDP_factory_use }
+		multiply_variable = { ADW_shutsuryoku_fac = 5.5 }
+		set_variable = { ADW_shutsuryoku_big = ADW_indra_big_use }
+		set_variable = { ADW_shikin_big = ADW_indra_big_use }
+		multiply_variable = { ADW_shutsuryoku_big = 5 }
+		set_variable = { ADW_shutsuryoku_mid = ADW_indra_middle_use }
+		set_variable = { ADW_shikin_mid = ADW_indra_middle_use }
+		multiply_variable = { ADW_shutsuryoku_mid = 2 }
+		set_variable = { ADW_shutsuryoku_sma = ADW_indra_small_use }
+		set_variable = { ADW_shikin_sma = ADW_indra_small_use }
+		multiply_variable = { ADW_shutsuryoku_sma = 1 }
+		
+		multiply_variable = { ADW_shikin_fac = 13 }
+		multiply_variable = { ADW_shikin_big = 10 }
+		multiply_variable = { ADW_shikin_mid = 3.0 }
+		multiply_variable = { ADW_shikin_sma = 1.8 }
+		
+		set_variable = { ADW_shutsuryoku_amount = ADW_shutsuryoku_fac }
+		add_to_variable = { ADW_shutsuryoku_amount = ADW_shutsuryoku_big }
+		add_to_variable = { ADW_shutsuryoku_amount = ADW_shutsuryoku_mid }
+		add_to_variable = { ADW_shutsuryoku_amount = ADW_shutsuryoku_sma }
+		
+		set_variable = { ADW_shutsuryoku_per_fac = ADW_shutsuryoku_fac }
+		divide_variable = { ADW_shutsuryoku_per_fac = ADW_shutsuryoku_amount }
+		set_variable = { ADW_shutsuryoku_per_big = ADW_shutsuryoku_big }
+		divide_variable = { ADW_shutsuryoku_per_big = ADW_shutsuryoku_amount }
+		set_variable = { ADW_shutsuryoku_per_mid = ADW_shutsuryoku_mid }
+		divide_variable = { ADW_shutsuryoku_per_mid = ADW_shutsuryoku_amount }
+		set_variable = { ADW_shutsuryoku_per_sma = ADW_shutsuryoku_sma }
+		divide_variable = { ADW_shutsuryoku_per_sma = ADW_shutsuryoku_amount }
+		
+		set_variable = { the_minkan_per_ADW_GDP = ADW_shutsuryoku_per_big }
+		add_to_variable = { the_minkan_per_ADW_GDP = ADW_shutsuryoku_per_mid }
+		add_to_variable = { the_minkan_per_ADW_GDP = ADW_shutsuryoku_per_sma }
+		
+		add_to_variable = { the_minkan_per_ADW_GDP = 0.5 } #値上がり
+		clamp_variable = {
+			var = the_minkan_per_ADW_GDP
+			min = 0.8
+			max = 1.3
 		}
-		set_variable = { #階層
-			var = SCB_floar_improved
-			value = 250
+		set_variable = { ADW_ijihi_big = 11 }
+		multiply_variable = { ADW_ijihi_big = the_minkan_per_ADW_GDP }
+		set_variable = { ADW_ijihi_mid = 3 }
+		multiply_variable = { ADW_ijihi_mid = the_minkan_per_ADW_GDP }
+		set_variable = { ADW_ijihi_sma = 1.8 }
+		multiply_variable = { ADW_ijihi_sma = the_minkan_per_ADW_GDP }
+		
+		set_variable = { ADW_ijihi_big_amount = ADW_ijihi_big }
+		multiply_variable = { ADW_ijihi_big_amount = ADW_indra_big_use }
+		
+		set_variable = { ADW_ijihi_mid_amount = ADW_ijihi_mid }
+		multiply_variable = { ADW_ijihi_mid_amount = ADW_indra_middle_use }
+		
+		set_variable = { ADW_ijihi_sma_amount = ADW_ijihi_sma }
+		multiply_variable = { ADW_ijihi_sma_amount = ADW_indra_small_use }
+		
+		set_variable = { ADW_ijihi_fac_amount = ADW_GDP_factory_use }
+		multiply_variable = { ADW_ijihi_fac_amount = 13 }
+		
+		set_variable = { ADW_ijihi_amount = ADW_ijihi_big_amount }
+		add_to_variable = { ADW_ijihi_amount = ADW_ijihi_mid_amount }
+		add_to_variable = { ADW_ijihi_amount = ADW_ijihi_sma_amount }
+		add_to_variable = { ADW_ijihi_amount = ADW_ijihi_fac_amount }
+		
+		set_variable = { per_ADW_of_youkyuuryou = ADW_shutsuryoku_amount }
+		divide_variable = { per_ADW_of_youkyuuryou = ADW_GDP_infra_hikin_real }
+		subtract_from_variable = { per_ADW_of_youkyuuryou = 0.1 }
+		clamp_variable = {
+			var = per_ADW_of_youkyuuryou
+			min = 0
+			max = 1
 		}
-		set_variable = {
-			var = middle_company
-			value = 50
-		}
-		set_variable = { #階層
-			var = MCB_floar_improved
-			value = 300
-		}
+		set_variable = { ADW_GDP_infra_effect = per_ADW_of_youkyuuryou }
+		multiply_variable = { ADW_GDP_infra_effect = -1 }
 	}
 }
 
@@ -119,6 +206,7 @@ ADW_the_array_add = {
 		add_to_array = { ROOT.ADW_state_list = THIS }
 	}
 }
+
 ADW_array_shogun_add = {
 	clear_array = ROOT.ADW_shogun_array
 	every_country = {
@@ -558,4 +646,243 @@ ADW_GDP_trade_gun_country = {
 	every_country = {
 		add_to_array = { global.ADW_GDP_trade_gun_country_list = THIS }
 	}
+}
+ADW_GDP_police_hiyo_keisan = {
+	set_variable = { ROOT.ADW_GDP_police = 0.008 }
+	multiply_variable = { ROOT.ADW_GDP_police = ROOT.max_manpower_k }
+	multiply_variable = { ROOT.ADW_GDP_police = ROOT.kanshi_per }
+	divide_variable = { ROOT.ADW_GDP_police = 12 }
+	
+	set_variable = { ROOT.ADW_GDP_police_stabil = -0.8 }
+	add_to_variable = { ROOT.ADW_GDP_police_stabil = ROOT.ADW_GDP_police }
+	divide_variable = { ROOT.ADW_GDP_police_stabil = 2 }
+	add_dynamic_modifier = { modifier = ADW_GDP_keistaus }
+}
+
+ADWIND_civil_war_kaihen = {
+	hidden_effect = {
+		remove_ideas = ADW_IND_civilwar_7
+		remove_ideas = ADW_IND_civilwar_6
+		remove_ideas = ADW_IND_civilwar_5
+		remove_ideas = ADW_IND_civilwar_4
+		remove_ideas = ADW_IND_civilwar_3
+		remove_ideas = ADW_IND_civilwar_2
+		remove_ideas = ADW_IND_civilwar_1
+		remove_ideas = ADW_IND_civilwar
+	}
+	if = {
+		limit = {
+			check_variable = {
+				var = ROOT.ADW_gerira_taisho_do
+				value = 1
+				compare = equals
+			}
+		}
+		add_ideas = ADW_IND_civilwar_7
+		else_if = {
+			limit = {
+				check_variable = {
+					var = ROOT.ADW_gerira_taisho_do
+					value = 0.9
+					compare = greater_than_or_equals
+				}
+			}
+			add_ideas = ADW_IND_civilwar_6
+			else_if = {
+				limit = {
+					check_variable = {
+						var = ROOT.ADW_gerira_taisho_do
+						value = 0.8
+						compare = greater_than_or_equals
+					}
+				}
+				add_ideas = ADW_IND_civilwar_5
+				else_if = {
+					limit = {
+						check_variable = {
+							var = ROOT.ADW_gerira_taisho_do
+							value = 0.7
+							compare = greater_than_or_equals
+						}
+					}
+					add_ideas = ADW_IND_civilwar_4
+					else_if = {
+						limit = {
+							check_variable = {
+								var = ROOT.ADW_gerira_taisho_do
+								value = 0.6
+								compare = greater_than_or_equals
+							}
+						}
+						add_ideas = ADW_IND_civilwar_3
+						else_if = {
+							limit = {
+								check_variable = {
+									var = ROOT.ADW_gerira_taisho_do
+									value = 0.5
+									compare = greater_than_or_equals
+								}
+							}
+							add_ideas = ADW_IND_civilwar_2
+							else_if = {
+								limit = {
+									check_variable = {
+										var = ROOT.ADW_gerira_taisho_do
+										value = 0.4
+										compare = greater_than_or_equals
+									}
+								}
+								add_ideas = ADW_IND_civilwar_1
+								else_if = {
+									limit = {
+										check_variable = {
+											var = ROOT.ADW_gerira_taisho_do
+											value = 0
+											compare = greater_than_or_equals
+										}
+									}
+									add_ideas = ADW_IND_civilwar
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+ADW_GDP_graph_effect = {
+	add_to_variable = { ADW_count = 1 }
+
+	set_variable = { ADW_last_y_position = ADW_y_position }
+	set_variable = { ADW_y_position = ADW_GDP }
+	divide_variable = { ADW_y_position = 190 }
+	add_to_variable = { ADW_y_position = 0 }
+	round_variable = ADW_y_position
+
+	if = {
+		limit = {
+			check_variable = { ADW_count > 208 }
+		}
+		remove_from_array = { array = ADW_graph_offsets index = 0 }
+		remove_from_array = { array = ADW_graph_slopes index = 0 }
+		remove_from_array = { array = ADW_number index = 0 }
+	}
+	set_temp_variable = { offset = ADW_last_y_position }
+	multiply_temp_variable = { offset = -1 }
+	add_to_array = { ADW_graph_offsets = offset }
+	set_temp_variable = { diff = ADW_y_position }
+	subtract_from_temp_variable = { diff = ADW_last_y_position }
+	divide_temp_variable = { diff = 2 }
+	add_to_temp_variable = { diff = 50 }
+	add_to_array = { ADW_graph_slopes = diff }
+	
+	add_to_array = { ADW_number = ADW_count }
+}
+
+
+ADW_GDP_graph_effect_of_jinko = {
+	add_to_variable = { ADW_countJINKO = 1 }
+
+	set_variable = { ADW_last_y_position_a = ADW_y_position_a }
+	
+	set_variable = { ADW_y_position_a = jinko_suii }
+	multiply_variable = { ADW_y_position_a = 4 }
+	round_variable = ADW_y_position_a
+
+	if = {
+		limit = {
+			check_variable = { ADW_countJINKO > 104 }
+		}
+		remove_from_array = { array = ADW_graph_offsets_jinko index = 0 }
+		remove_from_array = { array = ADW_graph_slopes_jinko index = 0 }
+		remove_from_array = { array = ADW_number_jinko index = 0 }
+	}
+	set_temp_variable = { offseta = ADW_last_y_position_a }
+	multiply_temp_variable = { offseta = -1 }
+	add_to_array = { ADW_graph_offsets_jinko = offseta }
+	set_temp_variable = { diffa = ADW_y_position_a }
+	subtract_from_temp_variable = { diffa = ADW_last_y_position_a }
+	divide_temp_variable = { diffa = 2 }
+	add_to_temp_variable = { diffa = 50 }
+	add_to_array = { ADW_graph_slopes_jinko = diffa }
+	
+	add_to_array = { ADW_number_jinko = ADW_countJINKO }
+}
+ADW_worker_per = {
+	set_variable = { ADW_company_workers_amu = the_worker_of_small_company }
+	add_to_variable = { ADW_company_workers_amu = the_worker_of_MID_company }
+	add_to_variable = { ADW_company_workers_amu = the_worker_of_BIG_company }
+	set_variable = { ADW_SMA_per = the_worker_of_small_company }
+	set_variable = { ADW_MID_per = the_worker_of_MID_company }
+	set_variable = { ADW_BIG_per = the_worker_of_BIG_company }
+	
+	divide_variable = { ADW_SMA_per = ADW_company_workers_amu }
+	divide_variable = { ADW_MID_per = ADW_company_workers_amu }
+	divide_variable = { ADW_BIG_per = ADW_company_workers_amu }
+}
+# Scripted GUI Pie Chart example by Yard1
+# Feel free to use in your mods, but give credits to Yard1 (both in code, with comments; and on your download page)
+
+# this creates a pie chart of popularities - can be easily adapted to show anything that adds up to 100%
+ADW_chert_en_of_kig = {
+	clear_array = ADW_pie_chart
+	resize_array = {
+		array = ADW_pie_chart
+		value = 1 # 1 is value for neutrality frame, so we don't have to make a loop for it
+		size = 100 # 100 pieces, each percent is one piece
+	}
+	set_temp_variable = { SMA_company_workers = ADW_SMA_per }
+	multiply_temp_variable = { SMA_company_workers = 100 }
+	round_temp_variable = SMA_company_workers
+
+	set_temp_variable = { MID_company_workers = ADW_MID_per }
+	multiply_temp_variable = { MID_company_workers = 100 }
+	round_temp_variable = MID_company_workers 
+	set_variable = { ROOT.ADW_last_idx = SMA_company_workers }
+	add_to_temp_variable = { MID_company_workers = ROOT.ADW_last_idx }
+	for_loop_effect = {
+		start = ROOT.ADW_last_idx
+		end = MID_company_workers
+		set_variable = { ADW_pie_chart^v = 2 }
+		add_to_variable = { ROOT.ADW_last_idx = 1 }
+	}
+
+	set_temp_variable = { BIG_company_workers = ADW_BIG_per }
+	multiply_temp_variable = { BIG_company_workers = 100 }
+	round_temp_variable = BIG_company_workers
+	add_to_temp_variable = { BIG_company_workers = ROOT.ADW_last_idx }
+	for_loop_effect = {
+		start = ROOT.ADW_last_idx
+		end = BIG_company_workers
+		set_variable = { ADW_pie_chart^v = 3 }
+		add_to_variable = { ROOT.ADW_last_idx = 1 }
+	}
+
+	clear_variable = ROOT.ADW_last_idx
+	add_to_variable = { ADW_pie_chert_dirty = 1 }
+}
+ADW_GDP_resorce_of_oil = {
+	clear_variable = global.ADW_GDP_consume_wol
+	clear_variable = global.ADW_GDP_export
+	every_country = {
+		clear_variable = THIS.ADW_GDP_consume
+		set_variable = { THIS.ADW_GDP_consume = THIS.resource_imported@oil }
+		subtract_from_variable = { THIS.ADW_GDP_consume = THIS.resource_produced@oil }
+		clamp_variable = {
+			var = THIS.ADW_GDP_consume
+			min = 0.00
+		}
+		add_to_variable = { global.ADW_GDP_consume_wol = THIS.ADW_GDP_consume }
+		add_to_variable = { global.ADW_GDP_export = THIS.resource_exported@oil }
+	}
+	divide_variable = { global.ADW_GDP_consume_wol = 1 }
+	divide_variable = { global.ADW_GDP_consume_wol = global.ADW_GDP_export }
+	multiply_variable = { global.ADW_GDP_consume_wol = 5 }
+	add_to_variable = { global.ADW_GDP_consume_wol = 0.01 }
+}
+ADW_GDP_array_effect = {
+	add_to_array = { ADW_seisaku_list = 1 }
+	add_to_array = { ADW_seisaku_list = 2 }
+	add_to_array = { ADW_seisaku_list = 3 }
 }
