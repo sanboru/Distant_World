@@ -1,0 +1,19 @@
+state={
+	id=948
+	name="STATE_948"
+	provinces={
+		898 959 3803 3852 3860 6822 6922 6944 11878 
+	}
+	manpower=200000
+	state_category=rural
+	history={
+		owner = KOR
+		add_core_of = KOR
+		buildings = {
+			infrastructure = 2
+
+		}
+	}
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

@@ -1,0 +1,25 @@
+state={
+	id=943
+	name="STATE_943"
+	provinces={
+		7532 
+	}
+	history={
+		owner = HOK
+		add_core_of = HOK
+		add_claim_by = JAP
+		buildings = {
+			infrastructure = 2
+			air_base = 1
+			industrial_complex = 1
+		}
+		victory_points = {
+			7532 5 
+		}
+
+	}
+	manpower=453200
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	state_category=rural
+}

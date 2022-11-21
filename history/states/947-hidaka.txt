@@ -1,0 +1,21 @@
+state={
+	id=947
+	name="STATE_947"
+	provinces={
+		7595 10512 12493 
+	}
+	manpower=1285600
+	state_category=town
+	history={
+		owner = HOK
+		add_core_of = HOK
+		add_claim_by = JAP
+		buildings = {
+			infrastructure = 3
+			dockyard = 1
+			industrial_complex = 1
+		}
+	}
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}
