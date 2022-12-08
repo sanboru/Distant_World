@@ -7,5 +7,5 @@ tags={
 	"Alternative History"
 }
 name="Distant_World"
-supported_version="1.10.8"
+supported_version="1.12.6"
 path=""
