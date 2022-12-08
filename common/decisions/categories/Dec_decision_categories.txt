@@ -110,3 +110,26 @@ ADW_IND_social_improve = {
 		base = 9
 	}
 }
+
+######中国######
+ADW_CHI_chow_kou_dec_category = {
+	icon = GFX_decision_category_generic_monarchism
+	scripted_gui = ADW_CHI_chokou_koku_window
+	visible_when_empty = yes
+	visible = { tag = QIE }
+	priority = {
+		base = 100
+	}
+}
+ADW_HOK_sehinseingumi = {
+	icon = GFX_decision_category_military_operation
+	visible_when_empty = yes
+	scripted_gui = ADW_HOK_shinsengumi_window
+	visible = {
+		tag = HOK
+		#has_country_flag = shinsengumi_ADW_flag
+	}
+	priority = {
+		base = 100
+	}
+}

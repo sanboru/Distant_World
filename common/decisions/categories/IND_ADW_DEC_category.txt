@@ -64,3 +64,20 @@ ADW_IND_fukko_from_civil_war = {
 		base = 25
 	}
 }
+ADW_IND_core_state = {
+	icon = GFX_decision_category_generic_prospect_for_resources
+	picture = GFX_decision_cat_picture_SWI_absolute_neutrality
+	visible = {
+		AND = {
+			OR = {
+				tag = IND
+				tag = CND
+				tag = FND
+			}
+			has_country_flag = display_dec_to_core
+		}
+	}
+	Priority = {
+		base = 2
+	}
+}
