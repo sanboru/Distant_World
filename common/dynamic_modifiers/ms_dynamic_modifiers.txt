@@ -83,7 +83,7 @@
 	ADW_GDP_keistaus = {
 		icon = "generic_flexible_foreign_policy2"
 		enable = { always = yes }
-		stability_weekly = ROOT.ADW_GDP_police_stabil
+		stability_weekly = ROOT.kanshi_per_modi
 	}
 	ADW_GDP_infra_use_factory = {
 		icon = "GFX_idea_unknown"
