@@ -1,0 +1,52 @@
+scripted_map_modes = {
+
+	QIE_CHOW_KOU_FACTION = {
+
+		top = {
+			type = country
+			
+			color = {
+				set_temp_variable = { red = 0 }
+				divide_temp_variable = { red = 1 }
+				set_temp_variable = { blue = 125 }
+				divide_temp_variable = { blue = 1 }
+				set_temp_variable = { green = 0 }
+				divide_temp_variable = { green = 1 }
+				set_temp_variable = { alpha = 1.0 }	
+				
+				set_temp_variable = { thickness = 1.0 }
+
+				FROM = {
+					tag = QIE
+				}
+			}
+			
+		}
+		
+		bottom = {
+			type = country
+			
+			color = {
+				set_temp_variable = { red = 0 }
+				divide_temp_variable = { red = 1 }
+				set_temp_variable = { blue = 125 }
+				divide_temp_variable = { blue = 1 }
+				set_temp_variable = { green = 30 }
+				divide_temp_variable = { green = 1 }
+				set_temp_variable = { alpha = 1.0 }	
+				
+				set_temp_variable = { thickness = 1.0 }
+				
+				FROM = { 
+					is_in_array = { 
+						array = QIE.ADW_CHI_chow_kou_list_array
+						value = THIS
+					}
+				}
+			}
+		}
+		far_text = country
+		near_text = none
+		update_daily = yes
+	}
+}
