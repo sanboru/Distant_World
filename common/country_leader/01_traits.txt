@@ -16,4 +16,9 @@ leader_traits = {
 		random = no
 		stability_factor = 0.05
 	}
+	
+	ADW_CHI_pu_i = {
+		random = no
+		stability_factor = 0.1
+	}
 }
