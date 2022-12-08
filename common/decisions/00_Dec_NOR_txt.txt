@@ -950,6 +950,7 @@ IND_ADW_india_civil_war = {
 				}
 			}
 			country_event = { id = IND_ADW.104 days = 1 }
+			ROOT = { load_focus_tree = IND_perfecrt_load keep_completed = yes }
 		}
         timeout_effect = {
 			news_event = { id = ADW_NEWS.8 days = 1 }
@@ -1531,9 +1532,17 @@ the_kougyou_DEC_ADW_RAJ = {
 ####################################################################################################
 
 a = {
+	ADW_GDdddddddd = {
+		complete_effect = { country_event = { id = IND_ADW.110 } }
+	}
+	ADW_FROM_CHK = {
+		visible = { tag = QIE }
+		complete_effect = { KOR = {country_event = { id = IND_ADW.112 days = 2} } }
+	}
 	b = {
 		complete_effect = {
 			set_cosmetic_tag = RAJ_UNITE
+				add_ideas = ADW_CHI_ensen_mood
 		}
 	}
 	c = {
@@ -1980,6 +1989,69 @@ a = {
 			news_event = { id = ADW_NEWS.10 }
 		}
 	}
+	state_fukko = {
+		complete_effect = {
+			ADW_GDP_array_effect = yes
+		}
+	}
+	ADW_QIE_system = {
+		complete_effect = {
+			news_event = { id = ADW_NEWS.11 }
+		}
+	}
+	PHI_event = {
+		visible = { tag = QIE }
+		complete_effect = {
+			country_event = { id = IND_ADW.117 }
+		}
+	}
+	templete = {
+		visible = { tag = HOK }
+		complete_effect = {
+			set_variable = { ADW_shinsengumi_saidai_select = 3 }
+			division_template = {
+				name = "新選組歩兵部隊"
+				is_locked = yes
+				template_counter = 0
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+				}
+			}
+		}
+	}
+	templete_1 = {
+		visible = { tag = HOK }
+		complete_effect = {
+			division_template = {
+				name = "新選組砲兵部隊"
+				is_locked = yes
+				template_counter = 0
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 2 y = 0 }
+					artillery_brigade = { x = 2 y = 1 }
+				}
+			}
+		}
+	}
+	ADW_HOK_event = {
+		visible = { tag = HOK }
+		complete_effect = { country_event = { id = IND_ADW.119 } }
+	}
+	change_name_HOK = {
+		visible = { tag = HOK }
+		complete_effect = { country_event = { id = IND_ADW.120 } }
+		complete_effect = { country_event = { id = IND_ADW.121 } }
+	}
+	ADW_OKI_distination = {
+		visible = { tag = OKI }
+		complete_effect = { OKI = { country_event = { id = IND_ADW.125 } } }
+	}
 }
 
 ADW_IND_fukko_from_civil_war = {
@@ -2169,4 +2241,186 @@ ADW_IND_fukko_from_civil_war = {
 			factor = 5
 		}
     }
+}
+ADW_CHI_chow_kou_dec_category = {
+	ADW_QIE_sansen = {
+		icon = GFX_decision_tur_unifying_the_country
+		target_trigger = {
+			is_in_array = { ADW_CHI_chow_kou_list_array = FROM }
+			FROM = {
+				has_defensive_war = yes
+			}
+		}
+		visible = {
+			any_country = {
+				has_war_with = FROM
+				NOT = { has_war_with = ROOT }
+			}
+		}
+		complete_effect = {
+			every_country = {
+				limit = {
+					has_war_with = FROM
+				}
+				ROOT = {
+					add_to_war = {
+						targeted_alliance = FROM
+						enemy = PREV
+						hostility_reason = asked_to_join
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+}
+ADW_HOK_sehinseingumi = {
+	HOK_ADW_shinsengumi_improve = {
+		icon = GFX_decision_generic_army_support
+		days_remove = 30
+		cost = 150
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ADW_shinsengumi_select_lower
+				check_variable = { ADW_shinsengumi_select < ADW_shinsengumi_saidai_select }
+			}
+		}
+		complete_effect = {
+			add_to_variable = { ROOT.ADW_shinsengumi_select = 1 }
+		}
+		remove_effect = {
+			942 = {
+				create_unit = {
+					division = "name = \"新選組歩兵部隊\" division_template = \"新選組歩兵部隊\" start_experience_factor = 0.5　start_manpower_factor = 0.1"
+					owner = HOK
+					prioritize_location = 10444
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	HOK_ADW_shinsengumi_infanity_upgrade = {
+		icon = GFX_decision_gre_paying_ifc_debt
+		days_remove = 35
+		cost = 200
+		fire_only_once = yes
+		available = {
+		}
+		remove_effect = {
+			add_units_to_division_template = {
+				template_name = "新選組歩兵部隊"
+				regiments = {
+					infantry = 1
+					infantry = 2
+					infantry = 2
+					infantry = 2
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		priority = 10
+	}
+	HOK_ADW_shinsengumi_arity_upgrade = {
+		icon = GFX_decision_generic_industry
+		days_remove = 40
+		cost = 170
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ADW_shinsengumi_select_lower
+				check_variable = { ADW_shinsengumi_select < ADW_shinsengumi_saidai_select }
+			}
+		}
+		complete_effect = {
+			add_to_variable = { ROOT.ADW_shinsengumi_select = 1 }
+		}
+		visible = { has_completed_focus = ADW_HOK_new_country_shinsen_kikou_shidan }
+		remove_effect = {
+			942 = {
+				create_unit = {
+					division = "name = \"新選組砲兵部隊\" division_template = \"新選組砲兵部隊\" start_experience_factor = 0.5　start_manpower_factor = 0.1"
+					owner = HOK
+					prioritize_location = 10444
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	HOK_ADW_shinsengumi_arity_upgrade_kikou = {
+		icon = GFX_decision_generic_tank
+		days_remove = 80
+		cost = 250
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ADW_shinsengumi_select_lower_tank
+				check_variable = { ADW_shinsengumi_select_tank < ADW_shinsengumi_saidai_select_kikou }
+			}
+		}
+		visible = { has_completed_focus = ADW_HOK_new_country_shinsen_kikou_shidan_1 }
+		complete_effect = {
+			add_to_variable = { ROOT.ADW_shinsengumi_select_tank = 1 }
+		}
+		remove_effect = {
+			942 = {
+				create_unit = {
+					division = "name = \"新選組機甲部隊\" division_template = \"新選組機甲部隊\" start_experience_factor = 0.5　start_manpower_factor = 0.1"
+					owner = HOK
+					prioritize_location = 10444
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	HOK_ADW_shinsengumi_houhei_upgrade = {
+		icon = GFX_decision_gre_paying_ifc_debt
+		days_remove = 60
+		cost = 180
+		visible = { has_completed_focus = ADW_HOK_new_country_shinsen_kikou_shidan }
+		fire_only_once = yes
+		remove_effect = {
+			set_country_flag = ADW_HOK_SHIN_houhei_more
+			add_units_to_division_template = {
+				template_name = "新選組砲兵部隊"
+				regiments = {
+					infantry = 0
+					infantry = 1
+					artillery_brigade = 2
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		priority = 10
+	}
+	HOK_ADW_shinsengumi_houhei_upgrade_2 = {
+		icon = GFX_decision_gre_paying_ifc_debt
+		days_remove = 30
+		cost = 70
+		visible = { has_country_flag = ADW_HOK_SHIN_houhei_more }
+		fire_only_once = yes
+		remove_effect = {
+			set_country_flag = ADW_HOK_SHIN_houhei_more
+			add_units_to_division_template = {
+				template_name = "新選組砲兵部隊"
+				regiments = {
+					infantry = 0
+					infantry = 1
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		priority = 10
+	}
 }

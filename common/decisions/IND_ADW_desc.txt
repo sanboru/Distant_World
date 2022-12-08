@@ -234,3 +234,50 @@ ADW_IND_buildings_breaking = {
 		}
 	}
 }
+ADW_IND_core_state = {
+	ADW_ADW_IND_core_state = {
+		icon = GFX_decision_infiltrate_state
+		cost = 30
+		days_remove = 30
+		on_map_mode = map_and_decisions_view
+		state_target = yes
+		target_trigger = {
+			FROM = {
+				owner = { tag = ROOT }
+				NOT = { is_core_of = ROOT }
+				OR = {
+				state = 439
+				state = 438
+				state = 435
+				state = 426
+				state = 436
+				state = 913
+				state = 912
+				
+				state = 441
+				state = 787
+				
+				state = 433
+				state = 428
+				state = 437
+				state = 910
+				state = 427
+				state = 429
+				state = 909
+				state = 320
+				state = 423
+				state = 425
+				state = 424
+				state = 911
+				state = 321
+				}
+			}
+		}
+		remove_effect = {
+			ROOT = { add_state_core = FROM }
+		}
+		ai_will_do = {
+			factor = 15
+		}
+	}
+}
