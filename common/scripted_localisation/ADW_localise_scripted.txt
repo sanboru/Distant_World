@@ -630,3 +630,42 @@ defined_text = {
 		localization_key = text_ADW_seisaku_list_locali_3
 	}
 }
+defined_text = {
+	name = text_GDP_cheker_ADW
+	text = {
+		trigger = { ROOT = { check_variable = { ADW_GDP_seisaku_list_checker_array^ADW_seisaku_list_indx = 1 }}}
+		localization_key = text_GDP_cheker_ADW_yes
+	}
+	text = {
+		trigger = { ROOT = { check_variable = { ADW_GDP_seisaku_list_checker_array^ADW_seisaku_list_indx = 0 }}}
+		localization_key = text_GDP_cheker_ADW_no
+	}
+}
+defined_text = {
+	name = ADW_TXT_HOK_shinsengumi_sowchou
+	text = {
+		trigger = {
+			ROOT = {
+				check_variable = {
+					var = ROOT.ADW_shinsengumi_taichow
+					value = 0
+					compare = equals
+				}
+			}
+		}
+		localization_key = ADW_TXT_HOK_shinsengumi_sowchou_selected_no
+	}
+	text = {
+		localization_key = ADW_TXT_HOK_shinsengumi_sowchou_selected
+	}
+}
+defined_text = {
+	name = ADW_HOK_kikou_has_unlocked
+	text = {
+		trigger = { ROOT = {  has_completed_focus = ADW_HOK_new_country_shinsen_kikou_shidan_1 } }
+		localization_key = ADW_HOK_kikou_has_unlocked_yes
+	}
+	text = {
+		localization_key = ADW_HOK_kikou_has_unlocked_no
+	}
+}
