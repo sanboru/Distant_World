@@ -6,6 +6,9 @@ on_actions = {
 				ADW_RAJ_state_var_col = yes
 				ADW_RAJ_state_var_col_danatsu = yes
 			}
+			QIE = {
+				ADW_CHI_chow_kou_koku_arrays = yes
+			}
 		}
 	}
 	on_daily = {
@@ -146,18 +149,14 @@ on_actions = {
 		effect = {
 			ROOT = {
 				set_temp_variable = { num_fac_cil = ROOT.num_of_civilian_factories }
-				multiply_temp_variable = { num_fac_cil = 6 }
+				multiply_temp_variable = { num_fac_cil = 1 }
 				set_temp_variable = { num_fac_mil = ROOT.num_of_military_factories }
-				multiply_temp_variable = { num_fac_mil = 6 }
+				multiply_temp_variable = { num_fac_mil = 1 }
 				set_temp_variable = { num_fac_nav = ROOT.num_of_naval_factories }
-				multiply_temp_variable = { num_fac_nav = 10 }
+				multiply_temp_variable = { num_fac_nav = 1.5 }
 				add_to_temp_variable = { aa_ww_temp = num_fac_mil }
 				add_to_temp_variable = { aa_ww_temp = num_fac_nav }
 				add_to_temp_variable = { aa_ww_temp = num_fac_cil }
-				set_temp_variable = { can_work_peo_f = ROOT.max_manpower_k }
-				multiply_temp_variable = { can_work_peo_f = 1 }
-				multiply_temp_variable = { aa_ww_temp = can_work_peo_f }
-				divide_temp_variable = { aa_ww_temp = 100000000 }
 				set_variable = { ADW_list_ww = aa_ww_temp }
 				set_variable = {
 					var = GDP_daily
@@ -309,9 +308,9 @@ on_actions = {
 					var = country_people
 					value = country_people_mi
 				}
-				multiply_temp_variable = { country_people = 80 }
+				multiply_temp_variable = { country_people = 70 }
 				set_temp_variable = { ships_rot = ROOT.num_ships }
-				multiply_temp_variable = { ships_rot = 150 }
+				multiply_temp_variable = { ships_rot = 130 }
 				
 				add_to_variable = { country_people = ships_rot }
 
@@ -321,10 +320,10 @@ on_actions = {
 					var = ADW_country_people_money
 					value = country_people_min
 				}
-				multiply_variable = { ADW_country_people_money = 80 }
+				multiply_variable = { ADW_country_people_money = 70 }
 				
 				set_temp_variable = { ADW_SHIP_money = ROOT.num_ships }
-				multiply_temp_variable = { ADW_SHIP_money = 150 }
+				multiply_temp_variable = { ADW_SHIP_money = 130 }
 				
 				set_variable = { ADW_mil_amount = ADW_SHIP_money }
 				add_to_variable = { ADW_mil_amount = ADW_country_people_money }
@@ -1216,8 +1215,6 @@ on_actions = {
 				set_variable = { GDP_of_gikai_person = ROOT.gikai_person_of_numbar }
 				multiply_variable = { GDP_of_gikai_person = 0.002 }
 			}
-		}
-		effect = {
 			ROOT = {
 				set_variable = {
 					var = GDP_monthly
@@ -1448,23 +1445,23 @@ on_actions = {
 			ROOT = {
 				####国民の一人当たりのお金####
 				set_variable = { small_wage_SCB = ROOT.the_worker_of_small_company }
-				multiply_variable = { small_wage_SCB = 0.0004 }
+				multiply_variable = { small_wage_SCB = 0.003 }
 				set_variable = { middle_wage_MCB = ROOT.the_worker_of_MID_company }
-				multiply_variable = { middle_wage_MCB = 0.0005 }
+				multiply_variable = { middle_wage_MCB = 0.009 }
 				set_variable = { big_wage_BCB = ROOT.the_worker_of_BIG_company }
-				multiply_variable = { big_wage_BCB = 0.0007 }
-				set_variable = { factory_worker_wage = ROOT.num_of_factories }
-				multiply_variable = { factory_worker_wage = 1500 }
+				multiply_variable = { big_wage_BCB = 0.018 }
+				set_variable = { ADW_factory_wage = ADW_GDP_factory_of_people }
+				multiply_variable = { ADW_factory_wage = 0.105 }
 				
 				add_to_variable = { small_wage_SCB = middle_wage_MCB }
 				add_to_variable = { small_wage_SCB = big_wage_BCB }
-				add_to_variable = { small_wage_SCB = factory_worker_wage }
+				add_to_variable = { small_wage_SCB = ADW_factory_wage }
 				set_variable = { all_wage_SMBCB = small_wage_SCB }
-				divide_variable = { all_wage_SMBCB = 3 }
-				multiply_variable = { all_wage_SMBCB = 2 } #総手取り
+				
 				divide_variable = { all_wage_SMBCB = ROOT.max_manpower_k }
-				divide_variable = { all_wage_SMBCB = 7 } #一人当たりのお金
-				multiply_variable = { all_wage_SMBCB = 10 }
+				
+				set_variable = { all_wage_SMBCB_keiki = 10000 }
+				multiply_variable = { all_wage_SMBCB_keiki = all_wage_SMBCB }
 			}
 		}
 		
@@ -1682,6 +1679,59 @@ on_actions = {
 								}
 							}
 						}
+					}
+				}
+			}
+		}
+	}
+	on_daily = {
+		effect = {
+			ROOT = {
+				set_variable = { ADW_roudou_jinko = ROOT.max_manpower_k }
+				multiply_variable = { ADW_roudou_jinko = 0.7 }
+				set_variable = { ADW_GDP_worker_of_roudoujin = the_woker_high_level }
+				divide_variable = { ADW_GDP_worker_of_roudoujin = 1000 }
+				subtract_from_variable = { ADW_roudou_jinko = ADW_GDP_worker_of_roudoujin }
+				
+				set_variable = { ADW_GDP_factory_of_people = num_of_factories }
+				multiply_variable = { ADW_GDP_factory_of_people = 50 }
+				
+				subtract_from_variable = { ADW_roudou_jinko = ADW_GDP_factory_of_people }
+			}
+		}
+	}
+	on_daily = {
+		effect = {
+			HOK = {
+				ADW_HOK_shinsengumi_list = yes
+			}
+			ROOT = {
+				if = {
+					limit = { has_country_flag = ADW_GDP_research_flag }
+					add_to_variable = { ADW_research_days = 1 }
+					else = {
+						add_to_variable = { ADW_research_days = -1 }
+					}
+				}
+				clamp_variable = {
+					var = ADW_research_days
+					min = 0
+					max = 120
+				}
+				
+				set_variable = { make_percenrt_ADW_research = ADW_research_days }
+				divide_variable = { make_percenrt_ADW_research = 120 }
+				multiply_variable = { make_percenrt_ADW_research = 100 }
+				round_variable = make_percenrt_ADW_research
+				
+				set_variable = { ADW_bar_percent_array^0 = make_percenrt_ADW_research }
+				if = {
+					limit = {
+						check_variable = { ROOT.ADW_research_days = 120 }
+						NOT = { has_country_flag = research_complete_flag }
+					}
+					ROOT = {
+						country_event = { id = ADW_SPE.1 }
 					}
 				}
 			}
