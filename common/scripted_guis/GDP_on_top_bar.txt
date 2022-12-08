@@ -19,6 +19,18 @@ scripted_gui = {
 			}
 		}
 	}
+	ADW_CHI_chokou_koku_window = {
+		context_type = decision_category
+		parent_window_token = decision_tab
+		window_name = "ADW_CHI_chokou_koku"
+		dynamic_lists = {
+			ADW_CHI_chow_kou_grid = {
+				array = ROOT.ADW_CHI_chow_kou_list_array
+				change_scope = yes
+				entry_container = "ADW_country_list_of_CHI_chow"
+			}
+		}
+	}
 	ADW_GDP_emplpy_system_buttom = {
 		window_name = "ADW_GDP_emplpy_system_buttom"
 		visible = {
@@ -299,7 +311,7 @@ scripted_gui = {
 		window_name = "ADW_seisaku_list_window"
 		visible = {
 			has_country_flag = ADW_open_additional_seisaku
-			has_country_flag = open_ui_keizai
+			#has_country_flag = open_ui_keizai
 		}
 		dynamic_lists = {
 			ADW_seisaku_kist_grid = {
@@ -308,6 +320,20 @@ scripted_gui = {
 				entry_container = "seisaku_ADW_list"
 				index = ADW_seisaku_list_indx
 			}
+		}
+		effects = {
+			ADW_GDP_additional_seisaku_conduct_bt_click = {
+				set_variable = { ROOT.ADW_GDP_seisaku_mRNA = ADW_seisaku_list^ADW_seisaku_list_indx }
+				ADW_GDP_additional_seisaku_effect = yes
+			}
+		}
+		triggers = {
+			ADW_GDP_seisaku_per_bow_visible = {
+				check_variable = { ROOT.ADW_seisaku_list^ADW_seisaku_list_indx = 1 }
+			}
+		}
+		properties = {
+			ADW_GDP_seisaku_per_bow = { frame = ROOT.ADW_bar_percent_array^ADW_seisaku_list_indx }
 		}
 	}
 	GDP_keizai_ui = {
@@ -323,6 +349,20 @@ scripted_gui = {
 			}
 		}
 		effects = {
+			ADW_GDP_dis_seisaku_click = {		
+				ROOT = {
+					ADW_GDP_array_effect = yes
+					if = {
+						limit = {
+							has_country_flag = ADW_open_additional_seisaku
+						}
+						clr_country_flag = ADW_open_additional_seisaku
+						else = {
+							set_country_flag = ADW_open_additional_seisaku
+						}
+					}
+				}
+			}
 			STATE_to_camera_click = {
 				PREV = {
 					set_variable = { checked_variable = 1 }
@@ -2872,6 +2912,37 @@ scripted_gui = {
 						value = 5
 						compare = greater_than_or_equals
 					}
+				}
+			}
+		}
+	}
+	ADW_HOK_shinsengumi_window = {
+		window_name = "ADW_HOK_shinsengumi"
+		context_type = decision_category
+		parent_window_token = decision_tab
+		dynamic_lists = {
+			ADW_shinsengumi_leader_list_grid = {
+				array = ROOT.ADW_HOK_shinsengumi_leaders
+				change_scope = yes
+				entry_container = "ADW_shinsengumi_leader_list_entry" 
+			}
+		}
+		effects = {
+			ADW_characte_select_click = {
+				PREV = {
+					set_variable = { ROOT.ADW_shinsengumi_taichow = THIS }
+					set_character_flag = ADW_character_shinsen_selected
+					add_unit_leader_trait = ADW_HOK_shinsengumi_kumichow
+				}
+				ADW_HOK_shinsengumi_list = yes
+			}
+		}
+		triggers = {
+			ADW_characte_select_click_enabled = {
+				check_variable = {
+					var = ROOT.ADW_shinsengumi_taichow
+					value = 0
+					compare = equals
 				}
 			}
 		}
