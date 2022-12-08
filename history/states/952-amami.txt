@@ -1,0 +1,22 @@
+state={
+	id=952
+	name="STATE_952"
+	provinces={
+		1123 7115 
+	}
+	history={
+		owner = OKI
+		add_core_of = OKI
+		buildings = {
+			infrastructure = 1
+		}
+		victory_points = {
+			7115 1
+		}
+
+	}
+	manpower=91800
+	state_category=small_island
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

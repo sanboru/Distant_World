@@ -1,0 +1,26 @@
+state={
+	id=953
+	name="STATE_953"
+	provinces={
+		11932 13257 
+	}
+	history={
+		owner = OKI
+		add_core_of = OKI
+		buildings = {
+			infrastructure = 4
+			air_base = 5
+			11932 = {
+				naval_base = 5
+
+			}
+		}
+		victory_points = {
+			11932 20 
+		}
+	}
+	manpower=378000
+	buildings_max_level_factor=1.000
+	state_category=city
+	local_supplies=0.000
+}
