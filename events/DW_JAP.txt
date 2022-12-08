@@ -69,3 +69,172 @@ country_event = { #今後の方針
 		name = DW_JAP.3.a
 	}
 }
+
+country_event = { #釜山会議開幕
+	id = DW_JAP.4
+	title = DW_JAP.4.t
+	desc = DW_JAP.4.d
+	picture = GFX_report_event_aid_pact
+
+	fire_only_once = yes
+
+	option = {
+		name = DW_JAP.4.a
+		custom_effect_tooltip = "ADW_JAP_must_choose_carefully"
+		JAP = {
+			country_event = {
+			id = DW_JAP.5
+			days = 10
+		}
+		news_event = ADW_JAP_N.1
+		
+		}
+	}
+}
+
+country_event = { #北方領土交渉
+	id = DW_JAP.5
+	title = DW_JAP.5.t
+	desc = DW_JAP.5.d
+	picture = GFX_report_event_ast_navy
+
+	fire_only_once = yes
+
+	option = {
+		name = DW_JAP.5.a
+		add_state_core = 536
+		JAP = {
+			country_event ={
+			id = DW_JAP.6
+			days = 10
+			}
+		}	
+	}
+
+	option = {
+		name = DW_JAP.5.b
+		add_state_core = 536
+		add_state_core = 555
+		add_political_power = 50
+		diplomatic_relation = {
+			country = CHI
+			relation = docking_rights
+			active = yes
+		}
+		JAP = {
+			country_event ={
+			id = DW_JAP.6
+			days = 10
+			}
+		}
+	}
+
+		option = {
+		name = DW_JAP.5.c
+		add_state_core = 536
+		add_state_core = 555
+		add_political_power = -100
+			add_opinion_modifier = {
+			target = CHI
+			modifier = ADW_JAP_refused_chishima_island_docking_rights
+			}
+			JAP = {
+				country_event ={
+				id = DW_JAP.6
+				days = 10
+					}
+			}
+		}
+
+	}
+
+	country_event = { #旧南方領土交渉、現防共協定
+		id = DW_JAP.6
+		title = DW_JAP.6.t
+		desc = DW_JAP.6.d
+		picutre = GFX_report_event_hol_polderen #将来変更予定
+
+		fire_only_once = yes
+
+		option = {
+			name = DW_JAP.6.a
+			add_political_power = -50
+			add_popularity = {
+				ideology = communism
+				popularity = -0.3
+			}
+			JAP = {
+				country_event = {
+				id = DW_JAP.7
+				days = 10
+			}
+		}
+		}
+	
+		option = {
+			name = DW_JAP.6.b
+			add_political_power = 50
+			add_popularity = {
+				ideology = communism
+				popularity = 0.1
+			}
+			JAP = {
+				country_event = {
+				id = DW_JAP.7
+				days = 10
+			}
+		}
+		}
+		
+	}
+
+
+country_event = { #朝貢交渉
+	id = DW_JAP.7
+	title = DW_JAP.7.t
+	desc = DW_JAP.7.d
+	picture = GFX_report_event_hitler_croatia_handshake
+
+	fire_only_once = yes
+
+	option = {
+		name = DW_JAP.7.a
+		add_political_power = -200
+		JAP = {
+			country_event ={
+			id = DW_JAP.8
+			days = 10
+		}
+	}
+	}
+
+	option = {
+		name = DW_JAP.7.b
+		add_timed_idea = {
+			idea = DW_JAP_chinese_tribunary
+			days = 180
+		}
+		JAP = {
+			country_event ={
+			id = DW_JAP.8
+			days = 10
+		}
+	}
+	}
+}
+
+country_event = { #釜山会議閉幕
+	id = DW_JAP.8
+	title = DW_JAP.8.t
+	desc = DW_JAP.8.d
+	picture = GFX_report_event_japan_europe_pact
+
+	fire_only_once = yes
+
+	option = {
+		name = DW_JAP.8.a
+		news_event = {
+			id = ADW_JAP_N.1
+		}
+	}
+}

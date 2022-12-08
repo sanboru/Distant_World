@@ -932,3 +932,97 @@ news_event = {
 		}
 	}
 }
+news_event = {
+	id = ADW_NEWS.11
+	title = ADW_NEWS.11.t
+	picture = GFX_news_event_mex_civil_war
+	major = yes
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			every_country = {
+				limit = { major = yes }
+				add_ideas = ADW_support_anti_QIE
+			}
+				AIN = {
+					create_faction = ADW_SOUTH_ASIA_FACTION
+					add_to_faction = AKO
+					add_to_faction = ABM
+					add_to_faction = ASI
+					transfer_state = 934
+					add_state_core = 934
+					
+					transfer_state = 741
+					add_state_core = 741
+					transfer_state = 933
+					add_state_core = 933
+					transfer_state = 928
+					add_state_core = 928
+					transfer_state = 286
+					add_state_core = 286
+					transfer_state = 927
+					add_state_core = 927
+					transfer_state = 925
+					add_state_core = 925
+					transfer_state = 924
+					add_state_core = 924
+					transfer_state = 922
+					add_state_core = 922
+					country_event = { id = IND_ADW.111 days = 1}
+				}
+				AKO = {
+					transfer_state = 525
+					add_state_core = 525
+					
+					transfer_state = 937
+					add_state_core = 937
+					
+					transfer_state = 939
+					add_state_core = 939
+					
+					transfer_state = 938
+					add_state_core = 938
+					country_event = { id = IND_ADW.111 days = 1}
+				}
+				ABM = {
+					transfer_state = 288
+					add_state_core = 288
+					country_event = { id = IND_ADW.111 days = 1}
+				}
+				ASI = {
+					transfer_state = 289
+					add_state_core = 289
+					
+					transfer_state = 724
+					add_state_core = 724
+					country_event = { id = IND_ADW.111 days = 1}
+				}
+		}
+	}
+}
+news_event = {
+	id = ADW_NEWS.12
+	title = ADW_NEWS.12.t
+	desc = ADW_NEWS.12.d
+	picture = GFX_news_event_king_speech
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = ADW_NEWS.12.a
+		trigger = {
+			NOT = { tag = PHI }
+		}
+		ai_chance = {
+			factor = 5
+		}
+	}
+	option = {
+		name = ADW_NEWS.12.b
+		trigger = {
+			tag = PHI
+		}
+		ai_chance = {
+			factor = 5
+		}
+	}
+}

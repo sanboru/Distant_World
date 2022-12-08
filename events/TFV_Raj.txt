@@ -2431,3 +2431,632 @@ country_event = {
 		}
 	}
 }
+country_event = {
+	id = IND_ADW.108
+	title = IND_ADW.108.t
+	desc = IND_ADW.108.d
+	picture = GFX_report_event_degaulle_inspect_troops
+	is_triggered_only = yes
+	option = {
+		name = IND_ADW.108.a
+		IND = {
+			annex_country = {
+				target = RAJ
+				transfer_troops = yes
+			}
+		}
+		ai_chance = {
+			factor = -10
+			modifier = {
+				strength_ratio = {
+					tag = IND
+					ratio > 15
+				}
+				factor = 11
+			}
+			modifier = {
+				has_government = IND
+				factor = 3
+			}
+		}
+	}
+	option = {
+		name = IND_ADW.108.b
+		IND = {
+			country_event = { id = IND_ADW.109 days = 1 }
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+country_event = {
+	id = IND_ADW.109
+	title = IND_ADW.109.t
+	desc = IND_ADW.109.d
+	picture = GFX_report_event_generic_read_write
+	is_triggered_only = yes
+	option = {
+		name = IND_ADW.109.a
+		create_wargoal = {
+			type = annex_everything
+			target = RAJ
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = IND_ADW.109.b
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+country_event = {
+	id = IND_ADW.110
+	title = IND_ADW.110.t
+	desc = IND_ADW.110.d
+	picture = GFX_report_event_generic_read_write
+	is_triggered_only = yes
+	option = {
+		name = IND_ADW.110.a
+		if = {
+			limit = { IND = { exists = yes } }
+			add_to_war = {
+				targeted_alliance = IND
+				enemy = QIE
+				hostility_reason = asked_to_join
+			}
+		}
+		if = {
+			limit = { FND = { exists = yes } }
+			add_to_war = {
+				targeted_alliance = FND
+				enemy = QIE
+				hostility_reason = asked_to_join
+			}
+		}
+		if = {
+			limit = { CND = { exists = yes } }
+			add_to_war = {
+				targeted_alliance = CND
+				enemy = QIE
+				hostility_reason = asked_to_join
+			}
+		}
+		ai_chance = {
+			modifier = {
+				has_war = yes
+				factor = -3
+			}
+			modifier = {
+				IND = { exists = yes }
+				IND = { has_government = ROOT }
+				factor = 6
+			}
+			modifier = {
+				CND = { exists = yes }
+				CND = { has_government = ROOT }
+				factor = 6
+			}
+			modifier = {
+				FND = { exists = yes }
+				FND = { has_government = ROOT }
+				factor = 6
+			}
+			modifier = {
+				num_divisions > 100
+				factor = 10
+			}
+			modifier = {
+				check_variable = { SOV.alliance_strength_ratio > QIE.alliance_strength_ratio }
+				factor = 10
+			}
+			modifier = {
+				has_war_support > 0.7
+				factor = 3
+			}
+			factor = -10
+		}
+	}
+	option = {
+		name = IND_ADW.110.b
+		ai_chance = {
+			factor = 15
+		}
+	}
+}
+country_event = {
+	id = IND_ADW.111
+	hidden = yes
+	is_triggered_only = yes
+	immediate = {
+		ADW_QIE_shokuminchi_sesen = yes
+	}
+}
+country_event = { #朝貢
+	id = IND_ADW.112
+	title = IND_ADW.112.t
+	desc = IND_ADW.112.d
+	picture = GFX_report_event_molotov_ribentrop_handshake
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+		set_variable = { ADW_amount_chow_kou_money = ADW_real_GDP_amoun }
+		multiply_variable = { ADW_amount_chow_kou_money = 0.05 }
+		multiply_variable = { ADW_amount_chow_kou_money_4_cheker = 0.05 }
+		clamp_variable = {
+			var = ADW_amount_chow_kou_money
+			min	= 0
+			max = ROOT.GDP_amou
+		}
+		}
+	}
+	option = {
+		name = IND_ADW.112.a
+		subtract_from_variable = { ROOT.GDP_amou = ADW_amount_chow_kou_money }
+		add_to_variable = { QIE.GDP_amou = ADW_amount_chow_kou_money }
+		custom_effect_tooltip = ADW_amount_chow_kou_money_harau
+		QIE = { country_event = { id = IND_ADW.115 days = 2} }
+		if = {
+			limit = { check_variable = { ADW_amount_chow_kou_money < ADW_amount_chow_kou_money_4_cheker } }
+			add_to_variable = { ROOT.QIE_red_point = 1 }
+			if = {
+				limit = { check_variable = { QIE_red_point = 3 } }
+				QIE = { country_event = { id = IND_ADW.113.t days = 2} }
+			}
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = IND_ADW.112.b
+		add_to_variable = { ROOT.QIE_red_point = 1 }
+		if = {
+			limit = { check_variable = { QIE_red_point = 3 } }
+			QIE = { country_event = { id = IND_ADW.113 days = 2} }
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+country_event = { #朝貢
+	id = IND_ADW.113
+	title = IND_ADW.113.t
+	desc = IND_ADW.113.d
+	picture = GFX_report_event_molotov_ribentrop_handshake
+	is_triggered_only = yes
+	option = {
+		name = IND_ADW.113.a
+		random_list = {
+			6 = { #国民の反対
+				ROOT = { country_event = { id = IND_ADW.114 days = 1} }
+			}
+			4 = {
+				QIE = {
+					create_wargoal = {
+						type = annex_everything
+						target = FROM
+					}
+				}
+			}
+		}
+		ai_chance = {
+			factor = 4
+		}
+	}
+	option = {
+		name = IND_ADW.113.b
+		custom_effect_tooltip = ADW_CHI_chow_kou_list_array_remove
+		remove_from_array = { ADW_CHI_chow_kou_list_array = FROM }
+		ai_chance = {
+			factor = 5
+		}
+	}
+	option = {
+		name = IND_ADW.113.c
+		clear_variable = FROM.QIE_red_point
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+country_event = { #朝貢国民反対
+	id = IND_ADW.114
+	title = IND_ADW.114.t
+	desc = IND_ADW.114.d
+	picture = GFX_report_event_crowd_in_prague
+	is_triggered_only = yes
+	option = {
+		name = IND_ADW.114.a
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+country_event = { #朝貢返礼品
+	id = IND_ADW.115
+	title = IND_ADW.115.t
+	desc = IND_ADW.115.d
+	picture = GFX_report_event_RCMP
+	is_triggered_only = yes
+	immediate = {
+		set_variable = { ADW_QI_chow_kou_henreihin = FROM.ADW_amount_chow_kou_money }
+		multiply_variable = { ADW_QI_chow_kou_henreihin = 2 }
+	}
+	option = {
+		subtract_from_variable = { ROOT.GDP_amou = ADW_QI_chow_kou_henreihin }
+		add_variable = { FROM.GDP_amou = ADW_QI_chow_kou_henreihin }
+		name = IND_ADW.115.a
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+country_event = { #朝貢返礼品
+	id = IND_ADW.116
+	hidden = yes
+	is_triggered_only = yes
+	immediate = {
+		QIE = { country_event = { id = IND_ADW.116 } }
+		for_each_scope_loop = {
+			array = QIE.ADW_CHI_chow_kou_list_array
+			country_event = { id = IND_ADW.112 days = 182 }
+		}
+	}
+}
+country_event = {
+	id = IND_ADW.117
+	title = IND_ADW.117.t
+	desc = IND_ADW.117.d
+	picture = GFX_report_event_chinese_soldiers_01
+	is_triggered_only = yes
+	option = {
+		name = IND_ADW.117.a
+		PHI = {
+			transfer_state = 623
+			transfer_state = 327
+			transfer_state = 850
+			transfer_state = 624
+			transfer_state = 628
+			transfer_state = 625
+			transfer_state = 627
+			transfer_state = 626
+			add_to_array = { QIE.ADW_CHI_chow_kou_list_array = PHI }
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = IND_ADW.117.b
+		add_stability = -0.2
+		add_political_power = -50
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+country_event = {
+	id = IND_ADW.118
+	title = IND_ADW.118.t
+	desc = IND_ADW.118.d
+	picture = GFX_report_event_chinese_soldiers
+	is_triggered_only = yes
+	option = {
+		name = IND_ADW.118.a
+		trigger = { tag = HOK }
+		HOK = {
+			add_state_claim = 533
+			add_state_claim = 282
+			add_state_claim = 920
+			add_state_claim = 534
+			add_state_claim = 535
+			add_state_claim = 532
+			add_state_claim = 531
+			add_state_claim = 529
+			add_state_claim = 917
+			add_state_claim = 530
+			add_state_claim = 919
+			add_state_claim = 528
+			add_state_claim = 918
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = IND_ADW.118.b
+		trigger = {
+			OR = {
+				tag = JAP
+				tag = KYO
+			}
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+country_event = {
+	id = IND_ADW.119
+	title = IND_ADW.119.t
+	desc = IND_ADW.119.d
+	picture = GFX_ADW_HOK_shinsengumi_pic
+	is_triggered_only = yes
+	option = {
+		name = IND_ADW.119.a
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+country_event = {
+	id = IND_ADW.120
+	title = IND_ADW.120.t
+	desc = IND_ADW.120.d
+	picture = GFX_report_event_molotov_ribbentrop_stalin_pact
+	is_triggered_only = yes
+	option = {
+		name = IND_ADW.120.a
+		set_cosmetic_tag = HOK_BAK
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = IND_ADW.120.b
+		custom_effect_tooltip = HOK_EMP_toolti
+		set_cosmetic_tag = HOK_EMP
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+country_event = {
+	id = IND_ADW.121
+	title = IND_ADW.121.t
+	desc = IND_ADW.121.d
+	picture = GFX_report_event_second_vienna_award_pact
+	is_triggered_only = yes
+	option = {
+		name = IND_ADW.121.a
+		set_capital = {state = 942}
+		trigger = {
+			controls_state = 942
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = IND_ADW.121.b
+		set_capital = {state = 920}
+		trigger = {
+			controls_state = 920
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = IND_ADW.121.c
+		set_capital = {state = 921}
+		trigger = {
+			controls_state = 921
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = IND_ADW.121.e
+		set_capital = {state = 533}
+		trigger = {
+			controls_state = 533
+		}
+		add_victory_points = {
+			province = 7169
+			value = 10
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+country_event = {
+	id = IND_ADW.122
+	title = IND_ADW.122.t
+	desc = IND_ADW.122.d
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	option = {
+		name = IND_ADW.122.a
+		HOK = {
+			annex_country = { target = KYO }
+			country_event = { id = IND_ADW.123 days = 2}
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = IND_ADW.122.b
+		HOK = { country_event = { id = IND_ADW.124 days = 2} }
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+country_event = {
+	id = IND_ADW.123
+	title = IND_ADW.123.t
+	desc = IND_ADW.123.d
+	picture = GFX_report_event_generic_read_write
+	is_triggered_only = yes
+	option = {
+		name = IND_ADW.123.a
+		add_stability = 0.01
+		ai_chance = {
+			factor = 5
+		}
+	}
+}
+country_event = {
+	id = IND_ADW.124
+	title = IND_ADW.124.t
+	desc = IND_ADW.124.d
+	picture = GFX_report_event_generic_read_write
+	is_triggered_only = yes
+	option = {
+		name = IND_ADW.124.a
+		add_war_support = 0.01
+		create_wargoal = {
+			type = annex_everything
+			target = KYO
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = IND_ADW.124.b
+		add_war_support = 0.01
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+country_event = {
+	id = IND_ADW.125
+	title = IND_ADW.125.t
+	desc = IND_ADW.125.d
+	picture = GFX_report_event_chinese_soldiers_01
+	is_triggered_only = yes
+	option = {
+		name = IND_ADW.125.a
+		HOK = {
+			create_wargoal = {
+				type = annex_everything
+				target = OKI
+			}
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				add = 6
+				strength_ratio = {
+					tag = OKI
+					ratio > 4
+				}
+			}
+		}
+	}
+	option = {
+		name = IND_ADW.125.b
+		add_war_support = 0.01
+		HOK = { puppet = OKI }
+		ai_chance = {
+			factor = 5
+			modifier = {
+				add = 6
+				strength_ratio = {
+					tag = HOK
+					ratio > 7
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = IND_ADW.126
+	title = IND_ADW.126.t
+	desc = IND_ADW.126.d
+	picture = GFX_report_event_japanese_chinese_surrender
+	is_triggered_only = yes
+	option = { #容認
+		name = IND_ADW.126.a
+		HOK = { country_event = { id = IND_ADW.127 days = 1 } }
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = IND_ADW.126.b
+		HOK = { country_event = { id = IND_ADW.128 days = 1 } }
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+country_event = {
+	id = IND_ADW.127
+	title = IND_ADW.127.t
+	desc = IND_ADW.127.d
+	is_triggered_only = yes
+	option = {
+		name = IND_ADW.127.a
+		create_faction = ADW_HOK_JAP_FACTION
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+country_event = {
+	id = IND_ADW.128
+	title = IND_ADW.128.t
+	desc = IND_ADW.128.d
+	picture = GFX_report_event_molotov_ribentrop_handshake
+	is_triggered_only = yes
+	option = {
+		name = IND_ADW.128.a
+		add_to_array = { QIE.ADW_CHI_chow_kou_list_array = ROOT }
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = IND_ADW.128.b
+		trigger = {
+			QIE = {
+				NOT = {
+					is_in_faction = yes
+					is_faction_leader = no
+				}
+			}
+		}
+		if = {
+			limit = {
+				is_in_faction = yes
+			}
+			QIE = { add_to_faction = HOK }
+			else = {
+				QIE = { create_faction = ADW_QIE_HOK_DAITOUA_KYOUEI_KEN }
+				QIE = { add_to_faction = HOK }
+			}
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = IND_ADW.128.c
+		create_wargoal = {
+			type = annex_everything
+			target = QIE
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = IND_ADW.128.e
+		ai_chance = {
+			factor = 10
+		}
+	}
+}

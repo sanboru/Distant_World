@@ -1,0 +1,28 @@
+add_namespace = ADW_SPE
+
+country_event = {
+	id = ADW_SPE.1
+	title = ADW_SPE.1.t
+	desc = ADW_SPE.1.d
+	major = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_tur_politician_march
+	option = {
+		name = ADW_SPE.1.a
+		set_country_flag = research_complete_flag
+		add_research_slot = 1
+	}
+}
+country_event = {
+	id = ADW_SPE.2
+	title = ADW_SPE.2.t
+	desc = ADW_SPE.2.d
+	major = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_german_reichstag_bombed
+	option = {
+		name = ADW_SPE.2.a
+		clr_country_flag = research_complete_flag
+		add_research_slot = -1
+	}
+}
