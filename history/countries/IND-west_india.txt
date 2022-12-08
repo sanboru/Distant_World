@@ -6,6 +6,7 @@ set_war_support = 0.3
 set_convoys = 223
 country_event = { id = IND_ADW.93 days = 10 }
 country_event = { id = IND_ADW.29 days = 1 }
+recruit_character = ADW_IND_neru
 set_technology = {
 	infantry_weapons = 1
 }
