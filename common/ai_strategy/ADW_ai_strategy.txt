@@ -1,0 +1,92 @@
+ADW_kansho_senso_of_QIEa = {
+    allowed = {
+		OR = {
+			NOT = { original_tag = QIE }
+		}
+    }
+    enable = {
+		AKO = { has_war_with = QIE }
+    }
+    abort = {
+		NOT = { AKO = { has_war_with = QIE } }
+    }
+    ai_strategy = {
+        type = support
+        id = AKO
+        value = 500
+    }
+    ai_strategy = {
+        type = send_volunteers_desire
+        id = AKO
+        value = 500
+    }
+}
+ADW_kansho_senso_of_QIEb = {
+    allowed = {
+		OR = {
+			NOT = { original_tag = QIE }
+		}
+    }
+    enable = {
+		AIN = { has_war_with = QIE }
+    }
+    abort = {
+		NOT = { AIN = { has_war_with = QIE } }
+    }
+    ai_strategy = {
+        type = support
+        id = AIN
+        value = 500
+    }
+    ai_strategy = {
+        type = send_volunteers_desire
+        id = AIN
+        value = 500
+    }
+}
+ADW_kansho_senso_of_QIEc = {
+    allowed = {
+		OR = {
+			NOT = { original_tag = QIE }
+		}
+    }
+    enable = {
+		ASI = { has_war_with = QIE }
+    }
+    abort = {
+		NOT = { ASI = { has_war_with = QIE } }
+    }
+    ai_strategy = {
+        type = support
+        id = ASI
+        value = 500
+    }
+    ai_strategy = {
+        type = send_volunteers_desire
+        id = ASI
+        value = 500
+    }
+}
+ADW_kansho_senso_of_QIEd = {
+    allowed = {
+		OR = {
+			NOT = { original_tag = QIE }
+		}
+    }
+    enable = {
+		ABM = { has_war_with = QIE }
+    }
+    abort = {
+		NOT = { ABM = { has_war_with = QIE } }
+    }
+    ai_strategy = {
+        type = support
+        id = ABM
+        value = 500
+    }
+    ai_strategy = {
+        type = send_volunteers_desire
+        id = ABM
+        value = 500
+    }
+}
