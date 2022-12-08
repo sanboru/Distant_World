@@ -648,14 +648,9 @@ ADW_GDP_trade_gun_country = {
 	}
 }
 ADW_GDP_police_hiyo_keisan = {
-	set_variable = { ROOT.ADW_GDP_police = 0.008 }
-	multiply_variable = { ROOT.ADW_GDP_police = ROOT.max_manpower_k }
-	multiply_variable = { ROOT.ADW_GDP_police = ROOT.kanshi_per }
-	divide_variable = { ROOT.ADW_GDP_police = 12 }
-	
-	set_variable = { ROOT.ADW_GDP_police_stabil = -0.8 }
-	add_to_variable = { ROOT.ADW_GDP_police_stabil = ROOT.ADW_GDP_police }
-	divide_variable = { ROOT.ADW_GDP_police_stabil = 2 }
+	set_variable = { ROOT.kanshi_per_modi = ROOT.kanshi_per }
+	divide_variable = { ROOT.kanshi_per_modi = 5 }
+	add_to_variable = { ROOT.kanshi_per_modi = -0.14 }
 	add_dynamic_modifier = { modifier = ADW_GDP_keistaus }
 }
 
@@ -882,7 +877,92 @@ ADW_GDP_resorce_of_oil = {
 	add_to_variable = { global.ADW_GDP_consume_wol = 0.01 }
 }
 ADW_GDP_array_effect = {
+	clear_array = ADW_seisaku_list
 	add_to_array = { ADW_seisaku_list = 1 }
 	add_to_array = { ADW_seisaku_list = 2 }
 	add_to_array = { ADW_seisaku_list = 3 }
+}
+ADW_GDP_additional_seisaku_effect = {
+	ROOT = {
+		if = {
+			limit = { check_variable = { ROOT.ADW_GDP_seisaku_mRNA = 1 } }
+			if = {
+				limit = { has_country_flag = ADW_GDP_research_flag }
+				clr_country_flag = ADW_GDP_research_flag
+				set_variable = { ADW_GDP_seisaku_list_checker_array^ADW_seisaku_list_indx = 0 }
+				remove_ideas = ADW_GDP_researchZ_build
+				else = {
+					subtract_from_variable = { ROOT.GDP_amou = 15 }
+					set_country_flag = ADW_GDP_research_flag
+					set_variable = { ADW_GDP_seisaku_list_checker_array^ADW_seisaku_list_indx = 1 }
+					add_ideas = ADW_GDP_researchZ_build
+				}
+			}
+			if = {
+				limit = { has_country_flag = research_complete_flag }
+				ROOT = {
+					country_event = { id = ADW_SPE.2 }
+				}
+			}
+		}
+	}
+}
+ADW_CHI_chow_kou_koku_arrays = {
+	QIE = {
+		add_to_array = { ADW_CHI_chow_kou_list_array = BRM }
+		add_to_array = { ADW_CHI_chow_kou_list_array = KOR }
+		add_to_array = { ADW_CHI_chow_kou_list_array = SIA }
+		add_to_array = { ADW_CHI_chow_kou_list_array = CAM }
+		add_to_array = { ADW_CHI_chow_kou_list_array = VIN }
+		add_to_array = { ADW_CHI_chow_kou_list_array = TMS }
+		add_to_array = { ADW_CHI_chow_kou_list_array = LAO }
+	}
+}
+ADW_QIE_shokuminchi_sesen = {
+ROOT = {
+	if = {
+		limit = { BRM = { exists = yes } }
+		declare_war_on = {
+			target = BRM
+			type = annex_everything
+		}
+	}
+	if = {
+		limit = { SIA = { exists = yes }}
+		declare_war_on = {
+			target = SIA
+			type = annex_everything
+		}
+	}
+	if = {
+		limit = { LAO = { exists = yes }}
+		declare_war_on = {
+			target = LAO
+			type = annex_everything
+		}
+	}
+	if = {
+		limit = { VIN = { exists = yes }}
+		declare_war_on = {
+			target = VIN
+			type = annex_everything
+		}
+	}
+	if = {
+		limit = { KOR = { exists = yes }}
+		declare_war_on = {
+			target = KOR
+			type = annex_everything
+		}
+	}
+}
+}
+ADW_HOK_shinsengumi_list = {
+	ROOT = {
+		clear_array = ROOT.ADW_HOK_shinsengumi_leaders
+		every_army_leader = {
+			limit = { NOT = { has_character_flag = ADW_character_shinsen_selected } }
+			add_to_array = { ROOT.ADW_HOK_shinsengumi_leaders = THIS }
+		}
+	}
 }
