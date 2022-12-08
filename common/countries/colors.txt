@@ -2,6 +2,26 @@ IND = {
 	color = rgb { 0 153 89 }
 	color_ui = rgb { 255 255 255 }
 }
+HOK = {
+	color = rgb { 0 44 67 }
+	color_ui = rgb { 255 255 255 }
+}
+AKO = {
+	color = rgb { 147 0 0 }
+	color_ui = rgb { 255 255 255 }
+}
+AIN = {
+	color = rgb { 147 26 53 }
+	color_ui = rgb { 255 255 255 }
+}
+ABM = {
+	color = rgb { 147 57 0 }
+	color_ui = rgb { 255 255 255 }
+}
+ASI = {
+	color = rgb { 255 0 0 }
+	color_ui = rgb { 255 255 255 }
+}
 QIE = {
 	color = rgb { 255 182 114 }
 	color_ui = rgb { 255 255 255 }
