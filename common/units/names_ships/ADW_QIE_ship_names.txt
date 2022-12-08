@@ -1,0 +1,14 @@
+﻿### BATTLECRUISER NAMES ###
+QIE_BC_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_BC
+
+	for_countries = { QIE }
+	type = ship
+	ship_types = { ship_hull_carrier_conversion_bb carrier }
+	
+	fallback_name = "carrier %s"		
+
+	unique = {
+        "Vladivostok" "Pekin" "HongKong"
+ 	}
+}

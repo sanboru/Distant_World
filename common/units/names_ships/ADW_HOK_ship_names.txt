@@ -1,0 +1,40 @@
+﻿### BATTLECRUISER NAMES ###
+HOK_BC_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_BC
+
+	for_countries = { HOK }
+	type = ship
+	ship_types = { SH_battleship_1 battleship }
+	
+	fallback_name = "battleship %s"		
+
+	unique = {
+        "富士"
+ 	}
+}
+HOK_LC_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_LC
+
+	for_countries = { HOK }
+	type = ship
+	ship_types = { ship_hull_cruiser_1 light_cruiser }
+	
+	fallback_name = "light_cruiser %s"		
+
+	unique = {
+        "葛城"
+ 	}
+}
+HOK_HD_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_BC_HD
+
+	for_countries = { HOK }
+	type = ship
+	ship_types = { ship_hull_cruiser_1 light_cruiser }
+	
+	fallback_name = "light_cruiser %s"		
+
+	unique = {
+        "白雲" "朝潮" "叢雲"
+ 	}
+}
