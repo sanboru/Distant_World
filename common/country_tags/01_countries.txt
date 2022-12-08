@@ -6,3 +6,11 @@ GIN = "countries/central_india.txt"
 FND = "countries/central_india.txt"
 CND = "countries/central_india.txt"
 QIE = "countries/central_india.txt"
+
+AIN = "countries/central_india.txt"
+ASI = "countries/central_india.txt"
+ABM = "countries/central_india.txt"
+AKO = "countries/central_india.txt"
+
+HOK = "countries/ADW_japan.txt"
+OKI = "countries/ADW_japan.txt"
