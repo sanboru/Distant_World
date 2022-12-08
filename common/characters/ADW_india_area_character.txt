@@ -1,0 +1,100 @@
+characters = {
+    ADW_RAJ_ganzy = {
+		name = ADW_ganzy_name
+		desc = POLITICS_Vyner_Brooke_DESC
+		portraits={
+			civilian={
+				large = GFX_ADW_ADW_RAJ_ganzy
+			}
+		}
+		country_leader={
+			ideology = marxism
+			id=-1
+		}
+	}
+    ADW_RAJ_ganzy_2 = {
+		name = ADW_ganzy_name
+		desc = POLITICS_Vyner_Brooke_DESC
+		portraits={
+			civilian={
+				large = GFX_ADW_ADW_RAJ_ganzy
+			}
+		}
+		country_leader={
+			ideology = conservatism
+			id=-1
+		}
+	}
+    ADW_RAJ_ganzy_3 = {
+		name = ADW_ganzy_name
+		desc = POLITICS_Vyner_Brooke_DESC
+		portraits={
+			civilian={
+				large = GFX_ADW_ADW_RAJ_ganzy
+			}
+		}
+		country_leader={
+			ideology = nazism
+			id=-1
+		}
+	}
+    ADW_RAJ_ganzy_4 = {
+		name = ADW_ganzy_name
+		desc = POLITICS_Vyner_Brooke_DESC
+		portraits={
+			civilian={
+				large = GFX_ADW_ADW_RAJ_ganzy
+			}
+		}
+		country_leader={
+			ideology = despotism
+			id=-1
+		}
+	}
+	
+    ADW_subas_chandra = {
+		name = ADW_subas_chandras_bos
+		portraits={
+			civilian={
+				large = GFX_subas_chandraAADW_IND_graarg
+			}
+		}
+		country_leader={
+			ideology = nazism
+			id=-1
+		}
+		field_marshal = {
+			skill = 4
+			attack_skill = 3
+			defense_skill = 5
+			planning_skill = 3
+			logistics_skill = 4
+		}
+	}
+	
+    ADW_IND_neru = {
+		name = ADW_neru_pt_name
+		portraits={
+			civilian={
+				large = GFX_ADW_neru_pt
+			}
+		}
+		country_leader={
+			ideology = conservatism
+			id=-1
+		}
+	}
+	ADW_QIE_pu_i_ld = {
+		name = ADW_QIE_pu_i
+		portraits={
+			civilian={
+				large = GFX_ADW_QIE_pui_portlate
+			}
+		}
+		country_leader ={
+			#traits = { ADW_CHI_pu_i }
+			ideology = despotism
+			id=-1
+		}
+	}
+}
