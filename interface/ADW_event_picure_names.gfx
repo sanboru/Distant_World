@@ -1,0 +1,6 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_ADW_HOK_shinsengumi_pic"
+		texturefile = "gfx/interface/event_picture/ADW_HOK_shinsengumi_pic.dds"
+	}
+}

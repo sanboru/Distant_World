@@ -127,4 +127,16 @@ spriteTypes = {
 		name = "GFX_ADW_GDP_infor_bug"
 		texturefile = "gfx/interface/ADW_GDP_infor_bg.dds"
 	}
+	spriteType = {
+		name = "GFX_ADW_GDP_additional_seisaku_list"
+		texturefile = "gfx/interface/ADW_GDP_additional_seisaku_list.dds"
+	}
+	spriteType = {
+		name = "GFX_ADW_GDP_ADW_seisaku_bg"
+		texturefile = "gfx/interface/ADW_seisaku_bg.dds"
+	}
+	spriteType = {
+		name = "GFX_ADW_GDP_seisaku_button_conduct"
+		texturefile = "gfx/interface/ADW_GDP_seisaku_button_conduct.dds"
+	}
 }

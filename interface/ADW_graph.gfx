@@ -70,7 +70,7 @@ spriteTypes = {
 		colortwo = { 0.0 0.0 0.0 }
 		size = { 
 			x = 43
-			y = 169
+			y = 220
 		}
 		effectFile = "gfx/FX/progress.lua"
 		horizontal = no
@@ -80,5 +80,19 @@ spriteTypes = {
 		name = "GFX_ADW_icon_sample_bow_graph"
 		texturefile = "gfx//interface//ADW_icon_sample_bow_graph.dds"
 		noOfFrames = 2
+	}
+	
+	progressbartype = {
+		name = "GFX_ADW_GDP_per_research"
+		textureFile1 = "gfx/interface/ADW_GDP_per_orange.dds"
+		textureFile2 = "gfx/interface/ADW_GDP_per_bg.dds"
+		color = { 0.0 0.0 0.0 }
+		colortwo = { 0.0 0.0 0.0 }
+		size = { 
+			x = 20
+			y = 200
+		}
+		effectFile = "gfx/FX/progress.lua"
+		horizontal = no
 	}
 }

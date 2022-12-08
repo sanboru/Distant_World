@@ -1,0 +1,14 @@
+spriteTypes = {
+    spriteType = {
+        name = "GFX_subas_chandraAADW_IND_graarg"
+        texturefile = "gfx/leaders/RAJ/AADW_IND_graarg.dds"
+    }
+    spriteType = {
+        name = "GFX_ADW_neru_pt"
+        texturefile = "gfx/leaders/RAJ/ADW_neru_pt.dds"
+    }
+	spriteType = {
+		name = "GFX_ADW_QIE_pui_portlate"
+		texturefile = "gfx/leaders/RAJ/ADW_QIE_pui_portlate.dds"
+	}
+}
