@@ -2530,15 +2530,15 @@ ideas = {
 			}
 		}
 		ADW_IND_insen_mood = {
-			allowed = {
-				always = no
-			}
-			allowed_clivil_war = {
-				always = yes
-			}
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = no
+            }
 			picture = tfv_can_conscription_crisis
 			modifier = {
-				mobilization_laws_cost_factor = 0.3
+				mobilization_laws_cost_factor = 0.30
 				justify_war_goal_time = 0.5
 				generate_wargoal_tension = 0.2
 			}
@@ -2554,6 +2554,189 @@ ideas = {
 			modifier = {
 				political_power_factor = 0.01
 				stability_weekly_factor = 0.01
+			}
+		}
+		ADW_IND_dai_shitsu_gyo_2 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = chi_hyper_inflation5
+			modifier = {
+				stability_factor = -0.05
+				production_factory_max_efficiency_factor = -0.15
+				industrial_capacity_factory = -0.05
+				consumer_goods_factor = 0.3
+			}
+		}
+		ADW_IND_areta_farme_2 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = man_low_legitimacy
+			modifier = {
+				conscription_factor = -0.4
+			}
+		}
+		ADW_IND_areta_farme_3 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = man_low_legitimacy
+			modifier = {
+				conscription_factor = -0.3
+			}
+		}
+		ADW_IND_areta_farme_4 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = man_low_legitimacy
+			modifier = {
+				conscription_factor = -0.2
+			}
+		}
+		
+		ADW_GDP_researchZ_build = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = triumphant_will
+			modifier = {
+				civilian_factory_use = 8
+			}
+		}
+		
+		ADW_IND_manp_i_deas = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = bul_kaproni_bulgarski
+			modifier = {
+				conscription_factor = 0.03
+			}
+		}
+		####中国####
+		ADW_CHI_history_of_400 = {
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			picture = man_low_legitimacy5
+			modifier = {
+				stability_factor = 0.1
+				surrender_limit = 0.2
+				army_core_defence_factor = 0.05
+			}
+		}
+		ADW_CHI_ensen_mood = {
+			picture = generic_disjointed_gov
+
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = no
+            }
+		
+			removal_cost = -1
+			
+			modifier = {
+				mobilization_laws_cost_factor = 8.00
+				war_support_factor = -0.2
+				justify_war_goal_time = 2
+				offensive_war_stability_factor = -0.5
+			}
+		}
+		ADW_support_anti_QIE = {
+			picture = generic_disjointed_gov
+			allowed = {
+				always = no
+			}
+			allowed_clivil_war = {
+				always = yes
+			}
+			modifier = {
+				send_volunteer_size = 100
+			}
+		}
+		
+####北海道####
+		ADW_HOK_bow_mei_seifu = {
+			picture = generic_communist_army
+		
+			removal_cost = -1
+			
+			modifier = {
+				war_support_factor = 0.04
+				stability_factor = -0.05
+			}
+		}
+		ADW_HOK_war_supoort_ideas = {
+			picture = FRA_scw_intervention_nationalists_focus
+		
+			removal_cost = -1
+			
+			modifier = {
+				war_support_factor = 0.08
+			}
+		}
+		ADW_HOK_satability_ideas = {
+			picture = generic_victors_of_ww1
+		
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.08
+			}
+		}
+		ADW_HOK_company_with_ainu = {
+			picture = generic_aircraft_support
+		
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.04
+				conscription_factor = 0.03
+			}
+		}
+		ADW_heimin_HOK_myouji_allow = {
+			picture = FRA_national_mobilization_focus
+		
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.08
+				conscription_factor = 0.03
+			}
+		}
+		ADW_heimin_HOK_myouji_allow_1 = {
+			picture = FRA_national_mobilization_focus
+		
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.08
+				conscription_factor = 0.08
 			}
 		}
 	}
