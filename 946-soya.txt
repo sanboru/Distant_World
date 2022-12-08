@@ -1,0 +1,28 @@
+state={
+	id=946
+	name="STATE_946"
+	provinces={
+		4576 
+	}
+	manpower=430568
+	state_category=rural
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	history={
+		owner = HOK
+		add_core_of = HOK
+		add_claim_by = JAP
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+			industrial_complex = 1
+			4576 = {
+				naval_base = 1
+			}
+		}
+		victory_points = {
+			4576 1
+		}
+
+	}
+}
