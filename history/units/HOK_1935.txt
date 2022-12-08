@@ -1,0 +1,105 @@
+division_template = {
+	name = "Hokkaido Wehrmacht"
+	division_names_group = HOK_ADW_1
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+	priority = 1
+}
+division_template = {
+	name = "Hokkaido Wehrmacht with Cannon"
+	
+	division_names_group = HOK_ADW_2
+	
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		artillery_brigade = { x = 2 y = 0 }
+	}
+	priority = 1
+}
+division_template = {
+	name = "Hokkaido marine brigade"
+	
+	division_names_group = HOK_ADW_3
+	
+	regiments = {
+		marine = { x = 0 y = 0 }
+		marine = { x = 0 y = 1 }
+		marine = { x = 1 y = 0 }
+		marine = { x = 1 y = 1 }
+		marine = { x = 2 y = 0 }
+		marine = { x = 2 y = 1 }
+	}
+	priority = 1
+}
+units = {
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 3962
+		division_template = "Hokkaido Wehrmacht"
+		start_experience_factor = 0.5
+		start_equipment_factor = 0.9
+	}
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 3962
+		division_template = "Hokkaido Wehrmacht"
+		start_experience_factor = 0.5
+		start_equipment_factor = 0.9
+	}
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 3962
+		division_template = "Hokkaido Wehrmacht"
+		start_experience_factor = 0.5
+		start_equipment_factor = 0.9
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 10444
+		division_template = "Hokkaido Wehrmacht with Cannon"
+		start_experience_factor = 0.5
+		start_equipment_factor = 0.9
+	}
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 1512
+		division_template = "Hokkaido Wehrmacht with Cannon"
+		start_experience_factor = 0.5
+		start_equipment_factor = 0.9
+	}
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 4576
+		division_template = "Hokkaido marine brigade"
+		start_experience_factor = 0.5
+		start_equipment_factor = 0.9
+	}
+}

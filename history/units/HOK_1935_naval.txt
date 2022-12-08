@@ -1,0 +1,15 @@
+﻿units = {
+    fleet = {
+        name = "皇帝海軍第一部隊"
+        naval_base = 10444
+        task_force = {
+            name = "imperial navy first units shuryoku"
+            location = 10444
+            ship = { name = "富士" pride_of_the_fleet = yes definition = battleship equipment = { SH_battleship_1 = { amount = 1 owner = HOK version_name = "富士 Class" } }}
+			ship = { name = "葛城" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = HOK version_name = "葛城 Class" } }}
+			ship = { name = "白雲" definition = destroyer equipment = { ship_hull_pre_dreadnought = { amount = 1 owner = HOK version_name = "白雲 Class" } }}
+			ship = { name = "朝潮" definition = destroyer equipment = { ship_hull_pre_dreadnought = { amount = 1 owner = HOK version_name = "白雲 Class" } }}
+			ship = { name = "叢雲" definition = destroyer equipment = { ship_hull_pre_dreadnought = { amount = 1 owner = HOK version_name = "白雲 Class" } }}
+        }
+	}
+}
