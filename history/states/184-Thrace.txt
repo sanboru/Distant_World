@@ -22,6 +22,7 @@ state={
 		}
 		add_core_of = TUR
 		add_claim_by = BUL
+		add_claim_by = GRE
 	}
 
 	provinces={

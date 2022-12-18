@@ -1,0 +1,22 @@
+state={
+	id=961
+	name="STATE_961"
+	provinces={
+		878 893 6857 9818 11813 
+	}
+	history={
+		owner = TUR
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+			industrial_complex = 1
+
+		}
+		add_claim_by = BUL
+
+	}
+	manpower=814936
+	state_category = town
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

@@ -1,0 +1,28 @@
+
+state={
+	id=682
+	name="STATE_682"
+	resources={
+		steel=8.000
+		aluminium=9.000
+	}
+
+	history={
+		owner = USA
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+
+		}
+		add_core_of = USA
+
+	}
+
+	provinces={
+		1769 4775 4875 7899 11571 13094 13159 13161 
+	}
+	manpower=69059
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=0.000
+}

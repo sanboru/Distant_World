@@ -8,7 +8,9 @@ state={
 		owner = TUR
 		add_core_of	= TUR
 		buildings = {
-			infrastructure = 1
+			infrastructure = 3
+			arms_factory = 1
+			industrial_complex = 1
 			12883 = {
 				naval_base = 5
 
@@ -19,7 +21,7 @@ state={
 		}
 	}
 	manpower=500000
-	state_category=pastoral
+	state_category=rural
 	buildings_max_level_factor=1.000
 	local_supplies=0.000
 

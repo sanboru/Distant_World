@@ -19,7 +19,6 @@ state={
 			11976 1 
 		}
 
-		add_core_of = JOR
 		add_core_of = TUR
 	}
 

@@ -1,0 +1,23 @@
+state={
+	id=960
+	name="STATE_960"
+	provinces={
+		10610 
+	}
+	history={
+		owner = QIE
+		buildings = {
+			infrastructure = 1
+			air_base = 1
+		}
+		add_core_of = QIE
+		victory_points = {
+			12594 1 
+		}
+
+	}
+	manpower=2213
+	state_category=pastoral
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

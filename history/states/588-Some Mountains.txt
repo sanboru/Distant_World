@@ -1,0 +1,30 @@
+
+state={
+	id=588
+	name="STATE_588"
+	resources={
+		chromium=10.000
+	}
+
+	history={
+		owner = SOV
+		add_core_of = KAZ
+		buildings = {
+			infrastructure = 2
+
+		}
+		add_core_of = SOV
+		victory_points = {
+			12594 1 
+		}
+
+	}
+
+	provinces={
+		1287 1749 1818 1864 4661 4674 4867 7350 7890 10161 10218 10292 10584 10653 12427 12564 12594 12635 13151 
+	}
+	manpower=427213
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=0.000
+}

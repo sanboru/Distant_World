@@ -1,0 +1,20 @@
+state={
+	id=957
+	name="STATE_957"
+	provinces={
+		602 777 1299 1782 4784 4869 6510 7366 7794 9467 9480 9740 10621 10718 12278 12582 12701 
+	}
+	history={
+		owner = NUA
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+		}
+		add_core_of = NUA
+
+	}
+	manpower=69059
+	state_category=rural
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}
