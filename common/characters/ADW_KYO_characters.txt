@@ -3,12 +3,12 @@ characters = {
     name = ADW_KYO_emperor_hirohito
     portraits = {
         civilian = {
-            large = GFX_portrait_JAP_emperor_hirohito
+            large = GFX_emperor_hirohito_portrait
             }
         }
-    country_leader={
+    country_leader = {
         ideology = despotism
-        traits={ emperor_showa imperial_sanction }
+        traits = { emperor_showa imperial_sanction }
         desc = ADW_KYO_emperor_hirohito_desc
         }
     }
