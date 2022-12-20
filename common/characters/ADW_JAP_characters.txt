@@ -1,6 +1,6 @@
 characters = {
-    JAP_ADW_shidehara_kijyuro = {
-        name = JAP_ADW_shidehara_kijyuro
+    ADW_JAP_shidehara_kijyuro = {
+        name = ADW_JAP_shidehara_kijyuro
         portraits = {
             civilian = {
                 large = GFX_shidehara_kijyuro_portrait
@@ -8,7 +8,7 @@ characters = {
         }
         country_leader = {
             ideology = centrism
-            desc = JAP_ADW_shidehara_kijyuro_desc
+            desc = ADW_JAP_shidehara_kijyuro_desc
             id = -1
         }
     }

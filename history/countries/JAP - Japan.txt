@@ -6,7 +6,7 @@ set_war_support = 0.5
 set_research_slots = 4
 set_fuel_ratio = 1.0
 
-recruit_character = JAP_ADW_JAP_shidehara_kijyuro
+recruit_character = ADW_JAP_shidehara_kijyuro
 
 add_ideas = {
     civilian_economy
