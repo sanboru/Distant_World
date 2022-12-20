@@ -181,7 +181,7 @@ focus_tree = {
 
 	focus = {
 		id = ADW_JAP_demand_ryukyu_islands
-		icon = GFX_placeholder
+		icon = GFX_goal_unknown
 		cost = 5
 		x = 2
 		y = 6
