@@ -4,6 +4,10 @@ spriteTypes = {
         texturefile = "gfx/leaders/JAP/ADW_shidehara_kijyuro.dds"
     }
     spriteType = {
+        name = "GFX_emperor_hirohito_portrait"
+        texturefile = "gfx/leaders/KYO/ADW_emperor_hirohito.dds"
+    }
+    spriteType = {
         name = "GFX_ADW_RAJ_ke_shav"
         texturefile = "gfx/leaders/RAJ/ADW_RAJ_ke_shav.dds"
     }
