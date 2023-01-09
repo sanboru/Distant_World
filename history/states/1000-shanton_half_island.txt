@@ -1,0 +1,24 @@
+state={
+	id=1000
+	name="STATE_1000"
+	provinces={
+		1104 1184 1200 4089 4157 4186 7089 7105 10018 12074 
+	}
+	history={
+		owner = QIE
+		add_core_of = QIE
+		victory_points = {
+			1069 3 
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			arms_factory = 1
+		}
+
+	}
+	manpower=15873200
+	buildings_max_level_factor=1.000
+	state_category=large_town
+	local_supplies=0.000
+}

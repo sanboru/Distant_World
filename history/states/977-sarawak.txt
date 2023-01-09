@@ -1,0 +1,29 @@
+state={
+	id=977
+	name="STATE_977"
+	provinces={
+		1208 4216 12905 
+	}
+	resources={
+		rubber=5.000
+		oil=1.000
+	}
+	history={
+		owner = MAL
+		victory_points = {
+			1208 1 
+		}
+		buildings = {
+			infrastructure = 2
+			1208 = {
+				naval_base = 1
+			}
+		}
+		add_core_of = MAL
+
+	}
+	manpower=89800
+	state_category=rural
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

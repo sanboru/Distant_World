@@ -1,0 +1,18 @@
+state={
+	id=988
+	name="STATE_988"
+	provinces={
+		4435 12338 
+	}
+	history={
+		owner = QIE
+		buildings = {
+			infrastructure = 3
+		}
+		add_core_of = BAN
+	}
+	manpower=22300
+	state_category=pastoral
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

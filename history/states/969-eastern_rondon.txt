@@ -1,0 +1,24 @@
+state={
+	id=969
+	name="STATE_969"
+	provinces={
+		11374 
+	}
+	history={
+		owner = ENG
+		buildings = {
+			infrastructure = 5
+			arms_factory = 1
+			industrial_complex = 2
+			dockyard = 3
+			11374 = {
+				naval_base = 10
+			}
+		}
+		add_core_of = ENG
+	}
+	manpower=3000000
+	state_category=metropolis
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

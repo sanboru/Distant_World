@@ -1,0 +1,20 @@
+state={
+	id=999
+	name="STATE_999"
+	provinces={
+		1084 7160 7189 9987 11933 11962 12093 
+	}
+	history={
+		owner = QIE
+		add_core_of = QIE
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+		}
+
+	}
+	manpower=7873200
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=0.000
+}

@@ -10,10 +10,11 @@ state={
 	}
 
 	history={
-		owner = BAN
+		owner = QIE
 		buildings = {
 			infrastructure = 1
 		}
+		add_core_of = BAN
 
 	}
 

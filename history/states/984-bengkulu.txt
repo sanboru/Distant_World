@@ -1,0 +1,25 @@
+state={
+	id=984
+	name="STATE_984"
+	provinces={
+		7308 7440 12138 12209 
+	}
+	resources={
+		rubber=30.000
+	}
+
+	history={
+		owner = INS
+		add_core_of = INS
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+
+		}
+
+	}
+	manpower=854900
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	state_category=rural
+}

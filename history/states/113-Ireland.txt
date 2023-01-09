@@ -1,25 +1,22 @@
 
 state={
 	id=113
-	name="STATE_113" # Leinster
-	manpower = 1357600
+	name="STATE_113"
 	resources={
-		aluminium=0 # was: 2
-		steel=2 # was: 3
+		aluminium=0.000
+		steel=2.000
 	}
-	
-	state_category = city
-	
+
 	history={
 		owner = ENG
 		victory_points = {
-			285 1 #Wexford
+			285 1 
 		}
 		victory_points = {
-			303 1 #Tullamore
+			303 1 
 		}
 		victory_points = {
-			11293 10 #Dublin
+			11293 10 
 		}
 		buildings = {
 			infrastructure = 4
@@ -28,14 +25,19 @@ state={
 			air_base = 3
 			11293 = {
 				naval_base = 6
+
 			}
+
 		}
 		add_core_of = ENG
+
 	}
 
 	provinces={
-		285 303 369 3342 3359 7377 11293 11303 
+		303 369 3342 3359 11303 
 	}
-
-	local_supplies=0.0 
+	manpower=400000
+	buildings_max_level_factor=1.000
+	state_category=city
+	local_supplies=0.000
 }

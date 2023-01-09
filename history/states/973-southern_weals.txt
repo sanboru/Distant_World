@@ -1,0 +1,33 @@
+state={
+	id=973
+	name="STATE_973"
+	provinces={
+		253 377 407 11361 
+	}
+	history={
+		owner = ENG
+		victory_points = {
+			407 3 
+		}
+		victory_points = {
+			377 5 
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+			dockyard = 1
+			377 = {
+				naval_base = 3
+
+			}
+
+		}
+		add_core_of = ENG
+		add_core_of = WLS
+
+	}
+	manpower=1609230
+	state_category=city
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

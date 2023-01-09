@@ -1,0 +1,27 @@
+state={
+	id=979
+	name="STATE_979"
+	provinces={
+		1306 7358 10199 10240 12228 
+	}
+	resources={
+		rubber=7.000
+		oil=3.000
+	}
+	history={
+		owner = MAL
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			10199 = {
+				naval_base = 1
+			}
+		}
+		add_core_of = MAL
+
+	}
+	manpower=159800
+	state_category=town
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

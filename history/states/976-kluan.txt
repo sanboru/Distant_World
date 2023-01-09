@@ -1,0 +1,21 @@
+state={
+	id=976
+	name="STATE_976"
+	provinces={
+		4367 4412 4424 7427 10313 12271 
+	}
+	history={
+		owner = MAL
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			air_base = 1
+		}
+		add_core_of = MAL
+
+	}
+	manpower=393200
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	state_category=rural
+}

@@ -1,0 +1,29 @@
+state={
+	id=1010
+	name="STATE_1010"
+	provinces={
+		1589 4349 10263 10464 
+	}
+	history={
+		owner = INS
+		add_core_of = INS
+		victory_points = {
+			10263 3 
+		}
+		buildings = {
+			infrastructure = 2
+			air_base = 4
+			arms_factory = 1
+			10263 = {
+				naval_base = 3
+
+			}
+
+		}
+
+	}
+	manpower=1032000
+	state_category=town
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

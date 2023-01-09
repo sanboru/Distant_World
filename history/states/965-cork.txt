@@ -1,0 +1,24 @@
+state={
+	id=965
+	name="STATE_965"
+	provinces={
+		7394 9405 11237 
+	}
+	history={
+		owner = ENG
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 2
+			arms_factory = 1
+		}
+		victory_points = {
+			7394 5 
+		}
+		add_core_of = ENG
+
+	}
+	manpower=441400
+	state_category=town
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

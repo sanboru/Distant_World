@@ -1,0 +1,27 @@
+state={
+	id=994
+	name="STATE_994"
+	provinces={
+		1296 1315 1385 1403 4275 4408 7295 10217 12125 12238 12292 
+	}
+	history={
+		add_core_of = BRM
+		owner = BRM
+		victory_points = {
+			1403 2
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+			1403 = {
+				naval_base = 1
+			}
+
+		}
+
+	}
+	manpower=3722500
+	state_category=rural
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

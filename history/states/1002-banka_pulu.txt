@@ -1,0 +1,20 @@
+state={
+	id=1002
+	name="STATE_1002"
+	provinces={
+		4211 7384 7396 
+	}
+	history={
+		owner = INS
+		add_core_of = INS 
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 1
+		}
+
+	}
+	manpower=454900
+	buildings_max_level_factor=1.000
+	state_category=tiny_island
+	local_supplies=0.000
+}

@@ -1,0 +1,35 @@
+state={
+	id=968
+	name="STATE_968"
+	provinces={
+		6103 11333 
+	}
+	history={
+		owner = ENG
+		victory_points = {
+			6103 100 
+		}
+		buildings = {
+			infrastructure = 5
+			arms_factory = 5
+			industrial_complex = 5
+			anti_air_building = 5
+			radar_station = 1
+			air_base = 10
+		}
+		add_core_of = ENG
+		1939.1.1 = {
+			buildings = {
+				arms_factory = 4
+				industrial_complex = 4
+
+			}
+
+		}
+
+	}
+	state_category=megalopolis
+	manpower=6824296
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

@@ -1,0 +1,26 @@
+state={
+	id=978
+	name="STATE_978"
+	provinces={
+		4282 4338 10143 10212 12171 12186 
+	}
+	resources={
+		rubber=7.000
+		oil=3.000
+	}
+
+	history={
+		owner = MAL
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			air_base = 2
+		}
+		add_core_of = MAL
+
+	}
+	manpower=159800
+	state_category=rural
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

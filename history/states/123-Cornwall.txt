@@ -1,0 +1,25 @@
+
+state={
+	id=123
+	name="STATE_123"
+
+	history={
+		owner = ENG
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+			anti_air_building = 1
+			radar_station = 1
+		}
+		add_core_of = ENG
+
+	}
+
+	provinces={
+		3422 3463 9562 
+	}
+	manpower=601321
+	buildings_max_level_factor=1.000
+	state_category=large_town
+	local_supplies=0.000
+}

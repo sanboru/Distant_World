@@ -11,20 +11,15 @@ state={
 		owner = KOR
 		buildings = {
 			infrastructure = 2
-			industrial_complex = 1
-
-		}
-		victory_points = {
-			4052 1 
 		}
 		add_core_of = KOR
 
 	}
 
 	provinces={
-		848 852 906 912 978 1003 3904 3912 3981 4052 4107 6928 6963 7070 7155 7171 9790 9795 9899 9918 9981 10065 10083 11770 11775 11828 11835 11896 11915 12040 
+		852 906 912 978 3904 3912 3981 6928 6963 9795 9899 9918 11770 11775 11828 11835 11896 
 	}
-	manpower=6774200
+	manpower=3274200
 	buildings_max_level_factor=1.000
 	state_category=town
 	local_supplies=0.000

@@ -1,9 +1,7 @@
 state={
 	id=941
 	name="STATE_941"
-	provinces={
-		1148 4004 4103 7021 9936 10036 11912 11958 12011 
-	}
+
 	history={
 		owner = KOR
 		buildings = {
@@ -16,6 +14,10 @@ state={
 		}
 		add_core_of = KOR
 
+	}
+
+	provinces={
+		1148 4004 4103 7021 9936 10036 11912 11958 12011 
 	}
 	manpower=2000000
 	buildings_max_level_factor=1.000

@@ -1,0 +1,33 @@
+
+state={
+	id=334
+	name="STATE_334"
+	resources={
+		rubber=75.000
+		oil=5.000
+	}
+
+	history={
+		owner = INS
+		add_core_of = INS
+		victory_points = {
+		}
+		buildings = {
+			infrastructure = 1
+			arms_factory = 1
+		}
+		buildings = {
+			7296 = {
+				naval_base = 1
+			}
+		}
+	}
+
+	provinces={
+		1225 1416 2184 7227 7296 8221 10138 10178 10266 10310 12110 12252 12280 
+	}
+	manpower=468600
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=0.000
+}

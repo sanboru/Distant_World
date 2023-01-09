@@ -1,0 +1,33 @@
+state={
+	id=980
+	name="STATE_980"
+	provinces={
+		1398 7381 10279 
+	}
+	resources={
+		rubber=10.000
+	}
+
+	history={
+		owner = INS
+		add_core_of = INS
+		victory_points = {
+			7381 10 
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 1
+			dockyard = 1
+			air_base = 3
+			7381 = {
+				naval_base = 6
+
+			}
+		}
+
+	}
+	manpower=2718200
+	state_category=large_city
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

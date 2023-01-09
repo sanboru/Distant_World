@@ -1,0 +1,44 @@
+state={
+	id=985
+	name="STATE_985"
+	provinces={
+		1648 4652 7658 7673 8360 10509 10522 12488 
+	}
+	resources={
+		rubber=30.000
+		oil=3.000
+	}
+	manpower=854900
+	history={
+		owner = INS
+		add_core_of = INS
+		victory_points = {
+			4652 1 
+		}
+		victory_points = {
+			7658 1
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			air_base = 1
+			4652 = {
+				naval_base = 3
+
+			}
+			7658 = {
+				naval_base = 1
+
+			}
+			1648 = {
+				naval_base = 1
+
+			}
+
+		}
+
+	}
+	state_category=rural
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

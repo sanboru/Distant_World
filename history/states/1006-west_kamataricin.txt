@@ -1,0 +1,26 @@
+state={
+	id=1006
+	name="STATE_1006"
+	provinces={
+		1230 1304 1316 2170 2222 4279 4335 4409 7424 10282 12129 12955 
+	}
+	history={
+		owner = INS
+		add_core_of = INS
+		victory_points = {
+			1006 1 
+		}
+		buildings = {
+			infrastructure = 1
+			1316 = {
+				naval_base = 1
+
+			}
+		}
+
+	}
+	manpower=768600
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=0.000
+}

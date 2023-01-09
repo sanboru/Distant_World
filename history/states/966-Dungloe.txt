@@ -1,0 +1,22 @@
+state={
+	id=966
+	name="STATE_966"
+	provinces={
+		337 11371 
+	}
+	manpower=67100
+	history={
+		owner = ENG
+		victory_points = {
+			11371 3 
+		}
+		buildings = {
+			infrastructure = 3
+		}
+		add_core_of = ENG
+
+	}
+	state_category=rural
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}
