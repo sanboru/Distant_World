@@ -1,0 +1,40 @@
+﻿capital = 288
+
+#oob = ""
+
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+}
+
+set_convoys = 5
+
+recruit_character = ADW_BRM_takin_tan
+recruit_character = ADW_BRM_bar_mow
+recruit_character = ADW_e_win_BRM
+promote_character = ADW_BRM_takin_tan
+promote_character = ADW_BRM_bar_mow
+promote_character = ADW_e_win_BRM
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = yes
+}
+set_popularities = {
+	democratic = 12
+	fascism = 2
+	communism = 14
+	neutrality = 72
+}
+#create_country_leader = {
+#	
+#	name = "Jonas Lote"
+#	picture = "gfx//leaders//Africa//Portrait_Africa_Generic_2.dds"
+#	expire = "1965.1.1"
+#	ideology = centrism
+#	traits = {
+#		#
+#	}
+#}

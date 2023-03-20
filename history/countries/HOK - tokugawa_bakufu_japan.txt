@@ -5,7 +5,10 @@ set_research_slots = 2
 set_stability = 0.6
 set_war_support = 0.7
 set_convoys = 100
-
+recruit_character = ADW_HOK_kaneto
+recruit_character = ADW_HOK_yoshida
+recruit_character = ADW_HOK_ensei_hokuto
+recruit_character = ADE_HOK_tokugawa_iemasa
 set_technology = {
 	basic_naval_mines = 1
 	submarine_mine_laying = 1

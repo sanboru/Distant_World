@@ -1,0 +1,47 @@
+capital = 439
+
+set_research_slots = 2
+set_stability = 0.2
+set_war_support = 0.3
+set_convoys = 223
+country_event = { id = IND_ADW.93 days = 10 }
+country_event = { id = IND_ADW.29 days = 1 }
+recruit_character = ADW_IND_neru
+set_technology = {
+	infantry_weapons = 1
+}
+set_party_name = {
+    ideology = fascism
+    long_name = IND_FAS
+    name = IND_FAS
+}
+set_party_name = {
+    ideology = democratic
+    long_name = IND_DEM
+    name = IND_DEM
+}
+set_party_name = {
+    ideology = communism
+    long_name = IND_COM
+    name = IND_COM
+}
+add_ideas = {
+	ADW_IND_garira_war
+	ADW_IND_areta_farme_1
+	ADW_IND_fuante_keza_1
+	ADW_IND_dai_shitsu_gyo_1
+	ADW_IND_the_de_buff_of_1
+}
+set_politics = {
+	ruling_party = democratic
+	last_election = "1917.5.17"
+	election_frequency = 48
+	elections_allowed = yes
+}
+
+set_popularities = {
+	democratic = 50
+	fascism = 30
+	communism = 20
+	neutrality = 0
+}

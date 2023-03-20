@@ -1,0 +1,183 @@
+capital = 968
+oob = "ENG_1936"
+
+set_research_slots = 4
+set_stability = 0.8
+set_war_support = 0.6
+set_convoys = 223
+add_ideas = {
+	ADW_ENG_biggest_country
+	ADW_ENG_nakawaru_oversea
+	ADW_ENG_antaiteki_country
+}
+ENG = { country_event = { id = IND_ADW.143 days = 2 } }
+recruit_character = ADW_ENG_mozure
+recruit_character = ADW_ENG_mac_d
+recruit_character = ADW_cher_cil
+recruit_character = ADW_ENG_edward_8
+add_opinion_modifier = {
+    target = FRA
+    modifier = ADW_ENG_FRA_kenen_nonaka
+}
+set_technology = {
+	gwtank_chassis = 1
+	gw_artillery = 1
+	gwtank = 1
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1
+	tech_engineers = 1
+	tech_recon = 1
+	motorised_infantry = 1
+	interwar_antiair = 1
+	basic_train = 1
+	trench_warfare = 1
+	fleet_in_being = 1
+	electronic_mechanical_engineering = 1
+	radio = 1
+	radio_detection = 1
+	fuel_silos = 1
+	fuel_refining = 1
+	basic_light_tank_chassis = 1
+	camelry = 1
+	basic_naval_mines = 1
+	submarine_mine_laying = 1
+	early_ship_hull_light = 1
+	basic_ship_hull_light = 1
+	arly_ship_hull_submarine = 1
+	early_ship_hull_cruiser = 1
+	basic_ship_hull_cruiser = 1
+	early_ship_hull_heavy = 1
+	basic_ship_hull_heavy = 1
+	early_ship_hull_carrier = 1
+	asic_ship_hull_carrier = 1
+	basic_battery = 1
+	basic_light_battery = 1
+	basic_medium_battery = 1
+	basic_heavy_battery = 1
+	basic_torpedo = 1
+	sonar = 1
+	smoke_generator = 1
+	basic_depth_charges = 1
+	basic_cruiser_armor_scheme = 1
+	mtg_transport = 1
+	basic_fire_control_system = 1
+	armored_car1 = 1
+}
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "1932.5.17"
+	election_frequency = 48
+	elections_allowed = yes
+}
+
+set_popularities = {
+	democratic = 70
+	fascism = 10
+	communism = 5
+	neutrality = 15
+}
+967 = {
+	add_state_modifier = {
+		modifier = {
+			local_factories = -0.1
+			local_manpower = -0.1
+		}
+    }
+}
+119 = {
+	add_state_modifier = {
+		modifier = {
+			local_factories = -0.1
+			local_manpower = -0.1
+		}
+    }
+}
+966 = {
+	add_state_modifier = {
+		modifier = {
+			local_factories = -0.1
+			local_manpower = -0.1
+		}
+    }
+}
+113 = {
+	add_state_modifier = {
+		modifier = {
+			local_factories = -0.1
+			local_manpower = -0.1
+		}
+    }
+}
+964 = {
+	add_state_modifier = {
+		modifier = {
+			local_factories = -0.1
+			local_manpower = -0.1
+		}
+    }
+}
+963 = {
+	add_state_modifier = {
+		modifier = {
+			local_factories = -0.1
+			local_manpower = -0.1
+		}
+    }
+}
+134 = {
+	add_state_modifier = {
+		modifier = {
+			local_factories = -0.1
+			local_manpower = -0.1
+		}
+    }
+}
+135 = {
+	add_state_modifier = {
+		modifier = {
+			local_factories = -0.1
+			local_manpower = -0.1
+		}
+    }
+}
+965 = {
+	add_state_modifier = {
+		modifier = {
+			local_factories = -0.1
+			local_manpower = -0.1
+		}
+    }
+}
+set_autonomy = {
+	target = EIN
+	autonomous_state = autonomy_integrated_puppet
+	freedom_level = 0.35
+}
+set_autonomy = {
+	target = MAL
+	autonomous_state = autonomy_integrated_puppet
+	freedom_level = 0.4
+}
+set_autonomy = {
+	target = UST
+	autonomous_state = autonomy_puppet
+	freedom_level = 0.4
+}
+set_autonomy = {
+	target = SAF
+	autonomous_state = autonomy_puppet
+	freedom_level = 0.4
+}
+set_autonomy = {
+	target = AST
+	autonomous_state = autonomy_colony
+	freedom_level = 0.2
+}
+set_autonomy = {
+	target = NZL
+	autonomous_state = autonomy_colony
+	freedom_level = 0.2
+}
+create_faction = ADW_union

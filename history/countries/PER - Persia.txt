@@ -1,0 +1,68 @@
+﻿capital = 266
+set_research_slots = 2
+set_technology = {
+	infantry_weapons = 1
+	tech_mountaineers = 1
+	tech_support = 1
+	gw_artillery = 1
+	basic_train = 1
+	
+	early_ship_hull_light = 1
+	early_ship_hull_submarine = 1
+	
+	convoy_sailing = 1
+	submarine_operations = 1
+	gw_artillery = 1
+}
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1935.2.8"
+	elections_allowed = yes
+	election_frequency = 1
+}
+recruit_character = PER_reza_shah_pahlavi
+recruit_character = PER_soleyman_mirza_eskandari
+recruit_character = PER_hasan_arfa
+recruit_character = PER_dalir_pesyan
+recruit_character = PER_sohrab_tahmasebi
+recruit_character = PER_mir_afkhami
+recruit_character = PER_ahmad_khan_nakhjavan
+recruit_character = PER_reza_mizani
+recruit_character = PER_ali_razmara
+recruit_character = PER_hassan_majid_firooz
+recruit_character = PER_ahmad_mira_khosravani
+recruit_character = PER_ahmad_khan_nakhjaavan
+recruit_character = PER_mohammed_nakhjavani
+recruit_character = PER_abdolreza_afkhami
+recruit_character = PER_fazlollah_zahedi
+recruit_character = PER_mohammed_reza_pahlavi
+recruit_character = PER_ali_akbar_deiva
+recruit_character = PER_hossein_afkhami
+recruit_character = PER_ali_zohayli
+recruit_character = PER_mahmud_jam
+recruit_character = PER_ali_khan_mansour
+
+recruit_character = ADW_PER_lezer_sha
+recruit_character = ADW_PER_lezer_sha_2
+recruit_character = ADW_PER_milzer
+recruit_character = ADW_PER_mohand
+recruit_character = ADW_PER_ruholar
+recruit_character = ADW_PER_azam_sha
+
+promote_character = ADW_PER_lezer_sha
+promote_character = ADW_PER_lezer_sha_2
+promote_character = ADW_PER_milzer
+promote_character = ADW_PER_mohand
+promote_character = ADW_PER_ruholar
+promote_character = ADW_PER_azam_sha
+
+set_convoys = 20
+set_stability = 0.3
+set_war_support = 0.5
+
+set_popularities = {
+	democratic = 20
+	fascism = 5
+	communism = 5
+	neutrality = 70
+}

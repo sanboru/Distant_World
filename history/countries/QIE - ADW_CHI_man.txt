@@ -1,16 +1,18 @@
-capital = 608
+capital = 992
 oob = "QIE_1935"
 set_naval_oob = "QIE_1935_naval"
 set_research_slots = 4
 set_stability = 0.8
 set_war_support = 0.1
-recruit_character = ADW_QIE_pu_i_ld
 country_event = { id = IND_ADW.116 days = 30 }
+recruit_character = ADW_QIE_pu_i_ld
+recruit_character = ADW_QIE_pu_i_ld_2
+recruit_character = PRC_mao_zedong
 add_ideas = {
-    undisturbed_isolation
+    isolation
     volunteer_only
     limited_exports
-	
+	ADW_QIE_kakusa_zesi_fuan
 	ADW_CHI_ensen_mood
 	ADW_CHI_history_of_400
 }
@@ -27,7 +29,23 @@ set_popularities = {
 	communism = 0
 	neutrality = 100
 }
+set_party_name = {
+    ideology = fascism
+    long_name = QIE_fasism_party
+    name = QIE_fasism_party
+}
+set_party_name = {
+    ideology = democratic
+    long_name = QIE_democratic_party
+    name = QIE_democratic_party
+}
+set_party_name = {
+    ideology = communism
+    long_name = QIE_communism_party
+    name = QIE_communism_party
+}
 set_technology = {
+	early_ship_hull_carrier = 1
 	basic_naval_mines = 1
 	submarine_mine_laying = 1
 	early_ship_hull_submarine = 1

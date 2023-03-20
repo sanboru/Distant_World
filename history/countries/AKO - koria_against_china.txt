@@ -1,4 +1,4 @@
-capital = 443
+capital = 937
 
 oob = "SAR_1936"
 set_research_slots = 2

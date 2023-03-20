@@ -24,27 +24,5 @@ set_popularities = {
 	communism = 0
 	neutrality = 30
 }
-create_country_leader = {
-	name = "インド人"
-	desc = "POLITICS_Vyner_Brooke_DESC"
-	expire = "1965.1.1"
-	ideology = despotism
-}
-create_country_leader = {
-	name = "インド人"
-	desc = "POLITICS_Vyner_Brooke_DESC"
-	expire = "1965.1.1"
-	ideology = falangism
-}
-create_country_leader = {
-	name = "インド人"
-	desc = "POLITICS_Vyner_Brooke_DESC"
-	expire = "1965.1.1"
-	ideology = marxism
-}
-create_country_leader = {
-	name = "インド人"
-	desc = "POLITICS_Vyner_Brooke_DESC"
-	expire = "1965.1.1"
-	ideology = socialism
-}
+recruit_character = ADW_ruith_batten
+promote_character= ADW_ruith_batten
