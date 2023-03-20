@@ -1,0 +1,25 @@
+state={
+	id=1017
+	name="STATE_1017"
+	provinces={
+		2026 4928 12756 
+	}
+	history={
+		owner = PER
+		buildings = {
+			infrastructure = 2
+		}
+		victory_points = {
+			2026 20
+		}
+		victory_points = {
+			4928 1 
+		}
+		add_core_of = PER
+
+	}
+	manpower=485272
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=0.000
+}

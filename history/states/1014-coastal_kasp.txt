@@ -1,0 +1,20 @@
+state={
+	id=1014
+	name="STATE_1014"
+	provinces={
+		7602 10385 10768 
+	}
+	history={
+		owner = PER
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+		}
+		add_core_of = PER
+
+	}
+	manpower=2046250
+	state_category= rural
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

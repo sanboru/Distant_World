@@ -1,0 +1,29 @@
+
+state={
+	id=411
+	name="STATE_411"
+	resources={
+		oil=12.000
+	}
+
+	history={
+		owner = PER
+		buildings = {
+			infrastructure = 1
+
+		}
+		victory_points = {
+			8031 1 
+		}
+		add_core_of = PER
+
+	}
+
+	provinces={
+		1963 4983 5067 8031 8074 10828 
+	}
+	manpower=485272
+	buildings_max_level_factor=1.000
+	state_category=wasteland
+	local_supplies=0.000
+}
