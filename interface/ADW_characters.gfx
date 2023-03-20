@@ -4,15 +4,28 @@ spriteTypes = {
         texturefile = "gfx/leaders/JAP/ADW_shidehara_kijyuro.dds"
     }
     spriteType = {
-        name = "GFX_emperor_hirohito_portrait"
-        texturefile = "gfx/leaders/KYO/ADW_emperor_hirohito.dds"
-    }
-    spriteType = {
         name = "GFX_ADW_RAJ_ke_shav"
         texturefile = "gfx/leaders/RAJ/ADW_RAJ_ke_shav.dds"
     }
     spriteType = {
         name = "GFX_ADW_ADW_RAJ_ganzy"
         texturefile = "gfx/leaders/RAJ/ADW_RAJ_ganzy.dds"
+    }
+	
+    spriteType = {
+        name = "GFX_ADW_narend_com"
+        texturefile = "gfx/leaders/RAJ/ADW_narend_com.dds"
+    }
+    spriteType = {
+        name = "GFX_ADW_O_lobin_FAS"
+        texturefile = "gfx/leaders/RAJ/ADW_O_lobin_FAS.dds"
+    }
+    spriteType = {
+        name = "GFX_ADW_natram_fas"
+        texturefile = "gfx/leaders/RAJ/ADW_natram_fas.dds"
+    }
+    spriteType = {
+        name = "GFX_ADW_mefot_6"
+        texturefile = "gfx/leaders/RAJ/mefot_6.dds"
     }
 }

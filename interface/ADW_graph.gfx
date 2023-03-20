@@ -4,7 +4,7 @@ spriteTypes = {
 		textureFile1 = "/gfx/interface/graph_gfx/ADW_graph_full.dds"
 		textureFile2 = "/gfx/interface/graph_gfx/ADW_graph_empty.dds"
 		size = {
-			x = 5
+			x = 10
 			y = 200
 		}
 		effectFile = "gfx/FX/ADW_graph.lua"
@@ -94,5 +94,47 @@ spriteTypes = {
 		}
 		effectFile = "gfx/FX/progress.lua"
 		horizontal = no
+	}
+	
+	spriteType = {
+		name = "GFX_bar_graph_frame"
+		textureFile = "gfx/interface/ADW_ellection_bar_frame.dds"
+	}
+	progressbartype = {
+		name = "GFX_ADW_bar_graph_cian"
+		textureFile1 = "gfx/interface/ADW_ellection_bar_1.dds"
+		textureFile2 = "gfx/interface/ADW_ellection_bar_2.dds"
+		color = { 0.0 0.0 0.0 }
+		colortwo = { 0.0 0.0 0.0 }
+		size = { 
+			x = 40
+			y = 231
+		}
+		effectFile = "gfx/FX/progress.lua"
+		horizontal = no
+	}
+	
+	progressbartype = {
+		name = "GFX_ADW_bar_graph_cian_nuke"
+		textureFile1 = "gfx/interface/ADW_ellection_bar_1.dds"
+		textureFile2 = "gfx/interface/ADW_ellection_bar_2.dds"
+		color = { 0.0 0.0 0.0 }
+		colortwo = { 0.0 0.0 0.0 }
+		size = { 
+			x = 20
+			y = 100
+		}
+		effectFile = "gfx/FX/progress.lua"
+		horizontal = no
+	}
+	spriteType = {
+		name = "GFX_ADW_GDP_line"
+		texturefile = "gfx/interface/ADW_GDP_line.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ADW_PER_state_option_pie_chart"
+		texturefile = "gfx/interface/ADW_PER_state_option_pie_chart.dds"
+		noOfFrames = 5
 	}
 }

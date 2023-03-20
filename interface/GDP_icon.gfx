@@ -139,4 +139,139 @@ spriteTypes = {
 		name = "GFX_ADW_GDP_seisaku_button_conduct"
 		texturefile = "gfx/interface/ADW_GDP_seisaku_button_conduct.dds"
 	}
+	spriteType = {
+		name = "GFX_ADW_gikai_back"
+		texturefile = "gfx/interface/ADW_gikai_back.dds"
+	}
+	spriteType = {
+		name = "GFX_ADW_GDP_gikai_point"
+		texturefile = "gfx/interface/ADW_GDP_gikai_point.dds"
+		noOfFrames = 5
+	}
+	spriteType = {
+		name = "GFX_ADW_GDP_gikai_bow_chart"
+		texturefile = "gfx/interface/ADW_GDP_gikai_bow_chart.dds"
+		noOfFrames = 5
+	}
+	spriteType = {
+		name = "GFX_ADW_GDP_gikai_each_ideorogy"
+		texturefile = "gfx/interface/ADW_GDP_gikai_each_ideorogy.dds"
+	}
+	spriteType = {
+		name = "GFX_ADW_GDP_gikai_upper"
+		texturefile = "gfx/interface/ADW_GDP_gikai_upper.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ADW_GDP_poli_mines"
+		texturefile = "gfx/interface/ADW_GDP_poli_mines.dds"
+	}
+	spriteType = {
+		name = "GFX_ADW_GDP_poli_add"
+		texturefile = "gfx/interface/ADW_GDP_poli_add.dds"
+	}
+	spriteType = {
+		name = "GFX_ADW_non_party_ideorogy"
+		texturefile = "gfx/interface/ADW_non_party_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_ADW_GDP_nuke_icon"
+		texturefile = "gfx/interface/ADW_GDP_nuke_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_ADW_nuke_prodution"
+		texturefile = "gfx/interface/ADW_nuke_prodution.dds"
+	}
+	spriteType = {
+		name = "GFX_ADW_nuke_icon"
+		texturefile = "gfx/interface/texticons/ADW_nuke_icon.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ADW_nuke_first_pic"
+		texturefile = "gfx/interface/nuke/ADW_nuke_first_pic.dds"
+	}
+	spriteType = {
+		name = "GFX_ADW_nuke_back"
+		texturefile = "gfx/interface/nuke/ADW_nuke_back.dds"
+	}
+	spriteType = {
+		name = "GFXADW_nuke_production"
+		texturefile = "gfx/interface/ADW_nuke_production.dds"
+	}
+	spriteType = {
+		name = "GFX_ADW_GDP_nuke_production_list_bg"
+		texturefile = "gfx/interface/ADW_GDP_nuke_production_list_bg.dds"
+	}
+	spriteType = {
+		name = "GFX_ADW_production_list_bg"
+		texturefile = "gfx/interface/ADW_production_list_bg.dds"
+	}
+	
+	
+	spriteType = {
+		name = "GFX_ADW_SPV_picture_back"
+		texturefile = "gfx/interface/ADW_SPV_picture_back.dds"
+	}
+	spriteType = {
+		name = "GFX_ADW_super_event_container"
+		texturefile = "gfx/interface/ADW_super_event_container.dds"
+	}
+	spriteType = {
+		name = "GFX_ADW_super_event_title"
+		texturefile = "gfx/interface/ADW_super_event_title.dds"
+	}
+	spriteType = {
+		name = "GFX_ADW_ENG_SPV_civil_war"
+		texturefile = "gfx/interface/ADW_ENG_SPV_civil_war.dds"
+	}
+	spriteType = {
+		name = "GFX_ADW_PER_map_min"
+		texturefile = "gfx/interface/ADW_PER_map_min.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ADW_419"
+		texturefile = "gfx/interface/PER_STATE_map/ADW_419.dds"
+		noOfFrames = 5
+	}
+	spriteType = {
+		name = "GFX_ADW_266"
+		texturefile = "gfx/interface/PER_STATE_map/ADW_266.dds"
+		noOfFrames = 5
+	}
+	spriteType = {
+		name = "GFX_ADW_420"
+		texturefile = "gfx/interface/PER_STATE_map/ADW_420.dds"
+		noOfFrames = 5
+	}
+	spriteType = {
+		name = "GFX_ADW_1014"
+		texturefile = "gfx/interface/PER_STATE_map/ADW_1014.dds"
+		noOfFrames = 5
+	}
+	spriteType = {
+		name = "GFX_ADW_416"
+		texturefile = "gfx/interface/PER_STATE_map/ADW_416.dds"
+		noOfFrames = 5
+	}
+	spriteType = {
+		name = "GFX_ADW_418"
+		texturefile = "gfx/interface/PER_STATE_map/ADW_418.dds"
+		noOfFrames = 5
+	}
+	
+	spriteType = {
+		name = "GFX_ADW_GDP_loist_button"
+		texturefile = "gfx/interface/ADW_GDP_loist_button.dds"
+	}
+	spriteType = {
+		name = "GFX_ADW_GDP_civ_fac"
+		texturefile = "gfx/interface/ADW_GDP_civ_fac.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_ADW_GER_volx_wargen"
+		texturefile = "gfx/interface/ADW_GER_volx_wargen.dds"
+	}
 }

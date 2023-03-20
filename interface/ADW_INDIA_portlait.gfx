@@ -11,4 +11,89 @@ spriteTypes = {
 		name = "GFX_ADW_QIE_pui_portlate"
 		texturefile = "gfx/leaders/RAJ/ADW_QIE_pui_portlate.dds"
 	}
+	
+	spriteType = {
+		name = "GFX_Portrait_Britain_MacDonald"
+		texturefile = "gfx/leaders/ENG/Portrait_Britain_MacDonald.dds"
+	}
+	spriteType = {
+		name = "GFX_ADW_ENG_mozure"
+		texturefile = "gfx/leaders/ENG/ADW_ENG_mozure.dds"
+	}
+	spriteType = {
+		name = "GFX_ADW_ENG_ed_ward"
+		texturefile = "gfx/leaders/ENG/ADW_ENG_ed_ward.dds"
+	}
+	spriteType = {
+		name = "GFX_ADW_ENG_chercill"
+		texturefile = "gfx/leaders/ENG/ADW_ENG_chercill.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ADW_BRM_bar_mow"
+		texturefile = "gfx/leaders/RAJ/ADW_BRM_bar_mow.dds"
+	}
+	spriteType = {
+		name = "GFX_ADW_BRM_aunsan"
+		texturefile = "gfx/leaders/RAJ/ADW_BRM_aunsan.dds"
+	}
+	spriteType = {
+		name = "GFX_ADW_BRM_takin_so"
+		texturefile = "gfx/leaders/RAJ/ADW_BRM_takin_so.dds"
+	}
+	spriteType = {
+		name = "GFX_ADW_BRM_takin_tan"
+		texturefile = "gfx/leaders/RAJ/ADW_BRM_takin_tan.dds"
+	}
+	spriteType = {
+		name = "GFX_ADW_e_win_BRM"
+		texturefile = "gfx/leaders/RAJ/ADW_e_win_BRM.dds"
+	}
+	spriteType = {
+		name = "GFX_ADW_ruith_batten"
+		texturefile = "gfx/leaders/RAJ/ADW_ruith_batten.dds"
+	}
+
+	spriteType = {
+		name = "GFX_ADW_HOK_kaneto"
+		texturefile = "gfx/leaders/HOK/ADW_HOK_kaneto.dds"
+	}
+	spriteType = {
+		name = "GFX_ADW_HOK_ensei_hokuto"
+		texturefile = "gfx/leaders/HOK/ADW_HOK_ensei_hokuto.dds"
+	}
+	spriteType = {
+		name = "GFX_ADW_HOK_yoshida"
+		texturefile = "gfx/leaders/HOK/ADW_HOK_yoshida.dds"
+	}
+	spriteType = {
+		name = "GFX_ADE_HOK_tokugawa_iemasa"
+		texturefile = "gfx/leaders/HOK/ADE_HOK_tokugawa_iemasa.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ADW_PER_ruholar"
+		texturefile = "gfx/leaders/PER/ADW_PER_ruholar.dds"
+	}
+	spriteType = {
+		name = "GFX_ADW_PER_mohand"
+		texturefile = "gfx/leaders/PER/ADW_PER_mohand.dds"
+	}
+	spriteType = {
+		name = "GFX_ADW_PER_milzer"
+		texturefile = "gfx/leaders/PER/ADW_PER_milzer.dds"
+	}
+	spriteType = {
+		name = "GFX_ADW_PER_lezer_sha_2"
+		texturefile = "gfx/leaders/PER/ADW_PER_lezer_sha_2.dds"
+	}
+	spriteType = {
+		name = "GFX_ADW_PER_lezer_sha"
+		texturefile = "gfx/leaders/PER/ADW_PER_lezer_sha.dds"
+	}
+	spriteType = {
+		name = "GFX_ADW_PER_azam_sha"
+		texturefile = "gfx/leaders/PER/ADW_PER_azam_sha.dds"
+	}
+
 }
