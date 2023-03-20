@@ -1,0 +1,11 @@
+﻿l_japanese:
+ nukes_1:0 "改良型核爆弾"
+ ADW_nuclear_allow:0 "基本的核爆弾をアンロック"
+ ADW_NOTRADE_TITLE:0 "貿易禁止"
+ ADW_NOTRADE_TITLE_DESC:0 "貿易禁止"
+ ADW_OUT_NOTRADE_TITLE:0 "貿易解放"
+ ADW_NOTRADE_TITLE_DESC_accept_title:0 "[FROM.GetName]から貿易禁止"
+ shelter:0 "シェルター"
+ shelter_desc:0 "空爆、原子爆弾から国民を守るために建設する。"
+ farm:0 "農場"
+ farm_desc:0 "様々な作物や食料を生産する。"
