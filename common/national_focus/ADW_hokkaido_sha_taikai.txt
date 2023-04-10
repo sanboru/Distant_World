@@ -1,0 +1,812 @@
+focus_tree = {
+	id = ADW_HOK_tree
+	shared_focus = ADW_HOK_shared_factories_0
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = HOK
+		}
+	}
+	default = no
+
+	continuous_focus_position = { x = 20 y = 2800 }
+	
+	focus = {
+		id = ADW_HOK_new_country
+		icon = GFX_focus_generic_the_giant_wakes
+		x = 8
+		y = 0
+		mutually_exclusive = { focus = SHA_HOK_AINU_civil_war }
+
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 30
+		}
+	}
+	focus = {
+		id = ADW_HOK_political
+		icon = GFX_goal_reichsautobahn
+		prerequisite = { focus = ADW_HOK_new_country }
+		x = 13
+		y = 1
+
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 30
+		}
+	}
+	focus = {
+		id = ADW_HOK_political_1
+		icon = GFX_goal_generic_improve_relations
+		prerequisite = { focus = ADW_HOK_political }
+		mutually_exclusive = { focus = ADW_HOK_political_2 }
+		x = 13
+		y = 2
+
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.05
+		}
+	}
+	focus = {
+		id = ADW_HOK_political_1_2
+		icon = GFX_focus_rom_royal_dictatorship
+		prerequisite = { focus = ADW_HOK_political_1 }
+		x = 13
+		y = 3
+
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.03
+			add_ideas = ADW_HOK_satability_ideas
+		}
+	}
+	focus = {
+		id = ADW_HOK_political_2
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = ADW_HOK_political }
+		mutually_exclusive = { focus = ADW_HOK_political_1 }
+		x = 15
+		y = 2
+
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			add_war_support = 0.05
+		}
+	}
+	focus = {
+		id = ADW_HOK_political_2_2
+		icon = GFX_focus_BUL_support_macedonian_organizations
+		prerequisite = { focus = ADW_HOK_political_2 }
+		x = 15
+		y = 3
+
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			add_war_support = 0.03
+			add_ideas = ADW_HOK_war_supoort_ideas
+		}
+	}
+	focus = {
+		id = ADW_HOK_political_3
+		icon = GFX_focus_por_concordat
+		prerequisite = { 
+			focus = ADW_HOK_political_2_2
+			focus = ADW_HOK_political_1_2
+		}
+		x = 15
+		y = 4
+
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_ideas = ADW_HOK_company_with_ainu
+		}
+	}
+	focus = {
+		id = ADW_HOK_political_4
+		icon = GFX_focus_SOV_zemsky_sobor
+		prerequisite = { 
+			focus = ADW_HOK_political_2_2
+			focus = ADW_HOK_political_1_2
+		}
+		x = 13
+		y = 4
+
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_ideas = ADW_heimin_HOK_myouji_allow
+		}
+	}
+	focus = {
+		id = ADW_HOK_political_5
+		icon = GFX_focus_SOV_patriarch_of_all_russia
+		prerequisite = { focus = ADW_HOK_political_4 }
+		x = 13
+		y = 5
+
+		cost = 6
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ADW_heimin_HOK_myouji_allow
+				add_idea = ADW_heimin_HOK_myouji_allow_1
+			}
+		}
+	}
+	focus = {
+		id = ADW_HOK_new_country_shinsen
+		icon = GFX_focus_generic_japanese_imperial_glory
+		prerequisite = { focus = ADW_HOK_new_country }
+		x = 9
+		y = 1
+
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			custom_effect_tooltip = shinsengumi_ADW_flag
+			set_country_flag = shinsengumi_ADW_flag
+			set_variable = { ADW_shinsengumi_saidai_select = 3 }
+			country_event = { id = IND_ADW.119 }
+			division_template = {
+				name = "新選組歩兵部隊"
+				is_locked = yes
+				template_counter = 0
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+				}
+			}
+		}
+	}
+	focus = {
+		id = ADW_HOK_new_country_shinsen_kikou_shidan
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = ADW_HOK_new_country_shinsen }
+		x = 9
+		y = 2
+
+		cost = 6
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			custom_effect_tooltip = ADW_create_hohei_shinsengumi
+			division_template = {
+				name = "新選組砲兵部隊"
+				is_locked = yes
+				template_counter = 0
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 2 y = 0 }
+					artillery_brigade = { x = 2 y = 1 }
+				}
+			}
+		}
+	}
+	focus = {
+		id = ADW_HOK_shinsengumi_improve
+		icon = GFX_focus_SOV_womens_fascist_movement
+		prerequisite = { focus = ADW_HOK_new_country_shinsen }
+		x = 11
+		y = 2
+
+		cost = 6
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			custom_effect_tooltip = ADW_create_hohei_shinsengumi_impr
+			add_to_variable = { ADW_shinsengumi_saidai_select = 10 }
+		}
+	}
+	focus = {
+		id = ADW_HOK_shinsengumi_improve_2
+		icon = GFX_focus_SOV_mobilization_plan
+		prerequisite = { focus = ADW_HOK_new_country_shinsen_kikou_shidan }
+		x = 10
+		y = 3
+
+		cost = 6
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			custom_effect_tooltip = ADW_create_hohei_shinsengumi_impr
+			add_to_variable = { ADW_shinsengumi_saidai_select = 10 }
+		}
+	}
+	focus = {
+		id = ADW_HOK_shinsengumi_improve_3
+		icon = GFX_focus_generic_tankette
+		prerequisite = { focus = ADW_HOK_shinsengumi_improve_2 }
+		prerequisite = { focus = ADW_HOK_shinsengumi_improve }
+		x = 11
+		y = 4
+
+		cost = 6
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			custom_effect_tooltip = ADW_create_hohei_shinsengumi_impr_tanks
+			add_to_variable = { ADW_shinsengumi_saidai_select_kikou = 3 }
+		}
+	}
+	focus = {
+		id = ADW_HOK_new_country_shinsen_kikou_shidan_1
+		icon = GFX_focus_generic_truck
+		prerequisite = { focus = ADW_HOK_new_country_shinsen_kikou_shidan }
+		x = 9
+		y = 4
+
+		cost = 12
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			custom_effect_tooltip = ADW_create_hohei_shinsengumi_2
+			set_variable = { ADW_shinsengumi_saidai_select_kikou = 2 }
+			division_template = {
+				name = "新選組機甲部隊"
+				is_locked = yes
+				regiments = {
+					motorized = { x = 0 y = 0 }
+					motorized = { x = 0 y = 1 }
+					motorized = { x = 0 y = 2 }
+					light_armor = { x = 1 y = 0 }
+					light_armor = { x = 1 y = 1 }
+					light_armor = { x = 1 y = 2 }
+					light_armor = { x = 1 y = 3 }
+				}
+			}
+		}
+	}
+	focus = {
+		id = ADW_bakufu_root_1
+		icon = GFX_focus_AST_war_japan
+		prerequisite = { focus = ADW_HOK_new_country_shinsen_kikou_shidan_1 }
+		prerequisite = { focus = ADW_HOK_shinsengumi_improve_3 }
+		prerequisite = { focus = ADW_HOK_political_5 }
+		prerequisite = { focus = ADW_HOK_political_3 }
+		x = 12
+		y = 6
+
+		cost = 3
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 8
+				num_divisions > 15
+			}
+			modifier = {
+				add = 4
+				strength_ratio = {
+					tag = HOK
+					ratio > 5
+				}
+			}
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			country_event = { id = IND_ADW.118 }
+		}
+	}
+	focus = {
+		id = ADW_bakufu_root_2
+		icon = GFX_focus_RAJ_indian_gentlemen_offcers
+		prerequisite = { focus = ADW_bakufu_root_1 }
+		x = 12
+		y = 7
+
+		cost = 2
+		ai_will_do = {
+			factor = 50
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = JAP
+			}
+		}
+	}
+	focus = {
+		id = ADW_bakufu_root_3
+		icon = GFX_focus_rom_royal_dictatorship
+		prerequisite = { focus = ADW_bakufu_root_2 }
+		x = 15
+		y = 8
+
+		cost = 5
+		available = {
+			controls_state = 282
+			controls_state = 920
+		}
+		ai_will_do = {
+			factor = 50
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			remove_state_claim = 282
+			remove_state_claim = 920
+			
+			add_state_core = 282
+			add_state_core = 920
+		}
+	}
+	focus = {
+		id = ADW_bakufu_root_4
+		icon = GFX_focus_YUG_autonomous_transylvania
+		prerequisite = { focus = ADW_bakufu_root_2 }
+		x = 13
+		y = 8
+
+		cost = 5
+		available = {
+			controls_state = 533
+		}
+		ai_will_do = {
+			factor = 50
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			remove_state_claim = 533
+			
+			add_state_core = 533
+		}
+	}
+	focus = {
+		id = ADW_bakufu_root_5
+		icon = GFX_focus_jap_spiritual_mobilization
+		prerequisite = { focus = ADW_bakufu_root_2 }
+		x = 17
+		y = 8
+
+		cost = 5
+		available = {
+			controls_state = 534
+			controls_state = 535
+			controls_state = 532
+		}
+		ai_will_do = {
+			factor = 50
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			remove_state_claim = 534
+			add_state_core = 534
+			remove_state_claim = 535
+			add_state_core = 535
+			remove_state_claim = 532
+			add_state_core = 532
+		}
+	}
+	focus = {
+		id = ADW_bakufu_root_6
+		icon = GFX_focus_jap_showa_restoration
+		prerequisite = { focus = ADW_bakufu_root_2 }
+		x = 11
+		y = 8
+
+		cost = 5
+		available = {
+			controls_state = 531
+			controls_state = 921
+		}
+		ai_will_do = {
+			factor = 50
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			remove_state_claim = 531
+			add_state_core = 531
+			remove_state_claim = 921
+			add_state_core = 921
+		}
+	}
+	focus = {
+		id = ADW_bakufu_root_7
+		icon = GFX_focus_hun_elect_a_king
+		prerequisite = { focus = ADW_bakufu_root_2 }
+		x = 9
+		y = 8
+
+		cost = 5
+		available = {
+			controls_state = 529
+			controls_state = 917
+			controls_state = 530
+		}
+		ai_will_do = {
+			factor = 50
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			remove_state_claim = 529
+			add_state_core = 529
+			remove_state_claim = 917
+			add_state_core = 917
+			remove_state_claim = 530
+			add_state_core = 530
+		}
+	}
+	focus = {
+		id = ADW_bakufu_root_8
+		icon = GFX_focus_jap_pacific_guardian
+		prerequisite = { focus = ADW_HOK_new_country }
+		x = 18
+		y = 1
+
+		cost = 2
+		select_effect = {
+			if = {
+				limit = {
+					is_neighbor_of = KYO
+				}
+				KYO = { country_event = { id = IND_ADW.122 } }
+			}
+		}
+		available = {
+			OR = {
+				AND = {
+					JAP = { exists = no }
+					controls_state = 533
+				}
+				AND = {
+					count_triggers = {
+						amount = 12
+						controls_state = 533
+						controls_state = 282
+						controls_state = 920
+						controls_state = 534
+						controls_state = 535
+						controls_state = 532
+						controls_state = 531
+						controls_state = 921
+						controls_state = 529
+						controls_state = 917
+						controls_state = 530
+						controls_state = 919
+						controls_state = 528
+						controls_state = 918
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 50
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			HOK = {
+				country_event = { id = IND_ADW.120 }
+				country_event = { id = IND_ADW.121 }
+			}
+		}
+	}
+	focus = {
+		id = ADW_bakufu_root_9
+		icon = GFX_focus_ger_revive_kaiserreich
+		prerequisite = { focus = ADW_bakufu_root_8 }
+		x = 17
+		y = 2
+
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			every_core_state = {
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+	}
+	focus = {
+		id = ADW_bakufu_root_10
+		icon = GFX_focus_chi_collaboration_with_the_japanese
+		prerequisite = { focus = ADW_bakufu_root_8 }
+		x = 19
+		y = 2
+
+		cost = 5
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				add = -6
+				has_war = yes
+			}
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			OKI = { country_event = { id = IND_ADW.125 } }
+		}
+	}
+	focus = {
+		id = ADW_bakufu_root_11
+		icon = GFX_goal_tfv_saf_anti_colonialist_crusade
+		prerequisite = { focus = ADW_bakufu_root_9 }
+		x = 17
+		y = 3
+
+		cost = 5
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				add = -6
+				has_war = yes
+			}
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			add_state_claim	= 948
+			add_state_claim	= 527
+			add_state_claim	= 941
+			add_state_claim	= 937
+			add_state_claim	= 940
+			add_state_claim	= 939
+			add_state_claim	= 525
+		}
+	}
+	focus = { #ムガルの攻撃
+		id = ADW_bakufu_root_12
+		icon = GFX_focus_eng_the_sun_never_sets
+		prerequisite = { focus = ADW_bakufu_root_10 }
+		x = 19
+		y = 3
+		cost = 7
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				add = -6
+				has_war = yes
+			}
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		will_lead_to_war_with = MAL
+		bypass = {
+			MAL = {
+				exists = no
+			}
+		}
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = MAL
+			}
+		}
+	}
+	focus = { #ムガルの攻撃
+		id = ADW_bakufu_root_13
+		icon = GFX_focus_eng_move_to_secure_the_dominions
+		prerequisite = { focus = ADW_bakufu_root_11 }
+		x = 17
+		y = 4
+		cost = 10
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				add = -6
+				has_war = yes
+			}
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		will_lead_to_war_with = VIN
+		will_lead_to_war_with = CAM
+		will_lead_to_war_with = LAO
+		bypass = {
+			VIN = {
+				exists = no
+			}
+			LAO = {
+				exists = no
+			}
+			CAM = {
+				exists = no
+			}
+		}
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = VIN
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = LAO
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = CAM
+			}
+		}
+	}
+	focus = {
+		id = ADW_bakufu_root_14
+		icon = GFX_focus_jap_spiritual_mobilization
+		prerequisite = { focus = ADW_bakufu_root_12 }
+		x = 19
+		y = 4
+		cost = 7
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				add = -6
+				has_war = yes
+			}
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		will_lead_to_war_with = INS
+		bypass = {
+			INS = {
+				exists = no
+			}
+		}
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = INS
+			}
+		}
+	}
+	focus = {
+		id = ADW_bakufu_root_15_a
+		icon = GFX_focus_hol_continue_the_war_in_batavia
+		prerequisite = { focus = ADW_bakufu_root_13 }
+		prerequisite = { focus = ADW_bakufu_root_14 }
+		mutually_exclusive = { focus = ADW_bakufu_root_15_b }
+		x = 17
+		y = 5
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		bypass = {
+			QIE = {
+				exists = no
+			}
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			QIE = { country_event = { id = IND_ADW.126 days = 2 } }
+		}
+	}
+	focus = {
+		id = ADW_bakufu_root_15_b
+		icon = GFX_focus_usa_focus_on_asia
+		prerequisite = { focus = ADW_bakufu_root_13 }
+		prerequisite = { focus = ADW_bakufu_root_14 }
+		mutually_exclusive = { focus = ADW_bakufu_root_15_a }
+		x = 19
+		y = 5
+		cost = 10
+		ai_will_do = {
+			factor = 4
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		will_lead_to_war_with = QIE
+		bypass = {
+			QIE = {
+				exists = no
+			}
+		}
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = QIE
+			}
+		}
+	}
+	#ここからアイヌルート
+	focus = {
+		id = SHA_HOK_AINU_civil_war
+		icon = GFX_focus_SHA_AINUMOSIR_civil_war
+		x = 6
+		y = 0
+		mutually_exclusive = { focus = ADW_HOK_new_country }
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 30
+			start_civil_war = {
+				ruling_party = democratic
+				ideology = neutrality
+				size = 0.2
+				only_own_territory = yes
+				capital = 944
+				states = {
+					944 943 942
+				}
+			}
+		}
+	}
+}
