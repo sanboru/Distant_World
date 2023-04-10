@@ -1,0 +1,491 @@
+﻿focus_tree = {
+	id = ADW_GER_focus_tree
+	
+	country = {
+		factor = 0
+		modifier = {
+			add = 12
+			tag = GER
+		}
+	}
+	
+	default = no
+	continuous_focus_position = { x = 20 y = 1500 }
+	
+	focus = { 
+		id = ADW_GER_the_first_take_yonkanen
+		icon = GFX_focus_generic_japanese_imperial_glory
+		x = 2
+		y = 0
+
+		cost = 9
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_ideas = ADW_GER_yonkanen
+		}
+	}
+	focus = { 
+		id = ADW_GER_civ_support
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = {focus = ADW_GER_the_first_take_yonkanen}
+		x = 0
+		y = 1
+
+		cost = 15
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			random_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			swap_ideas = {
+				add_idea = ADW_GER_yonkanen_1
+				remove_idea = ADW_GER_yonkanen
+			}
+		}
+	}
+	focus = {
+		id = ADW_GER_reichs_autbarn
+		icon = GFX_focus_generic_infiltration
+		prerequisite = {focus = ADW_GER_the_first_take_yonkanen}
+		x = 2
+		y = 1
+
+		cost = 15
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			random_controlled_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_controlled_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = ADW_GER_infra_up
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = {focus = ADW_GER_the_first_take_yonkanen}
+		x = 4
+		y = 1
+
+		cost = 15
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			random_controlled_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_controlled_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = ADW_ger_research_of_national_resource
+		icon = GFX_goal_generic_oil_refinery
+		prerequisite = {
+			focus = ADW_GER_civ_support
+			focus = ADW_GER_reichs_autbarn
+			focus = ADW_GER_infra_up
+		}
+		x = 2
+		y = 2
+
+		cost = 15
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_ideas = ADW_GER_resource_production
+		}
+	}
+	focus = {
+		id = ADW_GER_priolty_of_national_industry
+		icon = GFX_focus_spr_masters_of_our_own_fate
+		mutually_exclusive = { focus = ADW_GER_priolty_of_foreign }
+		prerequisite = {
+			focus = ADW_GER_civ_support
+			focus = ADW_GER_reichs_autbarn
+			focus = ADW_GER_infra_up
+		}
+		x = 0
+		y = 3
+
+		cost = 9
+		ai_will_do = {
+			factor = 10
+		}
+		available = { has_completed_focus = ADW_GER_civ_support }
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ADW_GER_yonkanen_1
+				add_idea = ADW_GER_yonkanen_2_a
+			}
+		}
+	}
+	focus = {
+		id = ADW_GER_priolty_of_foreign
+		icon = GFX_focus_SOV_south_manchuria_railway
+		mutually_exclusive = { focus = ADW_GER_priolty_of_national_industry }
+		prerequisite = {
+			focus = ADW_GER_civ_support
+			focus = ADW_GER_reichs_autbarn
+			focus = ADW_GER_infra_up
+		}
+		x = 4
+		y = 3
+
+		cost = 9
+		ai_will_do = {
+			factor = 10
+		}
+		available = { has_completed_focus = ADW_GER_civ_support }
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ADW_GER_yonkanen_1
+				add_idea = ADW_GER_yonkanen_2_b
+			}
+		}
+	}
+	focus = {
+		id = ADW_GER_the_first_take_yonkanen_complete
+		icon = GFX_focus_generic_diplomatic_treaty
+		prerequisite = {
+			focus = ADW_GER_priolty_of_foreign
+			focus = ADW_GER_priolty_of_national_industry
+		}
+		x = 2
+		y = 4
+
+		cost = 7
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.2
+			if = {
+				limit = { has_idea = ADW_GER_yonkanen_2_b }
+				swap_ideas = {
+					remove_idea = ADW_GER_yonkanen_2_b
+					add_idea = ADW_GER_yonkanen_3_b
+				}
+			}
+			if = {
+				limit = { has_idea = ADW_GER_yonkanen_2_a }
+				swap_ideas = {
+					remove_idea = ADW_GER_yonkanen_2_a
+					add_idea = ADW_GER_yonkanen_3_a
+				}
+			}
+		}
+	}
+	focus = {
+		id = ADW_GER_jiritsu_economy
+		icon = GFX_focus_por_reclaim_crown_jewel
+		prerequisite = {focus = ADW_GER_the_first_take_yonkanen_complete}
+		x = 1
+		y = 5
+
+		cost = 8
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.1
+				uses = 3
+				category = industry
+			}
+		}
+	}
+	focus = {
+		id = ADW_GER_second_yonkanen
+		icon = GFX_focus_CZE_german_puppet
+		prerequisite = {focus = ADW_GER_the_first_take_yonkanen_complete}
+		x = 3
+		y = 5
+
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			
+			if = {
+				limit = { has_idea = ADW_GER_yonkanen_3_b }
+				swap_ideas = {
+					remove_idea = ADW_GER_yonkanen_3_b
+					add_idea = ADW_GER_yonkanen_4_b
+				}
+			}
+			if = {
+				limit = { has_idea = ADW_GER_yonkanen_3_a }
+				swap_ideas = {
+					remove_idea = ADW_GER_yonkanen_3_a
+					add_idea = ADW_GER_yonkanen_4_a
+				}
+			}
+		}
+	}
+	focus = {
+		id = ADW_GER_national_power_military
+		icon = GFX_focus_ETH_ecole_militaire_haile_selassie_1er
+		mutually_exclusive = { focus = ADW_ger_macine_farm }
+		prerequisite = {focus = ADW_GER_second_yonkanen}
+		prerequisite = {focus = ADW_GER_jiritsu_economy}
+		x = 5
+		y = 6
+
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			if = {
+				limit = { has_idea = ADW_GER_yonkanen_4_a }
+				swap_ideas = {
+					remove_idea = ADW_GER_yonkanen_4_a
+					add_idea = ADW_GER_yonkanen_a_a_5
+				}
+			}
+			if = {
+				limit = { has_idea = ADW_GER_yonkanen_4_b }
+				swap_ideas = {
+					remove_idea = ADW_GER_yonkanen_4_b
+					add_idea = ADW_GER_yonkanen_b_a_5
+				}
+			}
+		}
+	}
+	focus = {
+		id = ADW_GER_gosei_gom
+		icon = GFX_focus_generic_stockpile_fuel
+		prerequisite = {focus = ADW_GER_national_power_military}
+		x = 4
+		y = 7
+
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			random_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = ADW_GER_gosei_fuel_gom
+		icon = GFX_goal_generic_oil_refinery
+		prerequisite = {focus = ADW_GER_national_power_military}
+		x = 6
+		y = 7
+
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			random_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = fuel_silo
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = fuel_silo
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = ADW_GER_KdF
+		icon = GFX_focus_ITA_modernize_ansaldo_facilities
+		prerequisite = {focus = ADW_GER_gosei_gom}
+		x = 4
+		y = 8
+
+		cost = 15
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			custom_effect_tooltip = unlock_volx_wargen
+			random_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = ADW_GER_garing_factory
+		#icon = 
+		prerequisite = {focus = ADW_GER_gosei_fuel_gom}
+		x = 6
+		y = 8
+
+		cost = 20
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			random_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_controlled_state = {
+				add_resource = {
+					type = steel
+					amount = 15
+				}
+			}
+		}
+	}
+	focus = {
+		id = ADW_ger_macine_farm
+		icon = GFX_focus_ETH_unite_the_afar
+		mutually_exclusive = { focus = ADW_GER_national_power_military }
+		prerequisite = {focus = ADW_GER_second_yonkanen}
+		prerequisite = {focus = ADW_GER_jiritsu_economy}
+		x = -1
+		y = 6
+
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_STABILITY }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 100
+			add_stability = 0.15
+			if = {
+				limit = { has_idea = ADW_GER_yonkanen_4_a }
+				swap_ideas = {
+					remove_idea = ADW_GER_yonkanen_4_a
+					add_idea = ADW_GER_yonkanen_a_b_5
+				}
+			}
+			if = {
+				limit = { has_idea = ADW_GER_yonkanen_4_b }
+				swap_ideas = {
+					remove_idea = ADW_GER_yonkanen_4_b
+					add_idea = ADW_GER_yonkanen_b_b_5
+				}
+			}
+
+		}
+	}
+}
