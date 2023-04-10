@@ -38,6 +38,9 @@ spriteTypes = {
 		}
 		legacy_lazy_load = no
 	}
-	
+	spriteType = {
+		name = "GFX_focus_SHA_AINUMOSIR_civil_war"
+		texturefile = "gfx/interface/goals/focus_sha_ainumosir_civilwar.dds"
+	}
 
 }
