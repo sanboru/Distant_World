@@ -1,3 +1,226 @@
+ADW_GDP_company_production = { #経済規模
+	resize_array = {
+		array = ROOT.ADW_company_GDP_uriage_array
+		value = 0
+		size = ADW_GDP_company_amout
+	}
+}
+ADW_renable_days = {
+	for_each_loop = {
+		array = ROOT.ADW_seisaku_list
+		value = v
+		index = i
+		break = break
+		subtract_from_variable={ROOT.ADW_seisaku_list_reable_array^v = 1 }
+		clamp_variable = {
+			var = ROOT.ADW_seisaku_list_reable_array^v
+			min = 0
+		}
+	}
+}
+ADW_company_set_up = {
+	set_variable = { ROOT.ADW_zaibatsu_num_set = ROOT.ADW_GDP_company_amout }
+	multiply_variable = { ROOT.ADW_zaibatsu_num_set = ROOT.ADW_comp_zaibatsu_class }
+	round_variable = ROOT.ADW_zaibatsu_num_set
+	
+	set_variable = { ROOT.ADW_big_num_set = ROOT.ADW_GDP_company_amout }
+	multiply_variable = { ROOT.ADW_big_num_set = ROOT.ADW_comp_bigger_class }
+	round_variable = ROOT.ADW_big_num_set
+	
+	set_variable = { ROOT.ADW_mid_num_set = ROOT.ADW_GDP_company_amout }
+	multiply_variable = { ROOT.ADW_mid_num_set = ROOT.ADW_comp_middle_class }
+	round_variable = ROOT.ADW_mid_num_set
+		resize_array = {
+			array = ROOT.ADW_GDP_company_level_array
+			value = 1
+			size = ADW_GDP_company_amout
+		}
+	ADW_company_size_setup_1 = yes
+	
+	add_to_variable = { ADW_GDP_per_2 = ADW_GDP_per_1 }
+	add_to_variable = { ADW_GDP_per_3 = ADW_GDP_per_2 }
+	add_to_variable = { ADW_GDP_per_4 = ADW_GDP_per_3 }
+	add_to_variable = { ADW_GDP_per_5 = ADW_GDP_per_4 }
+	
+	multiply_variable = { ADW_GDP_per_1 = ADW_GDP_company_amout }
+	round_variable = ADW_GDP_per_1
+	multiply_variable = { ADW_GDP_per_2 = ADW_GDP_company_amout }
+	round_variable = ADW_GDP_per_2
+	multiply_variable = { ADW_GDP_per_3 = ADW_GDP_company_amout }
+	round_variable = ADW_GDP_per_3
+	multiply_variable = { ADW_GDP_per_4 = ADW_GDP_company_amout }
+	round_variable = ADW_GDP_per_3
+	multiply_variable = { ADW_GDP_per_5 = ADW_GDP_company_amout }
+	round_variable = ADW_GDP_per_5
+	
+	resize_array = {
+		array = ADW_GDP_company_kind
+		value = 1
+		size = ADW_GDP_per_1
+	}
+	resize_array = {
+		array = ADW_GDP_company_kind
+		value = 2
+		size = ADW_GDP_per_2
+	}
+	resize_array = {
+		array = ADW_GDP_company_kind
+		value = 3
+		size = ADW_GDP_per_3
+	}
+	resize_array = {
+		array = ADW_GDP_company_kind
+		value = 4
+		size = ADW_GDP_per_4
+	}
+	resize_array = {
+		array = ADW_GDP_company_kind
+		value = 5
+		size = ADW_GDP_per_5
+	}
+	resize_array = {
+		array = ADW_GDP_company_kind
+		value = 6
+		size = ADW_GDP_company_amout
+	}
+	ADW_company_add_effect = yes
+	
+	###人口###
+	resize_array = {
+		array = ROOT.ADW_GDP_company_people_array
+		value = 0
+		size = ADW_GDP_company_amout
+	}
+	
+	for_each_loop = {
+		array = ROOT.ADW_GDP_company_people_array
+		value = v
+		index = i
+		break = break
+		
+		set_variable_to_random = {
+			var = ADW_temp_variu
+			max = 1.1
+			min = 1
+		}
+		if = {
+			limit = {check_variable = { ADW_GDP_company_level_array^i = 4 }}
+			add_to_variable = { ROOT.ADW_GDP_company_people_array^i = 70 }
+			multiply_variable = {ROOT.ADW_GDP_company_people_array^i = ADW_temp_variu }
+		}
+		if = {
+			limit = {check_variable = { ADW_GDP_company_level_array^i = 3 }}
+			add_to_variable = { ROOT.ADW_GDP_company_people_array^i = 55 }
+			multiply_variable = {ROOT.ADW_GDP_company_people_array^i = ADW_temp_variu }
+		}
+		if = {
+			limit = {check_variable = { ADW_GDP_company_level_array^i = 2 }}
+			add_to_variable = { ROOT.ADW_GDP_company_people_array^i = 30 }
+			multiply_variable = {ROOT.ADW_GDP_company_people_array^i = ADW_temp_variu }
+		}
+		if = {
+			limit = {check_variable = { ADW_GDP_company_level_array^i = 1 }}
+			add_to_variable = { ROOT.ADW_GDP_company_people_array^i = 5 }
+			multiply_variable = {ROOT.ADW_GDP_company_people_array^i = ADW_temp_variu }
+		}
+	}
+}
+ADW_company_size_setup_1 = {
+	if = {
+		limit = { check_variable = { ADW_zaibatsu_num_set = ADW_zaibatsu_num }}
+		ADW_company_size_setup_2 = yes
+		else = {
+			set_variable_to_random = {
+				var = ADW_GDP_number
+				min = 0
+				max = ROOT.ADW_GDP_company_amout
+				integer = yes
+			}
+			round_variable = ADW_GDP_number
+			if = {
+				limit = {
+					check_variable = {
+						var = ROOT.ADW_GDP_company_level_array^ADW_GDP_number
+						value = 0
+						compare = not_equals
+					}
+				}
+				set_variable = { ROOT.ADW_GDP_company_level_array^ADW_GDP_number = 4 }
+				add_to_variable = { ADW_zaibatsu_num = 1 }
+			}
+			ADW_company_size_setup = yes
+		}
+	}
+}
+ADW_company_size_setup_2 = {
+	if = {
+		limit = { check_variable = { ADW_big_num_set = ADW_big_num }}
+		ADW_company_size_setup_3 = yes
+		else = {
+			set_variable_to_random = {
+				var = ADW_GDP_number
+				min = 0
+				max = ROOT.ADW_GDP_company_amout
+				integer = yes
+			}
+			round_variable = ADW_GDP_number
+			if = {
+				limit = {
+					check_variable = {
+						var = ROOT.ADW_GDP_company_level_array^ADW_GDP_number
+						value = 0
+						compare = not_equals
+					}
+				}
+				set_variable = { ROOT.ADW_GDP_company_level_array^ADW_GDP_number = 3 }
+				add_to_variable = { ADW_big_num = 1 }
+			}
+			ADW_company_size_setup_2 = yes
+		}
+	}
+}
+ADW_company_size_setup_3 = {
+	if = {
+		limit = { check_variable = { ADW_mid_num_set = ADW_mid_num }}
+		else = {
+			set_variable_to_random = {
+				var = ADW_GDP_number
+				min = 0
+				max = ROOT.ADW_GDP_company_amout
+				integer = yes
+			}
+			round_variable = ADW_GDP_number
+			if = {
+				limit = {
+					check_variable = {
+						var = ROOT.ADW_GDP_company_level_array^ADW_GDP_number
+						value = 0
+						compare = not_equals
+					}
+				}
+				set_variable = { ROOT.ADW_GDP_company_level_array^ADW_GDP_number = 2 }
+				add_to_variable = { ADW_mid_num = 1 }
+			}
+			ADW_company_size_setup_2 = yes
+		}
+	}
+}
+ADW_company_add_effect = {
+	if = {
+		limit = {
+			check_variable = {
+				var = ROOT.ADW_company_array_for_value
+				value= ROOT.ADW_GDP_company_amout
+				compare = greater_than_or_equals
+			}
+		}
+		else = {
+			add_to_array = { ROOT.ADW_company_array = ROOT.ADW_company_array_for_value}
+			add_to_variable = { ROOT.ADW_company_array_for_value = 1 }
+			ADW_company_add_effect = yes
+		}
+	}
+}
 ADW_GDP_fac_company_infra = {
 	set_variable = { ROOT.ADW_indra_small = ROOT.small_company }
 	set_variable = { ROOT.ADW_indra_middle = ROOT.middle_company }
@@ -24,171 +247,6 @@ ADW_GDP_keisan_of_infra = {
 		set_variable = { ADW_nokori_of_small = ADW_indra_small }
 		subtract_from_variable = { ADW_nokori_of_small = ADW_indra_small_use }
 	}
-}
-ADW_shutsuryoku_effect = {
-	ROOT = {
-		set_variable = { ADW_shutsuryoku_fac = ADW_GDP_factory_use }
-		set_variable = { ADW_shikin_fac = ADW_GDP_factory_use }
-		multiply_variable = { ADW_shutsuryoku_fac = 5.5 }
-		set_variable = { ADW_shutsuryoku_big = ADW_indra_big_use }
-		set_variable = { ADW_shikin_big = ADW_indra_big_use }
-		multiply_variable = { ADW_shutsuryoku_big = 5 }
-		set_variable = { ADW_shutsuryoku_mid = ADW_indra_middle_use }
-		set_variable = { ADW_shikin_mid = ADW_indra_middle_use }
-		multiply_variable = { ADW_shutsuryoku_mid = 2 }
-		set_variable = { ADW_shutsuryoku_sma = ADW_indra_small_use }
-		set_variable = { ADW_shikin_sma = ADW_indra_small_use }
-		multiply_variable = { ADW_shutsuryoku_sma = 1 }
-		
-		multiply_variable = { ADW_shikin_fac = 13 }
-		multiply_variable = { ADW_shikin_big = 10 }
-		multiply_variable = { ADW_shikin_mid = 3.0 }
-		multiply_variable = { ADW_shikin_sma = 1.8 }
-		
-		set_variable = { ADW_shutsuryoku_amount = ADW_shutsuryoku_fac }
-		add_to_variable = { ADW_shutsuryoku_amount = ADW_shutsuryoku_big }
-		add_to_variable = { ADW_shutsuryoku_amount = ADW_shutsuryoku_mid }
-		add_to_variable = { ADW_shutsuryoku_amount = ADW_shutsuryoku_sma }
-		
-		set_variable = { ADW_shutsuryoku_per_fac = ADW_shutsuryoku_fac }
-		divide_variable = { ADW_shutsuryoku_per_fac = ADW_shutsuryoku_amount }
-		set_variable = { ADW_shutsuryoku_per_big = ADW_shutsuryoku_big }
-		divide_variable = { ADW_shutsuryoku_per_big = ADW_shutsuryoku_amount }
-		set_variable = { ADW_shutsuryoku_per_mid = ADW_shutsuryoku_mid }
-		divide_variable = { ADW_shutsuryoku_per_mid = ADW_shutsuryoku_amount }
-		set_variable = { ADW_shutsuryoku_per_sma = ADW_shutsuryoku_sma }
-		divide_variable = { ADW_shutsuryoku_per_sma = ADW_shutsuryoku_amount }
-		
-		set_variable = { the_minkan_per_ADW_GDP = ADW_shutsuryoku_per_big }
-		add_to_variable = { the_minkan_per_ADW_GDP = ADW_shutsuryoku_per_mid }
-		add_to_variable = { the_minkan_per_ADW_GDP = ADW_shutsuryoku_per_sma }
-		
-		add_to_variable = { the_minkan_per_ADW_GDP = 0.5 } #値上がり
-		clamp_variable = {
-			var = the_minkan_per_ADW_GDP
-			min = 0.8
-			max = 1.3
-		}
-		set_variable = { ADW_ijihi_big = 11 }
-		multiply_variable = { ADW_ijihi_big = the_minkan_per_ADW_GDP }
-		set_variable = { ADW_ijihi_mid = 3 }
-		multiply_variable = { ADW_ijihi_mid = the_minkan_per_ADW_GDP }
-		set_variable = { ADW_ijihi_sma = 1.8 }
-		multiply_variable = { ADW_ijihi_sma = the_minkan_per_ADW_GDP }
-		
-		set_variable = { ADW_ijihi_big_amount = ADW_ijihi_big }
-		multiply_variable = { ADW_ijihi_big_amount = ADW_indra_big_use }
-		
-		set_variable = { ADW_ijihi_mid_amount = ADW_ijihi_mid }
-		multiply_variable = { ADW_ijihi_mid_amount = ADW_indra_middle_use }
-		
-		set_variable = { ADW_ijihi_sma_amount = ADW_ijihi_sma }
-		multiply_variable = { ADW_ijihi_sma_amount = ADW_indra_small_use }
-		
-		set_variable = { ADW_ijihi_fac_amount = ADW_GDP_factory_use }
-		multiply_variable = { ADW_ijihi_fac_amount = 13 }
-		
-		set_variable = { ADW_ijihi_amount = ADW_ijihi_big_amount }
-		add_to_variable = { ADW_ijihi_amount = ADW_ijihi_mid_amount }
-		add_to_variable = { ADW_ijihi_amount = ADW_ijihi_sma_amount }
-		add_to_variable = { ADW_ijihi_amount = ADW_ijihi_fac_amount }
-		
-		set_variable = { per_ADW_of_youkyuuryou = ADW_shutsuryoku_amount }
-		divide_variable = { per_ADW_of_youkyuuryou = ADW_GDP_infra_hikin_real }
-		subtract_from_variable = { per_ADW_of_youkyuuryou = 0.1 }
-		clamp_variable = {
-			var = per_ADW_of_youkyuuryou
-			min = 0
-			max = 1
-		}
-		set_variable = { ADW_GDP_infra_effect = per_ADW_of_youkyuuryou }
-		multiply_variable = { ADW_GDP_infra_effect = -1 }
-	}
-}
-
-Calculation_of_gikai = {
-	set_variable = { MIN_gikai_pct = MIN_gikai }
-	set_variable = { KIZ_gikai_pct = KIZ_gikai }
-	set_variable = { RIK_gikai_pct = RIK_gikai }
-	set_variable = { NVY_KYO_giin_pct = NVY_KYO_giin }
-	set_variable = { NVY_AIR_giin_pct = NVY_AIR_giin }
-	set_variable = { FAS_giin_pct = FAS_giin }
-	set_variable = { FAS_COM_giin_pct = FAS_COM_giin }
-	set_variable = { DEM_giin_pct = DEM_giin }
-	set_variable = { CHU_giin_pct = CHU_giin }
-	set_variable = { num_blank_giseki_pct = num_blank_giseki }
-	
-	divide_variable = { MIN_gikai_pct = gikai_person_of_numbar }
-	divide_variable = { KIZ_gikai_pct = gikai_person_of_numbar }
-	divide_variable = { RIK_gikai_pct = gikai_person_of_numbar }
-	divide_variable = { NVY_KYO_giin_pct = gikai_person_of_numbar }
-	divide_variable = { NVY_AIR_giin_pct = gikai_person_of_numbar }
-	divide_variable = { FAS_giin_pct = gikai_person_of_numbar }
-	divide_variable = { FAS_COM_giin_pct = gikai_person_of_numbar }
-	divide_variable = { DEM_giin_pct = gikai_person_of_numbar }
-	divide_variable = { CHU_giin_pct = gikai_person_of_numbar }
-	divide_variable = { num_blank_giseki_pct = gikai_person_of_numbar }
-	
-	set_variable = { the_count_variable = MIN_gikai }
-	add_to_variable = { the_count_variable = KIZ_gikai }
-	add_to_variable = { the_count_variable = RIK_gikai }
-	add_to_variable = { the_count_variable = NVY_KYO_giin }
-	add_to_variable = { the_count_variable = NVY_AIR_giin }
-	add_to_variable = { the_count_variable = FAS_giin }
-	add_to_variable = { the_count_variable = FAS_COM_giin }
-	add_to_variable = { the_count_variable = DEM_giin }
-	add_to_variable = { the_count_variable = CHU_giin }
-	set_variable = { ADW_GDP_giin_cost = the_count_variable }
-	add_to_variable = { the_count_variable = num_blank_giseki }
-	
-	###MIN###
-	set_variable = { MIN_mod = MIN_gikai }
-	divide_variable = { MIN_mod = 3 }
-	multiply_variable = { MIN_mod = 0.01 }
-	
-	###KIZ###
-	set_variable = { KIZ_mod = KIZ_gikai }
-	divide_variable = { KIZ_mod = 3 }
-	multiply_variable = { KIZ_mod = 0.02 }
-	
-	###RIK###
-	set_variable = { RIK_mod = RIK_gikai }
-	divide_variable = { RIK_mod = 4 }
-	multiply_variable = { RIK_mod = 0.01 }
-	###NVY###
-	set_variable = { NVY_mod = NVY_KYO_giin }
-	divide_variable = { NVY_mod = 3 }
-	multiply_variable = { NVY_mod = 0.015 }
-	###ANV###
-	set_variable = { ANV_mod = NVY_AIR_giin }
-	divide_variable = { ANV_mod = 6 }
-	multiply_variable = { ANV_mod = 0.015 }
-	
-	###FAS###
-	set_variable = { FAS_com = FAS_giin }
-	multiply_variable = { FAS_com = 0.002 }
-	divide_variable = { FAS_com = 4 }
-
-	###COM###
-	set_variable = { COM_com = FAS_COM_giin }
-	multiply_variable = { COM_com = 0.002 }
-	divide_variable = { COM_com = 4 }
-	
-	###DEM###
-	set_variable = { DEM_mod = FAS_DEM_giin }
-	multiply_variable = { DEM_mod = 0.005 }
-	divide_variable = { DEM_mod = 4 }
-	
-	###CHU###
-	set_variable = { CHU_mod = CHU_giin }
-	multiply_variable = { CHU_mod = 0.003 }
-	divide_variable = { CHU_mod = 4 }
-	
-	###cost###
-	multiply_variable = { ADW_GDP_giin_cost = 0.013 }
-	set_variable = { ADW_GDP_add_new_kizoku_cost = the_count_variable }
-	multiply_variable = { ADW_GDP_add_new_kizoku_cost = 0.7 }
-	add_to_variable = { ADW_GDP_giin_cost = ADW_GDP_add_new_kizoku_cost }
 }
 ADW_the_array_add = {
 	clear_array = ROOT.ADW_state_list
@@ -268,6 +326,7 @@ ADW_GDP_iryo_keisan = {
 	add_to_variable = { ADW_GDP_capa_keihi = ADW_GDP_dai_2_keihi }
 	add_to_variable = { ADW_GDP_capa_keihi = ADW_GDP_chu_3_keihi }
 	add_to_variable = { ADW_GDP_capa_keihi = ADW_GDP_yuu_4_keihi }
+	add_to_variable = { ROOT.ADW_GDP_capa_keihi_all = ADW_GDP_capa_keihi }
 }
 
 ADW_RAJ_state_var_col = {
@@ -643,8 +702,28 @@ ADW_the_GDP_juni_effect = {
 	}
 }
 ADW_GDP_trade_gun_country = {
+	clear_array = ROOT.ADW_GDP_trade_gun_country_list
 	every_country = {
-		add_to_array = { global.ADW_GDP_trade_gun_country_list = THIS }
+		limit = {
+			NOT = { tag = ROOT }
+			check_variable = { THIS.ADW_sell_gun_amou > 0 }
+			NOT = { is_in_array = { ROOT.ADW_trade_black = THIS } }
+			NOT ={ has_war_with = ROOT }
+		}
+		add_to_array = { ROOT.ADW_GDP_trade_gun_country_list = THIS }
+	}
+	ADW_GDP_trade_can_country = yes
+}
+ADW_GDP_trade_can_country = {
+	clear_array = ROOT.ADW_GDP_trade_can_country_list
+	every_country = {
+		limit = {
+			NOT = { tag = ROOT }
+			check_variable = { THIS.ADW_sell_can_amou > 0 }
+			NOT = { is_in_array = { ROOT.ADW_trade_black = THIS } }
+			NOT ={ has_war_with = ROOT }
+		}
+		add_to_array = { ROOT.ADW_GDP_trade_can_country_list = THIS }
 	}
 }
 ADW_GDP_police_hiyo_keisan = {
@@ -746,33 +825,56 @@ ADWIND_civil_war_kaihen = {
 		}
 	}
 }
-ADW_GDP_graph_effect = {
+ADW_GDP_graph_effect_real = {
 	add_to_variable = { ADW_count = 1 }
-
-	set_variable = { ADW_last_y_position = ADW_y_position }
-	set_variable = { ADW_y_position = ADW_GDP }
-	divide_variable = { ADW_y_position = 190 }
-	add_to_variable = { ADW_y_position = 0 }
-	round_variable = ADW_y_position
-
+	clamp_variable = {
+		var = ADW_count
+		min = 0
+		max = 104
+	}
+	clear_array = ADW_graph_offsets
+	clear_array = ADW_graph_slopes
+	clear_array = ADW_number
+	add_to_array = { ROOT.ADW_GDP_real_array = ROOT.ADW_GDP }
+	if = {
+		limit = {check_variable ={ ROOT.ADW_GDP > ROOT.temp_largest_value }}
+		set_variable = { ROOT.temp_largest_value = ROOT.ADW_GDP }
+	}
+	set_variable = { ADW_change_val = 550 }
+	divide_variable = { ADW_change_val = ROOT.temp_largest_value }
 	if = {
 		limit = {
-			check_variable = { ADW_count > 208 }
+			check_variable = { ADW_count > 103 }
 		}
-		remove_from_array = { array = ADW_graph_offsets index = 0 }
-		remove_from_array = { array = ADW_graph_slopes index = 0 }
-		remove_from_array = { array = ADW_number index = 0 }
+		remove_from_array = { array = ROOT.ADW_GDP_real_array index = 0 }
 	}
-	set_temp_variable = { offset = ADW_last_y_position }
-	multiply_temp_variable = { offset = -1 }
-	add_to_array = { ADW_graph_offsets = offset }
-	set_temp_variable = { diff = ADW_y_position }
-	subtract_from_temp_variable = { diff = ADW_last_y_position }
-	divide_temp_variable = { diff = 2 }
-	add_to_temp_variable = { diff = 50 }
-	add_to_array = { ADW_graph_slopes = diff }
+	clear_variable = ADW_country_vlue
+	ADW_GDP_graph_effect = yes
+}
+ADW_GDP_graph_effect = {
+	if = {
+		limit = { check_variable = {ADW_country_vlue = ADW_count }}
+		else = {
+			set_variable = { ADW_last_y_position = ADW_y_position }
+			set_variable = { ADW_y_position = ROOT.ADW_GDP_real_array^ROOT.ADW_country_vlue }
+			multiply_variable = { ADW_y_position = ADW_change_val }
+			round_variable = ADW_y_position
+
+			set_temp_variable = { offset = ADW_last_y_position }
+			multiply_temp_variable = { offset = -1 }
+			add_to_array = { ADW_graph_offsets = offset }
+			set_temp_variable = { diff = ADW_y_position }
+			subtract_from_temp_variable = { diff = ADW_last_y_position }
+			divide_temp_variable = { diff = 2 }
+			add_to_temp_variable = { diff = 50 }
+			add_to_array = { ADW_graph_slopes = diff }
 	
-	add_to_array = { ADW_number = ADW_count }
+			add_to_array = { ADW_number = ADW_country_vlue }
+			add_to_variable = { ADW_country_vlue = 1 }
+			
+			ADW_GDP_graph_effect = yes
+		}
+	}
 }
 
 
@@ -880,8 +982,8 @@ ADW_GDP_array_effect = {
 	clear_array = ADW_seisaku_list
 	add_to_array = { ADW_seisaku_list = 1 }
 	add_to_array = { ADW_seisaku_list = 2 }
-	add_to_array = { ADW_seisaku_list = 3 }
 }
+
 ADW_GDP_additional_seisaku_effect = {
 	ROOT = {
 		if = {
@@ -904,6 +1006,10 @@ ADW_GDP_additional_seisaku_effect = {
 					country_event = { id = ADW_SPE.2 }
 				}
 			}
+		}
+		if = {
+			limit = { check_variable = { ROOT.ADW_GDP_seisaku_mRNA = 2 } }
+			country_event = { id = ADW_SPE.3 }
 		}
 	}
 }
@@ -964,5 +1070,622 @@ ADW_HOK_shinsengumi_list = {
 			limit = { NOT = { has_character_flag = ADW_character_shinsen_selected } }
 			add_to_array = { ROOT.ADW_HOK_shinsengumi_leaders = THIS }
 		}
+	}
+}
+ADW_COL_mittle_state_effect = {
+	clear_array = global.ADW_COL_mittle_state
+	add_to_array = { global.ADW_COL_mittle_state = 546 }
+	add_to_array = { global.ADW_COL_mittle_state = 905 }
+	add_to_array = { global.ADW_COL_mittle_state = 903}
+	add_to_array = { global.ADW_COL_mittle_state = 547}
+	add_to_array = { global.ADW_COL_mittle_state = 904}
+	add_to_array = { global.ADW_COL_mittle_state = 548}
+	add_to_array = { global.ADW_COL_mittle_state = 769}
+	add_to_array = { global.ADW_COL_mittle_state = 768}
+	add_to_array = { global.ADW_COL_mittle_state = 718}
+	add_to_array = { global.ADW_COL_mittle_state = 890}
+	add_to_array = { global.ADW_COL_mittle_state = 538}
+	add_to_array = { global.ADW_COL_mittle_state = 888}
+	add_to_array = { global.ADW_COL_mittle_state = 295}
+	add_to_array = { global.ADW_COL_mittle_state = 539}
+	add_to_array = { global.ADW_COL_mittle_state = 772}
+	add_to_array = { global.ADW_COL_mittle_state = 297}
+	add_to_array = { global.ADW_COL_mittle_state = 773}
+	add_to_array = { global.ADW_COL_mittle_state = 660}
+	add_to_array = { global.ADW_COL_mittle_state = 774}
+	add_to_array = { global.ADW_COL_mittle_state = 884}
+	add_to_array = { global.ADW_COL_mittle_state = 885}
+	add_to_array = { global.ADW_COL_mittle_state = 549}
+	add_to_array = { global.ADW_COL_mittle_state = 886}
+	add_to_array = { global.ADW_COL_mittle_state = 887}
+	add_to_array = { global.ADW_COL_mittle_state = 900}
+	add_to_array = { global.ADW_COL_mittle_state = 558}
+	add_to_array = { global.ADW_COL_mittle_state = 902}
+	add_to_array = { global.ADW_COL_mittle_state = 901}
+	add_to_array = { global.ADW_COL_mittle_state = 776}
+	add_to_array = { global.ADW_COL_mittle_state = 777}
+	add_to_array = { global.ADW_COL_mittle_state = 274}
+	add_to_array = { global.ADW_COL_mittle_state = 779}
+	add_to_array = { global.ADW_COL_mittle_state = 778}
+	add_to_array = { global.ADW_COL_mittle_state = 781}
+	add_to_array = { global.ADW_COL_mittle_state = 889}
+	add_to_array = { global.ADW_COL_mittle_state = 771}
+	add_to_array = { global.ADW_COL_mittle_state = 796}
+	add_to_array = { global.ADW_COL_mittle_state = 540}
+	add_to_array = { global.ADW_COL_mittle_state = 892}
+	add_to_array = { global.ADW_COL_mittle_state = 891}
+	add_to_array = { global.ADW_COL_mittle_state = 770}
+	add_to_array = { global.ADW_COL_mittle_state = 844}
+	add_to_array = { global.ADW_COL_mittle_state = 896}
+	add_to_array = { global.ADW_COL_mittle_state = 897}
+}
+
+ADW_colony_setting_effect = {
+	set_political_power = 50
+	set_stability = 0.6
+	set_war_support = 0.6
+}
+ADW_QIE_chow_kouw_effect = {
+	every_country = {
+		limit = {
+			is_subject_of = QIE
+			NOT = { is_in_array = { QIE.ADW_CHI_chow_kou_list_array = THIS } }
+		}
+		add_to_array = { QIE.ADW_CHI_chow_kou_list_array = THIS }
+	}
+	for_each_scope_loop = {
+		array = QIE.ADW_CHI_chow_kou_list_array
+		
+		remove_ideas = ADW_chow_kow_contry_of_QIE
+		add_ideas = ADW_chow_kow_contry_of_QIE
+		if = {
+			limit = {
+				NOT = { QIE = { has_military_access_to = PREV } }
+			}
+			give_military_access = QIE
+		}
+		if = {
+			limit = {
+				THIS = { exists = no }
+			}
+			remove_from_array = { QIE.ADW_CHI_chow_kou_list_array = THIS }
+		}
+	}
+}
+ADW_TUR_KRD_resistance_war_effect = {
+	if = {
+		limit = { KUR = { exists = no } }
+		if = {
+			limit = {
+				any_owned_state = {
+					AND = {
+						OR = {
+							state = 353
+							state = 800
+							state = 352
+							state = 350
+							state = 680
+							state = 676
+							state = 419
+							state = 421
+							state = 419
+							state = 421
+						}
+						resistance > 80
+					}
+				}
+			}
+			every_owned_state = {
+				limit = {
+					OR = {
+						state = 353
+						state = 800
+						state = 352
+						state = 350
+						state = 680
+						state = 676
+						state = 419
+						state = 421
+						state = 419
+						state = 421
+					}
+				}
+				transfer_state_to = KUR
+			}
+			KUR = {
+				declare_war_on = {
+					target = TUR
+					type = annex_everything
+				}
+			}
+		}
+	}
+}
+ADW_TUR_KAKUMEI = {
+	FOT = {
+		transfer_state = 339
+		transfer_state = 187
+		add_state_core = 187
+		transfer_state = 164
+		add_state_core = 164
+		transfer_state = 342
+		add_state_core = 342
+		transfer_state = 345
+		add_state_core = 345
+		transfer_state = 346
+		add_state_core = 346
+		transfer_state = 343
+		add_state_core = 343
+		
+		add_state_core = 339
+		add_state_core = 341
+		add_state_core = 797
+		add_state_core = 340
+		add_state_core = 347
+		add_state_core = 49
+		add_state_core = 356
+		add_state_core = 798
+		add_state_core = 348
+		add_state_core = 344
+		add_state_core = 355
+		add_state_core = 349
+		add_state_core = 344
+		add_state_core = 799
+		add_state_core = 354
+		
+		add_state_claim = 353
+		add_state_claim = 800
+		add_state_claim = 350
+		add_state_claim = 352
+		division_template = {
+			name = "Cvilwar hanran military ottoman"
+			division_names_group = GINa_civil_war_WITH_EIN
+			regiments = {
+				infantry = { x = 0 y = 0 }
+				infantry = { x = 0 y = 1 }
+				infantry = { x = 1 y = 1 }
+			}
+		}
+		339 = {
+			create_unit = {
+				division = "division_template = \"Cvilwar hanran military ottoman\"start_experience_factor = 0.1 start_equipment_factor = 0.5"
+				owner = FOT
+				count = 15
+				prioritize_location = 4112
+			}
+		}
+		343 = {
+			create_unit = {
+				division = "division_template = \"Cvilwar hanran military ottoman\"start_experience_factor = 0.1 start_equipment_factor = 0.5"
+				owner = FOT
+				count = 10
+				prioritize_location = 9878
+			}
+		}
+		346 = {
+			create_unit = {
+				division = "division_template = \"Cvilwar hanran military ottoman\"start_experience_factor = 0.1 start_equipment_factor = 0.5"
+				owner = FOT
+				count = 10
+				prioritize_location = 6807
+			}
+		}
+		declare_war_on = {
+			target = TUR
+			type = annex_everything
+		}
+	}
+}
+ADW_non_party_per_basic = {
+	set_variable_to_random = {
+		var = ADW_GDP_kokumin_fushinkan
+		max = 0.04
+		min = 0
+	}
+}
+ADW_non_party_changer = {
+	set_variable_to_random = {
+		var = ADW_GDP_non_party_add
+		max = 0.03
+		min = -0.03
+	}
+	add_to_variable = { ADW_GDP_kokumin_fushinkan = ADW_GDP_non_party_add }
+	
+	clamp_variable = {
+		var = ADW_GDP_kokumin_fushinkan
+		min = 0
+		max = 1
+	}
+}
+ADW_GDP_giseki_senkyo = {
+	set_variable = { ADW_GDP_gikai_amount_temper = ADW_GDP_gikai_amount }
+	set_variable = { ADW_GDP_gikai_amount_non_party = ADW_GDP_gikai_amount }
+	multiply_variable = { ADW_GDP_gikai_amount_non_party = ADW_GDP_kokumin_fushinkan }
+	round_variable = ADW_GDP_gikai_amount_non_party
+	
+	set_variable = { ADW_GDP_gikai_amount_non_party_wihout = ADW_GDP_gikai_amount }
+	subtract_from_variable = { ADW_GDP_gikai_amount_non_party_wihout = ADW_GDP_gikai_amount_non_party }
+	
+	set_variable = { ADW_GDP_gikai_fas = ADW_GDP_gikai_amount_non_party_wihout }
+	set_variable = { ADW_GDP_gikai_com = ADW_GDP_gikai_amount_non_party_wihout }
+	set_variable = { ADW_GDP_gikai_dem = ADW_GDP_gikai_amount_non_party_wihout }
+	
+	multiply_variable = { ADW_GDP_gikai_fas = party_popularity@fascism }
+	round_variable = ADW_GDP_gikai_fas
+	subtract_from_variable = {ADW_GDP_gikai_amount_non_party_wihout=ADW_GDP_gikai_fas}
+	
+	multiply_variable = { ADW_GDP_gikai_com = party_popularity@communism }
+	round_variable = ADW_GDP_gikai_com
+	subtract_from_variable = {ADW_GDP_gikai_amount_non_party_wihout=ADW_GDP_gikai_com}
+	
+	multiply_variable = { ADW_GDP_gikai_dem = party_popularity@democratic }
+	round_variable = ADW_GDP_gikai_dem
+	subtract_from_variable = {ADW_GDP_gikai_amount_non_party_wihout=ADW_GDP_gikai_dem}
+	
+	set_variable = { ADW_GDP_gikai_neu = ADW_GDP_gikai_amount_non_party_wihout }
+	
+	set_variable = { ADW_FAS_COM = ADW_GDP_gikai_fas }
+	add_to_variable = { ADW_FAS_COM = ADW_GDP_gikai_com }
+	
+	set_variable = { ADW_FAS_COM_DEM = ADW_FAS_COM }
+	add_to_variable = { ADW_FAS_COM_DEM = ADW_GDP_gikai_dem }
+	
+	set_variable = { ADW_FAS_COM_DEM_COM = ADW_FAS_COM_DEM }
+	add_to_variable = { ADW_FAS_COM_DEM_COM = ADW_GDP_gikai_neu }
+	
+	set_variable = { ADW_all_giseki = ADW_FAS_COM_DEM_COM }
+	add_to_variable = { ADW_all_giseki = ADW_GDP_gikai_amount_non_party }
+}
+ADW_GDP_gikai_point_effect = {
+	clear_array = ADW_GDP_gikai_array
+	resize_array = {
+		array = ADW_GDP_gikai_array
+		value = 1
+		size = ADW_GDP_gikai_fas
+	}
+	resize_array = {
+		array = ADW_GDP_gikai_array
+		value = 2
+		size = ADW_FAS_COM
+	}
+	resize_array = {
+		array = ADW_GDP_gikai_array
+		value = 3
+		size = ADW_FAS_COM_DEM
+	}
+	resize_array = {
+		array = ADW_GDP_gikai_array
+		value = 4
+		size = ADW_FAS_COM_DEM_COM
+	}
+	resize_array = {
+		array = ADW_GDP_gikai_array
+		value = 5
+		size = ADW_all_giseki
+	}
+}
+ADW_GDP_gikai_point_chert_effect = {
+	set_variable = { ADW_GDP_poli_per_fas = ADW_GDP_gikai_fas }
+	set_variable = { ADW_GDP_poli_per_com = ADW_GDP_gikai_com }
+	set_variable = { ADW_GDP_poli_per_dem = ADW_GDP_gikai_dem }
+	set_variable = { ADW_GDP_poli_per_neu = ADW_GDP_gikai_neu }
+	set_variable = { ADW_GDP_poli_per_non = ADW_GDP_gikai_amount_non_party }
+	
+	divide_variable = { ADW_GDP_poli_per_fas = ADW_GDP_gikai_amount_temper }
+	divide_variable = { ADW_GDP_poli_per_com = ADW_GDP_gikai_amount_temper }
+	divide_variable = { ADW_GDP_poli_per_dem = ADW_GDP_gikai_amount_temper }
+	divide_variable = { ADW_GDP_poli_per_neu = ADW_GDP_gikai_amount_temper }
+	divide_variable = { ADW_GDP_poli_per_non = ADW_GDP_gikai_amount_temper }
+	
+	multiply_variable = { ADW_GDP_poli_per_fas = 100 }
+	round_variable = ADW_GDP_poli_per_fas
+	multiply_variable = { ADW_GDP_poli_per_com = 100 }
+	round_variable = ADW_GDP_poli_per_com
+	multiply_variable = { ADW_GDP_poli_per_dem = 100 }
+	round_variable = ADW_GDP_poli_per_dem
+	multiply_variable = { ADW_GDP_poli_per_neu = 100 }
+	round_variable = ADW_GDP_poli_per_neu
+	multiply_variable = { ADW_GDP_poli_per_non = 100 }
+	round_variable = ADW_GDP_poli_per_non
+	
+	set_variable = { ADW_GDP_poli_per_fas_com = ADW_GDP_poli_per_fas }
+	add_to_variable = {ADW_GDP_poli_per_fas_com = ADW_GDP_poli_per_com }
+	set_variable = { ADW_GDP_poli_per_fas_com_dem = ADW_GDP_poli_per_fas_com }
+	add_to_variable = {ADW_GDP_poli_per_fas_com_dem = ADW_GDP_poli_per_dem }
+	set_variable = { ADW_GDP_poli_per_fas_com_dem_neu = ADW_GDP_poli_per_fas_com_dem }
+	add_to_variable = {ADW_GDP_poli_per_fas_com_dem_neu = ADW_GDP_poli_per_neu }
+	set_variable = { ADW_all_per = ADW_GDP_poli_per_fas_com_dem_neu }
+	add_to_variable = {ADW_all_per = ADW_GDP_poli_per_non }
+	
+	clear_array = ADW_GDP_gikai_chert_array
+	resize_array = {
+		array = ADW_GDP_gikai_chert_array
+		value = 1
+		size = ADW_GDP_poli_per_fas
+	}
+	resize_array = {
+		array = ADW_GDP_gikai_chert_array
+		value = 2
+		size = ADW_GDP_poli_per_fas_com
+	}
+	resize_array = {
+		array = ADW_GDP_gikai_chert_array
+		value = 3
+		size = ADW_GDP_poli_per_fas_com_dem
+	}
+	resize_array = {
+		array = ADW_GDP_gikai_chert_array
+		value = 4
+		size = ADW_GDP_poli_per_fas_com_dem_neu
+	}
+	resize_array = {
+		array = ADW_GDP_gikai_chert_array
+		value = 5
+		size = ADW_all_per
+	}
+}
+ADW_political_chair_effect = {
+	ADW_non_party_per_basic = yes
+	set_variable = { ADW_GDP_gikai_amount = 200 }
+	set_variable = { ADW_poli_election = 12 }
+	ADW_GDP_giseki_senkyo = yes
+	ADW_GDP_gikai_point_effect = yes
+	ADW_GDP_gikai_point_chert_effect = yes
+}
+
+ADW_nuke_effect = {#生産ボタン
+	if = {
+		limit = { check_variable = { ADW_nuke_production_mRNA = 1 } }
+		add_to_variable = { ADW_nuke_ro_use = 5 }
+		add_to_variable = { ADW_nuke_fac_use = 10 }
+		add_to_variable = { GDP_amou = -37 }
+		add_to_array = { ADW_list_nuke_bom_list = 1 }
+		add_to_array = { ROOT.ADW_complete_days = 5 }
+	}
+	if = {
+		limit = { check_variable = { ADW_nuke_production_mRNA = 2 } }
+		add_to_variable = { ADW_nuke_ro_use = 5 }
+		add_to_variable = { ADW_nuke_fac_use = 10 }
+		add_to_variable = { GDP_amou = -37 }
+		add_to_array = { ADW_list_nuke_bom_list = 2 }
+		add_to_array = { ROOT.ADW_complete_days = 4 }
+	}
+	ADW_nuke_effect_avail = yes
+}
+####
+###工場返却###
+ADW_nuke_refund = {
+	if = {
+		limit = { check_variable = { ROOT.ADW_list_nuke_bom_list^i = 1 }}
+		add_to_variable = { ADW_nuke_ro_use = -5 }
+		add_to_variable = { ADW_nuke_fac_use = -10 }
+	}
+	if = {
+		limit = { check_variable = { ROOT.ADW_list_nuke_bom_list^i = 2 }}
+		add_to_variable = { ADW_nuke_ro_use = -5 }
+		add_to_variable = { ADW_nuke_fac_use = -10 }
+	}
+}
+####
+ADW_nuke_effect_avail = {
+	set_variable = { ADW_GDP_nuke_fac_avail = ADW_GDP_nuke_fac }
+	subtract_from_variable = { ADW_GDP_nuke_fac_avail = ADW_nuke_ro_use }
+}
+ADW_nuke_endress_system = {
+	clear_array = ROOT.ADW_nuke_list_remove_array
+	clear_array = ROOT.ADW_nuke_days_array_copy
+	for_each_loop = {
+		array = ROOT.ADW_list_nuke_bom_list
+		value = v
+		index = i
+		break = break
+		
+		add_to_variable = { ADW_nuke_days_array^i = 1 }
+		if = {
+			limit = {
+				check_variable = {
+					var = ADW_nuke_days_array^i
+					value = ADW_complete_days^i
+					compare = greater_than_or_equals
+				}
+			}
+			add_to_variable = { ADW_nuke_kazu^ADW_list_nuke_bom_list^i = 1}
+			###変更点###
+			ADW_nuke_refund = yes
+			###変更点###
+			ADW_nuke_effect_avail = yes
+			set_variable = { ROOT.ADW_complete_days^i = -1 }
+			set_variable = { ROOT.ADW_nuke_days_per_array^i = -1 }
+			set_variable = { ROOT.ADW_list_nuke_bom_list^i = -1 }
+			add_to_array = { ROOT.ADW_nuke_list_remove_array = i }
+			else = {
+				add_to_array = { ROOT.ADW_nuke_days_array_copy = ROOT.ADW_nuke_days_array^i }
+			}
+		}
+	}
+	clear_array = ROOT.ADW_nuke_days_array
+	for_each_loop = {
+		array = ROOT.ADW_nuke_days_array_copy
+		value = v2
+		index = i2
+		break = break
+		
+		add_to_array = { ROOT.ADW_nuke_days_array = v2 }
+	}
+	ADW_nuke_list_remove = yes
+}
+ADW_nuke_list_remove = { #核兵器リスト削除
+	for_each_loop = {
+		array = ROOT.ADW_nuke_list_remove_array
+		value = v
+		index = i
+		break = break
+		remove_from_array = {
+			array = ROOT.ADW_complete_days
+			value = -1
+		}
+		remove_from_array = {
+			array = ROOT.ADW_nuke_days_per_array
+			value = -1
+		}
+		remove_from_array = {
+			array = ROOT.ADW_list_nuke_bom_list
+			value = -1
+		}
+	}
+	for_each_loop = {
+		array = ROOT.ADW_list_nuke_bom_list
+		value = v
+		index = i
+		break = break
+		
+		set_temp_variable = {ADW_nuke_days_temp = ADW_nuke_days_array^i }
+		divide_temp_variable = { ADW_nuke_days_temp = ADW_complete_days^i }
+		multiply_temp_variable = { ADW_nuke_days_temp = 100 }
+		set_variable = { ADW_nuke_days_per_array^i = ADW_nuke_days_temp }
+	}
+}
+ADW_can_buy_money_col = {
+	set_variable = { ROOT.ADW_can_buy_money^THIS = ROOT.ADW_buy_can^THIS }
+	multiply_variable={ROOT.ADW_can_buy_money^THIS=THIS.ADW_can_value}
+}
+ADW_gun_buy_money_col = {
+	set_variable = { ROOT.ADW_gun_buy_money^THIS = ADW_buy_infanity^THIS }
+	multiply_variable = { ROOT.ADW_gun_buy_money^THIS = THIS.ADW_gun_value }
+}
+ADW_GDP_inful_toushi = {
+	clamp_variable = {
+		var = THIS.ADW_GDP_inful^ROOT
+		min = 0
+	}
+	if = {
+		limit = {
+			check_variable = {
+				var = THIS.ADW_GDP_inful^ROOT
+				value = 100000000
+				compare = greater_than_or_equals
+			}
+		}
+		set_variable = {
+			var = THIS.ADW_GDP_inful_kei^ROOT
+			value = THIS.ADW_GDP_inful^ROOT
+		}
+		divide_variable = {
+			var = THIS.ADW_GDP_inful_kei^ROOT
+			value = 100000000
+		}
+		else = {
+			if = {
+				limit = {
+					check_variable = {
+						var = THIS.ADW_GDP_inful^ROOT
+						value = 10000
+						compare = greater_than_or_equals
+					}
+				}
+				set_variable = {
+					var = THIS.ADW_GDP_inful_cho^ROOT
+					value = THIS.ADW_GDP_inful^ROOT
+				}
+				divide_variable = {
+					var = THIS.ADW_GDP_inful_cho^ROOT
+					value = 10000
+				}
+			}
+		}
+	}
+	set_variable = { THIS.ADW_GDP_inful_per_year^ROOT = THIS.ADW_GDP_inful^ROOT }
+	multiply_variable = { THIS.ADW_GDP_inful_per_year^ROOT = 12 }
+	if = {
+		limit = {
+			check_variable = {
+				var = THIS.ADW_GDP_inful_per_year^ROOT
+				value = 100000000
+				compare = greater_than_or_equals
+			}
+		}
+		set_variable = {
+			var = THIS.ADW_GDP_inful_per_year_kei^ROOT
+			value = THIS.ADW_GDP_inful_per_year^ROOT
+		}
+		divide_variable = {
+			var = THIS.ADW_GDP_inful_per_year_kei^ROOT
+			value = 100000000
+		}
+		else = {
+			if = {
+				limit = {
+					check_variable = {
+						var = THIS.ADW_GDP_inful_per_year^ROOT
+						value = 10000
+						compare = greater_than_or_equals
+					}
+				}
+				set_variable = {
+					var = THIS.ADW_GDP_inful_per_year_cho^ROOT
+					value = THIS.ADW_GDP_inful_per_year^ROOT
+				}
+				divide_variable = {
+					var = THIS.ADW_GDP_inful_per_year_cho^ROOT
+					value = 10000
+				}
+			}
+		}
+	}
+}
+ADW_inful_GDP_col = {
+	set_variable = { ROOT.ADW_GDP_toushi_amount = ROOT.ADW_real_GDP_amoun }
+	clear_variable = ROOT.ADW_GDP_toushi_per_month
+	clear_variable = ROOT.ADW_GDP_toushi_per_month_receive
+	
+	every_country = {
+		limit = { NOT = {tag = ROOT} }
+		add_to_variable = { THIS.ADW_GDP_toushi_amount = THIS.ADW_GDP_inful_per_year^ROOT }
+		set_variable = { THIS.ADW_toushi_array_per^ROOT = THIS.ADW_GDP_inful_per_year^ROOT }
+	}
+	every_country = {
+		divide_variable = { THIS.ADW_toushi_array_per^ROOT = THIS.ADW_GDP_toushi_amount }
+		set_variable = { THIS.ADW_toushi_array_point^ROOT = THIS.ADW_toushi_array_per^ROOT }
+		multiply_variable = { THIS.ADW_toushi_array_point^ROOT = 5}
+		
+		add_to_variable = { ROOT.ADW_GDP_toushi_per_month = THIS.ADW_GDP_inful^ROOT }
+		add_to_variable = { THIS.ADW_GDP_toushi_per_month_receive = THIS.ADW_GDP_inful^ROOT }
+	}
+}
+ADW_inful_ence_effect = {
+	set_variable = { ROOT.ADW_GDP_with_toushi = ROOT.ADW_GDP }
+	every_country = {
+		limit = { NOT ={tag = ROOT }}
+		add_to_variable = { THIS.ADW_GDP_with_toushi = THIS.ADW_GDP_inful_per_year^ROOT }
+	}
+	ADW_infulence_per_effect = yes
+}
+ADW_infulence_per_effect = {
+	ROOT = {
+		every_country = {
+			set_variable = { THIS.ADW_GDP_inful_per_point^ROOT = THIS.ADW_GDP_inful_per_year^ROOT }
+			divide_variable = { THIS.ADW_GDP_inful_per_point^ROOT = THIS.ADW_GDP_with_toushi }
+			multiply_variable = { THIS.ADW_GDP_inful_per_point^ROOT = 3 }
+		}
+	}
+}
+ADW_GDP_juni_list_effect = {
+	every_country = {
+		limit = {
+			check_variable = {
+				var = THIS.ADW_real_GDP_amoun
+				value = ROOT.ADW_real_GDP_amoun
+				compare = greater_than
+			}
+		}
+		add_to_variable = { ROOT.ADW_GDP_rank_num = 1 }
+	}
+}
+ADW_GDP_rank_first = {
+	add_to_array = { global.ADW_GDP_rank_array = THIS }
+	add_to_variable = { global.ADW_GDP_now_rank = 1 }
+	every_country = {
+		limit = { check_variable = { THIS.ADW_GDP_rank_num = global.ADW_GDP_now_rank }}
+		ADW_GDP_rank_first = yes
 	}
 }
