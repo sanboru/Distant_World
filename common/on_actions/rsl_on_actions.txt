@@ -1,4 +1,9 @@
 on_actions = {
+	on_daily = {
+		effect = {
+			ROOT = { ADW_renable_days = yes}
+		}
+	}
 	on_startup = {
 		effect = {
 			ADW_GDP_array_effect = yes
@@ -13,6 +18,65 @@ on_actions = {
 	}
 	on_daily = {
 		effect = {
+			set_variable = { ADW_poli_election_on_days = ADW_poli_election }
+			multiply_variable = { ADW_poli_election_on_days = 30 }
+			add_to_variable = { ADW_spent_days = 1 }
+			
+			set_variable = { ADW_poli_election_on_per = ADW_spent_days }
+			divide_variable = { ADW_poli_election_on_per = ADW_poli_election_on_days }
+			multiply_variable = { ADW_poli_election_on_per = 100 }
+			round_variable = ADW_poli_election_on_per
+			
+			if = {
+				limit = { 
+					check_variable {
+						var = ADW_spent_days
+						value = ADW_poli_election_on_days
+						compare = greater_than_or_equals
+					}
+				}
+				ADW_GDP_giseki_senkyo = yes
+				clear_variable = ADW_spent_days
+			}
+		}
+	}
+	on_daily = {#農業
+		effect = {
+			clear_variable = ROOT.ADW_GDP_farmer
+			every_state = {
+				add_to_variable = { ROOT.ADW_GDP_farmer = THIS.building_level@farm }
+			}
+			set_variable = { ROOT.ADW_num_farm = ROOT.ADW_GDP_farmer }
+			set_variable = { ROOT.ADW_GDP_farmer_people = ROOT.ADW_GDP_farmer }
+			multiply_variable = { ROOT.ADW_GDP_farmer = 0.5 }
+			add_to_variable = { ROOT.GDP_daily = ROOT.ADW_GDP_farmer }
+			
+			multiply_variable = { ROOT.ADW_GDP_farmer_people = 2 }
+		}
+	}
+	on_daily = { #労働可能人口
+		effect = {
+			set_variable = { ROOT.ADW_work_able_pp = ROOT.max_manpower_k}
+			multiply_variable = { ROOT.ADW_work_able_pp = 0.7 }
+			
+			set_variable = { ROOT.ADW_GDP_work_people_fac = ROOT.num_of_factories }
+			multiply_variable = { ROOT.ADW_GDP_work_people_fac = 312 }
+			
+			set_variable = { ROOT.ADW_GDP_work_able_pp_for_company = ROOT.all_kyoikuhi_by_one}
+			divide_variable = { ROOT.ADW_GDP_work_able_pp_for_company = 0.3 }
+			multiply_variable = { ROOT.ADW_GDP_work_able_pp_for_company = 1.3 }
+			clamp_variable = {
+				var = ROOT.ADW_GDP_work_able_pp_for_company
+				min = 0
+				max = 1
+			}
+			multiply_variable = { ROOT.ADW_GDP_work_able_pp_for_company = ROOT.ADW_work_able_pp }
+		}
+	}
+	on_daily = {
+		effect = {
+			ADW_GDP_gikai_point_chert_effect = yes
+			ADW_GDP_gikai_point_effect = yes
 			ADW_the_gDP_narabekae = yes
 			ADW_the_GDP_juni_effect = yes
 			ADW_GDP_fac_company_infra = yes
@@ -37,8 +101,11 @@ on_actions = {
 	}
 	on_weekly = {
 		effect = {
+			ROOT = {ADW_inful_ence_effect = yes}
+			ADW_GDP_graph_effect_real = yes
+			ADW_non_party_changer = yes
 			ADW_GDP_resorce_of_oil = yes
-			ADW_GDP_graph_effect = yes
+			#ADW_GDP_graph_effect = yes
 			clear_array = global.ADW_GDP_faction_array
 			every_country = {
 				limit = {
@@ -75,10 +142,17 @@ on_actions = {
 				ROOT = {
 					if = {
 						limit = {
+							OR ={
 							check_variable = {
 								var = GDP_yearly_for_faction
 								value = 100000000
 								compare = greater_than_or_equals
+							}
+							check_variable = {
+								var = GDP_yearly_for_faction
+								value = -100000000
+								compare = less_than_or_equals
+							}
 							}
 						}
 						set_variable = {
@@ -92,10 +166,17 @@ on_actions = {
 						else = {
 							if = {
 								limit = {
+									OR ={
 									check_variable = {
 										var = GDP_yearly_for_faction
 										value = 10000
 										compare = greater_than_or_equals
+									}
+									check_variable = {
+										var = GDP_yearly_for_faction
+										value = -10000
+										compare = less_than_or_equals
+									}
 									}
 								}
 								set_variable = {
@@ -111,6 +192,47 @@ on_actions = {
 					}
 				}
 			}
+			
+			if = {
+				ROOT = {
+					if = {
+						limit = {
+							check_variable = {
+								var = country_people_4
+								value = -100000000
+								compare = less_than_or_equals
+							}
+						}
+						set_variable = {
+							var = country_people_4_kei
+							value = country_people_4
+						}
+						divide_variable = {
+							var = country_people_4_kei
+							value = 100000000
+						}
+						else = {
+							if = {
+								limit = {
+									check_variable = {
+										var = country_people_4
+										value = -10000
+										compare = less_than_or_equals
+									}
+								}
+								set_variable = {
+									var = country_people_4_cho
+									value = country_people_4
+								}
+								divide_variable = {
+									var = country_people_4_cho
+									value = 10000
+								}
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 }
@@ -119,8 +241,24 @@ on_actions = {
 		effect = {
 			every_country = {
 				ADW_each_country = yes
+				ADW_COL_mittle_state_effect = yes
 				country_event = { id = IND_ADW.101 hours = 1 }
 			}
+			GER = {
+				set_variable = { ADW_GDP_company_amout = 100 }
+				set_variable = { ADW_GDP_per_1 = 0.1 }
+				set_variable = { ADW_GDP_per_2 = 0.1 }
+				set_variable = { ADW_GDP_per_3 = 0.1 }
+				set_variable = { ADW_GDP_per_4 = 0.1 }
+				set_variable = { ADW_GDP_per_5 = 0.1 }
+				set_variable = { ADW_GDP_per_6 = 0.5 }
+				
+				set_variable = { ADW_comp_zaibatsu_class = 0.004 }
+				set_variable = { ADW_comp_bigger_class = 0.056 }
+				set_variable = { ADW_comp_middle_class = 0.34 }
+				set_variable = { ADW_comp_small_class = 0.6 }
+			}
+			every_country = {country_event = { id = IND_ADW.163}}
 			every_country = {
 				limit = {
 					is_ai = no
@@ -141,6 +279,12 @@ on_actions = {
 			every_country = {
 				add_to_array = { global.ADW_all_country_GDP_juni = THIS }
 			}
+			ADW_GDP_company_production = yes
+		}
+	}
+	on_weekly = {
+		effect = {
+			#ADW_GDP_company_production = yes
 		}
 	}
 }
@@ -149,40 +293,20 @@ on_actions = {
 		effect = {
 			ROOT = {
 				set_temp_variable = { num_fac_cil = ROOT.num_of_civilian_factories }
-				multiply_temp_variable = { num_fac_cil = 1 }
+				multiply_temp_variable = { num_fac_cil = 2 }
 				set_temp_variable = { num_fac_mil = ROOT.num_of_military_factories }
-				multiply_temp_variable = { num_fac_mil = 1 }
+				multiply_temp_variable = { num_fac_mil = 2 }
 				set_temp_variable = { num_fac_nav = ROOT.num_of_naval_factories }
 				multiply_temp_variable = { num_fac_nav = 1.5 }
 				add_to_temp_variable = { aa_ww_temp = num_fac_mil }
 				add_to_temp_variable = { aa_ww_temp = num_fac_nav }
 				add_to_temp_variable = { aa_ww_temp = num_fac_cil }
+				add_to_temp_variable = { aa_ww_temp = manp_SHO }
 				set_variable = { ADW_list_ww = aa_ww_temp }
 				set_variable = {
 					var = GDP_daily
 					value = aa_ww_temp
 				}
-			}
-		}
-	}
-	on_daily = { #企業
-		effect = {
-			ROOT = {
-				set_variable = { KIG_1 = 0 }
-				###小企業###
-				set_variable = { SCP_of_wage = the_worker_of_small_company }
-				divide_variable = { SCP_of_wage = 10000 }
-				add_to_variable = { KIG_1 = SCP_of_wage }
-				###中企業###
-				set_variable = { MCP_of_wage = the_worker_of_MID_company }
-				divide_variable = { MCP_of_wage = 10000 }
-				multiply_variable = { MCP_of_wage = 1.3 }
-				add_to_variable = { KIG_1 = MCP_of_wage }
-				###大企業###
-				set_variable = { BCP_of_wage = the_worker_of_BIG_company }
-				divide_variable = { BCP_of_wage = 10000 }
-				multiply_variable = { BCP_of_wage = 3 }
-				add_to_variable = { KIG_1 = BCP_of_wage }
 			}
 		}
 	}
@@ -286,10 +410,6 @@ on_actions = {
 				multiply_variable = { manp_SHO = shouhi_tax }
 				
 				divide_variable = { manp_SHO = 1000 }
-				add_to_variable = {
-					var = manp_SHO
-					value = GDP_daily
-				}
 			}
 			ROOT = {
 				set_variable = { ADW_GDP_shouhi_tax_effect = 0.2 }
@@ -308,22 +428,19 @@ on_actions = {
 					var = country_people
 					value = country_people_mi
 				}
-				multiply_temp_variable = { country_people = 70 }
+				multiply_temp_variable = { country_people = 60 }
 				set_temp_variable = { ships_rot = ROOT.num_ships }
-				multiply_temp_variable = { ships_rot = 130 }
+				multiply_temp_variable = { ships_rot = 150 }
 				
 				add_to_variable = { country_people = ships_rot }
 
 				set_variable = { ADW_country_people_money = max_available_manpower_k }
 				set_variable = { country_people_min = manpower_k }
-				subtract_from_variable = {
-					var = ADW_country_people_money
-					value = country_people_min
-				}
-				multiply_variable = { ADW_country_people_money = 70 }
+				subtract_from_variable = { ADW_country_people_money = country_people_min }
+				multiply_variable = { ADW_country_people_money = 60 }
 				
-				set_temp_variable = { ADW_SHIP_money = ROOT.num_ships }
-				multiply_temp_variable = { ADW_SHIP_money = 130 }
+				set_variable = { ADW_SHIP_money = ROOT.num_ships }
+				multiply_variable = { ADW_SHIP_money = 150 }
 				
 				set_variable = { ADW_mil_amount = ADW_SHIP_money }
 				add_to_variable = { ADW_mil_amount = ADW_country_people_money }
@@ -336,6 +453,9 @@ on_actions = {
 	}
 	on_daily = { #調整
 		effect = {
+			clear_variable = ADW_GDP_rank_num
+			ADW_GDP_juni_list_effect = yes
+			add_to_variable = { ROOT.ADW_GDP_rank_num = 1 }
 			ADW_array_shogun_add = yes
 			if = {
 				ROOT = {
@@ -372,6 +492,176 @@ on_actions = {
 									var = GDP_amou_cho
 									value = 10000
 								}
+							}
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			set_variable = { ROOT.ADW_mil_people_k = ROOT.max_available_manpower_k }
+			subtract_from_variable = { ROOT.ADW_mil_people_k = ROOT.manpower_k }
+			if = {
+				ROOT = {
+					if = {
+						limit = {
+							check_variable = {
+								var = ADW_work_able_pp
+								value = 100000000
+								compare = greater_than_or_equals
+							}
+						}
+						set_variable = { ADW_work_able_pp_cho = ADW_work_able_pp }
+						divide_variable = {ADW_work_able_pp_cho = 100000000 }
+						else = {
+							if = {
+								limit = {
+									check_variable = {
+										var = ADW_work_able_pp
+										value = 100000
+										compare = greater_than_or_equals
+									}
+								}
+								set_variable = { ADW_work_able_pp_oku = ADW_work_able_pp}
+								divide_variable = {ADW_work_able_pp_oku = 100000 }
+							}
+						else = {
+							if = {
+								limit = {
+									check_variable = {
+										var = ADW_work_able_pp
+										value = 10
+										compare = greater_than_or_equals
+									}
+								}
+								set_variable = { ADW_work_able_pp_man = ADW_work_able_pp}
+								divide_variable = {ADW_work_able_pp_man = 10 }
+							}
+						}
+						}
+					}
+				}
+			}
+			if = {
+				ROOT = {
+					if = {
+						limit = {
+							check_variable = {
+								var = max_manpower_k
+								value = 100000000
+								compare = greater_than_or_equals
+							}
+						}
+						set_variable = { max_manpower_k_cho = max_manpower_k }
+						divide_variable = {max_manpower_k_cho = 100000000 }
+						else = {
+							if = {
+								limit = {
+									check_variable = {
+										var = max_manpower_k
+										value = 100000
+										compare = greater_than_or_equals
+									}
+								}
+								set_variable = { max_manpower_k_oku = max_manpower_k}
+								divide_variable = {max_manpower_k_oku = 100000 }
+							}
+						else = {
+							if = {
+								limit = {
+									check_variable = {
+										var = max_manpower_k
+										value = 10
+										compare = greater_than_or_equals
+									}
+								}
+								set_variable = { max_manpower_k_man = max_manpower_k}
+								divide_variable = {max_manpower_k_man = 10 }
+							}
+						}
+						}
+					}
+				}
+			}
+			if = {
+				ROOT = {
+					if = {
+						limit = {
+							check_variable = {
+								var = ADW_GDP_work_people_fac
+								value = 100000
+								compare = greater_than_or_equals
+							}
+						}
+						set_variable = { ADW_GDP_work_people_fac_oku = ADW_GDP_work_people_fac}
+						divide_variable = {ADW_GDP_work_people_fac_oku = 100000 }
+						else = {
+							if = {
+								limit = {
+									check_variable = {
+										var = ADW_GDP_work_people_fac
+										value = 10
+										compare = greater_than_or_equals
+									}
+								}
+								set_variable = { ADW_GDP_work_people_fac_man = ADW_GDP_work_people_fac}
+								divide_variable = {ADW_GDP_work_people_fac_man = 10 }
+							}
+						}
+					}
+				}
+			}
+			if = {
+				ROOT = {
+					if = {
+						limit = {
+							check_variable = {
+								var = ADW_GDP_farmer_people
+								value = 100000
+								compare = greater_than_or_equals
+							}
+						}
+						set_variable = { ADW_GDP_farmer_people_oku = ADW_GDP_farmer_people}
+						divide_variable = {ADW_GDP_farmer_people_oku = 100000 }
+						else = {
+							if = {
+								limit = {
+									check_variable = {
+										var = ADW_GDP_farmer_people
+										value = 10
+										compare = greater_than_or_equals
+									}
+								}
+								set_variable = { ADW_GDP_farmer_people_man = ADW_GDP_farmer_people}
+								divide_variable = {ADW_GDP_farmer_people_man = 10 }
+							}
+						}
+					}
+				}
+			}
+			if = {
+				ROOT = {
+					if = {
+						limit = {
+							check_variable = {
+								var = ROOT.ADW_GDP_work_able_pp_for_company
+								value = 100000
+								compare = greater_than_or_equals
+							}
+						}
+						set_variable = {ADW_GDP_work_able_pp_for_company_oku = ROOT.ADW_GDP_work_able_pp_for_company}
+						divide_variable = {ADW_GDP_work_able_pp_for_company_oku = 100000 }
+						else = {
+							if = {
+								limit = {
+									check_variable = {
+										var = ROOT.ADW_GDP_work_able_pp_for_company
+										value = 10
+										compare = greater_than_or_equals
+									}
+								}
+								set_variable = {ADW_GDP_work_able_pp_for_company_man = ROOT.ADW_GDP_work_able_pp_for_company}
+								divide_variable = {ADW_GDP_work_able_pp_for_company_man = 10 }
 							}
 						}
 					}
@@ -638,6 +928,7 @@ on_actions = {
 					var = all_kyoikuhi_by_one_by_man
 					value = 10000
 				}
+				ADW_political_chair_effect = yes
 			}
 			CHI = {
 				set_variable = {
@@ -698,6 +989,18 @@ on_actions = {
 			}
 			multiply_variable = { all_kyoikuhi_aonother = 12 }
 		}
+		effect = {
+			if = {
+				limit = {original_tag = ENG}
+				ROOT = {
+					set_variable = { ADW_WNG_FAS_COM_per = party_popularity@fascism }
+					add_to_variable = { ADW_WNG_FAS_COM_per = party_popularity@communism }
+					
+					set_variable = { ADW_ENG_com_fas_different = party_popularity@fascism }
+					subtract_from_variable = { ADW_ENG_com_fas_different = party_popularity@communism }
+				}
+			}
+		}
 	}
 	on_daily = {
 		effect = {
@@ -705,61 +1008,6 @@ on_actions = {
 				set_variable = { all_kyoikuhi_temp = 0 }
 				set_variable = { all_kyoikuhi_temp = all_kyoikuhi }
 				divide_variable = { all_kyoikuhi_temp = 50 }
-			}
-		}
-	}
-	on_daily = { #階層
-		effect = {
-			ROOT = { #後で追加
-				set_variable = { all_floar_of_SCB = small_company }
-				multiply_variable = { all_floar_of_SCB = 5 }
-				set_variable = { SCB_max_num = SCB_floar_improved }
-			}
-		}
-	}
-	on_daily = { #階層
-		effect = {
-			ROOT = {
-				set_variable = { SCB_max_num = SCB_floar_improved }
-				multiply_variable = { SCB_max_num = 1000 }
-			}
-		}
-	}
-	
-	####中企業####
-	on_daily = { #階層中
-		effect = {
-			ROOT = { #後で追加
-				set_variable = { all_floar_of_SCM = middle_company }
-				multiply_variable = { all_floar_of_SCM = 10 }
-				set_variable = { MCB_max_num = MCB_floar_improved }
-			}
-		}
-	}
-	on_daily = { #階層中
-		effect = {
-			ROOT = {
-				set_variable = { MCB_max_num = MCB_floar_improved }
-				multiply_variable = { MCB_max_num = 1200 }
-			}
-		}
-	}
-	
-	####大企業####
-	on_daily = { #階層大
-		effect = {
-			ROOT = { #後で追加
-				set_variable = { all_floar_of_BCM = big_company }
-				multiply_variable = { all_floar_of_BCM = 100 }
-				set_variable = { BCB_max_num = BCB_floar_improved }
-			}
-		}
-	}
-	on_daily = { #階層大
-		effect = {
-			ROOT = {
-				set_variable = { BCB_max_num = BCB_floar_improved }
-				multiply_variable = { BCB_max_num = 2000 }
 			}
 		}
 	}
@@ -807,256 +1055,7 @@ on_actions = {
 		}
 	}
 }
-#####小企業##########
 on_actions = {
-	on_daily = { #追加人 小企業
-		effect = {
-			ROOT = {
-				multiply_variable = { SCB_max_num = toushi_money_amount_temp }
-				if = {
-					limit = {
-						check_variable = {
-							var = the_worker_of_small_company
-							value = SCB_max_num
-							compare = less_than
-						}
-					}
-					set_variable = {
-						var = KEIS_SCB_max_num
-						value = SCB_max_num
-					}
-					subtract_from_variable = { KEIS_SCB_max_num = the_worker_of_small_company }
-					divide_variable = { KEIS_SCB_max_num = 100 }
-					clamp_variable = {
-						var = KEIS_SCB_max_num
-						min = 0
-						max = the_woker_high_level
-					}
-					add_to_variable = { KEIS_SCB_max_num_appo = KEIS_SCB_max_num }
-				}
-			}
-		}
-	}
-	on_daily = { #追加人 中企業
-		effect = {
-			ROOT = {
-				multiply_variable = { MCB_max_num = toushi_money_amount_temp_mid }
-				if = {
-					limit = {
-						check_variable = {
-							var = the_worker_of_MID_company
-							value = MCB_max_num
-							compare = less_than
-						}
-					}
-					set_variable = {
-						var = KEIS_MCB_max_num
-						value = MCB_max_num
-					}
-					subtract_from_variable = { KEIS_MCB_max_num = the_worker_of_MID_company }
-					divide_variable = { KEIS_MCB_max_num = 100 }
-					clamp_variable = {
-						var = KEIS_MCB_max_num
-						min = 0
-						max = the_woker_high_level
-					}
-					add_to_variable = { KEIS_MCB_max_num_appo = KEIS_MCB_max_num }
-				}
-			}
-		}
-	}
-	on_daily = { #追加人 大企業
-		effect = {
-			ROOT = {
-				multiply_variable = { BCB_max_num = toushi_money_amount_temp_big }
-				if = {
-					limit = {
-						check_variable = {
-							var = the_worker_of_BIG_company
-							value = BCB_max_num
-							compare = less_than
-						}
-					}
-					set_variable = {
-						var = KEIS_BCB_max_num
-						value = BCB_max_num
-					}
-					subtract_from_variable = { KEIS_BCB_max_num = the_worker_of_BIG_company }
-					divide_variable = { KEIS_BCB_max_num = 100 }
-					clamp_variable = {
-						var = KEIS_BCB_max_num
-						min = 0
-						max = the_woker_high_level
-					}
-					add_to_variable = { KEIS_BCB_max_num_appo = KEIS_BCB_max_num }
-				}
-			}
-		}
-	}
-	
-	on_daily = { #完全開発された小企業
-		effect = {
-			ROOT = {
-				set_variable = { SCB_floar_improved_for_kei = SCB_floar_improved }
-				subtract_from_variable = {
-					var = SCB_floar_improved_for_kei
-					value = small_company
-				}
-				set_variable = { the_parfect_improved_compa = SCB_floar_improved_for_kei }
-				modulo_variable = {
-					var = SCB_floar_improved_for_kei
-					value = 4
-				}
-				subtract_from_variable = {
-					var = the_parfect_improved_compa
-					value = SCB_floar_improved_for_kei
-				}
-				divide_variable = {
-					var = the_parfect_improved_compa
-					value = 4
-				}
-			}
-		}
-	}
-	on_daily = { #完全開発された中企業
-		effect = {
-			ROOT = {
-				set_variable = { MCB_floar_improved_for_kei = MCB_floar_improved }
-				subtract_from_variable = {
-					var = MCB_floar_improved_for_kei
-					value = middle_company
-				}
-				set_variable = { the_parfect_improved_compa_mid = MCB_floar_improved_for_kei }
-				modulo_variable = {
-					var = MCB_floar_improved_for_kei
-					value = 9
-				}
-				subtract_from_variable = {
-					var = the_parfect_improved_compa_mid
-					value = MCB_floar_improved_for_kei
-				}
-				divide_variable = {
-					var = the_parfect_improved_compa_mid
-					value = 9
-				}
-			}
-		}
-	}
-	on_daily = { #完全開発された大企業
-		effect = {
-			ROOT = {
-				set_variable = { BCB_floar_improved_for_kei = BCB_floar_improved }
-				subtract_from_variable = {
-					var = BCB_floar_improved_for_kei
-					value = big_company
-				}
-				set_variable = { the_parfect_improved_compa_BIG = BCB_floar_improved_for_kei }
-				modulo_variable = {
-					var = BCB_floar_improved_for_kei
-					value = 99
-				}
-				subtract_from_variable = {
-					var = the_parfect_improved_compa_BIG
-					value = BCB_floar_improved_for_kei
-				}
-				divide_variable = {
-					var = the_parfect_improved_compa_BIG
-					value = 99
-				}
-			}
-		}
-	}
-	on_daily = { #給料up小企業
-		effect = {
-			ROOT = {
-				set_variable = { kyuuryou_of_SCP = the_worker_of_small_company }
-				multiply_variable = {
-					var = kyuuryou_of_SCP
-					value = 0.02
-				}
-				set_variable = { toushi_money_amount_temp = toushi_money_amount }
-				divide_variable = {
-					var = toushi_money_amount_temp
-					value = kyuuryou_of_SCP
-				}
-				clamp_variable = {
-					var = toushi_money_amount_temp
-					min = 0
-					max = 1.5
-				}
-				add_to_variable = { toushi_money_amount_temp = 1 }
-			}
-		}
-	}
-	on_daily = { #給料up中企業
-		effect = {
-			ROOT = {
-				set_variable = { kyuuryou_of_MCP = the_worker_of_MID_company }
-				multiply_variable = {
-					var = kyuuryou_of_MCP
-					value = 0.03
-				}
-				set_variable = { toushi_money_amount_temp_mid = toushi_money_amount_mid }
-				divide_variable = {
-					var = toushi_money_amount_temp_mid
-					value = kyuuryou_of_MCP
-				}
-				clamp_variable = {
-					var = toushi_money_amount_temp_mid
-					min = 0
-					max = 1.6
-				}
-				add_to_variable = { toushi_money_amount_temp_mid = 1 }
-			}
-		}
-	}
-	on_daily = { #給料up大企業
-		effect = {
-			ROOT = {
-				set_variable = { kyuuryou_of_BCP = the_worker_of_BIG_company }
-				multiply_variable = {
-					var = kyuuryou_of_BCP
-					value = 0.045
-				}
-				set_variable = { toushi_money_amount_temp_big = toushi_money_amount_big }
-				divide_variable = {
-					var = toushi_money_amount_temp_big
-					value = kyuuryou_of_BCP
-				}
-				clamp_variable = {
-					var = toushi_money_amount_temp_big
-					min = 0
-					max = 1.6
-				}
-				add_to_variable = { toushi_money_amount_temp_big = 1 }
-			}
-		}
-	}
-}
-on_actions = {
-	on_weekly = {
-		effect = { #基本的企業支援
-			ROOT = {
-				set_variable = {
-					var = company_give_basic_money
-					value = SCB_floar_improved
-				}
-				add_to_variable = {
-					var = company_give_basic_money
-					value = MCB_floar_improved
-				}
-				add_to_variable = {
-					var = company_give_basic_money
-					value = BCB_floar_improved
-				}
-				multiply_variable = {
-					var = company_give_basic_money
-					value = 0.1
-				}
-			}
-		}
-	}
-
 	on_daily = { #確立期
 		effect = {
 			ROOT = {
@@ -1076,156 +1075,13 @@ on_actions = {
 	}
 }
 on_actions = {
-	on_daily = {
-		effect = {
-			ROOT = {
-				set_variable = {
-					var = alp_of_people
-					value = ROOT.max_manpower_k
-				}
-				round_variable = alp_of_people
-				set_variable = {
-					var = NUM_TEMP_all_people_of_worker
-					value = 0
-				}
-				#####小企業#####
-				set_variable = { #表示2
-					var = the_worker_of_small_company
-					value = 0
-				}
-				add_to_variable = { #再追加
-					var = the_worker_of_small_company
-					value = KEIS_SCB_max_num_appo
-				}
-				multiply_variable = { #表示2
-					var = the_worker_of_small_company
-					value = 100
-				}
-				
-				#####中企業#####
-				set_variable = { #表示2
-					var = the_worker_of_MID_company
-					value = 0
-				}
-				add_to_variable = { #再追加
-					var = the_worker_of_MID_company
-					value = KEIS_MCB_max_num_appo
-				}
-				multiply_variable = { #表示2
-					var = the_worker_of_MID_company
-					value = 100
-				}
-				
-				#####大企業#####
-				set_variable = { #表示2
-					var = the_worker_of_BIG_company
-					value = 0
-				}
-				add_to_variable = { #再追加
-					var = the_worker_of_BIG_company
-					value = KEIS_BCB_max_num_appo
-				}
-				multiply_variable = { #表示2
-					var = the_worker_of_BIG_company
-					value = 100
-				}
-			}
-		}
-		effect = {
-			ROOT = {
-				set_variable = { all_people_of_worker = 0 }
-				add_to_variable = { all_people_of_worker = all_people_of_worker_s }
-				add_to_variable = { all_people_of_worker = all_people_of_worker_s_mid }
-				add_to_variable = { all_people_of_worker = KEIS_SCB_max_num_appo }
-				add_to_variable = { all_people_of_worker = KEIS_MCB_max_num_appo }
-			}
-		}
-	}
-	on_daily = { #小企業人調整
-		effect = {
-			ROOT = {
-				if = {
-					limit = {
-						check_variable = {
-							var = SCB_max_num
-							value = the_worker_of_small_company
-							compare = less_than
-						}
-					}
-					clamp_variable = {
-						var = the_worker_of_small_company
-						min = 0
-						max = SCB_max_num
-					}
-				}
-			}
-		}
-	}
-	on_daily = { #中企業人調整
-		effect = {
-			ROOT = {
-				if = {
-					limit = {
-						check_variable = {
-							var = MCB_max_num
-							value = the_worker_of_MID_company
-							compare = less_than
-						}
-					}
-					clamp_variable = {
-						var = the_worker_of_MID_company
-						min = 0
-						max = MCB_max_num
-					}
-				}
-			}
-		}
-	}
-	on_daily = { #中企業人調整
-		effect = {
-			ROOT = {
-				if = {
-					limit = {
-						check_variable = {
-							var = BCB_max_num
-							value = the_worker_of_BIG_company
-							compare = less_than
-						}
-					}
-					clamp_variable = {
-						var = the_worker_of_BIG_company
-						min = 0
-						max = BCB_max_num
-					}
-				}
-			}
-		}
-	}
-	on_startup = {
-		effect = {
-			every_country = {
-				set_variable = { gikai_person_of_numbar = 100 }
-				set_variable = { num_blank_giseki = 100 }
-			}
-		}
-	}
 	on_monthly = {
 		effect = {
 			ROOT = {
-				set_variable = { GDP_of_gikai_person = ROOT.gikai_person_of_numbar }
-				multiply_variable = { GDP_of_gikai_person = 0.002 }
-			}
-			ROOT = {
 				set_variable = {
 					var = GDP_monthly
 					value = 0
 				}
-				subtract_from_variable = {
-					var = GDP_monthly
-					value = GDP_of_gikai_person
-				}
-				set_variable = { GDP_of_gikai_person_4_list = GDP_of_gikai_person }
-				multiply_variable = { GDP_of_gikai_person_4_list = -1 }
 				subtract_from_variable = {
 					var = GDP_monthly
 					value = all_kyoikuhi_temp
@@ -1233,10 +1089,8 @@ on_actions = {
 				set_variable = { all_kyoikuhi_temp_4 = all_kyoikuhi_temp }
 				multiply_variable = { all_kyoikuhi_temp_4 = -1 }
 				
-				subtract_from_variable = { GDP_monthly = ADW_GDP_giin_cost }
-				subtract_from_variable = { GDP_of_gikai_person_4_list = ADW_GDP_giin_cost }
-				subtract_from_variable = { GDP_monthly = ADW_GDP_capa_keihi }
-				set_variable = { ADW_GDP_capa_keihi_4 = ADW_GDP_capa_keihi }
+				subtract_from_variable = { GDP_monthly = ROOT.ADW_GDP_capa_keihi_all }
+				set_variable = { ADW_GDP_capa_keihi_4 = ROOT.ADW_GDP_capa_keihi_all }
 				multiply_variable = { ADW_GDP_capa_keihi_4 = -1 }
 				subtract_from_variable = { GDP_monthly = iryo_ADW_futan_amount }
 				set_variable = { iryo_ADW_futan_amount_4 = iryo_ADW_futan_amount }
@@ -1277,10 +1131,6 @@ on_actions = {
 					value = all_shienkin
 				}
 				subtract_from_variable = { toushi_money_amount_fo_list = all_shienkin }
-				add_to_variable = { #収入
-					var = GDP_weekly
-					value = KIG_1
-				}
 				add_to_variable = { #GDP所持金
 					var = GDP_amou
 					value = GDP_weekly
@@ -1350,6 +1200,8 @@ on_actions = {
 				
 				set_variable = { ADW_GDP_kouka_ritsu = 0.2 }
 				subtract_from_variable = { ADW_GDP_kouka_ritsu = GDP_the_country_percent_of_kenko_mainas }
+				set_variable = { ADW_GDP_cons_kenko = ADW_GDP_kouka_ritsu }
+				divide_variable = { ADW_GDP_cons_kenko = 3 }
 			}
 		}
 	}
@@ -1366,62 +1218,14 @@ on_actions = {
 on_actions = {
 	on_weekly = {
 		effect = {
+			TUR = { ADW_TUR_KRD_resistance_war_effect = yes }
 			ROOT = {
 				set_variable = { juyou_point_peo = ROOT.max_manpower_k }
 			}
 		}
 	}
-	on_daily = {
-		effect = {
-			ROOT = {
-				ADW_GDP_police_hiyo_keisan = yes
-				####供給####
-				set_variable = { the_consume_factory = ROOT.num_of_civilian_factories }
-				add_to_variable = { the_consume_factory = ROOT.num_of_military_factories }
-				multiply_variable = { the_consume_factory = ROOT.modifier@consumer_goods_factor }
-				round_variable = the_consume_factory
-				multiply_variable = { the_consume_factory = 40 }
-				set_variable = {used_factory = the_consume_factory}
-				multiply_variable = { the_consume_factory = 50 }
-				set_variable = { shien_tedori_kei = shien_tedori } #shien_tedori決める。
-				add_to_variable = { shien_tedori_kei = 1 }
-				multiply_variable = { the_consume_factory = shien_tedori_kei }
-				
-				set_variable = { the_kyokyu_B = the_consume_factory }
-				set_variable = { the_kyokyu_C = the_consume_factory }
-				
-				####需要####
-				set_variable = { juyou_point = juyou_point_peo }
-				multiply_variable = { juyou_point = 4 }
-				
-				####均衡価格####
-				set_variable = { kinkou_kakaku = juyou_point }
-				divide_variable = { kinkou_kakaku = the_consume_factory }
-				multiply_variable = { kinkou_kakaku = 1000 }
-				randomize_temp_variable = {
-					var = num_dogs_alufa
-					distribution = uniform
-					min = 1
-					max = 3
-				}
-				multiply_variable = { kinkou_kakaku = num_dogs_alufa }
-				set_variable = { kinkou_kakaku_display = kinkou_kakaku } #表示させる
-				
-			}
-		}
-	}
 }
 on_actions = {
-	on_startup = {
-		effect = {
-			RAJ = {
-				set_capital = {
-					state = 428
-					remember_old_capital = no
-				}
-			}
-		}
-	}
 	on_daily = {
 		effect = {
 			ROOT = {
@@ -1439,163 +1243,6 @@ on_actions = {
 	}
 }
 on_actions = {
-	
-	on_daily = {
-		effect = {
-			ROOT = {
-				####国民の一人当たりのお金####
-				set_variable = { small_wage_SCB = ROOT.the_worker_of_small_company }
-				multiply_variable = { small_wage_SCB = 0.003 }
-				set_variable = { middle_wage_MCB = ROOT.the_worker_of_MID_company }
-				multiply_variable = { middle_wage_MCB = 0.009 }
-				set_variable = { big_wage_BCB = ROOT.the_worker_of_BIG_company }
-				multiply_variable = { big_wage_BCB = 0.018 }
-				set_variable = { ADW_factory_wage = ADW_GDP_factory_of_people }
-				multiply_variable = { ADW_factory_wage = 0.105 }
-				
-				add_to_variable = { small_wage_SCB = middle_wage_MCB }
-				add_to_variable = { small_wage_SCB = big_wage_BCB }
-				add_to_variable = { small_wage_SCB = ADW_factory_wage }
-				set_variable = { all_wage_SMBCB = small_wage_SCB }
-				
-				divide_variable = { all_wage_SMBCB = ROOT.max_manpower_k }
-				
-				set_variable = { all_wage_SMBCB_keiki = 10000 }
-				multiply_variable = { all_wage_SMBCB_keiki = all_wage_SMBCB }
-			}
-		}
-		
-		effect = {
-			ROOT = {
-				####変化する景気####
-				set_variable = { the_max_prize = all_wage_SMBCB }
-				multiply_variable = { the_max_prize = 1.5 } #最大値
-				set_variable = { the_min_prize = all_wage_SMBCB }
-				multiply_variable = { the_min_prize = 0.5 } #最小値
-				
-				set_variable = { henka_ble_prize = kinkou_kakaku }
-				randomize_temp_variable = {
-					var = rondomize_mult_prize
-					distribution = uniform
-					min = 0.9
-					max = 2.5
-				}
-				if = {
-					limit = {
-						check_variable = {
-							var = henka_ble_prize
-							value = the_min_prize
-							compare = less_than
-						}
-					}
-					randomize_temp_variable = {
-						var = rondomize_mult_prize_chosei
-						distribution = uniform
-						min = 1.1
-						max = 1.3
-					}
-					else_if = {
-						limit = {
-							check_variable = {
-								var = henka_ble_prize
-								value = the_max_prize
-								compare = greater_than
-							}
-						}
-						randomize_temp_variable = {
-							var = rondomize_mult_prize_chosei
-							distribution = uniform
-							min = 1.2
-							max = 0.8
-						}
-						else = {
-							set_variable = { rondomize_mult_prize_chosei = 1 }
-						}
-					}
-				}
-				multiply_variable = { rondomize_mult_prize = rondomize_mult_prize_chosei }
-				multiply_variable = { henka_ble_prize = rondomize_mult_prize }
-				round_variable = henka_ble_prize #変化する景気
-			}
-		}
-		effect = {
-			ROOT = {
-				####実店舗数####
-				multiply_variable = { all_of_infra_in_thiscountry = ROOT.num_owned_controlled_states }
-				multiply_variable = { all_of_infra_in_thiscountry = 20 } #実店舗数
-				
-				divide_variable = { the_kyokyu_B = all_of_infra_in_thiscountry } #物流#
-				
-				###必要量###
-				set_variable = { hitsuyo_ryou = ROOT.max_manpower_k }
-				randomize_variable = {
-					var = multi_hitsuyou_ryo
-					distribution = uniform
-					min = 15
-					max = 35
-				}
-				multiply_variable = { hitsuyo_ryou = multi_hitsuyou_ryo }
-				set_variable = { GDP_add_selling = hitsuyo_ryou }
-				
-				divide_variable = { hitsuyo_ryou = the_heikin_store_numbar } #一般物流#
-			}
-		}
-		effect = {
-			ROOT = {
-				###商業ポイント###
-				clamp_variable = {
-					var = GDP_add_selling
-					min = 0
-					max = the_kyokyu_C
-				}
-				divide_variable = { GDP_add_selling = 10000 }
-				multiply_variable = { GDP_add_selling = henka_ble_prize }
-				divide_variable = { GDP_add_selling = 10000 } #GDP商業ポイント
-			}
-		}
-		effect = {
-			ROOT = {
-				####平均店舗数####
-				set_variable = { the_heikin_store_numbar = ROOT.max_manpower_k }
-				divide_variable = { the_heikin_store_numbar = ROOT.num_owned_controlled_states }
-				divide_variable = { the_heikin_store_numbar = 50000 }
-				set_variable = {
-					var = ROOT.my_country_infra_a
-					value = 0
-				}
-				every_state = {
-					limit = {
-						owner = {
-							tag = ROOT
-						}
-					}
-					add_to_variable = {
-						var = ROOT.my_country_infra_a
-						value = THIS.infrastructure_level
-					}
-				}
-				set_variable = { all_of_infra_in_thiscountry = ROOT.my_country_infra_a }
-				divide_variable = { my_country_infra_a = ROOT.num_owned_controlled_states }
-				multiply_variable = { the_heikin_store_numbar = my_country_infra_a } #平均店舗数
-			}
-		}
-	}
-	
-	on_daily = {
-		effect = {
-			ROOT = {
-				multiply_variable = { GDP_add_selling = 0.2 }
-				add_to_variable = {
-					var = GDP_daily
-					value = GDP_add_selling
-				}
-				add_to_variable = {
-					var = GDP_amou
-					value = GDP_daily
-				}
-			}
-		}
-	}
 	on_daily = {
 		effect = {
 			ROOT = {
@@ -1626,20 +1273,19 @@ on_actions = {
 	on_daily = {
 		effect = {
 			ROOT = {
-				set_variable = { ADW_real_GDP_daily = GDP_add_selling }
-				add_to_variable = { ADW_real_GDP_daily = mout_res_exp }
+				set_variable = { ADW_real_GDP_daily = mout_res_exp }
+				add_to_variable = { ADW_real_GDP_daily = ADW_GDP_farmer }
 				add_to_variable = { ADW_real_GDP_daily = aa_ww_temp }
 				multiply_variable = { ADW_real_GDP_daily = 365 }
 				
-				set_variable = { ADW_real_GDP_weekly = KIG_1 }
-				multiply_variable = { ADW_real_GDP_weekly = 50 }
 				
-				set_variable = { ADW_real_GDP_monthly = 0 }
 				multiply_variable = { ADW_real_GDP_monthly = 12 }
 				
 				set_variable = { ADW_real_GDP_amoun = ADW_real_GDP_daily }
 				add_to_variable = { ADW_real_GDP_amoun = ADW_real_GDP_weekly }
 				add_to_variable = { ADW_real_GDP_amoun = ADW_real_GDP_monthly }
+				
+				set_variable = { ADW_real_GDP_monthly = 0 }
 			}
 			
 			if = {
@@ -1702,6 +1348,7 @@ on_actions = {
 	}
 	on_daily = {
 		effect = {
+			QIE = { ADW_QIE_chow_kouw_effect = yes }
 			HOK = {
 				ADW_HOK_shinsengumi_list = yes
 			}
@@ -1734,6 +1381,258 @@ on_actions = {
 						country_event = { id = ADW_SPE.1 }
 					}
 				}
+			}
+		}
+	}
+	##核兵器関連##
+	on_weekly = {
+		effect = {
+			ADW_inful_GDP_col = yes
+		}
+	}
+	on_daily = {
+		effect = {
+			ADW_GDP_trade_gun_country = yesr
+			ROOT = {
+				clear_variable = ADW_GDP_nuke_fac
+				clear_variable = ADW_special_index
+				clear_variable = ADW_special_index_2nd
+				ADW_remove_effect = yes
+				ADW_nuke_endress_system = yes
+			}
+			every_owned_state = {
+				add_to_variable = { ROOT.ADW_GDP_nuke_fac = THIS.building_level@nuclear_reactor }
+			}
+			ADW_nuke_effect_avail = yes
+			ROOT = {add_dynamic_modifier = { modifier = ADW_GDP_nuke_pro }}
+			
+			
+			every_state = {
+				limit = {
+					days_since_last_strategic_bombing < 1
+					owner ={tag = ROOT}
+				}
+				set_variable = { THIS.ADW_state_deth_people = THIS.state_population_k }
+				set_variable = { THIS.ADW_gun_value_tmp = 0.001 }
+				set_variable = { THIS.ADW_shlter_effect = THIS.building_level@shelter }
+				divide_variable = { THIS.ADW_shlter_effect = 20 }
+				set_variable = { THIS.ADW_shlter_effect_per = 1 }
+				subtract_from_variable = { THIS.ADW_shlter_effect_per = THIS.ADW_shlter_effect }
+				multiply_variable = { THIS.ADW_gun_value_tmp = THIS.ADW_shlter_effect_per }
+				multiply_variable = { THIS.ADW_gun_value_tmp = 1000 }
+				
+				multiply_variable = { THIS.ADW_state_deth_people = THIS.ADW_gun_value_tmp }
+				round_variable = THIS.ADW_state_deth_people
+				multiply_variable = { THIS.ADW_state_deth_people = -1 }
+				add_manpower = THIS.ADW_state_deth_people
+				
+				add_to_variable = { ROOT.ADW_deth = THIS.ADW_state_deth_people }
+			}
+		}
+	}
+	##核兵器関連##
+	
+	on_startup = {
+		effect = {
+			every_state = {
+				limit = {owner = { tag = INS}}
+				add_to_array = { global.ADW_INS_state_list = THIS }
+			}
+			every_country = {
+				limit = { is_ai = yes }
+				set_country_flag = AADW_GDP_trade
+			}
+		}
+	}
+	on_weekly = {
+		effect = {
+			every_country = {
+				limit = { is_ai = yes }
+				if = {
+					limit = {
+						check_variable = { GDP_yearly_for_faction < -50 }
+					}
+					randomize_temp_variable = {
+						var = THIS.ADW_gun_value_tmp
+						distribution = uniform
+						min = 0.07
+						max = 0.1
+					}
+					
+					else_if = {
+						limit = { check_variable = { GDP_yearly_for_faction < 10 } }
+						randomize_temp_variable = {
+							var = THIS.ADW_gun_value_tmp
+							distribution = uniform
+							min = 0.05
+							max = 0.07
+						}
+					else_if = {
+						limit = { check_variable = { GDP_yearly_for_faction > 9 } }
+						randomize_temp_variable = {
+							var = THIS.ADW_gun_value_tmp
+							distribution = uniform
+							min = 0.02
+							max = 0.05
+						}
+					}
+					}
+				}
+				set_variable = { THIS.ADW_gun_value = ADW_gun_value_tmp }
+			}
+			
+		}
+	}
+	on_monthly = {
+		effect = {
+			ROOT = {
+				add_to_array = { ROOT.ADW_daily_counter_array = ROOT.ADW_daily_counter }
+				
+				add_to_array = { ROOT.ADW_GDP_year_value = global.year }
+				add_to_array = { ROOT.ADW_GDP_date_value = global.date }
+				
+				add_to_array = { ROOT.ADW_GDP_tax_array = ROOT.manp_SHO }
+				add_to_array = { ROOT.ADW_GDP_fac_production = ROOT.ADW_list_ww }
+				add_to_array = { ROOT.ADW_GDP_res_imp = ROOT.ADW_list_imp }
+				add_to_array = { ROOT.ADW_GDP_res_exp = ROOT.ADW_list_exp }
+				
+				add_to_variable = { ROOT.ADW_daily_counter = 1 }
+				subtract_from_variable = { ROOT.GDP_amou = ROOT.ADW_GDP_toushi_per_month }
+				add_to_variable = { ROOT.GDP_amou = ROOT.ADW_GDP_toushi_per_month_receive }
+				
+				set_variable = { ROOT.ADW_GDP_for_shushi = ROOT.ADW_GDP_toushi_per_month }
+				subtract_from_variable = { ROOT.ADW_GDP_for_shushi = ROOT.ADW_GDP_toushi_per_month_receive }
+				multiply_variable = { ROOT.ADW_GDP_for_shushi = 12 }
+				subtract_from_variable = { ROOT.GDP_yearly_for_faction = ROOT.ADW_GDP_for_shushi }
+				
+				set_variable = { ROOT.ADW_GDP_toushi_per_month_for_dis = ROOT.ADW_GDP_toushi_per_month }
+				multiply_variable = { ROOT.ADW_GDP_toushi_per_month_for_dis = -1}
+			}
+		}
+	}
+	on_daily = {
+		effect = {
+			ROOT = {
+				if = {
+					limit = {
+						check_variable = {
+							var = ROOT.ADW_GDP_toushi_per_month_for_dis
+							value = -100000000
+							compare = less_than_or_equals
+						}
+					}
+					set_variable = { ROOT.ADW_GDP_toushi_per_month_kei = ROOT.ADW_GDP_toushi_per_month_for_dis}
+					divide_variable = {ROOT.ADW_GDP_toushi_per_month_kei = 100000000}
+					else = {
+						if = {
+							limit = {
+								check_variable = {
+									var = ROOT.ADW_GDP_toushi_per_month_for_dis
+									value = -10000
+									compare = less_than_or_equals
+								}
+							}
+							set_variable = { ROOT.ADW_GDP_toushi_per_month_cho = ROOT.ADW_GDP_toushi_per_month_for_dis}
+							divide_variable = {ROOT.ADW_GDP_toushi_per_month_cho = 10000}
+						}
+					}
+				}
+			}
+			ROOT = {
+				if = {
+					limit = {
+						check_variable = {
+							var = ROOT.ADW_GDP_toushi_per_month_receive
+							value = 100000000
+							compare = greater_than_or_equals
+						}
+					}
+					set_variable = { ROOT.ADW_GDP_toushi_per_month_receive_kei = ROOT.ADW_GDP_toushi_per_month_receive}
+					divide_variable = {ROOT.ADW_GDP_toushi_per_month_receive_kei = 100000000}
+					else = {
+						if = {
+							limit = {
+								check_variable = {
+									var = ROOT.ADW_GDP_toushi_per_month_receive
+									value = 10000
+									compare = greater_than_or_equals
+								}
+							}
+							set_variable = { ROOT.ADW_GDP_toushi_per_month_receive_cho = ROOT.ADW_GDP_toushi_per_month_receive}
+							divide_variable = {ROOT.ADW_GDP_toushi_per_month_receive_cho = 10000}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	on_declare_war = {
+		effect = {
+			if = {
+				limit = {
+					OR = {
+						AND = {
+							ROOT = { tag = ENG }
+							FROM = { tag = FRA }
+						}
+						AND = {
+							ROOT = { tag = FRA }
+							FROM = { tag = ENG }
+						}
+					}
+				}
+				news_event = { id = ADW_NEWS.17 days = 1 }
+			}
+		}
+	}
+	
+	on_capitulation = {
+		effect = {
+			if = {
+				limit = {
+					ROOT = {original_tag = INS}
+				}
+				for_each_scope_loop = {
+					array = global.ADW_INS_state_list
+					controller = {
+						transfer_state = PREV
+					}
+				}
+			}
+		}
+	}
+	on_daily = { effect = {add_to_variable = { ROOT.GDP_amou = ROOT.GDP_daily }}}
+	
+	##ADW SPY###
+	on_daily = {
+		effect = {
+			ADW_SPY_intel_strength_researcher = yes
+			clear_array = ROOT.ADW_SPY_net_work_strength_list
+			every_country = {
+				limit = {
+					ROOT = {
+						network_strength = {
+							target = PREV
+							value > 0
+						}
+					}
+				}
+				add_to_array = { ROOT.ADW_SPY_net_work_strength_list = THIS }
+				while_loop_effect = {
+					break = temp_break
+					limit = {
+						ROOT = {
+							network_strength = {
+								target = PREV
+								value > ROOT.ADW_SPY_value_strength
+							}
+						}
+					}
+					add_to_variable = { ROOT.ADW_SPY_value_strength = 1 }
+					set_variable = { ROOT.ADW_SPY_net_work_strength_list_value^THIS = ROOT.ADW_SPY_value_strength }
+				}
+				clear_variable = ROOT.ADW_SPY_value_strength
 			}
 		}
 	}
