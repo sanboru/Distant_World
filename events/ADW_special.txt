@@ -26,3 +26,14 @@ country_event = {
 		add_research_slot = -1
 	}
 }
+country_event = {
+	id = ADW_SPE.3
+	title = ADW_SPE.3.t
+	desc = ADW_SPE.3.d
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = ADW_SPE.3.a
+		set_variable = { ROOT.ADW_seisaku_list_reable_array^2 = 60 }
+	}
+}

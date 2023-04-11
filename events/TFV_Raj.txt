@@ -2690,7 +2690,7 @@ country_event = { #朝貢返礼品
 	}
 	option = {
 		subtract_from_variable = { ROOT.GDP_amou = ADW_QI_chow_kou_henreihin }
-		add_variable = { FROM.GDP_amou = ADW_QI_chow_kou_henreihin }
+		add_to_variable = { FROM.GDP_amou = ADW_QI_chow_kou_henreihin }
 		name = IND_ADW.115.a
 		ai_chance = {
 			factor = 10
@@ -2702,7 +2702,7 @@ country_event = { #朝貢返礼品
 	hidden = yes
 	is_triggered_only = yes
 	immediate = {
-		QIE = { country_event = { id = IND_ADW.116 } }
+		QIE = { country_event = { id = IND_ADW.116 days = 182 } }
 		for_each_scope_loop = {
 			array = QIE.ADW_CHI_chow_kou_list_array
 			country_event = { id = IND_ADW.112 days = 182 }
@@ -3058,5 +3058,1142 @@ country_event = {
 		ai_chance = {
 			factor = 10
 		}
+	}
+}
+country_event = {
+	id = IND_ADW.129
+	title = IND_ADW.129.t
+	desc = IND_ADW.129.d
+	picture = GFX_report_event_british_inspect_troops
+	is_triggered_only = yes
+	option = {
+		name = IND_ADW.129.a
+		trigger = {
+			any_owned_state = {
+				state_population > 800000
+			}
+		}
+		random_owned_state = {
+			limit = { any_owned_state = { state_population > 800000 } }
+			add_manpower = -3000
+		}
+		FROM = { country_event = { id = IND_ADW.130 days = 20 random_days = 20 } }
+		ai_chance = {
+			factor = 5
+			modifier = {
+				add = 6
+				has_manpower > 800000
+			}
+		}
+	}
+	option = {
+		name = IND_ADW.129.b
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+country_event = {
+	id = IND_ADW.130
+	title = IND_ADW.130.t
+	desc = IND_ADW.130.d
+	picture = GFX_report_event_british_inspect_troops
+	is_triggered_only = yes
+	option = {
+		name = IND_ADW.130.a
+		add_to_variable = { ROOT.ADW_HOK_AIM_amount_min = 3000 }
+		random_owned_state = {
+			add_manpower = 3000
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+country_event = {
+	id = IND_ADW.131
+	title = IND_ADW.131.t
+	desc = IND_ADW.131.d
+	picture = GFX_report_event_generic_sign_treaty1
+	is_triggered_only = yes
+	option = {
+		name = IND_ADW.131.a
+		QIE = {
+			annex_country = {
+				target = ROOT
+				transfer_troops = no
+			}
+		}
+		ai_chance = {
+			factor = 2
+		}
+	}
+	option = {
+		name = IND_ADW.131.b
+		QIE = { country_event = { id = IND_ADW.132 days = 2} }
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+country_event = {
+	id = IND_ADW.132
+	title = IND_ADW.132.t
+	desc = IND_ADW.132.d
+	picture = GFX_report_event_generic_sign_treaty1
+	is_triggered_only = yes
+	option = {
+		name = IND_ADW.132.a
+		hidden_effect = { remove_from_array = { QIE.ADW_CHI_chow_kou_list_array = FROM } }
+		FROM = { remove_ideas = ADW_chow_kow_contry_of_QIE }
+		custom_effect_tooltip = remove_from_chow_cow
+		create_wargoal = {
+			type = annex_everything
+			target = FROM
+		}
+		ai_chance = {
+			factor = 2
+		}
+	}
+	option = {
+		name = IND_ADW.132.b
+		hidden_effect = { remove_from_array = { QIE.ADW_CHI_chow_kou_list_array = FROM } }
+		FROM = { remove_ideas = ADW_chow_kow_contry_of_QIE }
+		custom_effect_tooltip = remove_from_chow_cow
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+country_event = {
+	id = IND_ADW.133
+	title = IND_ADW.133.t
+	desc = IND_ADW.133.d
+	picture = GFX_report_event_chamberlain
+	is_triggered_only = yes
+	option = {
+		name = IND_ADW.132.a
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+country_event = {
+	id = IND_ADW.134
+	title = IND_ADW.134.t
+	desc = IND_ADW.134.d
+	picture = GFX_report_event_spain_civil_war_volunteers_01
+	is_triggered_only = yes
+	option = {
+		name = IND_ADW.134.a
+		declare_war_on = {
+			target = TUR
+			type = annex_everything
+		}
+		IF = {
+			limit = { tag = SAU }
+			add_state_claim = 679
+			add_state_claim = 855
+			add_state_claim = 856
+			add_state_claim = 962
+		}
+		IF = {
+			limit = { tag = YEM }
+			add_state_claim = 935
+		}
+		IF = {
+			limit = {
+				OR = {
+					tag = BUL
+					tag = YUG
+					tag = GRE
+				}
+			}
+			news_event = { id = ADW_NEWS.14 }
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = IND_ADW.134.b
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+###ギリシャへの侵攻（オスマン）###
+country_event = {
+	id = IND_ADW.135
+	title = IND_ADW.135.t
+	desc = IND_ADW.135.d
+	picture = GFX_report_event_chinese_soldiers_01
+	is_triggered_only = yes
+	option = {
+		name = IND_ADW.135.a
+		every_country = {
+			limit = {
+				OR = {
+					tag = YUG
+					tag = BUL
+					tag = ROM
+					tag = MNT
+				}
+				NOT = {is_in_faction_with = TUR}
+			}
+			country_event = {id = IND_ADW.136 days = 1 }
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+country_event = {
+	id = IND_ADW.136
+	title = IND_ADW.136.t
+	desc = IND_ADW.136.d
+	picture = GFX_report_event_SOV_mongolia_fortify_border
+	is_triggered_only = yes
+	option = {
+		name = IND_ADW.136.a
+		declare_war_on = {
+			target = TUR
+			type = annex_everything
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = IND_ADW.136.b
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+country_event = {
+	id = IND_ADW.138
+	title = IND_ADW.135.t
+	desc = IND_ADW.138.d
+	picture = GFX_report_event_chinese_soldiers_01
+	is_triggered_only = yes
+	option = {
+		name = IND_ADW.135.a
+		every_country = {
+			limit = {
+				OR = {
+					tag = YUG
+					tag = BUL
+					tag = ROM
+					tag = MNT
+				}
+				NOT = {is_in_faction_with = FOT}
+			}
+			country_event = {id = IND_ADW.139 days = 1 }
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+country_event = {
+	id = IND_ADW.139
+	title = IND_ADW.136.t
+	desc = IND_ADW.136.d
+	picture = GFX_report_event_SOV_mongolia_fortify_border
+	is_triggered_only = yes
+	option = {
+		name = IND_ADW.136.a
+		declare_war_on = {
+			target = FOT
+			type = annex_everything
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = IND_ADW.136.b
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+###ギリシャへの侵攻（オスマン）###
+country_event = {
+	id = IND_ADW.137
+	title = IND_ADW.137.t
+	desc = IND_ADW.137.d
+	picture = GFX_report_event_tur_opposition_party
+	is_triggered_only = yes
+	option = {
+		name = IND_ADW.137.a
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+###英国###
+country_event = {
+	id = IND_ADW.140
+	title = IND_ADW.140.t
+	desc = IND_ADW.140.d
+	picture = GFX_report_event_spain_civil_war_volunteers_01
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			ENG = {
+				set_capital = {state = 971}
+				set_cosmetic_tag = ADW_ENG_fas
+			}
+			create_dynamic_country = {
+				original_tag = ENG
+				add_political_power = 10
+				transfer_state = 968
+				
+				set_cosmetic_tag = ADW_ENG_LONDON
+				set_popularities = {
+					democratic = 100
+				}
+				set_politics = {
+					ruling_party = democratic
+					elections_allowed = no
+					long_name = ENG_LONDON_shimin_seifu
+					name = ENG_LONDON
+				}
+				load_focus_tree = ADW_ENG_LONDON_civil_war_NF
+			}
+			ROOT = {
+				add_popularity = {
+					ideology = fascism
+					popularity = -0.5
+				}
+				start_civil_war = {
+					ruling_party = fascism
+					ideology = ROOT
+					army_ratio = 0.5
+					navy_ratio = 0.5
+					states = all
+					states_filter = {
+						NOT ={has_state_flag = ENG_fasism }
+						NOT = { state = 968 }
+					}
+					set_popularities = {
+						democratic = ENG.party_popularity_100@democratic
+						neutrality = ENG.party_popularity_100@neutrality
+						fascism = ENG.party_popularity_100@fascism
+						communism = ENG.party_popularity_100@communism
+					}
+					set_cosmetic_tag = ADW_ENG_demo
+					load_focus_tree = ADW_ENG_british_empire
+					complete_national_focus = ADW_ENG_political_demo
+				}
+				set_popularities = {
+					democratic = 20
+					neutrality = 5
+					fascism = 70
+					communism = 5
+				}
+			}
+			968 = {set_demilitarized_zone = yes}
+		}
+	}
+	option = {
+		name = IND_ADW.140.a
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+###英国　対仏###
+country_event = {
+	id = IND_ADW.141
+	title = IND_ADW.141.t
+	desc = IND_ADW.141.d
+	picture = GFX_report_event_crowd_in_prague
+	is_triggered_only = yes
+	option = {
+		name = IND_ADW.141.a
+		add_stability = -0.15
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+country_event = {
+	id = IND_ADW.143
+	title = IND_ADW.143.t
+	desc = IND_ADW.143.d
+	picture = GFX_report_event_communists_in_riga
+	is_triggered_only = yes
+	option = {
+		name = IND_ADW.143.a
+		trigger = {
+			original_tag = FRA
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = IND_ADW.143.b
+		trigger = {
+			original_tag = ENG
+		}
+		ENG = {
+			add_opinion_modifier = {
+				target = FRA
+				modifier = ADW_ENG_fra_shuuyou
+			}
+		}
+		FRA = {country_event = { id = IND_ADW.144 days = 2}}
+		ai_chance = {
+			factor = 0
+			modifier = {
+				strength_ratio = {
+					tag = ENG
+					ratio > 20
+				}
+				factor = 5
+			}
+			modifier = {
+				num_divisions > 100
+				factor = 5
+			}
+			modifier = {
+				num_of_factories > 150
+				factor = 5
+			}
+			modifier = {
+				has_war = yes
+				factor = -30
+			}
+		}
+	}
+	option = {
+		name = IND_ADW.143.c
+		trigger = {
+			original_tag = ENG
+		}
+		set_temp_variable_to_random = ADW_ENG_RANDOM_var
+		if = {
+			limit = {
+				check_variable = {
+					var = ADW_ENG_RANDOM_var
+					value = ROOT.ADW_ENG_shimitsudo
+					compare = greater_than_or_equals
+				}
+			}
+			country_event = { id = IND_ADW.141 days = 3}
+		}
+		ENG = {
+			add_opinion_modifier = {
+				target = FRA
+				modifier = ADW_ENG_fra_shuuyou_NOT
+			}
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				has_war = yes
+				factor = 30
+			}
+		}
+	}
+}
+country_event = {
+	id = IND_ADW.144
+	title = IND_ADW.144.t
+	desc = IND_ADW.144.d
+	picture = GFX_report_event_gre_cabinet_meeting
+	is_triggered_only = yes
+	option = {
+		name = IND_ADW.144.a
+		ENG = {
+			hidden_effect = {
+				add_to_variable = { ROOT.ADW_ENG_shimitsudo = -0.1 }
+				clamp_variable = {
+					var = ROOT.ADW_ENG_shimitsudo
+					min = 0
+					max = 1
+				}
+			}
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				has_war = yes
+				factor = 15
+			}
+		}
+	}
+	option = {
+		name = IND_ADW.144.b
+		ENG = {
+			add_opinion_modifier = {
+				target = FRA
+				modifier = ADW_ENG_FARA_hougeki
+			}
+		}
+		ai_chance = {
+			factor = 0
+			modifier = {
+				strength_ratio = {
+					tag = FRA
+					ratio > 20
+				}
+				factor = 5
+			}
+			modifier = {
+				num_divisions > 100
+				factor = 5
+			}
+			modifier = {
+				num_of_factories > 150
+				factor = 5
+			}
+			modifier = {
+				has_war = yes
+				factor = -30
+			}
+		}
+	}
+	option = {
+		name = IND_ADW.144.c
+		ENG = {
+			add_opinion_modifier = {
+				target = FRA
+				modifier = ADW_ENG_FRA_hinan_2
+			}
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				has_war = yes
+				factor = 30
+			}
+		}
+	}
+}
+###英国　対仏###
+
+
+country_event = {
+	id = IND_ADW.142
+	title = IND_ADW.142.t
+	desc = IND_ADW.142.d
+	picture = GFX_report_event_communists_in_riga
+	is_triggered_only = yes
+	option = {
+		name = IND_ADW.142.a
+		add_stability = -0.01
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+country_event = {
+	id = IND_ADW.145
+	title = IND_ADW.145.t
+	desc = IND_ADW.145.d
+	picture = GFX_report_event_japan_europe_pact
+	is_triggered_only = yes
+	option = {
+		name = IND_ADW.145.a
+		set_politics = {
+			ruling_party = fascism
+			elections_allowed = yes
+			election_frequency = 48
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = IND_ADW.145.b
+		set_politics = {
+			ruling_party = communism
+			elections_allowed = yes
+			election_frequency = 48
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+country_event = {
+	id = IND_ADW.146
+	title = IND_ADW.146.t
+	desc = IND_ADW.146.d
+	picture = GFX_report_event_us_panay_demands
+	is_triggered_only = yes
+	option = {
+		name = IND_ADW.146.a
+		add_stability = 0.05
+		add_political_power = 10
+		hidden_effect = {
+			ENG = {
+				if = {
+					limit = {
+						controls_state = 119
+						controls_state = 967
+						controls_state = 113
+						controls_state = 964
+						controls_state = 963
+						controls_state = 965
+						controls_state = 135
+						controls_state = 134
+						controls_state = 966
+					}
+					country_event = { id = IND_ADW.147 days = 5 }
+				}
+				if = {
+					limit = {
+						controls_state = 122
+						controls_state = 973
+					}
+					country_event = { id = IND_ADW.148 days = 5 }
+				}
+				if = {
+					limit = {
+						controls_state = 133
+						controls_state = 121
+						controls_state = 136
+						controls_state = 120
+					}
+					country_event = { id = IND_ADW.149 days = 5 }
+				}
+			}
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+country_event = {
+	id = IND_ADW.147
+	title = IND_ADW.147.t
+	desc = IND_ADW.147.d
+	picture = GFX_report_event_eng_edward_and_wallis
+	is_triggered_only = yes
+	option = {
+		name = IND_ADW.147.a
+		IRE = { 
+			transfer_state = 119
+			transfer_state = 967
+			transfer_state = 113
+			transfer_state = 964
+			transfer_state = 963
+			transfer_state = 965
+			transfer_state = 135
+			transfer_state = 134
+			transfer_state = 966
+			
+			transfer_state = 119
+			transfer_state = 967
+			transfer_state = 113
+			transfer_state = 964
+			transfer_state = 963
+			transfer_state = 965
+			transfer_state = 135
+			transfer_state = 134
+			transfer_state = 966
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = IND_ADW.147.b
+		custom_effect_tooltip = ADW_GDP_kokumin_fushinkan_5_r
+		hidden_effect = {add_to_variable = { ADW_GDP_kokumin_fushinkan =0.05 }}
+		add_stability = -0.05
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+country_event = {
+	id = IND_ADW.148
+	title = IND_ADW.148.t
+	desc = IND_ADW.148.d
+	picture = GFX_report_event_eng_blackshirt_march
+	is_triggered_only = yes
+	option = {
+		name = IND_ADW.147.a
+		WLS = { 
+			transfer_state = 122
+			transfer_state = 973
+			
+			transfer_state = 122
+			transfer_state = 973
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = IND_ADW.147.b
+		custom_effect_tooltip = ADW_GDP_kokumin_fushinkan_5_r
+		hidden_effect = {add_to_variable = { ADW_GDP_kokumin_fushinkan =0.05 }}
+		add_stability = -0.05
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+country_event = {
+	id = IND_ADW.149
+	title = IND_ADW.149.t
+	desc = IND_ADW.149.d
+	picture = GFX_report_event_eng_blackshirt_march
+	is_triggered_only = yes
+	option = {
+		name = IND_ADW.147.a
+		SCO = { 
+			transfer_state = 133
+			transfer_state = 121
+			transfer_state = 136
+			transfer_state = 120
+			
+			add_state_core = 133
+			add_state_core = 121
+			add_state_core = 136
+			add_state_core = 120
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = IND_ADW.147.b
+		custom_effect_tooltip = ADW_GDP_kokumin_fushinkan_5_r
+		hidden_effect = {add_to_variable = { ADW_GDP_kokumin_fushinkan =0.05 }}
+		add_stability = -0.05
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+country_event = {
+	id = IND_ADW.150
+	hidden = yes
+	is_triggered_only = yes
+	immediate = {
+		ROOT = {
+			add_to_array = { global.ADW_GDP_rank_array = ROOT }
+			add_to_variable = { global.ADW_GDP_now_rank = 1 }
+		}
+		every_country = {
+			limit = { check_variable = { THIS.ADW_GDP_rank_num = global.ADW_GDP_now_rank }}
+			country_event = { id = IND_ADW.150 }
+		}
+	}
+}
+country_event = {
+	id = IND_ADW.151
+	title = IND_ADW.151.t
+	desc = IND_ADW.151.d
+	picture = GFX_report_event_finnish_letter
+	is_triggered_only = yes
+	option = {
+		name = IND_ADW.151.a
+		FROM = {
+			transfer_state = 977
+			transfer_state = 333
+			transfer_state = 978
+			transfer_state = 979
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = IND_ADW.151.b
+		FROM = {
+			country_event = { id = IND_ADW.152 days = 1}
+			add_autonomy_score = {
+				value = 500
+				localization = ADW_INS_effect
+			}
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+country_event = {
+	id = IND_ADW.152
+	title = IND_ADW.152.t
+	desc = IND_ADW.152.d
+	picture = GFX_report_event_finnish_letter
+	is_triggered_only = yes
+	option = {
+		name = IND_ADW.152.a
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+country_event = {
+	id = IND_ADW.153
+	title = IND_ADW.153.t
+	desc = IND_ADW.153.f
+	is_triggered_only = yes
+	option = {
+		name = IND_ADW.153.a
+		hidden_effect = {
+			clr_country_flag = ADW_INS_BOR_slct
+			clr_country_flag = ADW_INS_PAP_slct
+			clr_country_flag = ADW_INS_SUR_slct
+		}
+	}
+	option = {
+		name = IND_ADW.153.b
+		trigger = { has_country_flag = ADW_INS_BOR_dokuritsu }
+		hidden_effect = {
+			set_country_flag = ADW_INS_BOR_slct
+		}
+	}
+	option = {
+		name = IND_ADW.153.c
+		trigger = { has_country_flag = ADW_INS_PAP_dokuritsu }
+		hidden_effect = {
+			set_country_flag = ADW_INS_PAP_slct
+		}
+	}
+	option = {
+		name = IND_ADW.153.d
+		trigger = { has_country_flag = ADW_INS_SUR_dokuritsu }
+		hidden_effect = {
+			set_country_flag = ADW_INS_SUR_slct
+		}
+	}
+}
+country_event = {
+	id = IND_ADW.154
+	title = IND_ADW.154.t
+	desc = IND_ADW.154.de
+	picture = GFX_report_event_chinese_soldiers_01
+	is_triggered_only = yes
+	option = {
+		name = IND_ADW.154.a
+		trigger = {
+			tag = AST
+			PPA = {exists = yes}
+			669 = {
+				owner = {
+					original_tag = INS
+				}
+			}
+		}
+		PPA = {
+		}
+		669 = {
+			owner = {
+				ROOT = {
+					declare_war_on = {
+						target = PREV
+						type = annex_everything
+					}
+				}
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = {
+		name = IND_ADW.154.b
+		trigger = {
+			tag = AST
+			669 = {
+				owner = {
+					original_tag = INS
+				}
+			}
+		}
+		669 = {
+			owner = {
+				ROOT = {
+					declare_war_on = {
+						target = PREV
+						type = annex_everything
+					}
+				}
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = {
+		name = IND_ADW.154.c
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+country_event = {
+	id = IND_ADW.155
+	title = IND_ADW.155.t
+	desc = IND_ADW.155.d
+	picture = GFX_report_event_eng_mosley_mussolini
+	is_triggered_only = yes
+	option = {
+		name = IND_ADW.155.a
+		FROM = {
+			puppet = ROOT
+			country_event = { id = IND_ADW.156 }
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = IND_ADW.155.b
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+country_event = {
+	id = IND_ADW.156
+	title = IND_ADW.156.t
+	desc = IND_ADW.156.d
+	picture = GFX_report_event_molotov_ribentrop_handshake
+	is_triggered_only = yes
+	option = {
+		name = IND_ADW.156.a
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+country_event = {
+	id = IND_ADW.157
+	title = IND_ADW.157.t
+	desc = IND_ADW.157.d
+	picture = GFX_report_event_germany_politician_handshake
+	is_triggered_only = yes
+	option = {
+		name = IND_ADW.157.a
+		declare_war_on = {
+			target = FROM
+			type = annex_everything
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = IND_ADW.157.b
+		ai_chance = {
+			factor = 7
+		}
+	}
+}
+country_event = { #マラヤ
+	id = IND_ADW.158
+	title = IND_ADW.158.t
+	desc = IND_ADW.158.d
+	picture = GFX_report_event_japanese_soldiers_01
+	is_triggered_only = yes
+	option = {
+		name = IND_ADW.158.a
+		trigger = {
+			1006 = {
+				owner = { original_tag = INS }
+			}
+		}
+		1006 = {
+			owner = {
+				declare_war_on = {
+					target = PREV
+					type = annex_everything
+				}
+			}
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = IND_ADW.158.b
+		trigger = {
+			BOR = { exists = yes }
+			1006 = {
+				owner = { original_tag = INS }
+			}
+		}
+		1006 = {
+			owner = {
+				declare_war_on = {
+					target = PREV
+					type = annex_everything
+				}
+			}
+		}
+		declare_war_on = {
+			target = BOR
+			type = annex_everything
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = IND_ADW.158.c
+		ai_chance = {
+			factor = 7
+		}
+	}
+}
+country_event = { #ポルトガル
+	id = IND_ADW.159
+	title = IND_ADW.159.t
+	desc = IND_ADW.158.d
+	picture = GFX_report_event_pla_in_beijing
+	is_triggered_only = yes
+	option = {
+		name = IND_ADW.159.a
+		trigger = {
+			ROOT = { controls_state = 721 }
+			1023 = {
+				owner = { original_tag = INS }
+			}
+		}
+		1023 = {
+			owner = {
+				country_event = { id = IND_ADW.160 days = 1 }
+			}
+		}
+		ai_chance = {
+			factor = 15
+		}
+	}
+	option = {
+		name = IND_ADW.159.b
+		ai_chance = {
+			factor = 3
+		}
+	}
+}
+country_event = { #ポルトガル
+	id = IND_ADW.160
+	title = IND_ADW.160.t
+	desc = IND_ADW.160.d
+	picture = GFX_report_event_stalin_02
+	is_triggered_only = yes
+	option = {
+		name = IND_ADW.160.a
+		FROM = { transfer_state = 1023 }
+		ai_chance = {
+			factor = 5
+		}
+	}
+	option = {
+		name = IND_ADW.160.b
+		FROM = { country_event = { id = IND_ADW.161 days = 1 } }
+		ai_chance = {
+			factor = 15
+		}
+	}
+}
+country_event = { #ポルトガル
+	id = IND_ADW.161
+	title = IND_ADW.161.t
+	desc = IND_ADW.161.d
+	picture = GFX_report_event_stalin_02
+	is_triggered_only = yes
+	option = {
+		name = IND_ADW.161.a
+		declare_war_on = {
+			target = FROM
+			type = annex_everything
+		}
+		ai_chance = {
+			factor = 15
+			modifier = {
+				has_war = yes
+				add = -10
+			}
+		}
+	}
+	option = {
+		name = IND_ADW.161.b
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+country_event = { #中華インス
+	id = IND_ADW.162
+	title = IND_ADW.162.t
+	desc = IND_ADW.162.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	is_triggered_only = yes
+	option = {
+		name = IND_ADW.162.a
+		custom_effect_tooltip = ADW_QIS_dec_unlock
+		QIS = {
+			transfer_state = 985
+			set_cosmetic_tag = ADW_QIS_INS_col
+		}
+		every_country = {
+			limit = {
+				original_tag = INS
+			}
+			QIS = {
+				declare_war_on = {
+					target = PREV
+					type = annex_everything
+				}
+			}
+		}
+		add_to_array = {QIE.ADW_CHI_chow_kou_list_array = QIS }
+		QIS = {
+			division_template = {
+				name = "QIS hanran military"
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+				}
+			}
+			
+			985 = {
+				create_unit = {
+					division = "division_template = \"QIS hanran military\"start_experience_factor = 0.1 start_equipment_factor = 0.3"
+					owner = QIS
+					prioritize_location = 10552
+					count = 3
+				}
+			}
+		}
+		ai_chance = {
+			factor = 15
+			modifier = {
+				has_war = yes
+				add = -10
+			}
+		}
+	}
+	option = {
+		name = IND_ADW.162.b
+		ai_chance = {
+			factor = 6
+		}
+	}
+}
+country_event = {
+	id = IND_ADW.163
+	hidden = yes
+	is_triggered_only = yes
+	immediate = {
+		ROOT = {ADW_company_set_up = yes}
 	}
 }

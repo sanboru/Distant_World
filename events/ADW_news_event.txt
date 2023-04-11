@@ -1026,3 +1026,90 @@ news_event = {
 		}
 	}
 }
+news_event = {
+	id = ADW_NEWS.13
+	title = ADW_NEWS.13.t
+	desc = ADW_NEWS.13.d
+	picture = GFX_news_event_king_speech
+	major = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {tag = TUR }
+			}
+			ADW_TUR_KAKUMEI = yes
+			if = {
+				limit = { is_ai = no }
+				FOT = {change_tag_from = TUR}
+			}
+		}
+	}
+	option = {
+		name = ADW_NEWS.13.a
+		ai_chance = {
+			factor = 5
+		}
+	}
+}
+news_event = {
+	id = ADW_NEWS.14
+	title = ADW_NEWS.14.t
+	desc = ADW_NEWS.14.d
+	picture = GFX_news_event_battle_for_the_bosporus
+	fire_only_once = yes
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = ADW_NEWS.14.a
+		ai_chance = {
+			factor = 5
+		}
+	}
+}
+news_event = {
+	id = ADW_NEWS.15
+	title = ADW_NEWS.15.t
+	desc = ADW_NEWS.15.d
+	picture = GFX_news_event_civil_war_turkey
+	fire_only_once = yes
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = ADW_NEWS.15.a
+		ai_chance = {
+			factor = 5
+		}
+	}
+}
+news_event = {
+	id = ADW_NEWS.16
+	title = ADW_NEWS.16.t
+	desc = ADW_NEWS.16.d
+	picture = GFX_news_event_009
+	fire_only_once = yes
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = ADW_NEWS.16.a
+		ai_chance = {
+			factor = 5
+		}
+	}
+}
+news_event = {
+	id = ADW_NEWS.17
+	title = ADW_NEWS.17.t
+	desc = ADW_NEWS.17.d
+	picture = GFX_news_event_usa_japan_at_war
+	fire_only_once = yes
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = ADW_NEWS.17.a
+		ai_chance = {
+			factor = 5
+		}
+	}
+}
