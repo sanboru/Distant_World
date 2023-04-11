@@ -1,8 +1,33 @@
 scripted_gui = {
-
 	the_agency_ADW_inthe = {
-		window_name = "the_agency_ADW"
+		window_name = "ADW_SPY_information"
 		context_type = player_context
-		parent_window_token = countryintelligenceagencyview
+		parent_window_name = "agency_operations"
+		dynamic_lists = {
+			ADW_SPY_information_web_strength_list = {
+				array = ROOT.ADW_SPY_net_work_strength_list
+				change_scope = yes
+				entry_container = "ADW_SPY_information_entey" 
+			}
+		}
+	}
+	ADW_SPY_operation_entry = {
+		window_name = "ADW_SPY_operation_entry"
+		context_type = player_context
+		parent_window_name = "countryintelligenceagencyview"
+		visible = {
+			has_country_flag = ADW_SPY_operation
+			has_intelligence_agency = yes
+		}
+	}
+	ADW_SPY_operation_tab = {
+		window_name = "ADW_SPY_operation_tab"
+		context_type = player_context
+		parent_window_name = "countryintelligenceagencyview"
+		visible = {
+			has_intelligence_agency = yes
+		}
+		effects = {
+		}
 	}
 }

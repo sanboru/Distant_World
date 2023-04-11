@@ -1,24 +1,4 @@
 scripted_gui = {
-	ADW_GDP_fuku_shidosha_window = {
-		context_type = selected_country_context
-		parent_window_token = selected_country_view_diplomacy
-		window_name = "ADW_GDP_fuku_shidosha_window"
-		effects = {
-			open_the_ADW_GDP_fuku_shidosha_window_click = {
-				ROOT = {
-					if = {
-						limit = {
-							has_country_flag = open_ui_saiko
-						}
-						clr_country_flag = open_ui_saiko
-						else = {
-							set_country_flag = open_ui_saiko
-						}
-					}
-				}
-			}
-		}
-	}
 	ADW_CHI_chokou_koku_window = {
 		context_type = decision_category
 		parent_window_token = decision_tab
@@ -106,11 +86,19 @@ scripted_gui = {
 				change_scope = yes
 				entry_container = "ADW_GDP_junitxt" 
 			}
+			ADW_GDP_junitxt_GDP_grid = {
+				array = global.ADW_GDP_rank_array
+				change_scope = yes
+				entry_container = "ADW_GDP_list_entry" 
+			}
 		}
 		effects = {
 			ADW_GDP_hide_juni_click = {
 				ROOT = { clr_country_flag = ADQW_GDP_diS_flag }
 			}
+		}
+		properties = {
+			ADW_GDP_rank_list_flag = { image = "[THIS.GetFlag]"}
 		}
 	}
 	
@@ -157,21 +145,358 @@ scripted_gui = {
 		}
 		dynamic_lists = {
 			ADW_GDP_trade_gun = {
-				array = global.ADW_GDP_trade_gun_country_list
+				array = ROOT.ADW_GDP_trade_gun_country_list
 				change_scope = yes
 				entry_container = "ADW_sytem_of_international_trade_entry" 
 			}
+			ADW_GDP_trade_canon = {
+				array = ROOT.ADW_GDP_trade_can_country_list
+				change_scope = yes
+				entry_container = "ADW_sytem_of_international_trade_entry_can" 
+			}
 		}
 		effects = {
+			ADW_trade_close_click = {
+				clr_country_flag = AADW_GDP_trade
+			}
+			ADW_ADD_sell_amouc_click = {
+				add_to_variable = { ADW_sell_can_temp = 10 }
+				clamp_variable = {
+					var = ADW_sell_can_temp
+					min = 0
+					max = ROOT.num_equipment@artillery_equipment
+				}
+			}
+			ADW_mines_sell_amouc_click = {
+				add_to_variable = { ADW_sell_can_temp = -10 }
+				clamp_variable = {
+					var = ADW_sell_can_temp
+					min = 0
+					max = ROOT.num_equipment@artillery_equipment
+				}
+			}
+			ADW_sell_can_click = {
+				add_to_variable = { ADW_sell_can_amou = ADW_sell_can_temp }
+				
+				multiply_variable = { ADW_sell_can_temp = -1 }
+				add_equipment_to_stockpile = {
+					type = artillery_equipment
+					amount = ADW_sell_can_temp
+				}
+				
+				clear_variable = ADW_sell_can_temp
+			}
+			CADW_mines_sell_money_click = {
+				add_to_variable = { ADW_can_value = -0.01 }
+				clamp_variable = {
+					var = ADW_can_value
+					min = 0
+				}
+			}
+			CADW_mines_sell_money_control_click = {
+				add_to_variable = { ADW_can_value = -0.1 }
+				clamp_variable = {
+					var = ADW_can_value
+					min = 0
+				}
+			}
+			CADW_ADD_sell_money_click = {
+				add_to_variable = { ADW_can_value = 0.01 }
+				clamp_variable = {
+					var = ADW_can_value
+					min = 0
+				}
+			}
+			CADW_ADD_sell_money_control_click = {
+				add_to_variable = { ADW_can_value = 0.1 }
+				clamp_variable = {
+					var = ADW_can_value
+					min = 0
+				}
+			}
+			
+			ADW_ADD_buy_can_amou_click = {
+				add_to_variable = { ROOT.ADW_buy_can^THIS = 10 }
+				clamp_variable = {
+					var = ROOT.ADW_buy_can^THIS
+					min = 0
+					max = THIS.ADW_sell_can_amou
+				}
+				ADW_can_buy_money_col = yes
+			}
+			ADW_mines_buy_can_amou_click = {
+				add_to_variable = { ROOT.ADW_buy_can^THIS = -10 }
+				clamp_variable = {
+					var = ROOT.ADW_buy_can^THIS
+					min = 0
+					max = THIS.ADW_sell_can_amou
+				}
+				ADW_can_buy_money_col = yes
+			}
+			ADW_buy_can_click = {
+				set_variable={ ROOT.ADW_array_value_can = ROOT.ADW_buy_can^THIS }
+				ROOT = {
+					add_equipment_to_stockpile = {
+						type = artillery_equipment
+						amount = ROOT.ADW_array_value_can
+						producer = PREV
+					}
+				}
+				add_to_variable = { THIS.GDP_amou = ROOT.ADW_can_buy_money^THIS }
+				subtract_from_variable = { ROOT.GDP_amou = ROOT.ADW_can_buy_money^THIS }
+				subtract_from_variable = { THIS.ADW_sell_can_amou= ROOT.ADW_buy_can^THIS }
+				clear_variable = ROOT.ADW_buy_can^THIS
+				clear_variable = ROOT.ADW_can_buy_money^THIS
+			}
+			###歩兵装備売り###
+			ADW_ADD_sell_amou_click = {
+				add_to_variable = { ADW_sell_gun_temp = 100 }
+				clamp_variable = {
+					var = ADW_sell_gun_temp
+					min = 0
+					max = ROOT.num_equipment@infantry_equipment
+				}
+			}
+			ADW_mines_sell_amou_click = {
+				add_to_variable = { ADW_sell_gun_temp = -100 }
+				clamp_variable = {
+					var = ADW_sell_gun_temp
+					min = 0
+					max = ROOT.num_equipment@infantry_equipment
+				}
+			}
+			ADW_mines_sell_money_click = {
+				add_to_variable = { ADW_gun_value = -0.01 }
+				clamp_variable = {
+					var = ADW_gun_value
+					min = 0
+				}
+			}
+			ADW_ADD_sell_money_click = {
+				add_to_variable = { ADW_gun_value = 0.01 }
+				clamp_variable = {
+					var = ADW_gun_value
+					min = 0
+				}
+			}
+			###歩兵装備売り###
+			###歩兵装備買い###
+			ADW_mines_buy_gun_amou_click = {
+				add_to_variable = { ROOT.ADW_buy_infanity^THIS = -100 }
+				clamp_variable = {
+					var = ROOT.ADW_buy_infanity^THIS
+					min = 0
+					max = THIS.ADW_sell_gun_amou
+				}
+				ADW_gun_buy_money_col = yes
+			}
+			ADW_buy_gun_click = {
+				set_variable={ROOT.ADW_array_value = ROOT.ADW_buy_infanity^THIS }
+				ROOT = {
+					add_equipment_to_stockpile = {
+						type = infantry_equipment
+						amount = ROOT.ADW_array_value
+						producer = PREV
+					}
+				}
+				add_to_variable = { THIS.GDP_amou = ROOT.ADW_gun_buy_money^THIS }
+				subtract_from_variable = { ROOT.GDP_amou = ROOT.ADW_gun_buy_money^THIS }
+				subtract_from_variable = { THIS.ADW_sell_gun_amou = ROOT.ADW_buy_infanity^THIS }
+				clear_variable = ROOT.ADW_buy_infanity^THIS
+				clear_variable = ROOT.ADW_gun_buy_money^THIS
+			}
+			ADW_ADD_buy_gun_amou_click = {
+				add_to_variable = { ROOT.ADW_buy_infanity^THIS = 100 }
+				clamp_variable = {
+					var = ROOT.ADW_buy_infanity^THIS
+					min = 0
+					max = THIS.ADW_sell_gun_amou
+				}
+				ADW_gun_buy_money_col = yes
+			}
+			ADW_sell_gun_click = {
+				add_to_variable = { ADW_sell_gun_amou = ADW_sell_gun_temp }
+				
+				multiply_variable = { ADW_sell_gun_temp = -1 }
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = ADW_sell_gun_temp
+				}
+				
+				clear_variable = ADW_sell_gun_temp
+			}
+			###歩兵装備買い###
+		}
+		properties = {
+			ADW_GDP_flags = { image = "[THIS.GetFlag]"}
+			ADW_flags_sell = { image = "[ROOT.GetFlag]"}
+		}
+		
+		ai_enabled = {
+			always = yes
+		}
+		ai_test_interval = 24
+		ai_test_variance = 0.2
+		ai_test_scopes = test_self_country
+		ai_weights = {
+			ADW_ADD_sell_amou_click = {
+				ai_will_do = {
+					factor = 0
+					modifier = {
+						ROOT = {
+							has_equipment = {
+								infantry_equipment > 1000
+							}
+						}
+						add = 5
+					}
+					modifier = {
+						ROOT = {
+							has_equipment = {
+								infantry_equipment > 10000
+							}
+						}
+						add = 10
+					}
+				}
+			}
+			ADW_sell_gun_click = {
+				ai_will_do = {
+					modifier = {
+						ROOT = {
+							check_variable = { ADW_sell_gun_temp > 0 }
+						}
+						add = 100
+					}
+					factor = 0
+				}
+			}
 		}
 	}
-	
+	ADW_super_event = {
+		window_name = "ADW_super_event"
+		visible = { 
+			check_variable = {
+				var = global.ADW_SPV_Pic_variable
+				value = 0
+				compare = not_equals
+			}
+		}
+		effects = {
+			ADW_SPV_kakutei_click = { set_variable = {global.ADW_SPV_Pic_variable=0} }
+		}
+		properties = {
+			ADW_SPV_picture_back = { image = "[ADW_SPV_title_bg]" }
+		}
+	}
+	ADW_infulence_informartion_visible = {
+		window_name = "ADW_infulence_informartion"
+		visible = { 
+			has_country_flag = ADW_inful_infor
+		}
+	}
+	ADW_system_effect_infor = {
+		window_name = "ADW_system_effect_infor"
+		parent_window_token = selected_country_view_diplomacy
+		context_type = selected_country_context
+		visible = {
+			THIS = { NOT ={tag = ROOT }}
+			ROOT = {has_country_flag = ADW_GDP_EFC_infor}
+		}
+	}
+	ADW_system_effect_factory_option = {#工場オプション
+		window_name = "ADW_system_effect_factory_option"
+		parent_window_token = selected_country_view_diplomacy
+		context_type = selected_country_context
+		visible = {
+			THIS = { NOT ={tag = ROOT }}
+			ROOT = {has_country_flag = ADW_option_factory_lend}
+		}
+	}
+	ADW_system_effect_to_other = {
+		window_name = "ADW_system_effect_to_other"
+		parent_window_token = selected_country_view_diplomacy
+		context_type = selected_country_context
+		visible = {
+			NOT ={tag = ROOT }
+		}
+		effects = {
+			ADW_up_the_window_infor_click = {
+				if = {
+					limit = {
+						ROOT = {has_country_flag = ADW_GDP_EFC_infor}
+					}
+					ROOT = {clr_country_flag = ADW_GDP_EFC_infor}
+					else = {
+						ROOT = {set_country_flag = ADW_GDP_EFC_infor}
+					}
+				}
+			}
+			ADW_increese_shien_click = {
+				add_to_variable = { THIS.ADW_GDP_inful^ROOT = 0.1}
+				ADW_GDP_inful_toushi = yes
+			}
+			ADW_increese_shien_control_click = {
+				add_to_variable = { THIS.ADW_GDP_inful^ROOT = 1}
+				ADW_GDP_inful_toushi = yes
+			}
+			ADW_increese_shien_shift_click = {
+				add_to_variable = { THIS.ADW_GDP_inful^ROOT = 10}
+				ADW_GDP_inful_toushi = yes
+			}
+			ADW_increese_shien_control_shift_click = {
+				add_to_variable = { THIS.ADW_GDP_inful^ROOT = 100}
+				ADW_GDP_inful_toushi = yes
+			}
+			ADW_increese_shien_alt_click = {
+				add_to_variable = { THIS.ADW_GDP_inful^ROOT = 1000}
+				ADW_GDP_inful_toushi = yes
+			}
+			
+			ADW_decreese_shien_click = {
+				add_to_variable = { THIS.ADW_GDP_inful^ROOT = -0.1}
+				ADW_GDP_inful_toushi = yes
+			}
+			ADW_decreese_shien_control_click = {
+				add_to_variable = { THIS.ADW_GDP_inful^ROOT = -1}
+				ADW_GDP_inful_toushi = yes
+			}
+			ADW_decreese_shien_shift_click = {
+				add_to_variable = { THIS.ADW_GDP_inful^ROOT = -10}
+				ADW_GDP_inful_toushi = yes
+			}
+			ADW_decreese_shien_control_shift_click = {
+				add_to_variable = { THIS.ADW_GDP_inful^ROOT = -100}
+				ADW_GDP_inful_toushi = yes
+			}
+			ADW_decreese_shien_alt_click = {
+				add_to_variable = { THIS.ADW_GDP_inful^ROOT = -1000}
+				ADW_GDP_inful_toushi = yes
+			}
+			##工場貸出##
+			ADW_toushi_of_factory_right_click = {
+				ROOT = {
+					if = {
+						limit = {
+							has_country_flag = ADW_option_factory_lend
+						}
+						clr_country_flag = ADW_option_factory_lend
+						else = {
+							set_country_flag = ADW_option_factory_lend
+						}
+					}
+				}
+			}
+			##工場貸出##
+		}
+	}
 	ADW_GDP_system_information = {
 		window_name = "ADW_GDP_system_information"
 		visible = {
 			ROOT = { has_country_flag = open_information_tag_ADW }
 		}
 	}
+
 	ADW_GDP_any_system_button = {
 		window_name = "ADW_GDP_any_system_button"
 		parent_window_token = top_bar
@@ -229,6 +554,13 @@ scripted_gui = {
 					}
 					country_event = { id = IND_ADW.105 }
 				}
+				
+				set_variable = { global.ADW_GDP_now_rank = 1 }
+				clear_array = global.ADW_GDP_rank_array
+				every_country = {
+					limit = { check_variable = { THIS.ADW_GDP_rank_num = global.ADW_GDP_now_rank }}
+					country_event = { id = IND_ADW.150 }
+				}
 				ROOT = {
 					if = {
 						limit = {
@@ -254,18 +586,18 @@ scripted_gui = {
 					}
 				}
 			}
-		}
-	}
-	ADW_GDP_fuku_shidosha_window_2 = {
-		context_type = selected_country_context
-		parent_window_token = selected_country_view_diplomacy
-		window_name = "ADW_GDP_fuku_shidosha_window_2"
-		visible = {
-			ROOT = { has_country_flag = open_ui_saiko }
-		}
-		triggers = {
-			ADW_GDP_DIP_IND_visible = {
-				THIS = { tag = IND }
+			ADW_GDP_nuklear_weapons_botton_click = {
+				ROOT = {
+					if = {
+						limit = {
+							has_country_flag = ADW_GDP_nukelear_flag
+						}
+						clr_country_flag = ADW_GDP_nukelear_flag
+						else = {
+							set_country_flag = ADW_GDP_nukelear_flag
+						}
+					}
+				}
 			}
 		}
 	}
@@ -326,10 +658,26 @@ scripted_gui = {
 				set_variable = { ROOT.ADW_GDP_seisaku_mRNA = ADW_seisaku_list^ADW_seisaku_list_indx }
 				ADW_GDP_additional_seisaku_effect = yes
 			}
+			ADW_additional_option_close_click = {
+				clr_country_flag = ADW_open_additional_seisaku
+			}
 		}
 		triggers = {
+			ADW_GDP_additional_seisaku_conduct_bt_click_enabled = {
+				if = {
+					limit = { check_variable = { ADW_seisaku_list^ADW_seisaku_list_indx = 2 }}
+					check_variable = { ROOT.ADW_seisaku_list_reable_array^ADW_seisaku_list^ADW_seisaku_list_indx = 0 }
+				}
+			}
 			ADW_GDP_seisaku_per_bow_visible = {
-				check_variable = { ROOT.ADW_seisaku_list^ADW_seisaku_list_indx = 1 }
+				OR = {
+					check_variable = { ROOT.ADW_seisaku_list^ADW_seisaku_list_indx = 1 }
+				}
+			}
+			ADW_GDP_seisaku_check_list_visible = {
+				or ={
+					check_variable = { ROOT.ADW_seisaku_list^ADW_seisaku_list_indx = 1 }
+				}
 			}
 		}
 		properties = {
@@ -349,6 +697,19 @@ scripted_gui = {
 			}
 		}
 		effects = {
+			ADW_industry_ui_bt_click = {		
+				ROOT = {
+					if = {
+						limit = {
+							has_country_flag = ADW_GDP_industry_ui_flag
+						}
+						clr_country_flag = ADW_GDP_industry_ui_flag
+						else = {
+							set_country_flag = ADW_GDP_industry_ui_flag
+						}
+					}
+				}
+			}
 			ADW_GDP_dis_seisaku_click = {		
 				ROOT = {
 					ADW_GDP_array_effect = yes
@@ -389,6 +750,19 @@ scripted_gui = {
 						clr_country_flag = gikai_ui_dpl
 						else = {
 							set_country_flag = gikai_ui_dpl
+						}
+					}
+				}
+			}
+			ADW_UP_infor_n_e_click = {
+				ROOT = {
+					if = {
+						limit = {
+							has_country_flag = ADW_shi_n_e_flag
+						}
+						clr_country_flag = ADW_shi_n_e_flag
+						else = {
+							set_country_flag = ADW_shi_n_e_flag
 						}
 					}
 				}
@@ -817,117 +1191,6 @@ scripted_gui = {
 				}
 			}
 			
-			shien_up_click = {
-				ROOT = {
-					add_to_variable = {
-						var = all_shienkin
-						value = 0.01
-					}
-					clamp_variable = {
-						var = all_shienkin
-						min = 0
-						max = 2
-					}
-				}
-			}
-			shien_down_click = {
-				ROOT = {
-					add_to_variable = {
-						var = all_shienkin
-						value = -0.01
-					}
-					clamp_variable = {
-						var = all_shienkin
-						min = 0
-						max = 2
-					}
-				}
-			}
-			shien_up_control_click = {
-				ROOT = {
-					add_to_variable = {
-						var = all_shienkin
-						value = 0.1
-					}
-					clamp_variable = {
-						var = all_shienkin
-						min = 0
-						max = 2
-					}
-				}
-			}
-			shien_down_control_click = {
-				ROOT = {
-					add_to_variable = {
-						var = all_shienkin
-						value = -0.1
-					}
-					clamp_variable = {
-						var = all_shienkin
-						min = 0
-						max = 2
-					}
-				}
-			}
-			
-			
-			shien_down_consumer_click = {
-				ROOT = {
-					add_to_variable = {
-						var = add_consumer
-						value = -0.01
-					}
-					clamp_variable = {
-						var = add_consumer
-						max = additional_consumer_goods_factory
-						min = 0
-					}
-					add_dynamic_modifier = { modifier = additional_consumer_cauntry }
-				}
-			}
-			shien_up_consumer_click = {
-				ROOT = {
-					add_to_variable = {
-						var = add_consumer
-						value = 0.01
-					}
-					clamp_variable = {
-						var = add_consumer
-						max = additional_consumer_goods_factory
-						min = 0
-					}
-					add_dynamic_modifier = { modifier = additional_consumer_cauntry }
-				}
-			}
-			
-			shien_down_consumer_control_click = {
-				ROOT = {
-					add_to_variable = {
-						var = add_consumer
-						value = -0.1
-					}
-					clamp_variable = {
-						var = add_consumer
-						max = additional_consumer_goods_factory
-						min = 0
-					}
-					add_dynamic_modifier = { modifier = additional_consumer_cauntry }
-				}
-			}
-			shien_up_consumer_control_click = {
-				ROOT = {
-					add_to_variable = {
-						var = add_consumer
-						value = 0.1
-					}
-					clamp_variable = {
-						var = add_consumer
-						max = additional_consumer_goods_factory
-						min = 0
-					}
-					add_dynamic_modifier = { modifier = additional_consumer_cauntry }
-				}
-			}
 			ADW_GDP_reloard_the_state_click = {
 				ROOT = {
 					ADW_GDP_reset_variable_every_country = yes
@@ -1189,1455 +1452,101 @@ scripted_gui = {
 			}
 		}
 	}
-	GDP_keizai_ui_company = {
-		window_name = "company_ui"
-		visible = {
-			has_country_flag = open_ui_company
-			has_country_flag = open_ui_keizai
-		}
-		
-		effects = {
-			#####小企業表示#######
-			show_butten_small_companuy_click = {
-				ROOT = {
-					if = {
-						limit = {
-							has_country_flag = open_small_compa
-						}
-						clr_country_flag = open_small_compa
-						else = {
-							set_country_flag = open_small_compa
-							clr_country_flag = open_middle_compa
-							clr_country_flag = open_big_compa
-						}
-					}
-				}
-			}
-			#####小企業表示#######
-			#####中企業表示#######
-			show_butten_middle_companuy_click = {
-				ROOT = {
-					if = {
-						limit = {
-							has_country_flag = open_middle_compa
-						}
-						clr_country_flag = open_middle_compa
-						else = {
-							set_country_flag = open_middle_compa
-							clr_country_flag = open_small_compa
-							clr_country_flag = open_big_compa
-						}
-					}
-				}
-			}
-			
-			#####大企業表示#######
-			show_butten_big_companuy_click = {
-				ROOT = {
-					if = {
-						limit = {
-							has_country_flag = open_big_compa
-						}
-						clr_country_flag = open_big_compa
-						else = {
-							set_country_flag = open_big_compa
-							clr_country_flag = open_small_compa
-							clr_country_flag = open_middle_compa
-						}
-					}
-				}
-			}
-			
-			
-			#####小企業中身#######
-			hide_the_ui_only_click = {
-				ROOT = {
-					clr_country_flag = open_small_compa
-				}
-			}
-			build_small_company_click = { #表示はディシジョン
-				ROOT = {
-					activate_decision = small_company_build
-					set_variable = { the_mines_road_p = 10 }
-					clamp_variable = {
-						var = the_mines_road_p
-						min = 1
-						max = the_woker_high_level
-					}
-					add_to_variable = { #引き算
-						var = all_people_of_worker_s
-						value = the_mines_road_p
-					}
-					add_to_variable = { #全労働者
-						var = NUM_TEMP_all_people_of_worker
-						value = the_mines_road_p
-					}
-					subtract_from_variable = {
-						var = GDP_amou
-						value = 0.3
-					}
-				}
-			}
-			improve_hte_flor_click = {
-				ROOT = {
-					activate_decision = small_company_improve
-					set_variable = { small_company_improve_the_stock = SCB_floar_improved }
-					add_to_variable = { small_company_improve_the_stock = 1 }
-					subtract_from_variable = {
-						var = GDP_amou
-						value = 0.5
-					}
-				}
-			}
-			decr_give_money_by_week_click = {
-				ROOT = {
-					add_to_variable = {
-						var = toushi_money_amount
-						value = -0.01
-					}
-				}
-			}
-			decr_give_money_by_week_control_click = {
-				ROOT = {
-					add_to_variable = {
-						var = toushi_money_amount
-						value = -0.1
-					}
-				}
-			}
-			decr_give_money_by_week_shift_click = {
-				ROOT = {
-					add_to_variable = {
-						var = toushi_money_amount
-						value = -1
-					}
-				}
-			}
-			inc_give_money_by_week_click = {
-				ROOT = {
-					add_to_variable = {
-						var = toushi_money_amount
-						value = 0.01
-					}
-				}
-			}
-			inc_give_money_by_week_control_click = {
-				ROOT = {
-					add_to_variable = {
-						var = toushi_money_amount
-						value = 0.1
-					}
-				}
-			}
-			inc_give_money_by_week_shift_click = {
-				ROOT = {
-					add_to_variable = {
-						var = toushi_money_amount
-						value = 1
-					}
-				}
-			}
-			#####小企業中身#######
-			#####中企業中身#######
-			hide_the_ui_only_mid_click = {
-				ROOT = {
-					clr_country_flag = open_middle_compa
-				}
-			}
-			build_small_company_mid_click = { #表示はディシジョン
-				ROOT = {
-					activate_decision = middle_company_build
-					set_variable = { the_mines_road_p_mid = 10 }
-					clamp_variable = {
-						var = the_mines_road_p_mid
-						min = 1
-						max = the_woker_high_level
-					}
-					add_to_variable = { #引き算
-						var = all_people_of_worker_s_mid
-						value = the_mines_road_p_mid
-					}
-					add_to_variable = { #全労働者
-						var = NUM_TEMP_all_people_of_worker_mid
-						value = the_mines_road_p_mid
-					}
-					add_to_variable = {
-						var = SCB_floar_improved
-						value = -5
-					}
-					add_to_variable = {
-						var = small_company
-						value = -1
-					}
-					add_to_variable = {
-						var = the_worker_of_MID_company
-						value = 1000
-					}
-					subtract_from_variable = {
-						var = GDP_amou
-						value = 0.4
-					}
-				}
-			}
-			improve_hte_flor_mid_click = {
-				ROOT = {
-					activate_decision = middle_company_improve
-					set_variable = { middle_company_improve_the_stock = MCB_floar_improved }
-					add_to_variable = { middle_company_improve_the_stock = 1 }
-					subtract_from_variable = {
-						var = GDP_amou
-						value = 0.6
-					}
-				}
-			}
-			
-			decr_give_money_by_week_mid_click = {
-				ROOT = {
-					add_to_variable = {
-						var = toushi_money_amount_mid
-						value = -0.01
-					}
-				}
-			}
-			decr_give_money_by_week_mid_control_click = {
-				ROOT = {
-					add_to_variable = {
-						var = toushi_money_amount_mid
-						value = -0.1
-					}
-				}
-			}
-			decr_give_money_by_week_mid_shift_click = {
-				ROOT = {
-					add_to_variable = {
-						var = toushi_money_amount_mid
-						value = -1
-					}
-				}
-			}
-			inc_give_money_by_week_mid_click = {
-				ROOT = {
-					add_to_variable = {
-						var = toushi_money_amount_mid
-						value = 0.01
-					}
-				}
-			}
-			inc_give_money_by_week_mid_control_click = {
-				ROOT = {
-					add_to_variable = {
-						var = toushi_money_amount_mid
-						value = 0.1
-					}
-				}
-			}
-			inc_give_money_by_week_mid_shift_click = {
-				ROOT = {
-					add_to_variable = {
-						var = toushi_money_amount_mid
-						value = 1
-					}
-				}
-			}
-			#####中企業中身#######
 
-			#####大企業中身#######
-			hide_the_ui_only_big_click = {
-				ROOT = {
-					clr_country_flag = open_big_compa
-				}
-			}
-			build_small_company_big_click = { #表示はディシジョン
-				ROOT = {
-					activate_decision = big_company_build
-					set_variable = { the_mines_road_p_big = 15 }
-					clamp_variable = {
-						var = the_mines_road_p_big
-						min = 1
-						max = the_woker_high_level
-					}
-					add_to_variable = { #引き算
-						var = all_people_of_worker_s_big
-						value = the_mines_road_p_big
-					}
-					add_to_variable = { #全労働者
-						var = NUM_TEMP_all_people_of_worker_big
-						value = the_mines_road_p_big
-					}
-					add_to_variable = {
-						var = MCB_floar_improved
-						value = -10
-					}
-					add_to_variable = {
-						var = middle_company
-						value = -1
-					}
-					add_to_variable = {
-						var = the_worker_of_BIG_company
-						value = 1000
-					}
-					subtract_from_variable = {
-						var = GDP_amou
-						value = 0.5
-					}
-				}
-			}
-			improve_hte_flor_big_click = {
-				ROOT = {
-					activate_decision = big_company_improve
-					set_variable = { big_company_improve_the_stock = BCB_floar_improved }
-					add_to_variable = { big_company_improve_the_stock = 1 }
-					subtract_from_variable = {
-						var = GDP_amou
-						value = 1
-					}
-				}
-			}
-			
-			decr_give_money_by_week_big_click = {
-				ROOT = {
-					add_to_variable = {
-						var = toushi_money_amount_BIG
-						value = -0.01
-					}
-				}
-			}
-			decr_give_money_by_week_big_control_click = {
-				ROOT = {
-					add_to_variable = {
-						var = toushi_money_amount_BIG
-						value = -0.1
-					}
-				}
-			}
-			decr_give_money_by_week_big_shift_click = {
-				ROOT = {
-					add_to_variable = {
-						var = toushi_money_amount_BIG
-						value = -1
-					}
-				}
-			}
-			inc_give_money_by_week_big_click = {
-				ROOT = {
-					add_to_variable = {
-						var = toushi_money_amount_BIG
-						value = 0.01
-					}
-				}
-			}
-			inc_give_money_by_week_big_control_click = {
-				ROOT = {
-					add_to_variable = {
-						var = toushi_money_amount_BIG
-						value = 0.1
-					}
-				}
-			}
-			inc_give_money_by_week_big_shift_click = {
-				ROOT = {
-					add_to_variable = {
-						var = toushi_money_amount_BIG
-						value = 1
-					}
-				}
-			}
-			#####大企業中身#######
-		}
-		triggers = {
-		
-			######小企業######
-			decr_give_money_by_week_click_enabled = {
-				ROOT = {
-					check_variable = {
-						var = toushi_money_amount
-						value = 0
-						compare = greater_than
-					}
-				}
-			}
-			decr_give_money_by_week_control_click_enabled = {
-				ROOT = {
-					check_variable = {
-						var = toushi_money_amount
-						value = 0.1
-						compare = greater_than_or_equals
-					}
-				}
-			}
-			decr_give_money_by_week_shift_click_enabled = {
-				ROOT = {
-					check_variable = {
-						var = toushi_money_amount
-						value = 1
-						compare = greater_than_or_equals
-					}
-				}
-			}
-			
-			
-			build_small_company_click_enabled = {
-				ROOT = {
-					num_of_civilian_factories_available_for_projects > 5
-					check_variable = {
-						var = the_woker_high_level
-						value = 0.1
-						compare = greater_than_or_equals
-					}
-					check_variable = {
-						var = GDP_amou
-						value = 0.3
-						compare = greater_than_or_equals
-					}
-					NOT = {
-						check_variable = {
-							var = the_woker_high_level
-							value = NUM_TEMP_all_people_of_worker
-							compare = less_than_or_equals
-						}
-					}
-				}
-			}
-			improve_hte_flor_click_enabled = {
-				ROOT = {
-					num_of_civilian_factories_available_for_projects > 5
-					check_variable = {
-						var = GDP_amou
-						value = 0.5
-						compare = greater_than_or_equals
-					}
-					check_variable = {
-						var = SCB_floar_improved
-						value = all_floar_of_SCB
-						compare = less_than
-					}
-					check_variable = {
-						var = small_company_improve_the_stock
-						value = all_floar_of_SCB
-						compare = less_than
-					}
-				}
-			}
-			
-			######中企業######
-			decr_give_money_by_week_mid_click_enabled = {
-				ROOT = {
-					check_variable = {
-						var = toushi_money_amount_mid
-						value = 0
-						compare = greater_than
-					}
-				}
-			}
-			decr_give_money_by_week_mid_control_click_enabled = {
-				ROOT = {
-					check_variable = {
-						var = toushi_money_amount_mid
-						value = 0.1
-						compare = greater_than_or_equals
-					}
-				}
-			}
-			decr_give_money_by_week_mid_shift_click_enabled = {
-				ROOT = {
-					check_variable = {
-						var = toushi_money_amount_mid
-						value = 1
-						compare = greater_than_or_equals
-					}
-				}
-			}
-			
-			
-			build_small_company_mid_click_enabled = {
-				ROOT = {
-					num_of_civilian_factories_available_for_projects > 5
-					check_variable = {
-						var = the_parfect_improved_compa
-						value = 1
-						compare = greater_than_or_equals
-					}
-					check_variable = {
-						var = GDP_amou
-						value = 0.4
-						compare = greater_than_or_equals
-					}
-				}
-			}
-			improve_hte_flor_mid_click_enabled = {
-				ROOT = {
-					num_of_civilian_factories_available_for_projects > 5
-					check_variable = {
-						var = GDP_amou
-						value = 0.6
-						compare = greater_than_or_equals
-					}
-					check_variable = {
-						var = MCB_floar_improved
-						value = all_floar_of_SCM
-						compare = less_than
-					}
-					check_variable = {
-						var = middle_company_improve_the_stock
-						value = all_floar_of_SCM
-						compare = less_than
-					}
-				}
-			}
-
-			######大企業######
-			decr_give_money_by_week_big_click_enabled = {
-				ROOT = {
-					check_variable = {
-						var = toushi_money_amount_big
-						value = 0
-						compare = greater_than
-					}
-				}
-			}
-			decr_give_money_by_week_big_control_click_enabled = {
-				ROOT = {
-					check_variable = {
-						var = toushi_money_amount_big
-						value = 0.1
-						compare = greater_than_or_equals
-					}
-				}
-			}
-			decr_give_money_by_week_big_shift_click_enabled = {
-				ROOT = {
-					check_variable = {
-						var = toushi_money_amount_big
-						value = 1
-						compare = greater_than_or_equals
-					}
-				}
-			}
-			
-			
-			build_small_company_big_click_enabled = {
-				ROOT = {
-					num_of_civilian_factories_available_for_projects > 5
-					check_variable = {
-						var = the_parfect_improved_compa_mid
-						value = 1
-						compare = greater_than_or_equals
-					}
-					check_variable = {
-						var = GDP_amou
-						value = 0.5
-						compare = greater_than_or_equals
-					}
-				}
-			}
-			improve_hte_flor_big_click_enabled = {
-				ROOT = {
-					num_of_civilian_factories_available_for_projects > 5
-					check_variable = {
-						var = GDP_amou
-						value = 1
-						compare = greater_than_or_equals
-					}
-					check_variable = {
-						var = BCB_floar_improved
-						value = all_floar_of_BCM
-						compare = less_than
-					}
-					check_variable = {
-						var = big_company_improve_the_stock
-						value = all_floar_of_BCM
-						compare = less_than
-					}
-				}
-			}
-			
-			####小企業表示####
-			the_icon_of_bug_visible = {
-				ROOT = {
-					has_country_flag = open_small_compa
-				}
-			}
-			hide_the_ui_only_visible = {
-				ROOT = {
-					has_country_flag = open_small_compa
-				}
-			}
-			the_small_company_visible = {
-				ROOT = {
-					has_country_flag = open_small_compa
-				}
-			}
-			build_small_company_visible = {
-				ROOT = {
-					has_country_flag = open_small_compa
-				}
-			}
-			this_country_small_company_visible = {
-				ROOT = {
-					has_country_flag = open_small_compa
-				}
-			}
-			SCP_the_numbar_of_small_company_people_visible = {
-				ROOT = {
-					has_country_flag = open_small_compa
-				}
-			}
-			SCB_all_floar_visible = {
-				ROOT = {
-					has_country_flag = open_small_compa
-				}
-			}
-			improve_hte_flor_visible = {
-				ROOT = {
-					has_country_flag = open_small_compa
-				}
-			}
-			inc_give_money_by_week_visible = {
-				ROOT = {
-					has_country_flag = open_small_compa
-				}
-			}
-			give_toshi_text_visible = {
-				ROOT = {
-					has_country_flag = open_small_compa
-				}
-			}
-			
-			decr_give_money_by_week_visible = {
-				ROOT = {
-					has_country_flag = open_small_compa
-				}
-			}
-			the_max_improved_company_visible = {
-				ROOT = {
-					has_country_flag = open_small_compa
-				}
-			}
-			####小企業表示####
-			####中企業表示####
-
-			decr_give_money_by_week_mid_visible = {
-				ROOT = {
-					has_country_flag = open_middle_compa
-				}
-			}
-			inc_give_money_by_week_mid_visible = {
-				ROOT = {
-					has_country_flag = open_middle_compa
-				}
-			}
-			improve_hte_flor_mid_visible = {
-				ROOT = {
-					has_country_flag = open_middle_compa
-				}
-			}
-			build_small_company_mid_visible = {
-				ROOT = {
-					has_country_flag = open_middle_compa
-				}
-			}
-			hide_the_ui_only_mid_visible = {
-				ROOT = {
-					has_country_flag = open_middle_compa
-				}
-			}
-			the_max_improved_company_middle_visible = {
-				ROOT = {
-					has_country_flag = open_middle_compa
-				}
-			}
-			give_toshi_text_middle_visible = {
-				ROOT = {
-					has_country_flag = open_middle_compa
-				}
-			}
-			SCB_all_floar_middle_visible = {
-				ROOT = {
-					has_country_flag = open_middle_compa
-				}
-			}
-			SCP_the_numbar_of_middle_company_people_visible = {
-				ROOT = {
-					has_country_flag = open_middle_compa
-				}
-			}
-			
-			this_country_middle_company_visible = {
-				ROOT = {
-					has_country_flag = open_middle_compa
-				}
-			}
-			the_icon_of_bug_a_visible = {
-				ROOT = {
-					has_country_flag = open_middle_compa
-				}
-			}
-			the_middle_company_visible = {
-				ROOT = {
-					has_country_flag = open_middle_compa
-				}
-			}
-
-			####中企業表示####
-			
-			####大企業表示####
-
-			hide_the_ui_only_big_visible = {
-				ROOT = {
-					has_country_flag = open_big_compa
-				}
-			}
-			build_small_company_big_visible = {
-				ROOT = {
-					has_country_flag = open_big_compa
-				}
-			}
-			improve_hte_flor_big_visible = {
-				ROOT = {
-					has_country_flag = open_big_compa
-				}
-			}
-			inc_give_money_by_week_big_visible = {
-				ROOT = {
-					has_country_flag = open_big_compa
-				}
-			}
-			decr_give_money_by_week_big_visible = {
-				ROOT = {
-					has_country_flag = open_big_compa
-				}
-			}
-			the_icon_of_bug_b_visible = {
-				ROOT = {
-					has_country_flag = open_big_compa
-				}
-			}
-			
-			this_country_big_company_visible = {
-				ROOT = {
-					has_country_flag = open_big_compa
-				}
-			}
-			SCP_the_numbar_of_big_company_people_visible = {
-				ROOT = {
-					has_country_flag = open_big_compa
-				}
-			}
-			BCB_all_floar_middle_visible = {
-				ROOT = {
-					has_country_flag = open_big_compa
-				}
-			}
-			
-			give_toshi_text_big_visible = {
-				ROOT = {
-					has_country_flag = open_big_compa
-				}
-			}
-			the_max_improved_company_big_visible = {
-				ROOT = {
-					has_country_flag = open_big_compa
-				}
-			}
-			the_big_company_visible = {
-				ROOT = {
-					has_country_flag = open_big_compa
-				}
-			}
-		}
-	}
 	the_ui_of_gikai = {
 		window_name = "the_ui_of_gikai"
 		visible = {
 			has_country_flag = gikai_ui_dpl
 			has_country_flag = open_ui_keizai
 		}
-		
 		effects = {
+			ADW_mines_gikai_click = {
+				ROOT = {
+					add_to_variable = { ADW_GDP_gikai_amount = -1 }
+				}
+			}
+			ADW_ADD_gikai_click = {
+				ROOT = {
+					add_to_variable = { ADW_GDP_gikai_amount = 1 }
+				}
+			}
 			hide_the_ui_only_gikai_click = {
 				ROOT = {
 					clr_country_flag = gikai_ui_dpl
 				}
 			}
-			
-			up_the_gisekisuu_click = {
-				add_to_variable = {
-					var = gikai_person_of_numbar
-					value = 1
-				}
-				add_to_variable = { num_blank_giseki = 1 }
-				clamp_variable = {
-					var = gikai_person_of_numbar
-					min = 10
-					max = 25000
-				}
-				Calculation_of_gikai = yes
-			}
-			up_the_gisekisuu_control_click = {
-				add_to_variable = {
-					var = gikai_person_of_numbar
-					value = 10
-				}
-				add_to_variable = { num_blank_giseki = 10 }
-				clamp_variable = {
-					var = gikai_person_of_numbar
-					min = 10
-					max = 25000
-				}
-				Calculation_of_gikai = yes
-			}
-			up_the_gisekisuu_shift_click = {
-				add_to_variable = {
-					var = gikai_person_of_numbar
-					value = 100
-				}
-				add_to_variable = { num_blank_giseki = 100 }
-				clamp_variable = {
-					var = gikai_person_of_numbar
-					min = 10
-					max = 25000
-				}
-				Calculation_of_gikai = yes
-			}
-			up_the_gisekisuu_control_shift_click = {
-				add_to_variable = {
-					var = gikai_person_of_numbar
-					value = 1000
-				}
-				add_to_variable = { num_blank_giseki = 1000 }
-				clamp_variable = {
-					var = gikai_person_of_numbar
-					min = 10
-					max = 25000
-				}
-				Calculation_of_gikai = yes
-			}
-
-			down_the_gisekisuu_click = {
-				add_to_variable = {
-					var = gikai_person_of_numbar
-					value = -1
-				}
-				add_to_variable = { num_blank_giseki = -1 }
-				clamp_variable = {
-					var = gikai_person_of_numbar
-					min = 10
-					max = 25000
-				}
-				Calculation_of_gikai = yes
-			}
-			down_the_gisekisuu_control_click = {
-				add_to_variable = {
-					var = gikai_person_of_numbar
-					value = -10
-				}
-				add_to_variable = { num_blank_giseki = -10 }
-				clamp_variable = {
-					var = gikai_person_of_numbar
-					min = 10
-					max = 25000
-				}
-				Calculation_of_gikai = yes
-			}
-			down_the_gisekisuu_shift_click = {
-				add_to_variable = {
-					var = gikai_person_of_numbar
-					value = -100
-				}
-				add_to_variable = { num_blank_giseki = -100 }
-				clamp_variable = {
-					var = gikai_person_of_numbar
-					min = 10
-					max = 25000
-				}
-				Calculation_of_gikai = yes
-			}
-			down_the_gisekisuu_control_shift_click = {
-				add_to_variable = {
-					var = gikai_person_of_numbar
-					value = -1000
-				}
-				add_to_variable = { num_blank_giseki = -1000 }
-				clamp_variable = {
-					var = gikai_person_of_numbar
-					min = 10
-					max = 25000
-				}
-				Calculation_of_gikai = yes
-			}
-			
-			up_the_MIN_click = { #民間議員
-				add_to_variable = {
-					var = MIN_gikai
-					value = 1
-				}
-				add_to_variable = { num_used_chair_of_gikai = 1 }
-				set_variable = { num_blank_giseki = gikai_person_of_numbar }
-				subtract_from_variable = { num_blank_giseki = num_used_chair_of_gikai }
-				clamp_variable = {
-					var = MIN_gikai
-					min = 0
-				}
-				Calculation_of_gikai = yes
+			ADW_mines_gikai_election_click = {
 				ROOT = {
-					add_dynamic_modifier = { modifier = the_mod_of_MIN }
+					add_to_variable = { ADW_poli_election = -1 }
+					add_political_power = -300
 				}
 			}
-			down_the_MIN_click = {
-				add_to_variable = {
-					var = MIN_gikai
-					value = -1
-				}
-				add_to_variable = { num_used_chair_of_gikai = -1 }
-				set_variable = { num_blank_giseki = gikai_person_of_numbar }
-				subtract_from_variable = { num_blank_giseki = num_used_chair_of_gikai }
-				clamp_variable = {
-					var = MIN_gikai
-					min = 0
-				}
-				Calculation_of_gikai = yes
+			ADW_ADD_gikai_election_click = {
 				ROOT = {
-					add_dynamic_modifier = { modifier = the_mod_of_MIN }
-				}
-			}
-			
-			up_the_KIZ_click = { #貴族議員
-				add_to_variable = {
-					var = KIZ_gikai
-					value = 1
-				}
-				add_to_variable = { num_used_chair_of_gikai = 1 }
-				set_variable = { num_blank_giseki = gikai_person_of_numbar }
-				subtract_from_variable = { num_blank_giseki = num_used_chair_of_gikai }
-				clamp_variable = {
-					var = KIZ_gikai
-					min = 0
-				}
-				Calculation_of_gikai = yes
-				ROOT = {
-					add_dynamic_modifier = { modifier = the_mod_of_KIZ }
-				}
-			}
-			down_the_KIZ_click = {
-				add_to_variable = {
-					var = KIZ_gikai
-					value = -1
-				}
-				add_to_variable = { num_used_chair_of_gikai = -1 }
-				set_variable = { num_blank_giseki = gikai_person_of_numbar }
-				subtract_from_variable = { num_blank_giseki = num_used_chair_of_gikai }
-				clamp_variable = {
-					var = KIZ_gikai
-					min = 0
-				}
-				Calculation_of_gikai = yes
-				ROOT = {
-					add_dynamic_modifier = { modifier = the_mod_of_KIZ }
-				}
-			}
-			
-			up_the_RIK_click = { #陸軍議員
-				add_to_variable = {
-					var = RIK_gikai
-					value = 1
-				}
-				add_to_variable = { num_used_chair_of_gikai = 1 }
-				set_variable = { num_blank_giseki = gikai_person_of_numbar }
-				subtract_from_variable = { num_blank_giseki = num_used_chair_of_gikai }
-				clamp_variable = {
-					var = RIK_gikai
-					min = 0
-				}
-				Calculation_of_gikai = yes
-				ROOT = {
-					add_dynamic_modifier = { modifier = the_mod_of_RIK }
-				}
-			}
-			down_the_RIK_click = {
-				add_to_variable = {
-					var = RIK_gikai
-					value = -1
-				}
-				add_to_variable = { num_used_chair_of_gikai = -1 }
-				set_variable = { num_blank_giseki = gikai_person_of_numbar }
-				subtract_from_variable = { num_blank_giseki = num_used_chair_of_gikai }
-				clamp_variable = {
-					var = RIK_gikai
-					min = 0
-				}
-				Calculation_of_gikai = yes
-				ROOT = {
-					add_dynamic_modifier = { modifier = the_mod_of_RIK }
-				}
-			}
-			
-			up_the_NVY_KYO_click = { #海軍議員巨砲
-				add_to_variable = {
-					var = NVY_KYO_giin
-					value = 1
-				}
-				add_to_variable = { num_used_chair_of_gikai = 1 }
-				set_variable = { num_blank_giseki = gikai_person_of_numbar }
-				subtract_from_variable = { num_blank_giseki = num_used_chair_of_gikai }
-				clamp_variable = {
-					var = NVY_KYO_giin
-					min = 0
-				}
-				Calculation_of_gikai = yes
-				ROOT = {
-					add_dynamic_modifier = { modifier = the_mod_of_NVY }
-				}
-			}
-			down_the_NVY_KYO_click = {
-				add_to_variable = {
-					var = NVY_KYO_giin
-					value = -1
-				}
-				add_to_variable = { num_used_chair_of_gikai = -1 }
-				set_variable = { num_blank_giseki = gikai_person_of_numbar }
-				subtract_from_variable = { num_blank_giseki = num_used_chair_of_gikai }
-				clamp_variable = {
-					var = NVY_KYO_giin
-					min = 0
-				}
-				Calculation_of_gikai = yes
-				ROOT = {
-					add_dynamic_modifier = { modifier = the_mod_of_NVY }
-				}
-			}
-			up_the_NVY_AIR_click = { #海軍航空主兵主義
-				add_to_variable = {
-					var = NVY_AIR_giin
-					value = 1
-				}
-				add_to_variable = { num_used_chair_of_gikai = 1 }
-				set_variable = { num_blank_giseki = gikai_person_of_numbar }
-				subtract_from_variable = { num_blank_giseki = num_used_chair_of_gikai }
-				clamp_variable = {
-					var = NVY_AIR_giin
-					min = 0
-				}
-				Calculation_of_gikai = yes
-				ROOT = {
-					add_dynamic_modifier = { modifier = the_mod_of_ANV }
-				}
-			}
-			down_the_NVY_AIR_click = {
-				add_to_variable = {
-					var = NVY_AIR_giin
-					value = -1
-				}
-				add_to_variable = { num_used_chair_of_gikai = -1 }
-				set_variable = { num_blank_giseki = gikai_person_of_numbar }
-				subtract_from_variable = { num_blank_giseki = num_used_chair_of_gikai }
-				clamp_variable = {
-					var = NVY_AIR_giin
-					min = 0
-				}
-				Calculation_of_gikai = yes
-				ROOT = {
-					add_dynamic_modifier = { modifier = the_mod_of_ANV }
-				}
-			}
-			up_the_FAS_click = { #ファシズム
-				add_to_variable = {
-					var = FAS_giin
-					value = 1
-				}
-				add_to_variable = { num_used_chair_of_gikai = 1 }
-				set_variable = { num_blank_giseki = gikai_person_of_numbar }
-				subtract_from_variable = { num_blank_giseki = num_used_chair_of_gikai }
-				clamp_variable = {
-					var = FAS_giin
-					min = 0
-				}
-				add_political_power = -50
-				add_to_variable = {
-					var = GDP_amou
-					value = -0.01
-				}
-				Calculation_of_gikai = yes
-				ROOT = {
-					add_dynamic_modifier = { modifier = the_mod_of_FAS }
-				}
-			}
-			down_the_FAS_click = {
-				add_to_variable = {
-					var = FAS_giin
-					value = -1
-				}
-				add_to_variable = { num_used_chair_of_gikai = -1 }
-				set_variable = { num_blank_giseki = gikai_person_of_numbar }
-				subtract_from_variable = { num_blank_giseki = num_used_chair_of_gikai }
-				clamp_variable = {
-					var = FAS_giin
-					min = 0
-				}
-				add_political_power = -50
-				add_to_variable = {
-					var = GDP_amou
-					value = -0.01
-				}
-				Calculation_of_gikai = yes
-				ROOT = {
-					add_dynamic_modifier = { modifier = the_mod_of_FAS }
-				}
-			}
-			
-			up_the_FAS_COM_click = { #共産主義
-				add_to_variable = {
-					var = FAS_COM_giin
-					value = 1
-				}
-				add_to_variable = { num_used_chair_of_gikai = 1 }
-				set_variable = { num_blank_giseki = gikai_person_of_numbar }
-				subtract_from_variable = { num_blank_giseki = num_used_chair_of_gikai }
-				clamp_variable = {
-					var = FAS_COM_giin
-					min = 0
-				}
-				add_political_power = -50
-				add_to_variable = {
-					var = GDP_amou
-					value = -0.01
-				}
-				Calculation_of_gikai = yes
-				ROOT = {
-					add_dynamic_modifier = { modifier = the_mod_of_COM }
-				}				
-			}
-			down_the_FAS_COM_click = {
-				add_to_variable = {
-					var = FAS_COM_giin
-					value = -1
-				}
-				add_to_variable = { num_used_chair_of_gikai = -1 }
-				set_variable = { num_blank_giseki = gikai_person_of_numbar }
-				subtract_from_variable = { num_blank_giseki = num_used_chair_of_gikai }
-				clamp_variable = {
-					var = FAS_COM_giin
-					min = 0
-				}
-				add_political_power = -50
-				add_to_variable = {
-					var = GDP_amou
-					value = -0.01
-				}
-				Calculation_of_gikai = yes
-				ROOT = {
-					add_dynamic_modifier = { modifier = the_mod_of_COM }
-				}
-			}
-			up_the_DEM_click = { #民主主義
-				add_to_variable = {
-					var = DEM_giin
-					value = 1
-				}
-				add_to_variable = { num_used_chair_of_gikai = 1 }
-				set_variable = { num_blank_giseki = gikai_person_of_numbar }
-				subtract_from_variable = { num_blank_giseki = num_used_chair_of_gikai }
-				clamp_variable = {
-					var = DEM_giin
-					min = 0
-				}
-				add_political_power = -50
-				add_to_variable = {
-					var = GDP_amou
-					value = -0.01
-				}
-				Calculation_of_gikai = yes
-				ROOT = {
-					add_dynamic_modifier = { modifier = the_mod_of_DEM }
-				}				
-			}
-			down_the_DEM_click = {
-				add_to_variable = {
-					var = DEM_giin
-					value = -1
-				}
-				add_to_variable = { num_used_chair_of_gikai = -1 }
-				set_variable = { num_blank_giseki = gikai_person_of_numbar }
-				subtract_from_variable = { num_blank_giseki = num_used_chair_of_gikai }
-				clamp_variable = {
-					var = DEM_giin
-					min = 0
-				}
-				add_political_power = -50
-				add_to_variable = {
-					var = GDP_amou
-					value = -0.01
-				}
-				Calculation_of_gikai = yes
-				ROOT = {
-					add_dynamic_modifier = { modifier = the_mod_of_DEM }
-				}
-			}
-			up_the_CHU_click = { #君主主義
-				add_to_variable = {
-					var = CHU_giin
-					value = 1
-				}
-				add_to_variable = { num_used_chair_of_gikai = 1 }
-				set_variable = { num_blank_giseki = gikai_person_of_numbar }
-				subtract_from_variable = { num_blank_giseki = num_used_chair_of_gikai }
-				clamp_variable = {
-					var = CHU_giin
-					min = 0
-				}
-				add_political_power = -50
-				add_to_variable = {
-					var = GDP_amou
-					value = -0.01
-				}
-				Calculation_of_gikai = yes
-				ROOT = {
-					add_dynamic_modifier = { modifier = the_mod_of_CHU }
-				}				
-			}
-			down_the_CHU_click = {
-				add_to_variable = {
-					var = CHU_giin
-					value = -1
-				}
-				add_to_variable = { num_used_chair_of_gikai = -1 }
-				set_variable = { num_blank_giseki = gikai_person_of_numbar }
-				subtract_from_variable = { num_blank_giseki = num_used_chair_of_gikai }
-				clamp_variable = {
-					var = CHU_giin
-					min = 0
-				}
-				add_political_power = -50
-				add_to_variable = {
-					var = GDP_amou
-					value = -0.01
-				}
-				Calculation_of_gikai = yes
-				ROOT = {
-					add_dynamic_modifier = { modifier = the_mod_of_CHU }
+					add_to_variable = { ADW_poli_election = 1 }
+					add_political_power = -300
 				}
 			}
 		}
-		
 		triggers = {
-			down_the_MIN_click_enabled = { #民間議員
-				check_variable = {
-					var = MIN_gikai
-					value = 0
-					compare = greater_than
-				}
-			}
-			up_the_MIN_click_enabled = {
-				check_variable = {
-					var = num_blank_giseki
-					value = 0
-					compare = greater_than
-				}
-			}
-			down_the_KIZ_click_enabled = { #貴族議員
-				check_variable = {
-					var = KIZ_gikai
-					value = 0
-					compare = greater_than
-				}
-			}
-			up_the_KIZ_click_enabled = {
-				check_variable = {
-					var = num_blank_giseki
-					value = 0
-					compare = greater_than
-				}
-			}
-			down_the_RIK_click_enabled = { #陸軍議員
-				check_variable = {
-					var = RIK_gikai
-					value = 0
-					compare = greater_than
-				}
-			}
-			up_the_RIK_click_enabled = {
-				check_variable = {
-					var = num_blank_giseki
-					value = 0
-					compare = greater_than
-				}
-			}
-			down_the_NVY_KYO_click_enabled = { #海軍議員巨砲
-				check_variable = {
-					var = NVY_KYO_giin
-					value = 0
-					compare = greater_than
-				}
-			}
-			up_the_NVY_KYO_click_enabled = {
-				check_variable = {
-					var = num_blank_giseki
-					value = 0
-					compare = greater_than
-				}
-			}
-			down_the_NVY_AIR_click_enabled = { #海軍航空主兵主義 
-				check_variable = {
-					var = NVY_AIR_giin
-					value = 0
-					compare = greater_than
-				}
-			}
-			up_the_NVY_AIR_click_enabled = {
-				check_variable = {
-					var = num_blank_giseki
-					value = 0
-					compare = greater_than
-				}
-			}
-			
-			###政党###
-			
-			down_the_FAS_click_enabled = { #ファシズム 
-				check_variable = {
-					var = FAS_giin
-					value = 0
-					compare = greater_than
-				}
-				
-				check_variable = {
-					var = GDP_amou
-					value = 0.01
-					compare = greater_than_or_equals
-				}
-				has_political_power > 50
-			}
-			up_the_FAS_click_enabled = {
-				check_variable = {
-					var = num_blank_giseki
-					value = 0
-					compare = greater_than
-				}
-				check_variable = {
-					var = GDP_amou
-					value = 0.01
-					compare = greater_than_or_equals
-				}
-				has_political_power > 50
-			}
-			
-			down_the_FAS_COM_click_enabled = { #共産主義
-				check_variable = {
-					var = FAS_COM_giin
-					value = 0
-					compare = greater_than
-				}
-				
-				check_variable = {
-					var = GDP_amou
-					value = 0.01
-					compare = greater_than_or_equals
-				}
-				has_political_power > 50
-			}
-			up_the_FAS_COM_click_enabled = {
-				check_variable = {
-					var = num_blank_giseki
-					value = 0
-					compare = greater_than
-				}
-				check_variable = {
-					var = GDP_amou
-					value = 0.01
-					compare = greater_than_or_equals
-				}
-				has_political_power > 50
-			}
-			down_the_DEM_click_enabled = { #民主主義
-				check_variable = {
-					var = DEM_giin
-					value = 0
-					compare = greater_than
-				}
-				
-				check_variable = {
-					var = GDP_amou
-					value = 0.01
-					compare = greater_than_or_equals
-				}
-				has_political_power > 50
-			}
-			up_the_DEM_click_enabled = {
-				check_variable = {
-					var = num_blank_giseki
-					value = 0
-					compare = greater_than
-				}
-				check_variable = {
-					var = GDP_amou
-					value = 0.01
-					compare = greater_than_or_equals
-				}
-				has_political_power > 50
-			}
-			
-			down_the_CHU_click_enabled = { #君主主義
-				check_variable = {
-					var = CHU_giin
-					value = 0
-					compare = greater_than
-				}
-				
-				check_variable = {
-					var = GDP_amou
-					value = 0.01
-					compare = greater_than_or_equals
-				}
-				has_political_power > 50
-			}
-			up_the_CHU_click_enabled = {
-				check_variable = {
-					var = num_blank_giseki
-					value = 0
-					compare = greater_than
-				}
-				check_variable = {
-					var = GDP_amou
-					value = 0.01
-					compare = greater_than_or_equals
-				}
-				has_political_power > 50
-			}
-			
-			down_the_gisekisuu_click_enabled = {
-				check_variable = {
-					var = num_blank_giseki
-					value = 0
-					compare = greater_than
-				}
-				NOT = {
+			ADW_mines_gikai_election_click_enabled = {
+				ROOT = {
+					has_political_power > 300
 					check_variable = {
-						var = the_count_variable
-						value = 10
+						var = ADW_poli_election
+						value = 6
+						compare = greater_than
+					}
+				}
+			}
+			ADW_ADD_gikai_election_click_enabled = {
+				ROOT = {
+					has_political_power > 300
+					check_variable = {
+						var = ADW_poli_election
+						value = 120
 						compare = less_than_or_equals
 					}
 				}
 			}
-			down_the_gisekisuu_control_click_enabled = {
-				check_variable = {
-					var = num_blank_giseki
-					value = 20
-					compare = greater_than_or_equals
+			
+			ADW_mines_gikai_click_enabled = {
+				ROOT = {
+					check_variable = {
+						var = ADW_GDP_gikai_amount
+						value = 10
+						compare = greater_than
+					}
 				}
 			}
-			down_the_gisekisuu_shift_click_enabled = {
-				check_variable = {
-					var = num_blank_giseki
-					value = 110
-					compare = greater_than_or_equals
+			ADW_ADD_gikai_click_enabled = {
+				ROOT = {
+					check_variable = {
+						var = ADW_GDP_gikai_amount
+						value = 1500
+						compare = less_than
+					}
 				}
 			}
-			down_the_gisekisuu_control_shift_click_enabled = {
-				check_variable = {
-					var = num_blank_giseki
-					value = 1010
-					compare = greater_than_or_equals
-				}
+		}
+		dynamic_lists = {
+			ADW_point_of_gikai_each = {
+				array = ADW_GDP_gikai_array
+				change_scope = no
+				entry_container = ADW_GDP_giseki_each_entry
+				index = ADW_GDP_gikai_index
 			}
+			ADW_point_bow_each = {
+				array = ADW_GDP_gikai_chert_array
+				change_scope = no
+				entry_container = ADW_GDP_giseki_each_bowchert_entry
+				index = ADW_GDP_gikai_chert_index
+			}
+		}
+		properties = {
+			ADW_GDP_GIKAI_point = { frame = ADW_GDP_gikai_array^ADW_GDP_gikai_index }
+			ADW_GDP_GIKAI_point_chert = { frame = ADW_GDP_gikai_chert_array^ADW_GDP_gikai_chert_index }
+			ADW_GDP_ellection_time_graph= { frame = ADW_poli_election_on_per }
 		}
 	}
 	ADW_GDP_option_of_each_states = {
@@ -2661,6 +1570,55 @@ scripted_gui = {
 					}
 				}
 			}
+		}
+	}
+	ADW_GDP_nuke_production = {
+		window_name = "ADW_GDP_nuke_production"
+		context_type = player_context
+		visible = {
+			has_country_flag = ADW_GDP_nukelear_flag
+		}
+		triggers = {
+			ADW_GDP_nuke_button_click_enabled = {
+				if = {
+					limit = { check_variable = { ADW_nuke_array^ADW_nuke_array_index = 1 } }
+					check_variable = { GDP_amou = 37 }
+					check_variable = {
+						var = ADW_GDP_nuke_fac_avail
+						value = 5
+						compare = greater_than_or_equals
+					}
+					num_of_civilian_factories_available_for_projects > 5
+				}
+			}
+		}
+		dynamic_lists = {
+			ADW_nuku_production_grid = {
+				array = ADW_nuke_array
+				change_scope = no
+				entry_container = ADW_GDP_nuke_producion_entry
+				index = ADW_nuke_array_index
+			}
+			ADW_nuke_production_list = {
+				array = ADW_list_nuke_bom_list
+				change_scope = no
+				entry_container = ADW_nuke_production_list_entry
+				index = ADW_list_nuke_bom_list_index
+			}
+			
+		}
+		effects = {
+			ADW_GDP_nuke_production_hide_click = {
+				ROOT = { clr_country_flag = ADW_GDP_nukelear_flag }
+			}
+			ADW_GDP_nuke_button_click = {
+				ROOT = { set_variable = { ADW_nuke_production_mRNA = ADW_nuke_array^ADW_nuke_array_index }}
+				ADW_nuke_effect = yes
+			}
+		}
+		properties = {
+			ADW_nuke_icon_picture = { image = "[GFX_ADW_nuke_picture]" }
+			ADW_nuke_bar_chert = {frame = ADW_nuke_days_per_array^ADW_list_nuke_bom_list_index}
 		}
 	}
 	ADW_GDP_graph_line_wind = {
@@ -2803,6 +1761,27 @@ scripted_gui = {
 		}
 	}
 	#############各州#########
+	ADW_state_nuke = {
+		window_name = "ADW_state_nuke"
+		context_type = selected_state_context
+		parent_window_token = selected_state_view
+		
+		effects = {
+			nuke_province_click = {
+				damage_units = {
+    				state = FROM
+    				region = 5
+    				damage = 0.5
+    				org_damage = 0.5
+    				str_damage = 0.5
+    				ratio = yes
+				    template = "template_name"
+    				army = yes
+    				navy = yes
+				}
+			}
+		}
+	}
 	ADW_iryo_of_each_states_window_name = {
 		window_name = "ADW_iryo_of_each_states_window"
 		context_type = selected_state_context
@@ -2944,6 +1923,88 @@ scripted_gui = {
 					value = 0
 					compare = equals
 				}
+			}
+		}
+	}
+	
+	ADW_each_country_button = {
+		window_name = "ADW_each_country_button"
+		parent_window_token = top_bar
+		triggers ={
+			ADW_PER_minimap_flag_visible = {
+				ROOT = { tag = PER }
+			}
+		}
+		effects = {
+			ADW_PER_minimap_flag_click = {
+				if = {
+					limit = {
+						has_country_flag = ADW_PER_minimap
+					}
+					clr_country_flag = ADW_PER_minimap
+					else = {
+						set_country_flag = ADW_PER_minimap
+					}	
+				}
+			}
+		}
+	}
+	ADW_PER_mini_map_view = {
+		window_name = "ADW_PER_mini_map_view"
+		visible = {
+			ROOT={tag = PER}
+			has_country_flag = ADW_PER_minimap
+		}
+	}
+	ADW_PER_mini_map_view_containt = {
+		window_name = "ADW_PER_mini_map_view_containt"
+		visible = {
+			ROOT={tag = PER}
+			has_country_flag = ADW_PER_minimap
+		}
+		effects = {
+			ADW_PER_minimap_close_click = { clr_country_flag = ADW_PER_minimap}
+		}
+	}
+	ADW_state_pie = {
+		window_name = "ADW_state_pie"
+	}
+	ADW_infor_ui_ex_inc = {
+		window_name = "ADW_infor_ui_ex_inc"
+		visible = {
+			has_country_flag = open_ui_keizai
+			has_country_flag = ADW_shi_n_e_flag
+		}
+		effects = {
+			hide_the_ui_infor_late_click = {
+				clr_country_flag = ADW_shi_n_e_flag
+			}
+		}
+		dynamic_lists = {
+			ADW_GDP_keizai_list_last = {
+				array = ROOT.ADW_daily_counter_array
+				change_scope = yes
+				entry_container = "ADW_infor_each_entry"
+				index = ADW_infor_each_index
+			}
+		}
+	}
+	ADW_industry_ui_improve = {
+		window_name = "ADW_industry_ui_improve"
+		visible = {
+			has_country_flag = ADW_GDP_industry_ui_flag
+		}
+		dynamic_lists = {
+			ADW_list_company_grid = {
+				array = ROOT.ADW_company_array
+				change_scope = no
+				entry_container = "ADW_GDP_company_entry"
+				index = ADW_company_array_index
+			}
+		}
+		effects = {
+			ADW_industry_ui_improve_close_click = {
+				ROOT = { clr_country_flag = ADW_GDP_industry_ui_flag }
 			}
 		}
 	}
