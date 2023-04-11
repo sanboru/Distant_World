@@ -466,14 +466,81 @@ defined_text = {
 	}
 }
 defined_text = {
+	name = ADW_toushi_recieve_txt
+	text = {
+		trigger = {
+			ROOT = {
+				check_variable = {
+					var = ROOT.ADW_GDP_toushi_per_month_receive
+					value = 100000000
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		localization_key = ADW_toushi_recieve_txt_kei
+	}
+	text = {
+		trigger = {
+			ROOT = {
+				check_variable = {
+					var = ROOT.ADW_GDP_toushi_per_month_receive
+					value = 10000
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		localization_key = ADW_toushi_recieve_txt_cho
+	}
+	text = {
+		localization_key = ADW_toushi_recieve_txt_oku
+	}
+}
+defined_text = {
+	name = ADW_MIL_money
+	text = {
+		trigger = {
+			ROOT = {
+				check_variable = {
+					var = ROOT.country_people_4
+					value = -100000000
+					compare = less_than_or_equals
+				}
+			}
+		}
+		localization_key = ADW_MIL_money_kei
+	}
+	text = {
+		trigger = {
+			ROOT = {
+				check_variable = {
+					var = ROOT.country_people_4
+					value = -10000
+					compare = less_than_or_equals
+				}
+			}
+		}
+		localization_key = ADW_MIL_money_cho
+	}
+	text = {
+		localization_key = ADW_MIL_money_oku
+	}
+}
+defined_text = {
 	name = ADW_TXT_GDP_for_THIS
 	text = {
 		trigger = {
 			THIS = {
+				OR = {
 				check_variable = {
 					var = THIS.GDP_yearly_for_faction
 					value = 100000000
 					compare = greater_than_or_equals
+				}
+				check_variable = {
+					var = THIS.GDP_yearly_for_faction
+					value = -100000000
+					compare = less_than_or_equals
+				}
 				}
 			}
 		}
@@ -482,10 +549,17 @@ defined_text = {
 	text = {
 		trigger = {
 			THIS = {
+				OR = {
 				check_variable = {
 					var = THIS.GDP_yearly_for_faction
 					value = 10000
 					compare = greater_than_or_equals
+				}
+				check_variable = {
+					var = THIS.GDP_yearly_for_faction
+					value = -10000
+					compare = less_than_or_equals
+				}
 				}
 			}
 		}
@@ -589,9 +663,9 @@ defined_text = {
 	name = text_ADW_real_GDP_amoun
 	text = {
 		trigger = {
-			ROOT = {
+			THIS = {
 				check_variable = {
-					var = ADW_real_GDP_amoun
+					var = THIS.ADW_real_GDP_amoun
 					value = 100000000
 					compare = greater_than_or_equals
 				}
@@ -601,9 +675,9 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			ROOT = {
+			THIS = {
 				check_variable = {
-					var = ADW_real_GDP_amoun
+					var = THIS.ADW_real_GDP_amoun
 					value = 10000
 					compare = greater_than_or_equals
 				}
@@ -615,7 +689,7 @@ defined_text = {
 		localization_key = text_ADW_real_GDP_amoun_oku
 	}
 }
-defined_text = {
+defined_text = { #政策リストタイトル
 	name = text_ADW_seisaku_list_locali
 	text = {
 		trigger = { ROOT = { check_variable = { ADW_seisaku_list^ADW_seisaku_list_indx = 1 } } }
@@ -625,9 +699,15 @@ defined_text = {
 		trigger = { ROOT = { check_variable = { ADW_seisaku_list^ADW_seisaku_list_indx = 2 } } }
 		localization_key = text_ADW_seisaku_list_locali_2
 	}
+}
+defined_text = { #政策リスト行う説明
+	name = text_ADW_seisaku_list_locali_desc
 	text = {
-		trigger = { ROOT = { check_variable = { ADW_seisaku_list^ADW_seisaku_list_indx = 3 } } }
-		localization_key = text_ADW_seisaku_list_locali_3
+		trigger = { ROOT = { check_variable = { ADW_seisaku_list^ADW_seisaku_list_indx = 2 } } }
+		localization_key = text_ADW_seisaku_list_desc_2
+	}
+	text = {
+		localization_key = text_ADW_seisaku_list_desc_normal
 	}
 }
 defined_text = {
@@ -667,5 +747,398 @@ defined_text = {
 	}
 	text = {
 		localization_key = ADW_HOK_kikou_has_unlocked_no
+	}
+}
+defined_text = { #生産兵器名前
+	name = ADW_GDP_nuke_txt
+	text = {
+		trigger = { ROOT = { check_variable = { ADW_nuke_array^ADW_nuke_array_index = 1 } } }
+		localization_key = ADW_GDP_nuke_txt_1
+	}
+}
+defined_text = { #生産兵器必要物
+	name = ADW_GDP_nuke_enable_txt
+	text = {
+		trigger = { ROOT = { check_variable = { ADW_nuke_array^ADW_nuke_array_index = 1 } } }
+		localization_key = ADW_GDP_nuke_enable_txt_1
+	}
+}
+defined_text = { #生産兵器必要物exp
+	name = ADW_GDP_nuke_enable_exp_txt
+	text = {
+		trigger = { ROOT = { check_variable = { ADW_nuke_array^ADW_nuke_array_index = 1 } } }
+		localization_key = ADW_GDP_nuke_enable_exp_txt_1
+	}
+}
+defined_text = { #生産兵器必要物exp
+	name = ADW_GDP_nuke_produ_time_txt
+	text = {
+		trigger = { ROOT = { check_variable = { ADW_nuke_array^ADW_nuke_array_index = 1 } } }
+		localization_key = ADW_GDP_nuke_produ_time_txt_1
+	}
+}
+defined_text = { #生産兵器写真
+	name = GFX_ADW_nuke_picture
+	text = {
+		trigger = { ROOT = { check_variable = { ADW_nuke_array^ADW_nuke_array_index = 1 } } }
+		localization_key = GFX_ADW_nuke_first_pic
+	}
+}
+
+############
+defined_text = { #生産兵器名前
+	name = ADW_GDP_production_name
+	text = {
+		trigger = { ROOT = { check_variable = { ADW_list_nuke_bom_list^ADW_list_nuke_bom_list_index = 1 } } }
+		localization_key = ADW_GDP_nuke_txt_1
+	}
+}
+
+defined_text = { #投資額月
+	name = ADW_GDP_INFUL_TXT_mon
+	text = {
+		trigger = {
+				check_variable = {
+					var = THIS.ADW_GDP_inful^ROOT
+					value = 100000000
+					compare = greater_than_or_equals
+				}
+		}
+		localization_key = ADW_GDP_INFUL_TXT_mon_kei
+	}
+	text = {
+		trigger = {
+				check_variable = {
+					var = FROM.ADW_GDP_inful^ROOT
+					value = 10000
+					compare = greater_than_or_equals
+				}
+		}
+		localization_key = ADW_GDP_INFUL_TXT_mon_cho
+	}
+	text = {
+		localization_key = ADW_GDP_INFUL_TXT_mon_oku
+	}
+}
+defined_text = { #投資額月
+	name = ADW_GDP_INFUL_TXT_year
+	text = {
+		trigger = {
+				check_variable = {
+					var = THIS.ADW_GDP_inful_per_year^ROOT
+					value = 100000000
+					compare = greater_than_or_equals
+				}
+		}
+		localization_key = ADW_GDP_INFUL_TXT_year_kei
+	}
+	text = {
+		trigger = {
+				check_variable = {
+					var = FROM.ADW_GDP_inful_per_year^ROOT
+					value = 10000
+					compare = greater_than_or_equals
+				}
+		}
+		localization_key = ADW_GDP_INFUL_TXT_year_cho
+	}
+	text = {
+		localization_key = ADW_GDP_INFUL_TXT_year_oku
+	}
+}
+defined_text = { #写真
+	name = ADW_SPV_title_bg
+	text = {
+		trigger = {check_variable = {global.ADW_SPV_Pic_variable = 1}}
+		localization_key = GFX_ADW_ENG_SPV_civil_war
+	}
+}
+defined_text = { #タイトル
+	name = ADW_SPV_title
+	text = {
+		trigger = {check_variable = {global.ADW_SPV_Pic_variable = 1}}
+		localization_key = ADW_SPV_title_1
+	}
+}
+defined_text = { #本文
+	name = ADW_SPV_countaint_txt
+	text = {
+		trigger = {check_variable = {global.ADW_SPV_Pic_variable = 1}}
+		localization_key = ADW_SPV_countaint_txt_1
+	}
+}
+
+defined_text = {
+	name = ADW_toushi_pay_txt
+	text = {
+		trigger = {
+			ROOT = {
+				check_variable = {
+					var = ROOT.ADW_GDP_toushi_per_month_for_dis
+					value = -100000000
+					compare = less_than_or_equals
+				}
+			}
+		}
+		localization_key = ADW_toushi_pay_txt_kei
+	}
+	text = {
+		trigger = {
+			ROOT = {
+				check_variable = {
+					var = ROOT.ADW_GDP_toushi_per_month_for_dis
+					value = -10000
+					compare = less_than_or_equals
+				}
+			}
+		}
+		localization_key = ADW_toushi_pay_txt_cho
+	}
+	text = {
+		localization_key = ADW_toushi_pay_txt_oku
+	}
+}
+defined_text = {
+	name = ADW_worker_pp
+	text = {
+		trigger = {
+			ROOT = {
+				check_variable = {
+					var = ROOT.ADW_work_able_pp
+					value = 100000000
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		localization_key = ADW_worker_cho
+	}
+	text = {
+		trigger = {
+			ROOT = {
+				check_variable = {
+					var = ROOT.ADW_work_able_pp
+					value = 100000
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		localization_key = ADW_worker_oku
+	}
+	text = {
+		trigger = {
+			ROOT = {
+				check_variable = {
+					var = ROOT.ADW_work_able_pp
+					value = 10
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		localization_key = ADW_worker_man
+	}
+	text = {
+		localization_key = ADW_worker_pp_sen
+	}
+}
+defined_text = {
+	name = ADW_population_tx
+	text = {
+		trigger = {
+			ROOT = {
+				check_variable = {
+					var = ROOT.max_manpower_k
+					value = 100000000
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		localization_key = ADW_population_tx_cho
+	}
+	text = {
+		trigger = {
+			ROOT = {
+				check_variable = {
+					var = ROOT.max_manpower_k
+					value = 100000
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		localization_key = ADW_population_tx_oku
+	}
+	text = {
+		trigger = {
+			ROOT = {
+				check_variable = {
+					var = ROOT.max_manpower_k
+					value = 10
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		localization_key = ADW_population_tx_man
+	}
+	text = {
+		localization_key = ADW_population_tx_sen
+	}
+}
+defined_text = {
+	name = ADW_work_people_fac_tx
+	text = {
+		trigger = {
+			ROOT = {
+				check_variable = {
+					var = ROOT.ADW_GDP_work_people_fac
+					value = 100000
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		localization_key = ADW_work_people_fac_oku
+	}
+	text = {
+		trigger = {
+			ROOT = {
+				check_variable = {
+					var = ROOT.ADW_GDP_work_people_fac
+					value = 10
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		localization_key = ADW_work_people_fac_man
+	}
+	text = {
+		localization_key = ADW_work_people_fac_sen
+	}
+}
+defined_text = {
+	name = ADW_worker_pp_farm
+	text = {
+		trigger = {
+			ROOT = {
+				check_variable = {
+					var = ROOT.ADW_GDP_farmer_people
+					value = 100000
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		localization_key = ADW_worker_pp_farm_oku
+	}
+	text = {
+		trigger = {
+			ROOT = {
+				check_variable = {
+					var = ROOT.ADW_GDP_farmer_people
+					value = 10
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		localization_key = ADW_worker_pp_farm_man
+	}
+	text = {
+		localization_key = ADW_worker_pp_farm_sen
+	}
+}
+defined_text = {
+	name = ADW_workeable_pp_compa_tx
+	text = {
+		trigger = {
+			ROOT = {
+				check_variable = {
+					var = ROOT.ADW_GDP_work_able_pp_for_company
+					value = 100000
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		localization_key = ADW_workeable_pp_compa_oku
+	}
+	text = {
+		trigger = {
+			ROOT = {
+				check_variable = {
+					var = ROOT.ADW_GDP_work_able_pp_for_company
+					value = 10
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		localization_key = ADW_workeable_pp_compa_man
+	}
+	text = {
+		localization_key = ADW_workeable_pp_compa_sen
+	}
+}
+defined_text = { #企業種類
+	name = ADW_company_kind
+	text = {
+		trigger = { ROOT = { check_variable = { ADW_GDP_company_kind^ADW_company_array^ADW_company_array_index = 1 } } }
+		localization_key = ADW_company_kind_food
+	}
+	text = {
+		trigger = { ROOT = { check_variable = { ADW_GDP_company_kind^ADW_company_array^ADW_company_array_index = 2 } } }
+		localization_key = ADW_company_kind_farm
+	}
+	text = {
+		trigger = { ROOT = { check_variable = { ADW_GDP_company_kind^ADW_company_array^ADW_company_array_index = 3 } } }
+		localization_key = ADW_company_kind_build
+	}
+	text = {
+		trigger = { ROOT = { check_variable = { ADW_GDP_company_kind^ADW_company_array^ADW_company_array_index = 4 } } }
+		localization_key = ADW_company_kind_cemical
+	}
+	text = {
+		trigger = { ROOT = { check_variable = { ADW_GDP_company_kind^ADW_company_array^ADW_company_array_index = 5 } } }
+		localization_key = ADW_company_kind_cloth
+	}
+	text = {
+		trigger = { ROOT = { check_variable = { ADW_GDP_company_kind^ADW_company_array^ADW_company_array_index = 6 } } }
+		localization_key = ADW_company_kind_machine
+	}
+	text = {
+		trigger = { ROOT = { check_variable = { ADW_GDP_company_kind^ADW_company_array^ADW_company_array_index = 7 } } }
+		localization_key = ADW_company_kind_IT
+	}
+}
+
+defined_text = { #企業レベル
+	name = ADW_company_level
+	text = {
+		trigger = { ROOT = { check_variable = { ADW_GDP_company_level_array^ADW_company_array^ADW_company_array_index = 4 } } }
+		localization_key = ADW_company_level_zaibatsu
+	}
+	text = {
+		trigger = { ROOT = { check_variable = { ADW_GDP_company_level_array^ADW_company_array^ADW_company_array_index = 3 } } }
+		localization_key = ADW_company_level_big
+	}
+	text = {
+		trigger = { ROOT = { check_variable = { ADW_GDP_company_level_array^ADW_company_array^ADW_company_array_index = 2 } } }
+		localization_key = ADW_company_level_middle
+	}
+	text = {
+		trigger = { ROOT = { check_variable = { ADW_GDP_company_level_array^ADW_company_array^ADW_company_array_index = 1 } } }
+		localization_key = ADW_company_level_small
+	}
+}
+
+defined_text = { #政策表示
+	name = ADW_GDP_option_days_desc
+	text = {
+		trigger = {
+			ROOT = {
+				check_variable = {
+					var = ROOT.ADW_seisaku_list_reable_array^ADW_seisaku_list^ADW_seisaku_list_indx
+					value = 0
+					compare = equals
+				}
+			}
+		}
+		localization_key = ADW_GDP_option_days_desc_avail
+	}
+	text = {
+		localization_key = ADW_GDP_option_days_desc_not_avail
 	}
 }
