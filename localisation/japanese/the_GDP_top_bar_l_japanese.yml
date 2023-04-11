@@ -275,9 +275,13 @@
  text_ADW_seisaku_list_desc_normal:0 "実行する。"
  text_ADW_seisaku_list_desc_2:0 "政策を選択する。"
  ##政策表示##
+ 
+ ADW_GDP_option_days_desc_avail:0 "§G実行可能§!"
+ ADW_GDP_option_days_desc_not_avail:0 "§Y[?ROOT.ADW_seisaku_list_reable_array^ADW_seisaku_list^ADW_seisaku_list_indx]日後に実行可能§!"
+ 
  ##政策タイトル##
  text_ADW_seisaku_list_locali_1:0 "§5新研究所建設§! §R建設費§!£GFX_civ_factory §O8§! £GFX_ADW_GDP_icon_money_txi §Y15億円§!  §Y120日§!  （§G維持費§! £GFX_ADW_GDP_icon_money_txi §Y5億円/月§!）"
- text_ADW_seisaku_list_locali_2:0 "§5戦争協力増強§! §O増強させる政策をイベントにより選択§!\n[?ROOT.ADW_seisaku_list_reable_array^ADW_seisaku_list^ADW_seisaku_list_indx]"
+ text_ADW_seisaku_list_locali_2:0 "§5戦争協力増強§! §O増強させる政策をイベントにより選択§!\n[ADW_GDP_option_days_desc]"
  ##政策タイトル##
  ADW_GDP_dis_seisaku_txt:0 "政策オプション"
  ADW_GDP_additonal_siesaku_title_txt:0 "§Y政策オプション§!"

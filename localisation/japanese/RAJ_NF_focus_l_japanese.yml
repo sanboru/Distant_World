@@ -1728,3 +1728,8 @@
  ADW_GER_gosei_fuel_gom_desc:0 "石炭の液体化"
  ADW_GER_KdF:0 "KdF-Wagen"
  ADW_GER_KdF_desc:0 "KdF-Wagen"
+ unlock_volx_wargen:0 "［フォルクスワーゲン］解放"
+ ADW_GER_garing_factory:0 "ゲーリング国家工場"
+ ADW_GER_garing_factory_desc:0 "ゲーリング国家工場"
+ ADW_ger_macine_farm:0 "機械化農業の推進"
+ ADW_ger_macine_farm_desc:0 "機械化農業の推進"
